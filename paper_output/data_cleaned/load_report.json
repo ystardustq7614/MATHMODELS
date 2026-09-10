@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "paper_output/code/data_processing/prepare_a_data.py",
+  "generated_at": "2026-09-10T13:14:59.445805+00:00",
+  "status": "PASS",
+  "input_manifest_used": true,
+  "input_manifest_sha256": "8e9fb70af0975a8bd8504d4f9431caae6198875f345abf3b3b486d8f7ea75b40",
+  "data_files": [
+    {
+      "path": "problem_files/A题/附件/附件1.xlsx",
+      "kind": "spreadsheet",
+      "ext": ".xlsx",
+      "readable": true,
+      "warnings": [],
+      "errors": [],
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 242,
+          "cols": 3,
+          "sample_cols": [
+            "时间",
+            "温度",
+            "水分浓度"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "problem_files/A题/附件/附件2.xlsx",
+      "kind": "spreadsheet",
+      "ext": ".xlsx",
+      "readable": true,
+      "warnings": [],
+      "errors": [],
+      "sheets": [
+        {
+          "name": "Sheet1",
+          "rows": 146,
+          "cols": 2,
+          "sample_cols": [
+            "时间",
+            "半径"
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_problem": "A",
+  "skipped_files": [
+    {
+      "path": "problem_files/A题/A题.pdf",
+      "role": "problem_statement",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/A题/附件/附件3/result1.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/A题/附件/附件3/result2.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/A题/附件/附件3/result3.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/A题/附件/附件3/result4.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/B题/B题.pdf",
+      "role": "problem_statement",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/B题/附件/附件1.docx",
+      "role": "problem_statement",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/B题/附件/附件2.docx",
+      "role": "problem_statement",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/C题.pdf",
+      "role": "problem_statement",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件1.xlsx",
+      "role": "raw_data",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件2.xlsx",
+      "role": "raw_data",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件3.xlsx",
+      "role": "raw_data",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件4.xlsx",
+      "role": "raw_data",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件5/result1.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件5/result2.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件5/result3.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件5/result4-2.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    },
+    {
+      "path": "problem_files/C题/附件/附件5/result4-3.xlsx",
+      "role": "result_template",
+      "reason": "outside_A_raw_data"
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "data_file_count": 2,
+    "readable_data_file_count": 2,
+    "total_observations": 386
+  },
+  "quality": [
+    {
+      "path": "problem_files/A题/附件/附件1.xlsx",
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+      "role": "raw_data",
+      "cleaned_output": "paper_output/data_cleaned/a_environment.csv",
+      "cleaned_sha256": "be08c60a8f84e6e721a82ba97323808c92a807828132baeaf8cd8fc119e8c891",
+      "rows": 241,
+      "columns": [
+        "time_s",
+        "temperature_C",
+        "air_moisture_kgkg",
+        "temperature_K"
+      ],
+      "units": {
+        "time_s": "s",
+        "temperature_C": "degC",
+        "air_moisture_kgkg": "kg/kg",
+        "temperature_K": "K"
+      },
+      "missing_values": 0,
+      "duplicate_times": 0,
+      "removed_rows": 0,
+      "imputed_values": 0,
+      "time_start_s": 0,
+      "time_end_s": 14400,
+      "interval_s": 60,
+      "min_values": {
+        "time_s": 0.0,
+        "temperature_C": 28.0,
+        "air_moisture_kgkg": 0.01963,
+        "temperature_K": 301.15
+      },
+      "max_values": {
+        "time_s": 14400.0,
+        "temperature_C": 50.246,
+        "air_moisture_kgkg": 0.05025,
+        "temperature_K": 323.39599999999996
+      },
+      "question_ids": [
+        "AQ1",
+        "AQ2",
+        "AQ3",
+        "AQ4"
+      ]
+    },
+    {
+      "path": "problem_files/A题/附件/附件2.xlsx",
+      "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+      "role": "raw_data",
+      "cleaned_output": "paper_output/data_cleaned/a_radius.csv",
+      "cleaned_sha256": "2201213faa00d88439d359df76fb78a3dbacf5a5c7d0ee39658f351da06aed69",
+      "rows": 145,
+      "columns": [
+        "time_s",
+        "radius_cm",
+        "radius_m"
+      ],
+      "units": {
+        "time_s": "s",
+        "radius_cm": "cm",
+        "radius_m": "m"
+      },
+      "missing_values": 0,
+      "duplicate_times": 0,
+      "removed_rows": 0,
+      "imputed_values": 0,
+      "time_start_s": 0,
+      "time_end_s": 259200,
+      "interval_s": 1800,
+      "min_values": {
+        "time_s": 0.0,
+        "radius_cm": 1.198,
+        "radius_m": 0.01198
+      },
+      "max_values": {
+        "time_s": 259200.0,
+        "radius_cm": 2.0,
+        "radius_m": 0.02
+      },
+      "question_ids": [
+        "AQ4"
+      ]
+    }
+  ],
+  "boundary_statistics": {
+    "interpolation": "piecewise_linear",
+    "support_s": [
+      0,
+      14400
+    ],
+    "extension": "hold_last",
+    "last_temperature_C": 50.165,
+    "last_Ce": 0.04986,
+    "sensitivity_window_s": [
+      10800,
+      14400
+    ],
+    "tail_mean_temperature_C": 49.998934426229496,
+    "tail_mean_Ce": 0.049987540983606554,
+    "tail_std_temperature_C": 0.15435336826607313,
+    "tail_std_Ce": 0.00015012945233702923,
+    "extension_is_observed": false
+  },
+  "radius_statistics": {
+    "interpolation": "piecewise_linear",
+    "support_s": [
+      0,
+      259200
+    ],
+    "extension": "hold_last",
+    "last_radius_m": 0.01198,
+    "nonincreasing": true,
+    "increasing_intervals": 0,
+    "extension_is_observed": false
+  }
+}

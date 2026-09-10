@@ -1,0 +1,418 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "S2 project-specific model selection",
+  "generated_at": "2026-09-10T13:12:59.189Z",
+  "status": "PLANNED",
+  "selected_problem": "A",
+  "source": "paper_output/step1/problem_analysis.json",
+  "input_hashes": {
+    "paper_output/step1/problem_analysis.json": "7b0a6be696edc0722f93e1eeb19fb800731bf7b58f1c7a7f98774989d24dcc06"
+  },
+  "decision_document": "paper_output/plan/scoring_strategy.md",
+  "question_id_policy": "Preserve AQ1-AQ4; do not silently normalize to Q1-Q4.",
+  "model_results_available": false,
+  "assumptions": {
+    "geometry": "radial midsection; fixed length 0.25 m",
+    "mass_basis": "uniform conserved reference dry loading; no absolute water mass claimed",
+    "empirical_density": "effective heat storage only, not also rho_d*(1+C)",
+    "mass_boundary": "effective Robin reference Ce, not a measured sorption equilibrium",
+    "heat": "sensible effective equation without explicit evaporation latent heat or mechanical work",
+    "shrinkage": "self-similar solid motion v=r R'/R; material xi mesh",
+    "environment_extension": "last observation after 14400 s",
+    "radius_extension": "last observation after 259200 s",
+    "q2_export": "all seconds to AQ3 event",
+    "evidence_limit": "No independent experimental validation dataset acquired"
+  },
+  "solver": {
+    "method": "annular finite volume + backward Euler + Picard + Thomas",
+    "language": "Python",
+    "array_library": "NumPy",
+    "acceleration": "Numba if necessary after S4 static coding",
+    "radial_cells_initial": 80,
+    "dt_initial_s": 1,
+    "picard_max_iterations": 50,
+    "temperature_iteration_tolerance_K": 1e-7,
+    "moisture_iteration_tolerance": 1e-10,
+    "failed_step_action": "halve dt and record; never clip solution",
+    "horizon_initial_s": 259200,
+    "horizon_max_s": 604800,
+    "event_bracket_tolerance_s": 1,
+    "implementation_status": "not_written"
+  },
+  "validation_acceptance": {
+    "spatial_cells": [
+      40,
+      80,
+      160
+    ],
+    "spatial_test_dt_s": 0.5,
+    "temporal_steps_s": [
+      2,
+      1,
+      0.5
+    ],
+    "temporal_test_cells": 160,
+    "temperature_max_difference_K": 0.05,
+    "moisture_max_difference": 0.0005,
+    "event_relative_difference": 0.005,
+    "analytic_relative_l2": 0.001,
+    "normalized_water_balance_residual": 0.000001,
+    "constant_radius_relative_error": 1e-8,
+    "details": "scoring_strategy.md section 4; targets, not results"
+  },
+  "questions": [
+    {
+      "question_id": "AQ1",
+      "source_question_id": "AQ1",
+      "title": "预热阶段温度与干基含水率",
+      "task_type": "非线性扩散与热传导",
+      "core_goal": "表1、表2：100/300/600/900/1200/1500/1800 s，r=0/0.5/1/1.5/2 cm",
+      "inputs": [
+        "L=0.25 m，R=0.02 m，T0=28°C，C0=2.55 kg/kg",
+        "附件1环境序列",
+        "rho=820，cp=2600，k=0.36，h=25，hm=8e-7（SI）",
+        "D(C)=7e-9*exp(-0.89/C) m²/s"
+      ],
+      "required_outputs": [
+        "表1、表2：100/300/600/900/1200/1500/1800 s，r=0/0.5/1/1.5/2 cm",
+        "result1.xlsx：1至1800 s，间隔1 s；0至2 cm，间隔0.1 cm；温度、水分浓度两表"
+      ],
+      "constraints": [
+        "热物性常数，但扩散系数随C变化",
+        "初始场单独保留，输出四位小数，内部计算不舍入",
+        "径向近似及表面传质驱动力需说明假设"
+      ],
+      "baseline_model": "圆柱径向有限体积",
+      "main_model": "隐式时间推进、Picard迭代、Thomas三对角算法",
+      "backup_models": [
+        "更细时空网格与同物性退化对照"
+      ],
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "validation": [
+        "常系数退化解析基准",
+        "时间步和网格收敛",
+        "中心对称与表面通量残差"
+      ],
+      "figures": [
+        {
+          "figure_id": "fig_aq1_fields",
+          "question_id": "AQ1",
+          "title": "前30 min温湿时空场",
+          "expected_path": "paper_output/figures/fig_aq1_fields.png",
+          "purpose": "前30 min温湿时空场",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_convergence",
+          "question_id": "all",
+          "title": "网格与时间步收敛",
+          "expected_path": "paper_output/figures/fig_convergence.png",
+          "purpose": "网格与时间步收敛",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_balance",
+          "question_id": "all",
+          "title": "归一水分收支残差",
+          "expected_path": "paper_output/figures/fig_balance.png",
+          "purpose": "归一水分收支残差",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_sensitivity",
+          "question_id": "all",
+          "title": "边界与参数敏感性",
+          "expected_path": "paper_output/figures/fig_sensitivity.png",
+          "purpose": "边界与参数敏感性",
+          "stage": "S5",
+          "status": "planned"
+        }
+      ],
+      "paper_sections": [
+        "5.1 模型建立与求解",
+        "5.1.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "required_tables": [
+        "table1",
+        "table2"
+      ],
+      "result_workbook": "paper_output/tables/result1.xlsx"
+    },
+    {
+      "question_id": "AQ2",
+      "source_question_id": "AQ2",
+      "title": "统一经验物性的全过程模型",
+      "task_type": "热湿非线性耦合",
+      "core_goal": "表3、表4：0.5至3 h，间隔0.5 h；r=0/0.5/1/1.5/2 cm",
+      "inputs": [
+        "与AQ1相同的初始场及环境输入",
+        "从t=0起统一采用附录3，不拼接AQ1末态"
+      ],
+      "required_outputs": [
+        "表3、表4：0.5至3 h，间隔0.5 h；r=0/0.5/1/1.5/2 cm",
+        "result2.xlsx：每1 s、每0.1 cm温度与水分浓度，自1 s至AQ3达标时刻；表3/4仅取前3 h。"
+      ],
+      "constraints": [
+        "Arrhenius温度用K",
+        "D与k在散度内，不能用变系数乘常系数拉普拉斯替代",
+        "附件1在4 h后保持末值；末段均值延拓作为敏感性情景"
+      ],
+      "baseline_model": "复用AQ1网格和隐式求解器，替换附录3物性",
+      "main_model": "迭代残差控制及环境延拓敏感性",
+      "backup_models": [
+        "更细时空网格与同物性退化对照"
+      ],
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "validation": [
+        "自身时间推进连续性",
+        "物性正值",
+        "离散方程与能量平衡残差",
+        "与AQ1前30 min对比而不要求数值相等"
+      ],
+      "figures": [
+        {
+          "figure_id": "fig_aq2_profiles",
+          "question_id": "AQ2",
+          "title": "全程温湿剖面",
+          "expected_path": "paper_output/figures/fig_aq2_profiles.png",
+          "purpose": "全程温湿剖面",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_convergence",
+          "question_id": "all",
+          "title": "网格与时间步收敛",
+          "expected_path": "paper_output/figures/fig_convergence.png",
+          "purpose": "网格与时间步收敛",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_balance",
+          "question_id": "all",
+          "title": "归一水分收支残差",
+          "expected_path": "paper_output/figures/fig_balance.png",
+          "purpose": "归一水分收支残差",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_sensitivity",
+          "question_id": "all",
+          "title": "边界与参数敏感性",
+          "expected_path": "paper_output/figures/fig_sensitivity.png",
+          "purpose": "边界与参数敏感性",
+          "stage": "S5",
+          "status": "planned"
+        }
+      ],
+      "paper_sections": [
+        "5.2 模型建立与求解",
+        "5.2.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "required_tables": [
+        "table3",
+        "table4"
+      ],
+      "result_workbook": "paper_output/tables/result2.xlsx"
+    },
+    {
+      "question_id": "AQ3",
+      "source_question_id": "AQ3",
+      "title": "固定半径下全域达标时长",
+      "task_type": "阈值事件检测",
+      "core_goal": "烘干时长h与未舍入事件夹逼区间",
+      "inputs": [
+        "AQ2模型续算",
+        "阈值0.15 kg/kg"
+      ],
+      "required_outputs": [
+        "烘干时长h与未舍入事件夹逼区间",
+        "表5：每6 h及结束时刻、每0.5 cm",
+        "result3.xlsx：每60 s、每0.1 cm，补充结束时刻"
+      ],
+      "constraints": [
+        "判定max_r C<0.15，不使用平均含水率",
+        "2至3天只是背景量级，不预设结束时刻"
+      ],
+      "baseline_model": "逐步扫描全域最大值",
+      "main_model": "事件区间内二分重算",
+      "backup_models": [
+        "更细时空网格与同物性退化对照"
+      ],
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "validation": [
+        "事件前后夹逼",
+        "最湿位置检查",
+        "事件时间随网格和步长收敛",
+        "长期环境假设敏感性"
+      ],
+      "figures": [
+        {
+          "figure_id": "fig_aq3_event",
+          "question_id": "AQ3",
+          "title": "全域最大含水率与阈值事件",
+          "expected_path": "paper_output/figures/fig_aq3_event.png",
+          "purpose": "全域最大含水率与阈值事件",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_convergence",
+          "question_id": "all",
+          "title": "网格与时间步收敛",
+          "expected_path": "paper_output/figures/fig_convergence.png",
+          "purpose": "网格与时间步收敛",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_balance",
+          "question_id": "all",
+          "title": "归一水分收支残差",
+          "expected_path": "paper_output/figures/fig_balance.png",
+          "purpose": "归一水分收支残差",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_sensitivity",
+          "question_id": "all",
+          "title": "边界与参数敏感性",
+          "expected_path": "paper_output/figures/fig_sensitivity.png",
+          "purpose": "边界与参数敏感性",
+          "stage": "S5",
+          "status": "planned"
+        }
+      ],
+      "paper_sections": [
+        "5.3 模型建立与求解",
+        "5.3.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "required_tables": [
+        "table5"
+      ],
+      "result_workbook": "paper_output/tables/result3.xlsx"
+    },
+    {
+      "question_id": "AQ4",
+      "source_question_id": "AQ4",
+      "title": "收缩域中的烘干时长",
+      "task_type": "移动边界传热传质",
+      "core_goal": "收缩条件下时长h",
+      "inputs": [
+        "附件2半径时间序列",
+        "附录4独立物性组",
+        "原始初始场与AQ3全域阈值"
+      ],
+      "required_outputs": [
+        "收缩条件下时长h",
+        "表6：每6 h及结束时刻、域内每0.5 cm及真实表面",
+        "result4.xlsx：每60 s、域内每0.1 cm及真实表面，补充结束时刻"
+      ],
+      "constraints": [
+        "xi=r/R(t)计算网格须映射回物理距离",
+        "先明确固体速度、密度及干基含水率守恒口径",
+        "域外位置不填零或外推值",
+        "Q3与Q4同时更换物性和几何，差值不能全部归因于收缩"
+      ],
+      "baseline_model": "分段线性R(t)与守恒移动网格",
+      "main_model": "同物性固定/收缩对照和2×2因子实验",
+      "backup_models": [
+        "更细时空网格与同物性退化对照"
+      ],
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界",
+        "收缩坐标变换",
+        "归一水分收支"
+      ],
+      "validation": [
+        "R恒定时退化为对应固定域模型",
+        "移动域质量收支与几何守恒",
+        "时空网格收敛",
+        "半径插值与外推敏感性"
+      ],
+      "figures": [
+        {
+          "figure_id": "fig_aq4_fields",
+          "question_id": "AQ4",
+          "title": "收缩域水分分布",
+          "expected_path": "paper_output/figures/fig_aq4_fields.png",
+          "purpose": "收缩域水分分布",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_aq4_factorial",
+          "question_id": "AQ4",
+          "title": "几何与物性2×2对照",
+          "expected_path": "paper_output/figures/fig_aq4_factorial.png",
+          "purpose": "几何与物性2×2对照",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_convergence",
+          "question_id": "all",
+          "title": "网格与时间步收敛",
+          "expected_path": "paper_output/figures/fig_convergence.png",
+          "purpose": "网格与时间步收敛",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_balance",
+          "question_id": "all",
+          "title": "归一水分收支残差",
+          "expected_path": "paper_output/figures/fig_balance.png",
+          "purpose": "归一水分收支残差",
+          "stage": "S5",
+          "status": "planned"
+        },
+        {
+          "figure_id": "fig_sensitivity",
+          "question_id": "all",
+          "title": "边界与参数敏感性",
+          "expected_path": "paper_output/figures/fig_sensitivity.png",
+          "purpose": "边界与参数敏感性",
+          "stage": "S5",
+          "status": "planned"
+        }
+      ],
+      "paper_sections": [
+        "5.4 模型建立与求解",
+        "5.4.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "required_tables": [
+        "table6"
+      ],
+      "result_workbook": "paper_output/tables/result4.xlsx"
+    }
+  ]
+}

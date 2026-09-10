@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "S2 project-specific rubric alignment",
+  "generated_at": "2026-09-10T13:12:59.189Z",
+  "scope": "A",
+  "official_weights": false,
+  "items": [
+    {
+      "question_id": "AQ1",
+      "rubric_point": "题意覆盖",
+      "evidence_required": [
+        "表1、表2：100/300/600/900/1200/1500/1800 s，r=0/0.5/1/1.5/2 cm",
+        "result1.xlsx：1至1800 s，间隔1 s；0至2 cm，间隔0.1 cm；温度、水分浓度两表"
+      ],
+      "paper_location": [
+        "5.1 模型建立与求解",
+        "5.1.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "指定时间/空间和四位小数由同一数值结果生成，追加事件行，无手填。"
+    },
+    {
+      "question_id": "AQ1",
+      "rubric_point": "模型合理性",
+      "evidence_required": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "paper_location": [
+        "5.1 模型建立与求解",
+        "5.1.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "系数、初边值与单位对应；假设不能表述为测量事实。"
+    },
+    {
+      "question_id": "AQ1",
+      "rubric_point": "结果可信",
+      "evidence_required": [
+        "常系数退化解析基准",
+        "时间步和网格收敛",
+        "中心对称与表面通量残差"
+      ],
+      "paper_location": [
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "满足预注册标准，失败如实记录；输入不能自证内部场准确。"
+    },
+    {
+      "question_id": "AQ1",
+      "rubric_point": "可复现性",
+      "evidence_required": [
+        "inputs/scripts/outputs SHA256",
+        "exit code",
+        "command and package versions",
+        "finite metrics"
+      ],
+      "paper_location": [
+        "附录"
+      ],
+      "qa_rule": "只有真实建模运行满足S5/S6；S3数据处理不算模型运行。"
+    },
+    {
+      "question_id": "AQ2",
+      "rubric_point": "题意覆盖",
+      "evidence_required": [
+        "表3、表4：0.5至3 h，间隔0.5 h；r=0/0.5/1/1.5/2 cm",
+        "result2.xlsx：每1 s、每0.1 cm温度与水分浓度，自1 s至AQ3达标时刻；表3/4仅取前3 h。"
+      ],
+      "paper_location": [
+        "5.2 模型建立与求解",
+        "5.2.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "指定时间/空间和四位小数由同一数值结果生成，追加事件行，无手填。"
+    },
+    {
+      "question_id": "AQ2",
+      "rubric_point": "模型合理性",
+      "evidence_required": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "paper_location": [
+        "5.2 模型建立与求解",
+        "5.2.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "系数、初边值与单位对应；假设不能表述为测量事实。"
+    },
+    {
+      "question_id": "AQ2",
+      "rubric_point": "结果可信",
+      "evidence_required": [
+        "自身时间推进连续性",
+        "物性正值",
+        "离散方程与能量平衡残差",
+        "与AQ1前30 min对比而不要求数值相等"
+      ],
+      "paper_location": [
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "满足预注册标准，失败如实记录；输入不能自证内部场准确。"
+    },
+    {
+      "question_id": "AQ2",
+      "rubric_point": "可复现性",
+      "evidence_required": [
+        "inputs/scripts/outputs SHA256",
+        "exit code",
+        "command and package versions",
+        "finite metrics"
+      ],
+      "paper_location": [
+        "附录"
+      ],
+      "qa_rule": "只有真实建模运行满足S5/S6；S3数据处理不算模型运行。"
+    },
+    {
+      "question_id": "AQ3",
+      "rubric_point": "题意覆盖",
+      "evidence_required": [
+        "烘干时长h与未舍入事件夹逼区间",
+        "表5：每6 h及结束时刻、每0.5 cm",
+        "result3.xlsx：每60 s、每0.1 cm，补充结束时刻"
+      ],
+      "paper_location": [
+        "5.3 模型建立与求解",
+        "5.3.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "指定时间/空间和四位小数由同一数值结果生成，追加事件行，无手填。"
+    },
+    {
+      "question_id": "AQ3",
+      "rubric_point": "模型合理性",
+      "evidence_required": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "paper_location": [
+        "5.3 模型建立与求解",
+        "5.3.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "系数、初边值与单位对应；假设不能表述为测量事实。"
+    },
+    {
+      "question_id": "AQ3",
+      "rubric_point": "结果可信",
+      "evidence_required": [
+        "事件前后夹逼",
+        "最湿位置检查",
+        "事件时间随网格和步长收敛",
+        "长期环境假设敏感性"
+      ],
+      "paper_location": [
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "满足预注册标准，失败如实记录；输入不能自证内部场准确。"
+    },
+    {
+      "question_id": "AQ3",
+      "rubric_point": "可复现性",
+      "evidence_required": [
+        "inputs/scripts/outputs SHA256",
+        "exit code",
+        "command and package versions",
+        "finite metrics"
+      ],
+      "paper_location": [
+        "附录"
+      ],
+      "qa_rule": "只有真实建模运行满足S5/S6；S3数据处理不算模型运行。"
+    },
+    {
+      "question_id": "AQ4",
+      "rubric_point": "题意覆盖",
+      "evidence_required": [
+        "收缩条件下时长h",
+        "表6：每6 h及结束时刻、域内每0.5 cm及真实表面",
+        "result4.xlsx：每60 s、域内每0.1 cm及真实表面，补充结束时刻"
+      ],
+      "paper_location": [
+        "5.4 模型建立与求解",
+        "5.4.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "指定时间/空间和四位小数由同一数值结果生成，追加事件行，无手填。"
+    },
+    {
+      "question_id": "AQ4",
+      "rubric_point": "模型合理性",
+      "evidence_required": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界",
+        "收缩坐标变换",
+        "归一水分收支"
+      ],
+      "paper_location": [
+        "5.4 模型建立与求解",
+        "5.4.4 结果分析",
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "系数、初边值与单位对应；假设不能表述为测量事实。"
+    },
+    {
+      "question_id": "AQ4",
+      "rubric_point": "结果可信",
+      "evidence_required": [
+        "R恒定时退化为对应固定域模型",
+        "移动域质量收支与几何守恒",
+        "时空网格收敛",
+        "半径插值与外推敏感性"
+      ],
+      "paper_location": [
+        "6 验证与敏感性"
+      ],
+      "qa_rule": "满足预注册标准，失败如实记录；输入不能自证内部场准确。"
+    },
+    {
+      "question_id": "AQ4",
+      "rubric_point": "可复现性",
+      "evidence_required": [
+        "inputs/scripts/outputs SHA256",
+        "exit code",
+        "command and package versions",
+        "finite metrics"
+      ],
+      "paper_location": [
+        "附录"
+      ],
+      "qa_rule": "只有真实建模运行满足S5/S6；S3数据处理不算模型运行。"
+    }
+  ],
+  "global_rules": [
+    "AQ1 D随C变化",
+    "AQ2不拼接AQ1",
+    "AQ3用全域max",
+    "AQ4分离几何和物性",
+    "S6通过后完整章节写作",
+    "官方2026格式优先于模板字数建议"
+  ]
+}

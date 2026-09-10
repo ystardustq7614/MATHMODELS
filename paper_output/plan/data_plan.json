@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-10T13:14:59.445805+00:00",
+  "selected_problem": "A",
+  "input_manifest_sha256": "8e9fb70af0975a8bd8504d4f9431caae6198875f345abf3b3b486d8f7ea75b40",
+  "model_route_sha256": "1fa3f04e25ba4a905994e39e3c26e25051eb0b4c62dc11e1fb8bd86b33adcf0f",
+  "data_files": [
+    {
+      "path": "problem_files/A题/附件/附件1.xlsx",
+      "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
+      "role": "raw_data",
+      "cleaned_output": "paper_output/data_cleaned/a_environment.csv",
+      "cleaned_sha256": "be08c60a8f84e6e721a82ba97323808c92a807828132baeaf8cd8fc119e8c891",
+      "rows": 241,
+      "columns": [
+        "time_s",
+        "temperature_C",
+        "air_moisture_kgkg",
+        "temperature_K"
+      ],
+      "units": {
+        "time_s": "s",
+        "temperature_C": "degC",
+        "air_moisture_kgkg": "kg/kg",
+        "temperature_K": "K"
+      },
+      "missing_values": 0,
+      "duplicate_times": 0,
+      "removed_rows": 0,
+      "imputed_values": 0,
+      "time_start_s": 0,
+      "time_end_s": 14400,
+      "interval_s": 60,
+      "min_values": {
+        "time_s": 0.0,
+        "temperature_C": 28.0,
+        "air_moisture_kgkg": 0.01963,
+        "temperature_K": 301.15
+      },
+      "max_values": {
+        "time_s": 14400.0,
+        "temperature_C": 50.246,
+        "air_moisture_kgkg": 0.05025,
+        "temperature_K": 323.39599999999996
+      },
+      "question_ids": [
+        "AQ1",
+        "AQ2",
+        "AQ3",
+        "AQ4"
+      ]
+    },
+    {
+      "path": "problem_files/A题/附件/附件2.xlsx",
+      "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
+      "role": "raw_data",
+      "cleaned_output": "paper_output/data_cleaned/a_radius.csv",
+      "cleaned_sha256": "2201213faa00d88439d359df76fb78a3dbacf5a5c7d0ee39658f351da06aed69",
+      "rows": 145,
+      "columns": [
+        "time_s",
+        "radius_cm",
+        "radius_m"
+      ],
+      "units": {
+        "time_s": "s",
+        "radius_cm": "cm",
+        "radius_m": "m"
+      },
+      "missing_values": 0,
+      "duplicate_times": 0,
+      "removed_rows": 0,
+      "imputed_values": 0,
+      "time_start_s": 0,
+      "time_end_s": 259200,
+      "interval_s": 1800,
+      "min_values": {
+        "time_s": 0.0,
+        "radius_cm": 1.198,
+        "radius_m": 0.01198
+      },
+      "max_values": {
+        "time_s": 259200.0,
+        "radius_cm": 2.0,
+        "radius_m": 0.02
+      },
+      "question_ids": [
+        "AQ4"
+      ]
+    }
+  ],
+  "environment": {
+    "interpolation": "piecewise_linear",
+    "support_s": [
+      0,
+      14400
+    ],
+    "extension": "hold_last",
+    "last_temperature_C": 50.165,
+    "last_Ce": 0.04986,
+    "sensitivity_window_s": [
+      10800,
+      14400
+    ],
+    "tail_mean_temperature_C": 49.998934426229496,
+    "tail_mean_Ce": 0.049987540983606554,
+    "tail_std_temperature_C": 0.15435336826607313,
+    "tail_std_Ce": 0.00015012945233702923,
+    "extension_is_observed": false
+  },
+  "radius": {
+    "interpolation": "piecewise_linear",
+    "support_s": [
+      0,
+      259200
+    ],
+    "extension": "hold_last",
+    "last_radius_m": 0.01198,
+    "nonincreasing": true,
+    "increasing_intervals": 0,
+    "extension_is_observed": false
+  },
+  "cleaning_policy": "检查全表；不填补、不平滑、不去趋势，保留原始观测波动；只增加SI单位列。",
+  "interpolation_policy": "S4按本计划在计算时插值，S3清洗文件只保留实测节点。",
+  "output_sampling": {
+    "AQ1": "1 s, 0.1 cm, through 1800 s",
+    "AQ2": "1 s, 0.1 cm, through AQ3 event; tables at 0.5 h through 3 h",
+    "AQ3": "60 s, 0.1 cm, append event",
+    "AQ4": "60 s, valid physical 0.1 cm nodes and true surface; append event"
+  },
+  "external_validation": {
+    "dataset_acquired": false,
+    "required_for_numerical_execution": false
+  },
+  "figure_ids": [
+    "fig_a_environment",
+    "fig_a_radius"
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper-workflow-orchestrator/scripts/preflight_check.py",
-  "generated_at": "2026-09-10T18:09:52",
-  "root": "D:/VS Project/MATHMODEL",
+  "generated_at": "2026-09-10T21:08:05",
+  "root": "C:/Users/neverend/Desktop/数模/MATHMODELS",
   "entries": [
     {
       "path": "problem_files/A题/A题.pdf",

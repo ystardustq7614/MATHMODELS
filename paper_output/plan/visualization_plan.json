@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-10T13:14:59.445805+00:00",
+  "figures": [
+    {
+      "figure_id": "fig_a_environment",
+      "title": "烘房温度与水分浓度实测输入",
+      "path": "paper_output/figures/fig_a_environment.png",
+      "expected_path": "paper_output/figures/fig_a_environment.png",
+      "question_ids": [
+        "AQ1",
+        "AQ2",
+        "AQ3",
+        "AQ4"
+      ],
+      "source_data": "paper_output/data_cleaned/a_environment.csv",
+      "source_sha256": "be08c60a8f84e6e721a82ba97323808c92a807828132baeaf8cd8fc119e8c891",
+      "sha256": "7a137b198d3e1dd0ed033ee9b24428011b48e36f866d6067b98c40401f3abe17",
+      "bytes": 94324,
+      "status": "generated",
+      "ok": true,
+      "exists": true,
+      "placeholder": false,
+      "evidence_type": "input_observation",
+      "interpretation": "展示官方输入，不是模型预测或独立验证。",
+      "paper_section": "2 数据与问题分析"
+    },
+    {
+      "figure_id": "fig_a_radius",
+      "title": "药材半径实测输入",
+      "path": "paper_output/figures/fig_a_radius.png",
+      "expected_path": "paper_output/figures/fig_a_radius.png",
+      "question_ids": [
+        "AQ4"
+      ],
+      "source_data": "paper_output/data_cleaned/a_radius.csv",
+      "source_sha256": "2201213faa00d88439d359df76fb78a3dbacf5a5c7d0ee39658f351da06aed69",
+      "sha256": "334f0462ff31b9572c8a89943169fcd3b68105ff6c7e36b2e88bebe0afdad176",
+      "bytes": 44515,
+      "status": "generated",
+      "ok": true,
+      "exists": true,
+      "placeholder": false,
+      "evidence_type": "input_observation",
+      "interpretation": "展示官方输入，不是模型预测或独立验证。",
+      "paper_section": "2 数据与问题分析"
+    }
+  ],
+  "future_model_figures": [
+    {
+      "figure_id": "fig_aq1_fields",
+      "question_id": "AQ1",
+      "title": "前30 min温湿时空场",
+      "expected_path": "paper_output/figures/fig_aq1_fields.png",
+      "purpose": "前30 min温湿时空场",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_convergence",
+      "question_id": "all",
+      "title": "网格与时间步收敛",
+      "expected_path": "paper_output/figures/fig_convergence.png",
+      "purpose": "网格与时间步收敛",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_balance",
+      "question_id": "all",
+      "title": "归一水分收支残差",
+      "expected_path": "paper_output/figures/fig_balance.png",
+      "purpose": "归一水分收支残差",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_sensitivity",
+      "question_id": "all",
+      "title": "边界与参数敏感性",
+      "expected_path": "paper_output/figures/fig_sensitivity.png",
+      "purpose": "边界与参数敏感性",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_aq2_profiles",
+      "question_id": "AQ2",
+      "title": "全程温湿剖面",
+      "expected_path": "paper_output/figures/fig_aq2_profiles.png",
+      "purpose": "全程温湿剖面",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_aq3_event",
+      "question_id": "AQ3",
+      "title": "全域最大含水率与阈值事件",
+      "expected_path": "paper_output/figures/fig_aq3_event.png",
+      "purpose": "全域最大含水率与阈值事件",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_aq4_fields",
+      "question_id": "AQ4",
+      "title": "收缩域水分分布",
+      "expected_path": "paper_output/figures/fig_aq4_fields.png",
+      "purpose": "收缩域水分分布",
+      "stage": "S5",
+      "status": "planned"
+    },
+    {
+      "figure_id": "fig_aq4_factorial",
+      "question_id": "AQ4",
+      "title": "几何与物性2×2对照",
+      "expected_path": "paper_output/figures/fig_aq4_factorial.png",
+      "purpose": "几何与物性2×2对照",
+      "stage": "S5",
+      "status": "planned"
+    }
+  ],
+  "note": "只有实际生成的S3输入图进入figure_index；模型图待S5。"
+}

@@ -1,213 +1,202 @@
 {
   "schema_version": "1.0",
-  "analysis_scope": "three_problem_preselection",
-  "selection_status": "pending_user_choice",
+  "analysis_scope": "selected_problem_A",
+  "selection_status": "user_selected",
+  "selected_problem": "A",
+  "review_date": "2026-09-10",
+  "review_plan": "paper_output/plan/scoring_strategy.md",
+  "scope_note": "仅A题AQ1至AQ4；历史选题比较已清理，Git基线保留原始记录。",
   "documents": [
-    {"problem": "A", "path": "problem_files/A题/A题.pdf", "type": "pdf", "pages": 4},
-    {"problem": "B", "path": "problem_files/B题/B题.pdf", "type": "pdf", "pages": 4},
-    {"problem": "B", "path": "problem_files/B题/附件/附件1.docx", "type": "docx", "role": "simulator_user_guide"},
-    {"problem": "B", "path": "problem_files/B题/附件/附件2.docx", "type": "docx", "role": "http_api_guide"},
-    {"problem": "C", "path": "problem_files/C题/C题.pdf", "type": "pdf", "pages": 3}
+    {
+      "problem": "A",
+      "path": "problem_files/A题/A题.pdf",
+      "type": "pdf",
+      "pages": 4
+    }
   ],
   "data_files": [
-    {"problem": "A", "path": "problem_files/A题/附件/附件1.xlsx", "role": "raw_data", "summary": "烘房温度和水分浓度，0-14400 s，60 s 间隔，无空值"},
-    {"problem": "A", "path": "problem_files/A题/附件/附件2.xlsx", "role": "raw_data", "summary": "药材半径，0-259200 s，1800 s 间隔，无空值"},
-    {"problem": "A", "path": "problem_files/A题/附件/附件3", "role": "result_templates", "summary": "result1.xlsx-result4.xlsx"},
-    {"problem": "C", "path": "problem_files/C题/附件/附件1.xlsx", "role": "raw_data", "summary": "单日电价、负荷和光伏预测，144 个 10 分钟时点，无空值"},
-    {"problem": "C", "path": "problem_files/C题/附件/附件2.xlsx", "role": "raw_data", "summary": "2025 全年负荷和光伏实际功率，365个完整日期行，每日 144 时点，无空值"},
-    {"problem": "C", "path": "problem_files/C题/附件/附件3.xlsx", "role": "raw_data", "summary": "2025 全年每日 0:00、6:00、12:00、18:00 发布的未来 24 小时光伏预报，无空值"},
-    {"problem": "C", "path": "problem_files/C题/附件/附件4.xlsx", "role": "raw_data", "summary": "2025 全年 10 分钟粒度实时电价，无空值"},
-    {"problem": "C", "path": "problem_files/C题/附件/附件5", "role": "result_templates", "summary": "result1.xlsx-result4-3.xlsx"}
+    {
+      "problem": "A",
+      "path": "problem_files/A题/附件/附件1.xlsx",
+      "role": "raw_data",
+      "summary": "241 条数值记录，时间 0-14400 s；温度 °C、水分浓度 kg/kg，不是相对湿度。"
+    },
+    {
+      "problem": "A",
+      "path": "problem_files/A题/附件/附件2.xlsx",
+      "role": "raw_data",
+      "summary": "145 条数值记录，时间 0-259200 s；半径 cm。属于几何输入，不能作为独立含水率验证数据。"
+    },
+    {
+      "problem": "A",
+      "path": "problem_files/A题/附件/附件3",
+      "role": "result_templates",
+      "summary": "result1.xlsx 至 result4.xlsx 仅作输出格式。"
+    }
   ],
   "problems": [
     {
       "id": "A",
       "title": "药材的烘干问题",
       "task_family": "机理建模与数值仿真",
-      "recommended_route": "一维轴对称有限体积法，隐式时间推进，问题 4 使用归一化坐标移动边界",
-      "validation_plan": ["网格与时间步收敛", "中心对称边界", "质量守恒", "物性和状态物理范围", "固定与收缩半径对照"],
-      "advantages": ["问题递进自然", "数据和参数自包含", "不依赖外部平台", "数值结果图形表达强"],
-      "risks": ["非线性 PDE 实现难度较高", "内部场缺少实测验证", "边界条件和阶段切换需作假设"],
-      "selection_score": 3.5
-    },
-    {
-      "id": "B",
-      "title": "无线电干扰源的快速自动定位与清除",
-      "task_family": "计算几何、主动感知与路径规划",
-      "recommended_route": "角扇区交集与最小覆盖几何，自适应交会，空间覆盖扫描，多方位定向源搜索",
-      "validation_plan": ["几何退化用例", "蒙特卡洛误差", "演练测试清除率与时间", "三次正式测试日志"],
-      "advantages": ["创新空间大", "模拟器可提供强实验闭环", "算法与工程结合明显"],
-      "risks": ["工作区未发现模拟器", "在线正式测试和截止时间约束", "问题 4 无信号歧义", "正式测试机会有限"],
-      "selection_score": 2.65
-    },
-    {
-      "id": "C",
-      "title": "微网与外部电网电力调控策略",
-      "task_family": "预测与滚动优化",
-      "recommended_route": "10 分钟粒度线性规划，日前预测，模型预测控制，固定与实时电价场景对照",
-      "validation_plan": ["电力平衡残差", "容量和功率约束", "首尾储能一致", "无未来信息泄漏回测", "滚动更新消融", "成本分解"],
-      "advantages": ["全年数据完整", "约束和目标明确", "结果可量化回测", "四问可复用同一优化核心"],
-      "risks": ["效率口径需统一", "偏差计费分段需准确", "预测切分易发生未来信息泄漏", "当前缺少现成 LP 求解库"],
-      "selection_score": 4.3
+      "recommended_route": "径向有限体积、隐式时间离散和三对角求解；Q4 先推导守恒与收缩运动再离散。"
     }
   ],
   "questions": [
     {
       "id": "AQ1",
       "problem": "A",
-      "title": "预热平衡阶段温湿场",
-      "task_type": "机理仿真",
-      "inputs": ["圆柱几何", "初始温度和含水率", "烘房温湿度边界", "常物性参数"],
-      "outputs": ["指定时空点温度和含水率", "result1.xlsx"],
-      "constraints": ["时间 0-1800 s", "时间步输出 1 s", "径向输出 0.1 cm", "四位小数"],
-      "recommended_models": {"baseline": "一维轴对称有限体积", "improved": "隐式耦合求解"},
-      "validation_plan": ["网格收敛", "时间步收敛", "边界通量检查"],
-      "figure_suggestions": ["温度时空图", "含水率时空图", "中心与表面曲线"]
+      "title": "预热阶段温度与干基含水率",
+      "task_type": "非线性扩散与热传导",
+      "source": "A题.pdf 第1页、附录2（第3页）",
+      "inputs": [
+        "L=0.25 m，R=0.02 m，T0=28°C，C0=2.55 kg/kg",
+        "附件1环境序列",
+        "rho=820，cp=2600，k=0.36，h=25，hm=8e-7（SI）",
+        "D(C)=7e-9*exp(-0.89/C) m²/s"
+      ],
+      "outputs": [
+        "表1、表2：100/300/600/900/1200/1500/1800 s，r=0/0.5/1/1.5/2 cm",
+        "result1.xlsx：1至1800 s，间隔1 s；0至2 cm，间隔0.1 cm；温度、水分浓度两表"
+      ],
+      "constraints": [
+        "热物性常数，但扩散系数随C变化",
+        "初始场单独保留，输出四位小数，内部计算不舍入",
+        "径向近似及表面传质驱动力需说明假设"
+      ],
+      "recommended_models": {
+        "baseline": "圆柱径向有限体积",
+        "improved": "隐式时间推进、Picard迭代、Thomas三对角算法"
+      },
+      "validation_plan": [
+        "常系数退化解析基准",
+        "时间步和网格收敛",
+        "中心对称与表面通量残差"
+      ],
+      "figure_suggestions": [
+        "温度与含水率时空场",
+        "中心和表面曲线"
+      ]
     },
     {
       "id": "AQ2",
       "problem": "A",
-      "title": "完整烘干过程温湿场",
-      "task_type": "非线性机理仿真",
-      "inputs": ["AQ1 条件", "随温度和含水率变化的物性经验式"],
-      "outputs": ["3 h 指定结果", "result2.xlsx"],
-      "constraints": ["温度单位 K/°C 转换一致", "非线性物性保持正值"],
-      "recommended_models": {"baseline": "逐时更新物性的有限体积", "improved": "隐式迭代或方法线"},
-      "validation_plan": ["AQ1 前段连续性", "迭代收敛", "状态范围检查"],
-      "figure_suggestions": ["物性随状态变化图", "径向剖面"]
+      "title": "统一经验物性的全过程模型",
+      "task_type": "热湿非线性耦合",
+      "source": "A题.pdf 第2页、附录3（第4页）",
+      "inputs": [
+        "与AQ1相同的初始场及环境输入",
+        "从t=0起统一采用附录3，不拼接AQ1末态"
+      ],
+      "outputs": [
+        "表3、表4：0.5至3 h，间隔0.5 h；r=0/0.5/1/1.5/2 cm",
+        "result2.xlsx：每1 s、每0.1 cm温度与水分浓度，自1 s至AQ3达标时刻；表3/4仅取前3 h。"
+      ],
+      "constraints": [
+        "Arrhenius温度用K",
+        "D与k在散度内，不能用变系数乘常系数拉普拉斯替代",
+        "附件1在4 h后保持末值；末段均值延拓作为敏感性情景"
+      ],
+      "recommended_models": {
+        "baseline": "复用AQ1网格和隐式求解器，替换附录3物性",
+        "improved": "迭代残差控制及环境延拓敏感性"
+      },
+      "validation_plan": [
+        "自身时间推进连续性",
+        "物性正值",
+        "离散方程与能量平衡残差",
+        "与AQ1前30 min对比而不要求数值相等"
+      ],
+      "figure_suggestions": [
+        "径向温湿剖面",
+        "物性变化与收敛图"
+      ]
     },
     {
       "id": "AQ3",
       "problem": "A",
-      "title": "烘干结束时间",
-      "task_type": "事件检测",
-      "inputs": ["AQ2 含水率场", "全域阈值 0.15 kg/kg"],
-      "outputs": ["烘干时长", "result3.xlsx"],
-      "constraints": ["药材各处均低于阈值"],
-      "recommended_models": {"baseline": "最大含水率阈值事件", "improved": "终止时刻插值"},
-      "validation_plan": ["最湿点检查", "阈值前后夹逼"],
-      "figure_suggestions": ["最大含水率与阈值交点"]
+      "title": "固定半径下全域达标时长",
+      "task_type": "阈值事件检测",
+      "source": "A题.pdf 第2页、附录3",
+      "inputs": [
+        "AQ2模型续算",
+        "阈值0.15 kg/kg"
+      ],
+      "outputs": [
+        "烘干时长h与未舍入事件夹逼区间",
+        "表5：每6 h及结束时刻、每0.5 cm",
+        "result3.xlsx：每60 s、每0.1 cm，补充结束时刻"
+      ],
+      "constraints": [
+        "判定max_r C<0.15，不使用平均含水率",
+        "2至3天只是背景量级，不预设结束时刻"
+      ],
+      "recommended_models": {
+        "baseline": "逐步扫描全域最大值",
+        "improved": "事件区间内二分重算"
+      },
+      "validation_plan": [
+        "事件前后夹逼",
+        "最湿位置检查",
+        "事件时间随网格和步长收敛",
+        "长期环境假设敏感性"
+      ],
+      "figure_suggestions": [
+        "最大含水率与阈值",
+        "全过程水分剖面"
+      ]
     },
     {
       "id": "AQ4",
       "problem": "A",
-      "title": "考虑收缩的移动边界烘干",
-      "task_type": "移动边界仿真",
-      "inputs": ["半径时序", "问题 4 经验物性"],
-      "outputs": ["收缩条件下烘干时长", "result4.xlsx"],
-      "constraints": ["空间输出坐标随表面变化"],
-      "recommended_models": {"baseline": "分段更新半径", "improved": "归一化坐标 ξ=r/R(t)"},
-      "validation_plan": ["半径插值误差", "固定与移动边界对照"],
-      "figure_suggestions": ["半径曲线", "两种烘干时长对比"]
-    },
-    {
-      "id": "BQ1",
-      "problem": "B",
-      "title": "交会定位区域与直径",
-      "task_type": "计算几何",
-      "inputs": ["检测点坐标", "示向度", "±1° 误差"],
-      "outputs": ["凸定位区域", "直径", "直径圆覆盖结论"],
-      "constraints": ["处理平行、空交集和无界退化"],
-      "recommended_models": {"baseline": "角扇区半平面裁剪", "improved": "凸包旋转卡壳与最小覆盖圆"},
-      "validation_plan": ["已知几何用例", "蒙特卡洛点包含"],
-      "figure_suggestions": ["角扇区交集图", "直径与覆盖圆反例"]
-    },
-    {
-      "id": "BQ2",
-      "problem": "B",
-      "title": "第二检测点选择",
-      "task_type": "鲁棒实验设计",
-      "inputs": ["第一检测点与示向度", "接收半径不确定区间"],
-      "outputs": ["选点策略", "候选区域"],
-      "constraints": ["未知源距离", "第二点需有较大概率收到信号"],
-      "recommended_models": {"baseline": "交会角接近 90°", "improved": "最小化最坏定位直径"},
-      "validation_plan": ["距离和角误差敏感性", "边界源场景"],
-      "figure_suggestions": ["候选区域热图"]
-    },
-    {
-      "id": "BQ3",
-      "problem": "B",
-      "title": "全向源自动搜索定位清除",
-      "task_type": "主动搜索与路径规划",
-      "inputs": ["圆域", "20 频道", "10-16 个未知全向源", "模拟器接口"],
-      "outputs": ["策略与算法", "清除比例", "平均时间", "正式日志"],
-      "constraints": ["串行动作", "20 分钟现实时间", "100 小时虚拟时间"],
-      "recommended_models": {"baseline": "覆盖扫描后逐源交会", "improved": "信息增益与路程联合选点"},
-      "validation_plan": ["多次演练统计", "最坏案例", "日志复核"],
-      "figure_suggestions": ["机器狗轨迹", "定位区域收缩", "时间分解"]
-    },
-    {
-      "id": "BQ4",
-      "problem": "B",
-      "title": "全向与定向源混合搜索",
-      "task_type": "部分可观测搜索",
-      "inputs": ["BQ3 条件", "未知定向源数量与方向"],
-      "outputs": ["混合源策略", "演练和正式结果"],
-      "constraints": ["no_signal 原因不可辨", "定向覆盖为半平面"],
-      "recommended_models": {"baseline": "多方位覆盖扫描", "improved": "置信集合和假阴性预算"},
-      "validation_plan": ["方向分层场景", "假阴性率", "全清除率"],
-      "figure_suggestions": ["定向覆盖与扫描点图", "失败场景图"]
-    },
-    {
-      "id": "CQ1",
-      "problem": "C",
-      "title": "单日计划购电",
-      "task_type": "线性优化",
-      "inputs": ["144 时点电价、负荷、光伏预测", "储能参数"],
-      "outputs": ["购电、充放电、储能轨迹、日电费", "result1.xlsx"],
-      "constraints": ["供电不低于负荷", "首尾储能相同", "容量与功率边界"],
-      "recommended_models": {"baseline": "确定性线性规划", "improved": "加入弃光和互斥检验"},
-      "validation_plan": ["平衡残差", "约束满足", "无储能基线对照"],
-      "figure_suggestions": ["日内功率堆叠图", "储能状态曲线"]
-    },
-    {
-      "id": "CQ2",
-      "problem": "C",
-      "title": "全年日前计划与紧急购电",
-      "task_type": "预测加滚动优化",
-      "inputs": ["2025 全年负荷和光伏实际功率", "固定日电价"],
-      "outputs": ["2025-02-01 至 12-31 每日策略", "紧急购电", "result2.xlsx"],
-      "constraints": ["每日 0:00 决策", "紧急购电价为 5 倍"],
-      "recommended_models": {"baseline": "历史同日型预测 + 日线性规划", "improved": "滚动窗口回归或树模型"},
-      "validation_plan": ["严格时间切分", "MAE/RMSE", "全年成本回测"],
-      "figure_suggestions": ["预测误差分布", "紧急购电日历图"]
-    },
-    {
-      "id": "CQ3",
-      "problem": "C",
-      "title": "多时点预报更新与调整购电",
-      "task_type": "模型预测控制",
-      "inputs": ["0/6/12/18 点光伏预报", "计划与调整偏差价格"],
-      "outputs": ["计划购电、调整购电、充放电、紧急购电", "result3.xlsx", "是否需要更新预报的结论"],
-      "constraints": ["只使用决策时点已发布预报", "偏差计费分段"],
-      "recommended_models": {"baseline": "仅 0:00 计划", "improved": "6 小时滚动重优化"},
-      "validation_plan": ["滚动更新消融", "成本与偏差分解"],
-      "figure_suggestions": ["预报修正曲线", "策略成本箱线图"]
-    },
-    {
-      "id": "CQ4",
-      "problem": "C",
-      "title": "波动电价下策略",
-      "task_type": "时变价格滚动优化",
-      "inputs": ["全年实时电价", "CQ2/CQ3 数据"],
-      "outputs": ["波动电价下 CQ2/CQ3 完整结果", "result4-2.xlsx", "result4-3.xlsx"],
-      "constraints": ["实时价格仅按题目可得性进入决策"],
-      "recommended_models": {"baseline": "替换时变目标系数", "improved": "价格预测与鲁棒敏感性"},
-      "validation_plan": ["固定与波动价格对照", "极端价格情景"],
-      "figure_suggestions": ["价格与储能动作叠图", "成本节省分解"]
+      "title": "收缩域中的烘干时长",
+      "task_type": "移动边界传热传质",
+      "source": "A题.pdf 第2至4页、附录4、附件2",
+      "inputs": [
+        "附件2半径时间序列",
+        "附录4独立物性组",
+        "原始初始场与AQ3全域阈值"
+      ],
+      "outputs": [
+        "收缩条件下时长h",
+        "表6：每6 h及结束时刻、域内每0.5 cm及真实表面",
+        "result4.xlsx：每60 s、域内每0.1 cm及真实表面，补充结束时刻"
+      ],
+      "constraints": [
+        "xi=r/R(t)计算网格须映射回物理距离",
+        "先明确固体速度、密度及干基含水率守恒口径",
+        "域外位置不填零或外推值",
+        "Q3与Q4同时更换物性和几何，差值不能全部归因于收缩"
+      ],
+      "recommended_models": {
+        "baseline": "分段线性R(t)与守恒移动网格",
+        "improved": "同物性固定/收缩对照和2×2因子实验"
+      },
+      "validation_plan": [
+        "R恒定时退化为对应固定域模型",
+        "移动域质量收支与几何守恒",
+        "时空网格收敛",
+        "半径插值与外推敏感性"
+      ],
+      "figure_suggestions": [
+        "半径输入",
+        "真实域水分分布",
+        "几何与物性分解"
+      ]
     }
   ],
   "global_constraints": [
     "结果模板只能作为输出格式，不得作为原始数据",
     "所有数值结果必须来自可复现代码",
-    "正式建模前由用户明确选择 A、B 或 C"
+    "用户已选A，仅questions中的AQ1至AQ4进入下游",
+    "所有赛题产物写入paper_output；Python简洁实现，NumPy加必要的Numba；不使用用户禁止的模型和元启发式算法",
+    "每节点记录完成项并查询套餐，任一可用窗口剩余低于15%则记录下一节点后暂停",
+    "本轮完成S2、S3并清除过时记录，在S4编写建模代码前暂停。"
   ],
   "external_data_required": false,
   "execution_dependencies": {
-    "A": "numpy 已安装，可直接开展；数值方案仍需实现和验证",
-    "B": "requests 已安装，但本地未发现模拟器；正式测试还需账号、联网和有效测试窗口",
-    "C": "numpy 与 pandas 已安装；当前未安装 scipy、cvxpy 或其他 LP 求解库"
+    "A": "F:/Anaconda_envs/envs/mathmodel-skill-standard/python.exe；本轮只运行S3数据处理，S4建模代码尚未编写。"
   },
-  "recommended_problem": "C",
-  "next_action": "等待用户确认选题，再进入所选题目的模型路线与数据计划。"
+  "recommended_problem": "A",
+  "next_action": "完成S2、S3交接后暂停；收到继续指令再写S4建模代码。"
 }

@@ -1,0 +1,6 @@
+# Keep generated text evidence stable across Windows checkouts.
+paper_output/**/*.json text eol=lf
+paper_output/**/*.md text eol=lf
+paper_output/**/*.csv text eol=lf
+paper_output/**/*.py text eol=lf
+paper_output/**/*.png binary

@@ -11,27 +11,19 @@
 - Role: mathematical modeling workflow assistant.
 - Output language: Chinese academic style unless the user asks otherwise.
 - Delivery target: keep Markdown and Word outputs aligned when a full paper is requested.
-- Workflow rule: preserve the chain `problem parsing -> model selection -> data/code adaptation -> QA -> micro-unit generation -> merge`.
+- Workflow rule: Standard S0-S8; evidence gate before complete-section authoring, then global revision and Word/PDF validation. Micro-units are only for authorized legacy use or triggered repair.
 - Script rule: treat bundled `scripts/` as reusable code templates and code-level prompts; adapt them to the current problem before trusting outputs.
 
 ## 2. Short-Term Workbench
 
-- Current problem: not set.
-- Problem files: not checked.
-- Data sources: not checked.
-- Model route: not set.
-- Generated figures: not checked.
-- QA status: not started.
-- Final paper: not generated.
+- Active project memory: `paper_output/context/memoryskill.md` (relative to project root).
+- Current stage and handoff: `paper_output/context/stage_checkpoint.md` and generated `paper_output/context/workflow_memory.json`.
+- Keep current-contest details in those files; this entry remains a pointer to avoid duplicated stale records.
 
 ## 3. External Resources / Literature
 
-- None recorded yet.
+- Current source status: `paper_output/plan/scoring_strategy.md`, section 5; source links do not establish an acquired validation dataset.
 
 ## 4. Open Todos
 
-- [ ] Parse the problem statement.
-- [ ] Select model route and scoring evidence.
-- [ ] Inspect data files and adapt scripts.
-- [ ] Run QA before paper generation.
-- [ ] Generate and merge paper micro-units.
+- Read the current checkpoint before continuing. A requested pause takes precedence over the workflow recommendation.

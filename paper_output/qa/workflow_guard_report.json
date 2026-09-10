@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "paper-workflow-orchestrator/scripts/workflow_guard.py",
+  "generated_at": "2026-09-10T18:46:38",
+  "mode": "status",
+  "target_step": "S2",
+  "status": "INCOMPLETE",
+  "current_step": "S1",
+  "next_step": "S2",
+  "recommended_skill": "modeling-paper-rubric-and-model-selector",
+  "next_action": "生成 model_route.json、rubric_alignment.json 与 scoring_strategy.md。",
+  "steps": [
+    {
+      "step": "S0",
+      "name": "准入预检",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S1",
+      "name": "审题分析",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S2",
+      "name": "模型路线",
+      "status": "FAIL",
+      "failures": [
+        "缺少文件：paper_output/plan/model_route.json",
+        "缺少文件：paper_output/plan/rubric_alignment.json",
+        "缺少文件：paper_output/plan/scoring_strategy.md"
+      ]
+    }
+  ],
+  "failures": [
+    "S2: 缺少文件：paper_output/plan/model_route.json",
+    "S2: 缺少文件：paper_output/plan/rubric_alignment.json",
+    "S2: 缺少文件：paper_output/plan/scoring_strategy.md"
+  ]
+}

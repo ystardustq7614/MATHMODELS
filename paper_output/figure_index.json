@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:14:59.445805+00:00",
+  "generated_at": "2026-09-10T13:19:23.806540+00:00",
   "figures": [
     {
       "figure_id": "fig_a_environment",
@@ -14,7 +14,7 @@
         "AQ4"
       ],
       "source_data": "paper_output/data_cleaned/a_environment.csv",
-      "source_sha256": "be08c60a8f84e6e721a82ba97323808c92a807828132baeaf8cd8fc119e8c891",
+      "source_sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1",
       "sha256": "7a137b198d3e1dd0ed033ee9b24428011b48e36f866d6067b98c40401f3abe17",
       "bytes": 94324,
       "status": "generated",
@@ -34,7 +34,7 @@
         "AQ4"
       ],
       "source_data": "paper_output/data_cleaned/a_radius.csv",
-      "source_sha256": "2201213faa00d88439d359df76fb78a3dbacf5a5c7d0ee39658f351da06aed69",
+      "source_sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db",
       "sha256": "334f0462ff31b9572c8a89943169fcd3b68105ff6c7e36b2e88bebe0afdad176",
       "bytes": 44515,
       "status": "generated",

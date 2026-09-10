@@ -4,3 +4,4 @@ paper_output/**/*.md text eol=lf
 paper_output/**/*.csv text eol=lf
 paper_output/**/*.py text eol=lf
 paper_output/**/*.png binary
+.agents/skills/data-cleaning-and-visualization/scripts/robust_loader.py text eol=lf

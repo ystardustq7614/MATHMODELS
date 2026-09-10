@@ -2,9 +2,9 @@
   "schema_version": "1.0",
   "stage": "S3",
   "status": "PASS",
-  "generated_at": "2026-09-10T13:14:59.445805+00:00",
+  "generated_at": "2026-09-10T13:19:23.806540+00:00",
   "exit_code": 0,
-  "elapsed_s": 0.7177047000004677,
+  "elapsed_s": 0.657277599995723,
   "command": "F:/Anaconda_envs/envs/mathmodel-skill-standard/python.exe -X utf8 paper_output/code/data_processing/prepare_a_data.py",
   "executable": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe",
   "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
@@ -13,20 +13,20 @@
   "scripts": [
     {
       "path": "paper_output/code/data_processing/prepare_a_data.py",
-      "sha256": "e250360976b87774d38ab58c42d4929cad208c99edededdd57def64032b1e704",
-      "bytes": 10677
+      "sha256": "d4367bca3210ca062727ac4d5739df7cec07a5ea0a3253f702239e295f625a60",
+      "bytes": 10768
     },
     {
       "path": ".agents/skills/data-cleaning-and-visualization/scripts/robust_loader.py",
-      "sha256": "687d30bfdb3458a37c0ef87a3151a7135da4ab4d2c99d3d95ebd21a0e3a0dd1d",
-      "bytes": 15706
+      "sha256": "af1ca26572f2553211ecb7cb05c1acafdaf31fe6429b4ff76fcf4071f075af4c",
+      "bytes": 15303
     }
   ],
   "inputs": [
     {
       "path": "paper_output/input_manifest.json",
-      "sha256": "8e9fb70af0975a8bd8504d4f9431caae6198875f345abf3b3b486d8f7ea75b40",
-      "bytes": 18819
+      "sha256": "dccf576e5ddd665c700a3327b75282645aa2e913f5b05ff7b4834ed03271713b",
+      "bytes": 18114
     },
     {
       "path": "paper_output/step1/problem_analysis.json",
@@ -52,33 +52,33 @@
   "outputs": [
     {
       "path": "paper_output/data_cleaned/load_report.json",
-      "sha256": "97c1786ac2e29201a59ca86d0f095e7eb0c209d171e5a52649fc99c849ea8ecb",
-      "bytes": 7108
+      "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25",
+      "bytes": 6844
     },
     {
       "path": "paper_output/plan/data_plan.json",
-      "sha256": "c0db47a468c0d76c08f1df00b5de83dda66bdd0969ce3d3b6c6cfbbda8ed1440",
-      "bytes": 4105
+      "sha256": "9cce315ed3efc3ef3855d3ba12045371e5087c23447b0598ff0db5a908a180c1",
+      "bytes": 3966
     },
     {
       "path": "paper_output/plan/visualization_plan.json",
-      "sha256": "ea500bc939bca4c8bdf2bb5026cbdcfc6ec7a9ac6c5dbabff476804c46cc3717",
-      "bytes": 4253
+      "sha256": "274b0ec9ce5cb5e4b4283de84f684e801b5cbdc83fd15fa8b45f6848616a533e",
+      "bytes": 4129
     },
     {
       "path": "paper_output/figure_index.json",
-      "sha256": "aa542aa2dc00a3c66fac611ca49c824cefd5658f9d150c4f109cd5078143642e",
-      "bytes": 1816
+      "sha256": "80b5c8c77ffe5503a3cfa894b8b4f1fd5343ad4cb89ffd16f1868f1e0edfe351",
+      "bytes": 1767
     },
     {
       "path": "paper_output/data_cleaned/a_environment.csv",
-      "sha256": "be08c60a8f84e6e721a82ba97323808c92a807828132baeaf8cd8fc119e8c891",
-      "bytes": 6992
+      "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1",
+      "bytes": 6750
     },
     {
       "path": "paper_output/data_cleaned/a_radius.csv",
-      "sha256": "2201213faa00d88439d359df76fb78a3dbacf5a5c7d0ee39658f351da06aed69",
-      "bytes": 2953
+      "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db",
+      "bytes": 2807
     },
     {
       "path": "paper_output/figures/fig_a_environment.png",

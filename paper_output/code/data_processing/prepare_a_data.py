@@ -24,7 +24,7 @@ def digest(path):
 def save_json(name, data):
     path = OUT / name
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8')
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8', newline='\n')
 
 
 def main():
@@ -68,7 +68,8 @@ def main():
         assert (values[:, 1:] > 0).all()
         converted = np.column_stack([values, values[:, 1] + 273.15 if end == 14400 else values[:, 1] / 100])
         path = OUT / 'data_cleaned' / name
-        np.savetxt(path, converted, delimiter=',', header=','.join(columns), comments='', fmt='%.12g')
+        with path.open('w', encoding='utf-8', newline='\n') as stream:
+            np.savetxt(stream, converted, delimiter=',', header=','.join(columns), comments='', fmt='%.12g')
         check = np.loadtxt(path, delimiter=',', skiprows=1)
         np.testing.assert_allclose(check, converted, rtol=0, atol=1e-10)
         arrays.append(converted)

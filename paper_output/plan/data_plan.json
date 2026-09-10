@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:14:59.445805+00:00",
+  "generated_at": "2026-09-10T13:19:23.806540+00:00",
   "selected_problem": "A",
-  "input_manifest_sha256": "8e9fb70af0975a8bd8504d4f9431caae6198875f345abf3b3b486d8f7ea75b40",
+  "input_manifest_sha256": "dccf576e5ddd665c700a3327b75282645aa2e913f5b05ff7b4834ed03271713b",
   "model_route_sha256": "1fa3f04e25ba4a905994e39e3c26e25051eb0b4c62dc11e1fb8bd86b33adcf0f",
   "data_files": [
     {
@@ -10,7 +10,7 @@
       "sha256": "7ef32870abeef420b89560b2530ff60dfe4255917805151d89988d0311af9dd7",
       "role": "raw_data",
       "cleaned_output": "paper_output/data_cleaned/a_environment.csv",
-      "cleaned_sha256": "be08c60a8f84e6e721a82ba97323808c92a807828132baeaf8cd8fc119e8c891",
+      "cleaned_sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1",
       "rows": 241,
       "columns": [
         "time_s",
@@ -55,7 +55,7 @@
       "sha256": "5563acbfa4b4afb10cc6c03e2207e5369bf39da27576672aff14cc5c32e704af",
       "role": "raw_data",
       "cleaned_output": "paper_output/data_cleaned/a_radius.csv",
-      "cleaned_sha256": "2201213faa00d88439d359df76fb78a3dbacf5a5c7d0ee39658f351da06aed69",
+      "cleaned_sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db",
       "rows": 145,
       "columns": [
         "time_s",

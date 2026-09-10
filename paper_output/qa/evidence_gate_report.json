@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "quality-assurance-auditor/scripts/evidence_gate.py",
-  "generated_at": "2026-09-10T23:01:41",
+  "generated_at": "2026-09-11T02:17:59",
   "status": "PASS",
   "failures": [],
   "warnings": [],
@@ -12,9 +12,9 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 5,
+      "metric_count": 11,
       "conclusion_count": 1,
-      "figure_count": 0,
+      "figure_count": 1,
       "table_count": 4
     },
     {
@@ -25,7 +25,7 @@
       "has_result": true,
       "metric_count": 6,
       "conclusion_count": 1,
-      "figure_count": 0,
+      "figure_count": 1,
       "table_count": 4
     },
     {
@@ -34,9 +34,9 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 6,
+      "metric_count": 10,
       "conclusion_count": 1,
-      "figure_count": 0,
+      "figure_count": 1,
       "table_count": 3
     },
     {
@@ -45,19 +45,19 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 8,
+      "metric_count": 11,
       "conclusion_count": 1,
-      "figure_count": 0,
+      "figure_count": 1,
       "table_count": 3
     }
   ],
   "input_hashes": {
     "paper_output/plan/model_route.json": "1fa3f04e25ba4a905994e39e3c26e25051eb0b4c62dc11e1fb8bd86b33adcf0f",
-    "paper_output/figure_index.json": "80b5c8c77ffe5503a3cfa894b8b4f1fd5343ad4cb89ffd16f1868f1e0edfe351",
-    "paper_output/results/model_results.json": "0f817d5f2ab04a2b6c45ad9a27be18240b635ccb449044ab828db8219c0d2cca",
-    "paper_output/results/run_manifest.json": "742ca11f7e6aa813a9801e6568d77bba050909723a4427cd93ee9e99c59bba84",
-    "paper_output/results/metrics.json": "e44cfb91e9dad5e3c5555662e9c70a926289bde0130328354b9b5909c08056ff",
-    "paper_output/results/conclusions.json": "cf74f317e7428ac3815fc1773231ea494922c463d3302771353e1a0c5a39b6f3",
-    "paper_output/tables/table_index.json": "592f5721f5d3bbaefa37615806eb26c3c04c7b608519230f3da4c5055dc3f50d"
+    "paper_output/figure_index.json": "bdc93596641360c75ac920eea8504a629d83f9d82dee867a381c4b022ef20663",
+    "paper_output/results/model_results.json": "f6aba75a77bbcd47d450f7285a7a5b00c8eeca8c58fab6dec752c4f49c35e3ec",
+    "paper_output/results/run_manifest.json": "58d1a511b4342459aa52bb7e2045b6b363462d54c3d47aece18169c6f90f1a10",
+    "paper_output/results/metrics.json": "14b1c48155fe095f593a2f9201211d513f61981a090fd76010e8547fbb7dc071",
+    "paper_output/results/conclusions.json": "cd23b1d3b65f278d22e5ddfc4ead4f71f8dcc42970c443a62a5531d0e8d0f83f",
+    "paper_output/tables/table_index.json": "a58acb36c8e83f96388b2f26c0674794f53a35e1fbf5cc58376c657d37d9f8aa"
   }
 }

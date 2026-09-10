@@ -61,7 +61,7 @@ def simulate_fvm_fixed(
     T_env: np.ndarray,
     C_env: np.ndarray,
     total_seconds: int,
-    formula_mode: int,  # 1 for Appx 2 (AQ1), 2 for Appx 3 (AQ2/AQ3)
+    formula_mode: int,  # 1 Appx 2 (AQ1), 2 Appx 3 (AQ2/AQ3), 3 Appx 4 fixed-domain reference only (AQ4)
     sample_every_s: int = 1,
     N: int = 80,
     R: float = 0.02,
@@ -121,11 +121,16 @@ def simulate_fvm_fixed(
                 cp = np.full(N, 2600.0, dtype=np.float64)
                 k = np.full(N, 0.36, dtype=np.float64)
                 D = 7.0e-9 * np.exp(-0.89 / C_iter)
-            else:
+            elif formula_mode == 2:
                 rho = 650.0 + 128.0 * C_iter
                 cp = 1450.0 + 2736.0 * (C_iter / (C_iter + 1.0))
                 k = 0.21 + 0.38 * (C_iter / (C_iter + 1.0))
                 D = 2.4e-3 * np.exp(-0.45 / C_iter - 3850.0 / T_iter)
+            else:  # formula_mode=3: Appendix 4 fixed-domain reference
+                rho = 760.0 + 90.0 * C_iter
+                cp = 1850.0 + 2150.0 * (C_iter / (C_iter + 1.0))
+                k = 0.12 + 0.20 * (C_iter / (C_iter + 1.0))
+                D = 4.2e-4 * np.exp(-0.30 / C_iter - 3850.0 / T_iter)
 
             for i in range(1, N):
                 D_face[i] = 2.0 * D[i - 1] * D[i] / (D[i - 1] + D[i])

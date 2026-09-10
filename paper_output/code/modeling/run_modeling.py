@@ -190,7 +190,7 @@ def main() -> int:
                 "script": rel(script),
                 "script_sha256": sha256(script),
                 "question_ids": qids,
-                "command": " ".join(command),
+                "command": f"{Path(sys.executable).name} {script.name}",
                 "returncode": result.returncode,
                 "status": "PASS" if result.returncode == 0 else "FAIL",
                 "started_at": started_at,

@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper-workflow-orchestrator/scripts/preflight_check.py",
-  "generated_at": "2026-09-10T21:08:05",
+  "generated_at": "2026-09-11T02:14:53",
   "status": "PASS",
-  "root": "C:/Users/neverend/Desktop/数模/MATHMODELS",
+  "root": "D:/VS Project/MATHMODEL",
   "problem_files": {
     "exists": true,
     "non_empty": true,
-    "file_count": 20,
+    "file_count": 7,
     "doc_candidates": [
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/A题.pdf",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/A题.pdf",
         "ext": ".pdf",
         "extractable": true,
         "char_count": 3191,
@@ -18,49 +18,11 @@
         "warnings": [],
         "errors": [],
         "total_pages": 4
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/B题/B题.pdf",
-        "ext": ".pdf",
-        "extractable": true,
-        "char_count": 4551,
-        "pages_sampled": 4,
-        "warnings": [],
-        "errors": [],
-        "total_pages": 4
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/B题/附件/附件1.docx",
-        "ext": ".docx",
-        "extractable": true,
-        "paragraphs": 64,
-        "char_count": 3592,
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/B题/附件/附件2.docx",
-        "ext": ".docx",
-        "extractable": true,
-        "paragraphs": 277,
-        "char_count": 12786,
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/C题.pdf",
-        "ext": ".pdf",
-        "extractable": true,
-        "char_count": 3358,
-        "pages_sampled": 3,
-        "warnings": [],
-        "errors": [],
-        "total_pages": 3
       }
     ],
     "data_candidates": [
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件1.xlsx",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件1.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -79,7 +41,7 @@
         "errors": []
       },
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件2.xlsx",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件2.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -97,7 +59,7 @@
         "errors": []
       },
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result1.xlsx",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result1.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -132,7 +94,7 @@
         "errors": []
       },
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result2.xlsx",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result2.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -167,7 +129,7 @@
         "errors": []
       },
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result3.xlsx",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result3.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -189,7 +151,7 @@
         "errors": []
       },
       {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result4.xlsx",
+        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result4.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -209,384 +171,22 @@
         ],
         "warnings": [],
         "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件1.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "Sheet1",
-            "rows": 145,
-            "cols": 4,
-            "sample_cols": [
-              "时间",
-              "电价",
-              "小区负载",
-              "光伏发电预测功率"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件2.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "小区负载",
-            "rows": 366,
-            "cols": 145,
-            "sample_cols": [
-              "日期\\时间",
-              "00:10:00",
-              "00:20:00",
-              "00:30:00",
-              "00:40:00",
-              "00:50:00",
-              "01:00:00",
-              "01:10:00"
-            ]
-          },
-          {
-            "name": "光伏发电实际功率",
-            "rows": 366,
-            "cols": 145,
-            "sample_cols": [
-              "日期\\时间",
-              "00:10:00",
-              "00:20:00",
-              "00:30:00",
-              "00:40:00",
-              "00:50:00",
-              "01:00:00",
-              "01:10:00"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件3.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "Sheet1",
-            "rows": 1461,
-            "cols": 26,
-            "sample_cols": [
-              "日期",
-              "预报时刻",
-              "预报1小时",
-              "预报2小时",
-              "预报3小时",
-              "预报4小时",
-              "预报5小时",
-              "预报6小时"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件4.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "Sheet1",
-            "rows": 366,
-            "cols": 145,
-            "sample_cols": [
-              "日期\\时间",
-              "00:10:00",
-              "00:20:00",
-              "00:30:00",
-              "00:40:00",
-              "00:50:00",
-              "01:00:00",
-              "01:10:00"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result1.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "计划购电量",
-            "rows": 145,
-            "cols": 2,
-            "sample_cols": [
-              "时间段",
-              "购电量"
-            ]
-          },
-          {
-            "name": "充放电量",
-            "rows": 7,
-            "cols": 5,
-            "sample_cols": [
-              "时间段",
-              "充电量",
-              "放电量",
-              "时刻",
-              "储电量"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result2.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "计划购电量",
-            "rows": 335,
-            "cols": 147,
-            "sample_cols": [
-              "日期\\时间",
-              "0:10-0:20",
-              "0:20-0:30",
-              "0:30-0:40",
-              "0:40-0:50",
-              "0:50-1:00",
-              "1:00-1:10",
-              "1:10-1:20"
-            ]
-          },
-          {
-            "name": "充放电量",
-            "rows": 20,
-            "cols": 6,
-            "sample_cols": [
-              "日期",
-              "时间段",
-              "充电量",
-              "放电量",
-              "时刻",
-              "储电量"
-            ]
-          },
-          {
-            "name": "紧急购电量",
-            "rows": 11,
-            "cols": 3,
-            "sample_cols": [
-              "日期",
-              "购电时间段",
-              "购电量"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result3.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "计划购电量",
-            "rows": 335,
-            "cols": 147,
-            "sample_cols": [
-              "日期\\时间",
-              "0:10-0:20",
-              "0:20-0:30",
-              "0:30-0:40",
-              "0:40-0:50",
-              "0:50-1:00",
-              "1:00-1:10",
-              "1:10-1:20"
-            ]
-          },
-          {
-            "name": "调整购电量",
-            "rows": 335,
-            "cols": 147,
-            "sample_cols": [
-              "日期\\时间",
-              "0:10-0:20",
-              "0:20-0:30",
-              "0:30-0:40",
-              "0:40-0:50",
-              "0:50-1:00",
-              "1:00-1:10",
-              "1:10-1:20"
-            ]
-          },
-          {
-            "name": "充放电量",
-            "rows": 26,
-            "cols": 6,
-            "sample_cols": [
-              "日期",
-              "时间段",
-              "充电量",
-              "放电量",
-              "时刻",
-              "储电量"
-            ]
-          },
-          {
-            "name": "紧急购电量",
-            "rows": 11,
-            "cols": 3,
-            "sample_cols": [
-              "日期",
-              "购电时间段",
-              "购电量"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result4-2.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "计划购电量",
-            "rows": 335,
-            "cols": 147,
-            "sample_cols": [
-              "日期\\时间",
-              "0:10-0:20",
-              "0:20-0:30",
-              "0:30-0:40",
-              "0:40-0:50",
-              "0:50-1:00",
-              "1:00-1:10",
-              "1:10-1:20"
-            ]
-          },
-          {
-            "name": "充放电量",
-            "rows": 20,
-            "cols": 6,
-            "sample_cols": [
-              "日期",
-              "时间段",
-              "充电量",
-              "放电量",
-              "时刻",
-              "储电量"
-            ]
-          },
-          {
-            "name": "紧急购电量",
-            "rows": 11,
-            "cols": 3,
-            "sample_cols": [
-              "日期",
-              "购电时间段",
-              "购电量"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
-      },
-      {
-        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result4-3.xlsx",
-        "ext": ".xlsx",
-        "readable": true,
-        "sheets": [
-          {
-            "name": "计划购电量",
-            "rows": 335,
-            "cols": 147,
-            "sample_cols": [
-              "日期\\时间",
-              "0:10-0:20",
-              "0:20-0:30",
-              "0:30-0:40",
-              "0:40-0:50",
-              "0:50-1:00",
-              "1:00-1:10",
-              "1:10-1:20"
-            ]
-          },
-          {
-            "name": "调整购电量",
-            "rows": 335,
-            "cols": 147,
-            "sample_cols": [
-              "日期\\时间",
-              "0:10-0:20",
-              "0:20-0:30",
-              "0:30-0:40",
-              "0:40-0:50",
-              "0:50-1:00",
-              "1:00-1:10",
-              "1:10-1:20"
-            ]
-          },
-          {
-            "name": "充放电量",
-            "rows": 26,
-            "cols": 6,
-            "sample_cols": [
-              "日期",
-              "时间段",
-              "充电量",
-              "放电量",
-              "时刻",
-              "储电量"
-            ]
-          },
-          {
-            "name": "紧急购电量",
-            "rows": 11,
-            "cols": 3,
-            "sample_cols": [
-              "日期",
-              "购电时间段",
-              "购电量"
-            ]
-          }
-        ],
-        "warnings": [],
-        "errors": []
       }
     ],
     "suspicious_template_files": [
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result1.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result2.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result3.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result4.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result1.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result2.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result3.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result4-2.xlsx",
-      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result4-3.xlsx"
+      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result1.xlsx",
+      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result2.xlsx",
+      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result3.xlsx",
+      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result4.xlsx"
     ]
   },
   "deps": {
     "required": [
-      "docx",
       "openpyxl",
       "pypdf"
     ],
     "missing": [],
     "present": [
-      "docx",
       "openpyxl",
       "pypdf"
     ]
@@ -614,28 +214,23 @@
   "input_manifest": {
     "path": "paper_output/input_manifest.json",
     "summary": {
-      "file_count": 20,
+      "file_count": 7,
       "role_counts": {
-        "problem_statement": 5,
-        "raw_data": 6,
-        "result_template": 9
+        "problem_statement": 1,
+        "raw_data": 2,
+        "result_template": 4
       },
-      "problem_statement_count": 5,
-      "raw_data_count": 6,
-      "result_template_count": 9,
+      "problem_statement_count": 1,
+      "raw_data_count": 2,
+      "result_template_count": 4,
       "requires_user_confirmation": false
     }
   },
   "errors": [],
   "warnings": [
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result1.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result2.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result3.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result4.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result1.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result2.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result3.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result4-2.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/C题/附件/附件5/result4-3.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。"
+    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result1.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result2.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result3.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result4.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。"
   ]
 }

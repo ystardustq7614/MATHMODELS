@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-10T23:01:11",
+  "generated_at": "2026-09-11T02:16:17",
   "source": "paper_output/results/model_results.json",
   "tables": [
     {

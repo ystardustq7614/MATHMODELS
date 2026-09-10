@@ -42,6 +42,26 @@ def rel(path: Path) -> str:
         return str(path).replace("\\", "/")
 
 
+def contract_path(value: object) -> str:
+    """Return a project-relative path for persisted contract fields."""
+    if not value:
+        return ""
+    path = Path(str(value))
+    return rel(path if path.is_absolute() else PROJECT_ROOT / path)
+
+
+def normalize_outputs(outputs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    normalized = []
+    for item in outputs:
+        if not isinstance(item, dict):
+            continue
+        copy = dict(item)
+        if copy.get("path"):
+            copy["path"] = contract_path(copy["path"])
+        normalized.append(copy)
+    return normalized
+
+
 def current_runner_path() -> Path:
     arg0 = Path(sys.argv[0]).resolve()
     if arg0.exists():
@@ -64,14 +84,14 @@ def execution_provenance(outputs: list[dict[str, Any]], input_files: list[str] |
     artifacts = []
     for item in outputs:
         if isinstance(item, dict) and item.get("path"):
-            artifacts.append(str(item["path"]))
+            artifacts.append(contract_path(item["path"]))
     return {
         "source_code_path": rel(runner),
         "source_code_sha256": sha256_file(runner),
         "helper_path": rel(THIS_FILE),
-        "run_command": f"{sys.executable} {rel(runner)}",
+        "run_command": f"{Path(sys.executable).name} {rel(runner)}",
         "run_exit_code": 0,
-        "input_files": input_files or [],
+        "input_files": [contract_path(path) for path in (input_files or [])],
         "output_artifacts": artifacts,
         "generated_at": now(),
     }
@@ -233,6 +253,7 @@ def upsert_question_contracts(
         contract.setdefault("schema_version", "1.0")
         contract["generated_at"] = now()
 
+    normalized_outputs = normalize_outputs(outputs)
     result_item = {
         "question_id": qid,
         "title": title,
@@ -241,11 +262,11 @@ def upsert_question_contracts(
         "main_model": main_model,
         "baseline_model": question.get("baseline_model", ""),
         "result_summary": result_summary,
-        "outputs": outputs,
+        "outputs": normalized_outputs,
         "parameters": parameters or [],
         "evidence_status": status,
         "status": status,
-        "execution_provenance": execution_provenance(outputs),
+        "execution_provenance": execution_provenance(normalized_outputs),
     }
     questions = [item for item in model_results.get("questions", []) if str(item.get("question_id")) != qid]
     questions.append(result_item)

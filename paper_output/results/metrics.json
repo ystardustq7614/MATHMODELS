@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-10T23:01:11",
+  "generated_by": "paper_output/code/modeling/result_contract_io.py",
+  "generated_at": "2026-09-11T02:16:17",
   "source": "paper_output/results/model_results.json",
   "items": [
     {
@@ -203,6 +203,124 @@
       "metric_role": "comparison",
       "value": 11.31,
       "unit": "%"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "validation_aq1_spatial_T_max_abs",
+      "metric_role": "validation",
+      "value": 9.310954300190133e-05,
+      "unit": "K",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "validation_aq1_spatial_C_max_abs",
+      "metric_role": "validation",
+      "value": 0.0001791344722710253,
+      "unit": "kg/kg",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "validation_aq1_spatial_pass",
+      "metric_role": "validation",
+      "value": 1,
+      "unit": "boolean",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "validation_aq1_temporal_T_max_abs",
+      "metric_role": "validation",
+      "value": 0.0006001100597927689,
+      "unit": "K",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "validation_aq1_temporal_C_max_abs",
+      "metric_role": "validation",
+      "value": 4.477288710469374e-05,
+      "unit": "kg/kg",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "validation_aq1_temporal_pass",
+      "metric_role": "validation",
+      "value": 1,
+      "unit": "boolean",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "validation_aq3_default_threshold_time_s",
+      "metric_role": "validation",
+      "value": 206433.0,
+      "unit": "s",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "validation_aq3_tail_mean_threshold_time_s",
+      "metric_role": "validation",
+      "value": 206433.0,
+      "unit": "s",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "validation_aq3_boundary_relative_difference",
+      "metric_role": "validation",
+      "value": 0.0,
+      "unit": "fraction",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "validation_aq3_boundary_pass",
+      "metric_role": "validation",
+      "value": 1,
+      "unit": "boolean",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "validation_aq4_fixed_moving_T_max_abs",
+      "metric_role": "validation",
+      "value": 1.1937117960769683e-12,
+      "unit": "K",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "validation_aq4_fixed_moving_C_max_abs",
+      "metric_role": "validation",
+      "value": 2.4424906541753444e-14,
+      "unit": "kg/kg",
+      "source": "paper_output/qa/model_validation_checks.json"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "validation_aq4_fixed_moving_pass",
+      "metric_role": "validation",
+      "value": 1,
+      "unit": "boolean",
+      "source": "paper_output/qa/model_validation_checks.json"
     }
-  ]
+  ],
+  "validation_generated_by": "paper_output/code/visualization/run_numerical_validation.py"
 }

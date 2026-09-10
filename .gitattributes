@@ -1,7 +1,8 @@
-# Keep generated text evidence stable across Windows checkouts.
-paper_output/**/*.json text eol=lf
-paper_output/**/*.md text eol=lf
-paper_output/**/*.csv text eol=lf
-paper_output/**/*.py text eol=lf
+# Generated evidence is hashed byte-for-byte; never rewrite it on checkout.
+paper_output/** -text whitespace=cr-at-eol
+# Source and ordinary documentation outside paper_output remain portable LF text.
 paper_output/**/*.png binary
+.githooks/** text eol=lf
+/*.md text eol=lf
+docs/**/*.md text eol=lf
 .agents/skills/data-cleaning-and-visualization/scripts/robust_loader.py text eol=lf

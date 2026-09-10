@@ -1,10 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:19:23.806540+00:00",
+  "generated_at": "2026-09-10T18:16:28.788114+00:00",
+  "generated_by": "paper_output/code/visualization/generate_model_evidence.py",
   "figures": [
     {
       "figure_id": "fig_a_environment",
-      "title": "烘房温度与水分浓度实测输入",
+      "title": "fig_a_environment",
       "path": "paper_output/figures/fig_a_environment.png",
       "expected_path": "paper_output/figures/fig_a_environment.png",
       "question_ids": [
@@ -21,13 +22,11 @@
       "ok": true,
       "exists": true,
       "placeholder": false,
-      "evidence_type": "input_observation",
-      "interpretation": "展示官方输入，不是模型预测或独立验证。",
-      "paper_section": "2 数据与问题分析"
+      "evidence_type": "input_observation"
     },
     {
       "figure_id": "fig_a_radius",
-      "title": "药材半径实测输入",
+      "title": "fig_a_radius",
       "path": "paper_output/figures/fig_a_radius.png",
       "expected_path": "paper_output/figures/fig_a_radius.png",
       "question_ids": [
@@ -41,9 +40,83 @@
       "ok": true,
       "exists": true,
       "placeholder": false,
-      "evidence_type": "input_observation",
-      "interpretation": "展示官方输入，不是模型预测或独立验证。",
-      "paper_section": "2 数据与问题分析"
+      "evidence_type": "input_observation"
+    },
+    {
+      "figure_id": "fig_aq1_fields",
+      "title": "fig_aq1_fields",
+      "path": "paper_output/figures/fig_aq1_fields.png",
+      "expected_path": "paper_output/figures/fig_aq1_fields.png",
+      "question_ids": [
+        "AQ1"
+      ],
+      "question_id": "AQ1",
+      "source_data": "paper_output/tables/table_aq1_temperature.csv",
+      "source_sha256": "b5da6a07cbb2147bed0d6102f198276f66e44c00d0c7944017cb711784875fe4",
+      "sha256": "5714118cdf294e152cc80f0f3e8d6a29d3962d3fbdc9e6409b68ca0f74a125e1",
+      "bytes": 78869,
+      "status": "generated",
+      "ok": true,
+      "exists": true,
+      "placeholder": false,
+      "evidence_type": "model_result"
+    },
+    {
+      "figure_id": "fig_aq2_profiles",
+      "title": "fig_aq2_profiles",
+      "path": "paper_output/figures/fig_aq2_profiles.png",
+      "expected_path": "paper_output/figures/fig_aq2_profiles.png",
+      "question_ids": [
+        "AQ2"
+      ],
+      "question_id": "AQ2",
+      "source_data": "paper_output/tables/table_aq2_temperature.csv",
+      "source_sha256": "f8fdb7118b17e6f2e74a40009d321a41cdd0808f71f1e437b2cd082f428e648b",
+      "sha256": "720d30e73be348ea034b2e803606e342b5a80f4d36c12a5d2a2b55d5a3c81741",
+      "bytes": 144068,
+      "status": "generated",
+      "ok": true,
+      "exists": true,
+      "placeholder": false,
+      "evidence_type": "model_result"
+    },
+    {
+      "figure_id": "fig_aq3_threshold",
+      "title": "fig_aq3_threshold",
+      "path": "paper_output/figures/fig_aq3_threshold.png",
+      "expected_path": "paper_output/figures/fig_aq3_threshold.png",
+      "question_ids": [
+        "AQ3"
+      ],
+      "question_id": "AQ3",
+      "source_data": "paper_output/tables/table_aq3_drying_moisture.csv",
+      "source_sha256": "93bb19f77877ddd6f0a7ac0ef229a847184170f6aca72d715c74d45b01308e50",
+      "sha256": "bbd26fafd727df21fa1c69ad41224f55032a5332206bc9913a6b0fe6d2a43574",
+      "bytes": 46084,
+      "status": "generated",
+      "ok": true,
+      "exists": true,
+      "placeholder": false,
+      "evidence_type": "model_result"
+    },
+    {
+      "figure_id": "fig_aq4_shrinkage",
+      "title": "fig_aq4_shrinkage",
+      "path": "paper_output/figures/fig_aq4_shrinkage.png",
+      "expected_path": "paper_output/figures/fig_aq4_shrinkage.png",
+      "question_ids": [
+        "AQ4"
+      ],
+      "question_id": "AQ4",
+      "source_data": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
+      "source_sha256": "6395c9ceffcca306fb7cd1157618326c0bcc658ece5627b7a4ca027e063cd9bf",
+      "sha256": "cfc2f062e26a38481f87ef7395a6fcecca363da8f09c712f16849ab304cb7c19",
+      "bytes": 103248,
+      "status": "generated",
+      "ok": true,
+      "exists": true,
+      "placeholder": false,
+      "evidence_type": "model_result"
     }
   ]
 }

@@ -2,10 +2,10 @@
 
 - Mode: `official`
 - Status: `PASS`
-- Generated at: `2026-09-10T23:01:41`
+- Generated at: `2026-09-11T02:17:59`
 
 ## Questions
-- AQ1: PASS (results=True, metrics=5, conclusions=1, figures=0, tables=4)
-- AQ2: PASS (results=True, metrics=6, conclusions=1, figures=0, tables=4)
-- AQ3: PASS (results=True, metrics=6, conclusions=1, figures=0, tables=3)
-- AQ4: PASS (results=True, metrics=8, conclusions=1, figures=0, tables=3)
+- AQ1: PASS (results=True, metrics=11, conclusions=1, figures=1, tables=4)
+- AQ2: PASS (results=True, metrics=6, conclusions=1, figures=1, tables=4)
+- AQ3: PASS (results=True, metrics=10, conclusions=1, figures=1, tables=3)
+- AQ4: PASS (results=True, metrics=11, conclusions=1, figures=1, tables=3)

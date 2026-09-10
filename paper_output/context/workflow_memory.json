@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
   "generated_by": "context-memory-keeper/scripts/update_workflow_memory.py",
-  "generated_at": "2026-09-10T23:02:05",
+  "generated_at": "2026-09-11T02:18:22",
   "status": "PASS",
-  "root": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS",
+  "root": "D:\\VS Project\\MATHMODEL",
   "workflow": {
     "status": "INCOMPLETE",
     "mode": "status",
@@ -30,47 +30,34 @@
   },
   "inputs": {
     "summary": {
-      "file_count": 20,
+      "file_count": 7,
       "role_counts": {
-        "problem_statement": 5,
-        "raw_data": 6,
-        "result_template": 9
+        "problem_statement": 1,
+        "raw_data": 2,
+        "result_template": 4
       },
-      "problem_statement_count": 5,
-      "raw_data_count": 6,
-      "result_template_count": 9,
+      "problem_statement_count": 1,
+      "raw_data_count": 2,
+      "result_template_count": 4,
       "requires_user_confirmation": false
     },
     "role_counts": {
-      "problem_statement": 5,
-      "raw_data": 6,
-      "result_template": 9
+      "problem_statement": 1,
+      "raw_data": 2,
+      "result_template": 4
     },
     "problem_statements": [
-      "problem_files/A题/A题.pdf",
-      "problem_files/B题/B题.pdf",
-      "problem_files/B题/附件/附件1.docx",
-      "problem_files/B题/附件/附件2.docx",
-      "problem_files/C题/C题.pdf"
+      "problem_files/A题/A题.pdf"
     ],
     "raw_data": [
       "problem_files/A题/附件/附件1.xlsx",
-      "problem_files/A题/附件/附件2.xlsx",
-      "problem_files/C题/附件/附件1.xlsx",
-      "problem_files/C题/附件/附件2.xlsx",
-      "problem_files/C题/附件/附件3.xlsx",
-      "problem_files/C题/附件/附件4.xlsx"
+      "problem_files/A题/附件/附件2.xlsx"
     ],
     "result_templates": [
       "problem_files/A题/附件/附件3/result1.xlsx",
       "problem_files/A题/附件/附件3/result2.xlsx",
       "problem_files/A题/附件/附件3/result3.xlsx",
-      "problem_files/A题/附件/附件3/result4.xlsx",
-      "problem_files/C题/附件/附件5/result1.xlsx",
-      "problem_files/C题/附件/附件5/result2.xlsx",
-      "problem_files/C题/附件/附件5/result3.xlsx",
-      "problem_files/C题/附件/附件5/result4-2.xlsx",
-      "problem_files/C题/附件/附件5/result4-3.xlsx"
+      "problem_files/A题/附件/附件3/result4.xlsx"
     ]
   },
   "runs": {
@@ -99,30 +86,30 @@
     "preflight_report": {
       "path": "paper_output/preflight_report.json",
       "exists": true,
-      "bytes": 18298,
+      "bytes": 6635,
       "status": "PASS"
     },
     "input_manifest": {
       "path": "paper_output/input_manifest.json",
       "exists": true,
-      "bytes": 18114
+      "bytes": 6088
     },
     "load_report": {
       "path": "paper_output/data_cleaned/load_report.json",
       "exists": true,
-      "bytes": 6844,
+      "bytes": 2831,
       "status": "PASS"
     },
     "run_manifest": {
       "path": "paper_output/results/run_manifest.json",
       "exists": true,
-      "bytes": 9389,
+      "bytes": 8861,
       "status": "PASS"
     },
     "evidence_gate_report": {
       "path": "paper_output/qa/evidence_gate_report.json",
       "exists": true,
-      "bytes": 2032,
+      "bytes": 2035,
       "status": "PASS"
     },
     "authoring_state": {

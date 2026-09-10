@@ -1,4 +1,5 @@
 numpy>=2.0,<3
+numba>=0.60,<1
 pandas>=2.2,<4
 matplotlib>=3.8,<4
 seaborn>=0.13,<1

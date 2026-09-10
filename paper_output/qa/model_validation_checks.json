@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "paper_output/code/visualization/run_numerical_validation.py",
+  "generated_at": "2026-09-10T18:17:52.750902+00:00",
+  "inputs": {
+    "environment": {
+      "path": "paper_output/data_cleaned/a_environment.csv",
+      "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
+    },
+    "solver": {
+      "path": "paper_output/code/modeling/core_solver.py",
+      "sha256": "01055951968c41f6ea4cf51f6307e9c5f80ba5aa8d5ea1258bcf0abc551f7db1"
+    },
+    "validation_script": {
+      "path": "paper_output/code/visualization/run_numerical_validation.py",
+      "sha256": "3b9953d62dfb0237a8f2dfd0e50b8e8968400833dab87d355f8d40faa58bcc2e"
+    },
+    "worker": {
+      "path": "paper_output/code/visualization/solver_worker.py",
+      "sha256": "867766d28796723a506e42c09a6ab05c36c5d7defc49e20927cfcdf18b9feb2a"
+    }
+  },
+  "checks": {
+    "aq1_convergence": {
+      "tolerance": 0.05,
+      "baseline": {
+        "config": {
+          "N": 80,
+          "dt_s": 1.0,
+          "total_seconds": 1800,
+          "formula_mode": 1
+        }
+      },
+      "baseline_terminal_center_surface": {
+        "T_C": [
+          33.57663450572221,
+          36.74529578988074
+        ],
+        "C": [
+          2.549991498708581,
+          1.5478261346904467
+        ]
+      },
+      "spatial_refinement": {
+        "config": {
+          "N": 160,
+          "dt_s": 1.0,
+          "total_seconds": 1800,
+          "formula_mode": 1
+        },
+        "max_abs_T_K": 9.310954300190133e-05,
+        "max_abs_C": 0.0001791344722710253
+      },
+      "temporal_refinement": {
+        "config": {
+          "N": 80,
+          "dt_s": 0.5,
+          "total_seconds": 1800,
+          "formula_mode": 1
+        },
+        "max_abs_T_K": 0.0006001100597927689,
+        "max_abs_C": 4.477288710469374e-05
+      },
+      "pass": true
+    },
+    "aq3_boundary_extension": {
+      "tolerance_relative": 0.02,
+      "default_boundary": "hold_last_value",
+      "tail_extension": {
+        "tail_samples": 10,
+        "T_air_K": 323.1965,
+        "C_air": 0.049928,
+        "end_time_s": 206433
+      },
+      "default_threshold_time_s": 206433.0,
+      "tail_extension_threshold_time_s": 206433.0,
+      "relative_difference": 0.0,
+      "pass": true
+    },
+    "aq4_fixed_moving_degeneracy": {
+      "config": {
+        "N": 80,
+        "dt_s": 1.0,
+        "total_seconds": 3600,
+        "formula_mode": 3,
+        "radius_m": 0.02
+      },
+      "tolerance": 1e-10,
+      "terminal_max_abs_T_K": 1.1937117960769683e-12,
+      "terminal_max_abs_C": 2.4424906541753444e-14,
+      "pass": true
+    }
+  },
+  "status": "PASS"
+}

@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/modeling/run_modeling.py",
-  "generated_at": "2026-09-10T23:01:11",
+  "generated_at": "2026-09-11T02:16:18",
   "status": "PASS",
   "runs": [
     {
-      "run_id": "q1_model_20260910_230023",
+      "run_id": "q1_model_20260911_021522",
       "script": "paper_output/code/modeling/q1_model.py",
-      "script_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+      "script_sha256": "37a6c8306cc803c4715bfc73b60ee6f713359b3598bc25c2bc99c88050c42fd7",
       "question_ids": [
         "AQ1"
       ],
-      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q1_model.py",
+      "command": "python.exe q1_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-10T23:00:23",
-      "finished_at": "2026-09-10T23:00:33",
+      "started_at": "2026-09-11T02:15:22",
+      "finished_at": "2026-09-11T02:15:33",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.12.14",
+        "python": "3.13.9",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -40,8 +40,8 @@
         },
         {
           "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 6844,
-          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+          "bytes": 2831,
+          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
         }
       ],
       "output_artifacts": [
@@ -60,27 +60,27 @@
         {
           "path": "paper_output/tables/result1.xlsx",
           "exists": true,
-          "bytes": 362765,
-          "sha256": "1eb8460bec1fee79ba6c6e7fcee3fcd51ae5358167ff14bec7f696a9e957fa21"
+          "bytes": 362766,
+          "sha256": "1c3355ba47488c4e8e7baccef57c5df118d993eba727d4319fa3dce5fa22fd31"
         }
       ],
       "stdout_tail": "AQ1 finished successfully.\n"
     },
     {
-      "run_id": "q2_model_20260910_230033",
+      "run_id": "q2_model_20260911_021533",
       "script": "paper_output/code/modeling/q2_model.py",
-      "script_sha256": "f4f555580524d64dc0867ffbc92e685208145be3e8c95d1d30ef96173fe1f48e",
+      "script_sha256": "b9eb5292a7519eaf05bbc3a5b9d430d784d824ea83a83615e4862024b0263448",
       "question_ids": [
         "AQ2"
       ],
-      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q2_model.py",
+      "command": "python.exe q2_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-10T23:00:33",
-      "finished_at": "2026-09-10T23:00:48",
+      "started_at": "2026-09-11T02:15:33",
+      "finished_at": "2026-09-11T02:15:51",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.12.14",
+        "python": "3.13.9",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -102,8 +102,8 @@
         },
         {
           "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 6844,
-          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+          "bytes": 2831,
+          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
         }
       ],
       "output_artifacts": [
@@ -122,27 +122,27 @@
         {
           "path": "paper_output/tables/result2.xlsx",
           "exists": true,
-          "bytes": 2366502,
-          "sha256": "f8e88142e88ec7af7ba4aa5ae114975205cbfb9191cd4f247335f8599d794caa"
+          "bytes": 2366503,
+          "sha256": "8f641e1599f7c4a1c2efc438646625450fe5a8a5062fc6ea40aa6c1009e6049e"
         }
       ],
       "stdout_tail": "AQ2 finished successfully.\n"
     },
     {
-      "run_id": "q3_model_20260910_230048",
+      "run_id": "q3_model_20260911_021551",
       "script": "paper_output/code/modeling/q3_model.py",
-      "script_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+      "script_sha256": "3297c935c08d67aa542e6f0ad072b71e0da6b088e4f99ccf11f82861bae0119b",
       "question_ids": [
         "AQ3"
       ],
-      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q3_model.py",
+      "command": "python.exe q3_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-10T23:00:48",
-      "finished_at": "2026-09-10T23:01:00",
+      "started_at": "2026-09-11T02:15:51",
+      "finished_at": "2026-09-11T02:16:05",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.12.14",
+        "python": "3.13.9",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -164,8 +164,8 @@
         },
         {
           "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 6844,
-          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+          "bytes": 2831,
+          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
         }
       ],
       "output_artifacts": [
@@ -179,26 +179,26 @@
           "path": "paper_output/tables/result3.xlsx",
           "exists": true,
           "bytes": 336778,
-          "sha256": "6a46484b9fd32305d2141c8975662be953902e7a8508ed599022fcfd75d5448b"
+          "sha256": "72d14182b74ed2652cd1a1df8fdc343125657d85aebb164c978f8a72295b4bf9"
         }
       ],
       "stdout_tail": "AQ3 finished successfully: t_end = 57.3425 h (206433.0 s).\n"
     },
     {
-      "run_id": "q4_model_20260910_230100",
+      "run_id": "q4_model_20260911_021605",
       "script": "paper_output/code/modeling/q4_model.py",
-      "script_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+      "script_sha256": "6d1c3ea57bfeef78633aa538fb18f5b243841807e6ffb615a199bc19c5f475c7",
       "question_ids": [
         "AQ4"
       ],
-      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q4_model.py",
+      "command": "python.exe q4_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-10T23:01:00",
-      "finished_at": "2026-09-10T23:01:11",
+      "started_at": "2026-09-11T02:16:05",
+      "finished_at": "2026-09-11T02:16:18",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.12.14",
+        "python": "3.13.9",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -220,8 +220,8 @@
         },
         {
           "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 6844,
-          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+          "bytes": 2831,
+          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
         }
       ],
       "output_artifacts": [
@@ -234,8 +234,8 @@
         {
           "path": "paper_output/tables/result4.xlsx",
           "exists": true,
-          "bytes": 224354,
-          "sha256": "1a4dd0ae6dc53d6095155eb183e308ca06f4dc71c8adbeb6df1032b6677b4d2c"
+          "bytes": 224355,
+          "sha256": "5e756cc0641e5d690cdbd2d5c07d0c898b66f3b5eb54d1412118966ea5835978"
         }
       ],
       "stdout_tail": "AQ4 finished successfully: t_end = 50.8572 h (183086.0 s).\n"

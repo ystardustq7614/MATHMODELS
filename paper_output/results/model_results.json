@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-10T23:01:11",
+  "generated_at": "2026-09-11T02:16:17",
   "source": "paper_output/plan/model_route.json",
   "data_sources": [
     "paper_output/data_cleaned/a_environment.csv",
@@ -18,15 +18,15 @@
       "result_summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。",
       "outputs": [
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_temperature.csv",
+          "path": "paper_output/tables/table_aq1_temperature.csv",
           "type": "csv"
         },
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_moisture.csv",
+          "path": "paper_output/tables/table_aq1_moisture.csv",
           "type": "csv"
         },
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result1.xlsx",
+          "path": "paper_output/tables/result1.xlsx",
           "type": "xlsx"
         }
       ],
@@ -35,17 +35,17 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q1_model.py",
-        "source_code_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+        "source_code_sha256": "37a6c8306cc803c4715bfc73b60ee6f713359b3598bc25c2bc99c88050c42fd7",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q1_model.py",
+        "run_command": "python.exe paper_output/code/modeling/q1_model.py",
         "run_exit_code": 0,
         "input_files": [],
         "output_artifacts": [
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_temperature.csv",
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_moisture.csv",
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result1.xlsx"
+          "paper_output/tables/table_aq1_temperature.csv",
+          "paper_output/tables/table_aq1_moisture.csv",
+          "paper_output/tables/result1.xlsx"
         ],
-        "generated_at": "2026-09-10T23:00:32"
+        "generated_at": "2026-09-11T02:15:32"
       }
     },
     {
@@ -58,15 +58,15 @@
       "result_summary": "AQ2全过程模型（前3 h）求解完成：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4及result2.xlsx均已导出。",
       "outputs": [
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_temperature.csv",
+          "path": "paper_output/tables/table_aq2_temperature.csv",
           "type": "csv"
         },
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_moisture.csv",
+          "path": "paper_output/tables/table_aq2_moisture.csv",
           "type": "csv"
         },
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result2.xlsx",
+          "path": "paper_output/tables/result2.xlsx",
           "type": "xlsx"
         }
       ],
@@ -75,17 +75,17 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q2_model.py",
-        "source_code_sha256": "f4f555580524d64dc0867ffbc92e685208145be3e8c95d1d30ef96173fe1f48e",
+        "source_code_sha256": "b9eb5292a7519eaf05bbc3a5b9d430d784d824ea83a83615e4862024b0263448",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q2_model.py",
+        "run_command": "python.exe paper_output/code/modeling/q2_model.py",
         "run_exit_code": 0,
         "input_files": [],
         "output_artifacts": [
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_temperature.csv",
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_moisture.csv",
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result2.xlsx"
+          "paper_output/tables/table_aq2_temperature.csv",
+          "paper_output/tables/table_aq2_moisture.csv",
+          "paper_output/tables/result2.xlsx"
         ],
-        "generated_at": "2026-09-10T23:00:48"
+        "generated_at": "2026-09-11T02:15:51"
       }
     },
     {
@@ -98,11 +98,11 @@
       "result_summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。",
       "outputs": [
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq3_drying_moisture.csv",
+          "path": "paper_output/tables/table_aq3_drying_moisture.csv",
           "type": "csv"
         },
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result3.xlsx",
+          "path": "paper_output/tables/result3.xlsx",
           "type": "xlsx"
         }
       ],
@@ -111,16 +111,16 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q3_model.py",
-        "source_code_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+        "source_code_sha256": "3297c935c08d67aa542e6f0ad072b71e0da6b088e4f99ccf11f82861bae0119b",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q3_model.py",
+        "run_command": "python.exe paper_output/code/modeling/q3_model.py",
         "run_exit_code": 0,
         "input_files": [],
         "output_artifacts": [
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq3_drying_moisture.csv",
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result3.xlsx"
+          "paper_output/tables/table_aq3_drying_moisture.csv",
+          "paper_output/tables/result3.xlsx"
         ],
-        "generated_at": "2026-09-10T23:01:00"
+        "generated_at": "2026-09-11T02:16:04"
       }
     },
     {
@@ -133,11 +133,11 @@
       "result_summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。",
       "outputs": [
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq4_shrinkage_moisture.csv",
+          "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
           "type": "csv"
         },
         {
-          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result4.xlsx",
+          "path": "paper_output/tables/result4.xlsx",
           "type": "xlsx"
         }
       ],
@@ -146,16 +146,16 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q4_model.py",
-        "source_code_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+        "source_code_sha256": "6d1c3ea57bfeef78633aa538fb18f5b243841807e6ffb615a199bc19c5f475c7",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q4_model.py",
+        "run_command": "python.exe paper_output/code/modeling/q4_model.py",
         "run_exit_code": 0,
         "input_files": [],
         "output_artifacts": [
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq4_shrinkage_moisture.csv",
-          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result4.xlsx"
+          "paper_output/tables/table_aq4_shrinkage_moisture.csv",
+          "paper_output/tables/result4.xlsx"
         ],
-        "generated_at": "2026-09-10T23:01:11"
+        "generated_at": "2026-09-11T02:16:17"
       }
     }
   ],

@@ -1,0 +1,4 @@
+﻿table_title,question_id,main_model,evidence_status,note
+核心结果表,AQ4,同物性固定/收缩对照和2×2因子实验,needs_real_modeling,真实数值需要由当前赛题专用建模代码补齐。
+模型对比表,AQ4,同物性固定/收缩对照和2×2因子实验,needs_real_modeling,真实数值需要由当前赛题专用建模代码补齐。
+稳健性检查表,AQ4,同物性固定/收缩对照和2×2因子实验,needs_real_modeling,真实数值需要由当前赛题专用建模代码补齐。

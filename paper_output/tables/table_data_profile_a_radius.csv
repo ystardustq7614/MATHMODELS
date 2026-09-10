@@ -1,0 +1,4 @@
+﻿field,sample_rows,non_null_count,missing_count,inferred_type,mean,std,min,max
+time_s,145,145,0,numeric,129600.0,75342.418331,0.0,259200.0
+radius_cm,145,145,0,numeric,1.246021,0.126608,1.198,2.0
+radius_m,145,145,0,numeric,0.01246,0.001266,0.01198,0.02

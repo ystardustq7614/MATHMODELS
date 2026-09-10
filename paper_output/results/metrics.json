@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
+  "generated_at": "2026-09-10T23:01:11",
+  "source": "paper_output/results/model_results.json",
+  "items": [
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "aq1_final_center_temperature_C",
+      "metric_role": "evaluation",
+      "value": 33.5766,
+      "unit": "°C"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "aq1_final_surface_temperature_C",
+      "metric_role": "evaluation",
+      "value": 36.7453,
+      "unit": "°C"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "aq1_final_center_moisture",
+      "metric_role": "evaluation",
+      "value": 2.55,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "aq1_final_surface_moisture",
+      "metric_role": "evaluation",
+      "value": 1.5478,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ1",
+      "status": "computed",
+      "metric_name": "aq1_total_moisture_loss_fraction",
+      "metric_role": "evaluation",
+      "value": 0.063924,
+      "unit": "fraction"
+    },
+    {
+      "question_id": "AQ2",
+      "status": "computed",
+      "metric_name": "aq2_3h_center_temperature_C",
+      "metric_role": "evaluation",
+      "value": 49.8494,
+      "unit": "°C"
+    },
+    {
+      "question_id": "AQ2",
+      "status": "computed",
+      "metric_name": "aq2_3h_surface_temperature_C",
+      "metric_role": "evaluation",
+      "value": 49.9646,
+      "unit": "°C"
+    },
+    {
+      "question_id": "AQ2",
+      "status": "computed",
+      "metric_name": "aq2_3h_center_moisture",
+      "metric_role": "evaluation",
+      "value": 1.7662,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ2",
+      "status": "computed",
+      "metric_name": "aq2_3h_surface_moisture",
+      "metric_role": "evaluation",
+      "value": 1.0174,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ2",
+      "status": "computed",
+      "metric_name": "aq2_1800s_surface_temperature_C",
+      "metric_role": "comparison",
+      "value": 35.3714,
+      "unit": "°C"
+    },
+    {
+      "question_id": "AQ2",
+      "status": "computed",
+      "metric_name": "aq2_1800s_surface_moisture",
+      "metric_role": "comparison",
+      "value": 1.6719,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "aq3_drying_time_s",
+      "metric_role": "evaluation",
+      "value": 206433.0,
+      "unit": "s"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "aq3_drying_time_h",
+      "metric_role": "evaluation",
+      "value": 57.3425,
+      "unit": "h"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "aq3_final_max_moisture",
+      "metric_role": "evaluation",
+      "value": 0.15,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "aq3_final_min_moisture",
+      "metric_role": "evaluation",
+      "value": 0.0666,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "aq3_final_center_moisture",
+      "metric_role": "evaluation",
+      "value": 0.15,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ3",
+      "status": "computed",
+      "metric_name": "aq3_final_surface_moisture",
+      "metric_role": "evaluation",
+      "value": 0.0666,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_drying_time_s",
+      "metric_role": "evaluation",
+      "value": 183086.0,
+      "unit": "s"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_drying_time_h",
+      "metric_role": "evaluation",
+      "value": 50.8572,
+      "unit": "h"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_final_radius_cm",
+      "metric_role": "evaluation",
+      "value": 1.2,
+      "unit": "cm"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_final_max_moisture",
+      "metric_role": "evaluation",
+      "value": 0.15,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_final_min_moisture",
+      "metric_role": "evaluation",
+      "value": 0.0605,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_final_center_moisture",
+      "metric_role": "evaluation",
+      "value": 0.15,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_final_surface_moisture",
+      "metric_role": "evaluation",
+      "value": 0.0605,
+      "unit": "kg/kg"
+    },
+    {
+      "question_id": "AQ4",
+      "status": "computed",
+      "metric_name": "aq4_time_reduction_vs_aq3_percent",
+      "metric_role": "comparison",
+      "value": 11.31,
+      "unit": "%"
+    }
+  ]
+}

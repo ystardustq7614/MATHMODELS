@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
+  "generated_at": "2026-09-10T23:01:11",
+  "source": "paper_output/plan/model_route.json",
+  "data_sources": [
+    "paper_output/data_cleaned/a_environment.csv",
+    "paper_output/data_cleaned/a_radius.csv"
+  ],
+  "questions": [
+    {
+      "question_id": "AQ1",
+      "title": "预热平衡阶段温度与干基含水率",
+      "task_type": "非线性扩散与热传导",
+      "result_type": "general",
+      "main_model": "隐式有限体积法 (FVM) + Picard迭代 + Thomas三对角求解",
+      "baseline_model": "",
+      "result_summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。",
+      "outputs": [
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_temperature.csv",
+          "type": "csv"
+        },
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_moisture.csv",
+          "type": "csv"
+        },
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result1.xlsx",
+          "type": "xlsx"
+        }
+      ],
+      "parameters": [],
+      "evidence_status": "computed",
+      "status": "computed",
+      "execution_provenance": {
+        "source_code_path": "paper_output/code/modeling/q1_model.py",
+        "source_code_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+        "helper_path": "paper_output/code/modeling/result_contract_io.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q1_model.py",
+        "run_exit_code": 0,
+        "input_files": [],
+        "output_artifacts": [
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_temperature.csv",
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq1_moisture.csv",
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result1.xlsx"
+        ],
+        "generated_at": "2026-09-10T23:00:32"
+      }
+    },
+    {
+      "question_id": "AQ2",
+      "title": "统一经验物性的全过程模型",
+      "task_type": "热湿非线性耦合",
+      "result_type": "general",
+      "main_model": "附录3全过程经验物性FVM模型 + Picard迭代 + Thomas三对角求解",
+      "baseline_model": "",
+      "result_summary": "AQ2全过程模型（前3 h）求解完成：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4及result2.xlsx均已导出。",
+      "outputs": [
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_temperature.csv",
+          "type": "csv"
+        },
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_moisture.csv",
+          "type": "csv"
+        },
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result2.xlsx",
+          "type": "xlsx"
+        }
+      ],
+      "parameters": [],
+      "evidence_status": "computed",
+      "status": "computed",
+      "execution_provenance": {
+        "source_code_path": "paper_output/code/modeling/q2_model.py",
+        "source_code_sha256": "f4f555580524d64dc0867ffbc92e685208145be3e8c95d1d30ef96173fe1f48e",
+        "helper_path": "paper_output/code/modeling/result_contract_io.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q2_model.py",
+        "run_exit_code": 0,
+        "input_files": [],
+        "output_artifacts": [
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_temperature.csv",
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq2_moisture.csv",
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result2.xlsx"
+        ],
+        "generated_at": "2026-09-10T23:00:48"
+      }
+    },
+    {
+      "question_id": "AQ3",
+      "title": "固定半径下全域达标时长",
+      "task_type": "阈值事件检测",
+      "result_type": "general",
+      "main_model": "烘干终点全域极值检测 + 截断逼近算法",
+      "baseline_model": "",
+      "result_summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。",
+      "outputs": [
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq3_drying_moisture.csv",
+          "type": "csv"
+        },
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result3.xlsx",
+          "type": "xlsx"
+        }
+      ],
+      "parameters": [],
+      "evidence_status": "computed",
+      "status": "computed",
+      "execution_provenance": {
+        "source_code_path": "paper_output/code/modeling/q3_model.py",
+        "source_code_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+        "helper_path": "paper_output/code/modeling/result_contract_io.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q3_model.py",
+        "run_exit_code": 0,
+        "input_files": [],
+        "output_artifacts": [
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq3_drying_moisture.csv",
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result3.xlsx"
+        ],
+        "generated_at": "2026-09-10T23:01:00"
+      }
+    },
+    {
+      "question_id": "AQ4",
+      "title": "收缩域中的烘干时长",
+      "task_type": "移动边界传热传质",
+      "result_type": "general",
+      "main_model": "物质坐标系(xi)移动网格FVM + 附录4公式 + 截断逼近算法",
+      "baseline_model": "",
+      "result_summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。",
+      "outputs": [
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq4_shrinkage_moisture.csv",
+          "type": "csv"
+        },
+        {
+          "path": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result4.xlsx",
+          "type": "xlsx"
+        }
+      ],
+      "parameters": [],
+      "evidence_status": "computed",
+      "status": "computed",
+      "execution_provenance": {
+        "source_code_path": "paper_output/code/modeling/q4_model.py",
+        "source_code_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+        "helper_path": "paper_output/code/modeling/result_contract_io.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe paper_output/code/modeling/q4_model.py",
+        "run_exit_code": 0,
+        "input_files": [],
+        "output_artifacts": [
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\table_aq4_shrinkage_moisture.csv",
+          "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\tables\\result4.xlsx"
+        ],
+        "generated_at": "2026-09-10T23:01:11"
+      }
+    }
+  ],
+  "data_summary": {
+    "cleaned_file_count": 2,
+    "profiled_files": [
+      {
+        "path": "paper_output/data_cleaned/a_environment.csv",
+        "sample_rows": 241,
+        "field_count": 4
+      },
+      {
+        "path": "paper_output/data_cleaned/a_radius.csv",
+        "sample_rows": 145,
+        "field_count": 3
+      }
+    ]
+  }
+}

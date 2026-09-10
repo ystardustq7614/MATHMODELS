@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper-workflow-orchestrator/scripts/workflow_guard.py",
-  "generated_at": "2026-09-10T21:19:24",
+  "generated_at": "2026-09-10T23:01:53",
   "mode": "status",
-  "target_step": "S4",
+  "target_step": "S7",
   "status": "INCOMPLETE",
-  "current_step": "S3",
-  "next_step": "S4",
-  "recommended_skill": "model-code-and-result-generator",
-  "next_action": "生成 paper_output/code/modeling/ 下的 q*_model.py 与 run_modeling.py。",
+  "current_step": "S6",
+  "next_step": "S7",
+  "recommended_skill": "paper-formal-writer",
+  "next_action": "执行写作计划、章节审计、必要的局部修复、确定性合并与全文统一改写；S7 PASS 后再生成正式 Word。",
   "steps": [
     {
       "step": "S0",
@@ -37,13 +37,39 @@
     {
       "step": "S4",
       "name": "建模代码",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S5",
+      "name": "结果证据",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S6",
+      "name": "证据门禁",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S7",
+      "name": "正式稿",
       "status": "FAIL",
       "failures": [
-        "缺少建模代码目录：paper_output/code/modeling"
+        "缺少文件：paper_output/plan/paper_outline.json",
+        "缺少文件：paper_output/plan/writing_plan.json",
+        "缺少文件：paper_output/context/authoring_state.json",
+        "缺少文件：paper_output/final_paper_source.md",
+        "缺少文件：paper_output/final_paper.docx"
       ]
     }
   ],
   "failures": [
-    "S4: 缺少建模代码目录：paper_output/code/modeling"
+    "S7: 缺少文件：paper_output/plan/paper_outline.json",
+    "S7: 缺少文件：paper_output/plan/writing_plan.json",
+    "S7: 缺少文件：paper_output/context/authoring_state.json",
+    "S7: 缺少文件：paper_output/final_paper_source.md",
+    "S7: 缺少文件：paper_output/final_paper.docx"
   ]
 }

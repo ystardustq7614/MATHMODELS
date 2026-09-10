@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "paper_output/code/modeling/run_modeling.py",
+  "generated_at": "2026-09-10T23:01:11",
+  "status": "PASS",
+  "runs": [
+    {
+      "run_id": "q1_model_20260910_230023",
+      "script": "paper_output/code/modeling/q1_model.py",
+      "script_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+      "question_ids": [
+        "AQ1"
+      ],
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q1_model.py",
+      "returncode": 0,
+      "status": "PASS",
+      "started_at": "2026-09-10T23:00:23",
+      "finished_at": "2026-09-10T23:00:33",
+      "working_directory": "paper_output/code/modeling",
+      "environment": {
+        "python": "3.12.14",
+        "implementation": "CPython",
+        "platform": "Windows-11-10.0.26200-SP0"
+      },
+      "input_files": [
+        {
+          "path": "paper_output/data_cleaned/a_environment.csv",
+          "bytes": 6750,
+          "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
+        },
+        {
+          "path": "paper_output/data_cleaned/a_radius.csv",
+          "bytes": 2807,
+          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+        },
+        {
+          "path": "paper_output/data_cleaned/data_pipeline_run.json",
+          "bytes": 3311,
+          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+        },
+        {
+          "path": "paper_output/data_cleaned/load_report.json",
+          "bytes": 6844,
+          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "path": "paper_output/tables/table_aq1_temperature.csv",
+          "exists": true,
+          "bytes": 360,
+          "sha256": "b5da6a07cbb2147bed0d6102f198276f66e44c00d0c7944017cb711784875fe4"
+        },
+        {
+          "path": "paper_output/tables/table_aq1_moisture.csv",
+          "exists": true,
+          "bytes": 325,
+          "sha256": "11476afea146ccd67afae0cc21985362b523d9b16d670e1c90fd15013e864471"
+        },
+        {
+          "path": "paper_output/tables/result1.xlsx",
+          "exists": true,
+          "bytes": 362765,
+          "sha256": "1eb8460bec1fee79ba6c6e7fcee3fcd51ae5358167ff14bec7f696a9e957fa21"
+        }
+      ],
+      "stdout_tail": "AQ1 finished successfully.\n"
+    },
+    {
+      "run_id": "q2_model_20260910_230033",
+      "script": "paper_output/code/modeling/q2_model.py",
+      "script_sha256": "f4f555580524d64dc0867ffbc92e685208145be3e8c95d1d30ef96173fe1f48e",
+      "question_ids": [
+        "AQ2"
+      ],
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q2_model.py",
+      "returncode": 0,
+      "status": "PASS",
+      "started_at": "2026-09-10T23:00:33",
+      "finished_at": "2026-09-10T23:00:48",
+      "working_directory": "paper_output/code/modeling",
+      "environment": {
+        "python": "3.12.14",
+        "implementation": "CPython",
+        "platform": "Windows-11-10.0.26200-SP0"
+      },
+      "input_files": [
+        {
+          "path": "paper_output/data_cleaned/a_environment.csv",
+          "bytes": 6750,
+          "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
+        },
+        {
+          "path": "paper_output/data_cleaned/a_radius.csv",
+          "bytes": 2807,
+          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+        },
+        {
+          "path": "paper_output/data_cleaned/data_pipeline_run.json",
+          "bytes": 3311,
+          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+        },
+        {
+          "path": "paper_output/data_cleaned/load_report.json",
+          "bytes": 6844,
+          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "path": "paper_output/tables/table_aq2_temperature.csv",
+          "exists": true,
+          "bytes": 312,
+          "sha256": "f8fdb7118b17e6f2e74a40009d321a41cdd0808f71f1e437b2cd082f428e648b"
+        },
+        {
+          "path": "paper_output/tables/table_aq2_moisture.csv",
+          "exists": true,
+          "bytes": 282,
+          "sha256": "699006fbbddb5e3b8e4095675611cfc26674a90b3d6f7f2f44dd127e7ec8d128"
+        },
+        {
+          "path": "paper_output/tables/result2.xlsx",
+          "exists": true,
+          "bytes": 2366502,
+          "sha256": "f8e88142e88ec7af7ba4aa5ae114975205cbfb9191cd4f247335f8599d794caa"
+        }
+      ],
+      "stdout_tail": "AQ2 finished successfully.\n"
+    },
+    {
+      "run_id": "q3_model_20260910_230048",
+      "script": "paper_output/code/modeling/q3_model.py",
+      "script_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+      "question_ids": [
+        "AQ3"
+      ],
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q3_model.py",
+      "returncode": 0,
+      "status": "PASS",
+      "started_at": "2026-09-10T23:00:48",
+      "finished_at": "2026-09-10T23:01:00",
+      "working_directory": "paper_output/code/modeling",
+      "environment": {
+        "python": "3.12.14",
+        "implementation": "CPython",
+        "platform": "Windows-11-10.0.26200-SP0"
+      },
+      "input_files": [
+        {
+          "path": "paper_output/data_cleaned/a_environment.csv",
+          "bytes": 6750,
+          "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
+        },
+        {
+          "path": "paper_output/data_cleaned/a_radius.csv",
+          "bytes": 2807,
+          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+        },
+        {
+          "path": "paper_output/data_cleaned/data_pipeline_run.json",
+          "bytes": 3311,
+          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+        },
+        {
+          "path": "paper_output/data_cleaned/load_report.json",
+          "bytes": 6844,
+          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "path": "paper_output/tables/table_aq3_drying_moisture.csv",
+          "exists": true,
+          "bytes": 477,
+          "sha256": "93bb19f77877ddd6f0a7ac0ef229a847184170f6aca72d715c74d45b01308e50"
+        },
+        {
+          "path": "paper_output/tables/result3.xlsx",
+          "exists": true,
+          "bytes": 336778,
+          "sha256": "6a46484b9fd32305d2141c8975662be953902e7a8508ed599022fcfd75d5448b"
+        }
+      ],
+      "stdout_tail": "AQ3 finished successfully: t_end = 57.3425 h (206433.0 s).\n"
+    },
+    {
+      "run_id": "q4_model_20260910_230100",
+      "script": "paper_output/code/modeling/q4_model.py",
+      "script_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+      "question_ids": [
+        "AQ4"
+      ],
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\paper_output\\code\\modeling\\q4_model.py",
+      "returncode": 0,
+      "status": "PASS",
+      "started_at": "2026-09-10T23:01:00",
+      "finished_at": "2026-09-10T23:01:11",
+      "working_directory": "paper_output/code/modeling",
+      "environment": {
+        "python": "3.12.14",
+        "implementation": "CPython",
+        "platform": "Windows-11-10.0.26200-SP0"
+      },
+      "input_files": [
+        {
+          "path": "paper_output/data_cleaned/a_environment.csv",
+          "bytes": 6750,
+          "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
+        },
+        {
+          "path": "paper_output/data_cleaned/a_radius.csv",
+          "bytes": 2807,
+          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+        },
+        {
+          "path": "paper_output/data_cleaned/data_pipeline_run.json",
+          "bytes": 3311,
+          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+        },
+        {
+          "path": "paper_output/data_cleaned/load_report.json",
+          "bytes": 6844,
+          "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
+          "exists": true,
+          "bytes": 474,
+          "sha256": "6395c9ceffcca306fb7cd1157618326c0bcc658ece5627b7a4ca027e063cd9bf"
+        },
+        {
+          "path": "paper_output/tables/result4.xlsx",
+          "exists": true,
+          "bytes": 224354,
+          "sha256": "1a4dd0ae6dc53d6095155eb183e308ca06f4dc71c8adbeb6df1032b6677b4d2c"
+        }
+      ],
+      "stdout_tail": "AQ4 finished successfully: t_end = 50.8572 h (183086.0 s).\n"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+﻿field,sample_rows,non_null_count,missing_count,inferred_type,mean,std,min,max
+time_s,241,241,0,numeric,7200.0,4174.206511,0.0,14400.0
+temperature_C,241,241,0,numeric,47.245328,5.104147,28.0,50.246
+air_moisture_kgkg,241,241,0,numeric,0.044756,0.00812,0.01963,0.05025
+temperature_K,241,241,0,numeric,320.395328,5.104147,301.15,323.396

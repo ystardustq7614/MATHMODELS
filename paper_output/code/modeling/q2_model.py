@@ -35,12 +35,13 @@ def run_aq2():
     T_env = df_env['temperature_K'].values.astype(np.float64)
     C_env = df_env['air_moisture_kgkg'].values.astype(np.float64)
 
-    # 1. Run simulation for 3 h (10800 s) with formula_mode=2 (Appendix 3)
+    # Appendix 3 applies from t=0 until drying completes. Tables 3/4
+    # show only the first 3 h; result2.xlsx must retain every second.
     times_raw, T_raw, C_raw, end_time, n_rec = simulate_fvm_fixed(
         t_env=t_env,
         T_env=T_env,
         C_env=C_env,
-        total_seconds=10800,
+        total_seconds=259200,
         formula_mode=2,
         sample_every_s=1,
         N=80,
@@ -48,6 +49,7 @@ def run_aq2():
         h=25.0,
         hm=8e-7,
         dt=1.0,
+        stop_at_cmax=0.15,
     )
 
     # 2. Build Table 3 (Temperature) & Table 4 (Moisture)
@@ -79,7 +81,7 @@ def run_aq2():
     t4_path = TABLES_DIR / 'table_aq2_moisture.csv'
     write_csv_table(t4_path, table4_rows)
 
-    # 3. Build result2.xlsx (10800 s, 0.1 cm steps)
+    # 3. Build result2.xlsx (every second to the terminal event, 0.1 cm steps)
     r_full_cm = np.arange(0.0, 2.0001, 0.1)
     T_full, C_full = sample_and_interpolate_fixed(times_raw, T_raw, C_raw, N=80, R=0.02, r_target_cm=r_full_cm)
     T_full_C = T_full - 273.15
@@ -93,7 +95,7 @@ def run_aq2():
     ws_T.append(header)
     ws_C.append(header)
 
-    for s in range(1, 10801):
+    for s in range(1, len(times_raw)):
         row_T = [s] + [round(val, 4) for val in T_full_C[s]]
         row_C = [s] + [round(val, 4) for val in C_full[s]]
         ws_T.append(row_T)
@@ -144,7 +146,7 @@ def run_aq2():
         {'path': str(res2_path), 'type': 'xlsx'},
     ]
 
-    summary = f'AQ2全过程模型（前3 h）求解完成：3 h时中心温度为{T_full_C[10800, 0]:.4f}°C，表面温度为{T_full_C[10800, -1]:.4f}°C；中心水分浓度为{C_full[10800, 0]:.4f} kg/kg，表面水分浓度为{C_full[10800, -1]:.4f} kg/kg。表3、表4及result2.xlsx均已导出。'
+    summary = f'AQ2全过程模型求解至达标时刻{end_time:.0f} s：3 h时中心温度为{T_full_C[10800, 0]:.4f}°C，表面温度为{T_full_C[10800, -1]:.4f}°C；中心水分浓度为{C_full[10800, 0]:.4f} kg/kg，表面水分浓度为{C_full[10800, -1]:.4f} kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。'
 
     upsert_question_contracts(
         question=QUESTION,

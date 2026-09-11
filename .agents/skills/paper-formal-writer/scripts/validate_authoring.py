@@ -48,6 +48,9 @@ def issue(category: str, message: str, *, section_id: str, expected: list[str] |
 
 
 def validate_common(text: str, section: dict[str, Any], section_id: str, *, require_marker: bool) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    # Appendix source listings are reproducibility material, not author prose.
+    # Neither evidence numbers in code nor code strings should decide the audit.
+    text = re.sub(r"```[\s\S]*?```|~~~[\s\S]*?~~~", "", text)
     issues: list[dict[str, Any]] = []
     required = all_required_ids(section)
     declared = evidence_ids(text)

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "data-cleaning-and-visualization/scripts/robust_loader.py",
-  "generated_at": "2026-09-11T02:15:07",
+  "generated_at": "2026-09-11T14:29:21",
   "status": "PASS",
   "input_dirs": [
     "problem_files",
@@ -9,7 +9,7 @@
   ],
   "input_manifest_used": true,
   "input_manifest": "paper_output/input_manifest.json",
-  "input_manifest_sha256": "d63880cf4dcb934b8b97fe4b753e1a550c4e17aa1417927a18f1319f2f0c9079",
+  "input_manifest_sha256": "4ee2ff67d2fb97079af398069548fdb22360b6adf092d61aec7588edda467c10",
   "skipped_files": [
     {
       "path": "problem_files/A题/A题.pdf",

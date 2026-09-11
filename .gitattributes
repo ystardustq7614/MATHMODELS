@@ -6,3 +6,5 @@ paper_output/**/*.png binary
 /*.md text eol=lf
 docs/**/*.md text eol=lf
 .agents/skills/data-cleaning-and-visualization/scripts/robust_loader.py text eol=lf
+.agents/skills/paper-formal-writer/scripts/*.py text eol=lf
+tests/**/*.py text eol=lf

@@ -1,0 +1,1641 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "paper-formal-writer/scripts/build_paper_outline.py",
+  "generated_at": "2026-09-11T14:31:29",
+  "numbering_style": "1 / 1.1 / 1.1.1",
+  "target_words": {
+    "min": 11300,
+    "ideal": 13500,
+    "max": 18800
+  },
+  "title": "数学建模问题的模型建立与求解",
+  "front_matter": {
+    "abstract_target_words": 700,
+    "keyword_count": "4-6",
+    "requirements": [
+      "摘要按子问题展开，必须写明方法、模型、算法、关键结果和结论。",
+      "关键词应覆盖核心模型、算法和问题领域。"
+    ]
+  },
+  "inputs": {
+    "problem_analysis": "paper_output/step1/problem_analysis.json",
+    "model_route": "paper_output/plan/model_route.json",
+    "rubric_alignment": "paper_output/plan/rubric_alignment.json",
+    "figure_index": "paper_output/figure_index.json",
+    "model_results": "paper_output/results/model_results.json",
+    "metrics": "paper_output/results/metrics.json",
+    "conclusions": "paper_output/results/conclusions.json",
+    "table_index": "paper_output/tables/table_index.json"
+  },
+  "warnings": [],
+  "questions": [
+    {
+      "question_id": "Q1",
+      "title": "预热阶段温度与干基含水率",
+      "task_type": "非线性扩散与热传导",
+      "sources": [
+        "problem_analysis",
+        "model_route",
+        "model_results"
+      ],
+      "core_goal": "表1、表2：100/300/600/900/1200/1500/1800 s，r=0/0.5/1/1.5/2 cm",
+      "main_model": "隐式时间推进、Picard迭代、Thomas三对角算法",
+      "baseline_model": "圆柱径向有限体积",
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "result_summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。"
+    },
+    {
+      "question_id": "Q2",
+      "title": "统一经验物性的全过程模型",
+      "task_type": "热湿非线性耦合",
+      "sources": [
+        "problem_analysis",
+        "model_route",
+        "model_results"
+      ],
+      "core_goal": "表3、表4：0.5至3 h，间隔0.5 h；r=0/0.5/1/1.5/2 cm",
+      "main_model": "迭代残差控制及环境延拓敏感性",
+      "baseline_model": "复用AQ1网格和隐式求解器，替换附录3物性",
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "result_summary": "AQ2全过程模型求解至达标时刻206433 s：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。"
+    },
+    {
+      "question_id": "Q3",
+      "title": "固定半径下全域达标时长",
+      "task_type": "阈值事件检测",
+      "sources": [
+        "problem_analysis",
+        "model_route",
+        "model_results"
+      ],
+      "core_goal": "烘干时长h与未舍入事件夹逼区间",
+      "main_model": "事件区间内二分重算",
+      "baseline_model": "逐步扫描全域最大值",
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界"
+      ],
+      "result_summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。"
+    },
+    {
+      "question_id": "Q4",
+      "title": "收缩域中的烘干时长",
+      "task_type": "移动边界传热传质",
+      "sources": [
+        "problem_analysis",
+        "model_route",
+        "model_results"
+      ],
+      "core_goal": "收缩条件下时长h",
+      "main_model": "同物性固定/收缩对照和2×2因子实验",
+      "baseline_model": "分段线性R(t)与守恒移动网格",
+      "model_reason": "题面给定参数和边界驱动的PDE；假设和守恒口径见scoring_strategy.md。",
+      "formula_requirements": [
+        "物质导数扩散方程",
+        "经验热容量热方程",
+        "中心与表面Robin边界",
+        "收缩坐标变换",
+        "归一水分收支"
+      ],
+      "result_summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "1",
+      "title": "问题重述",
+      "target_words": 900,
+      "subsections": [
+        {
+          "section_id": "1.1",
+          "title": "背景说明",
+          "target_words": 200
+        },
+        {
+          "section_id": "1.2",
+          "title": "题目任务",
+          "target_words": 450
+        },
+        {
+          "section_id": "1.3",
+          "title": "本文解决思路概述",
+          "target_words": 250
+        }
+      ]
+    },
+    {
+      "section_id": "2",
+      "title": "问题分析",
+      "target_words": 1600,
+      "subsections": [
+        {
+          "section_id": "2.1",
+          "title": "预热阶段温度与干基含水率分析",
+          "question_id": "Q1",
+          "target_words": 500,
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_center_temperature_C",
+              "role": "evaluation",
+              "value": 33.5766,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_surface_temperature_C",
+              "role": "evaluation",
+              "value": 36.7453,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_center_moisture",
+              "role": "evaluation",
+              "value": 2.55,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_surface_moisture",
+              "role": "evaluation",
+              "value": 1.5478,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_total_moisture_loss_fraction",
+              "role": "evaluation",
+              "value": 0.063924,
+              "unit": "fraction",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_spatial_T_max_abs",
+              "role": "validation",
+              "value": 9.310954300190133e-05,
+              "unit": "K",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_spatial_C_max_abs",
+              "role": "validation",
+              "value": 0.0001791344722710253,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_spatial_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_temporal_T_max_abs",
+              "role": "validation",
+              "value": 0.0006001100597927689,
+              "unit": "K",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_temporal_C_max_abs",
+              "role": "validation",
+              "value": 4.477288710469374e-05,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_temporal_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "在预热平衡阶段（0-1800 s），药材受烘房升温与对流传热驱动，中心温度由28.0000°C上升至33.5766°C，表面温度达到36.7453°C；由于对流传质阻力与内部非线性水分扩散制约，药材表面干基含水率由2.5500 kg/kg下降至1.5478 kg/kg，中心干基含水率为2.5500 kg/kg，体现出显著的内外梯度迟滞效应。",
+              "status": "computed"
+            }
+          ]
+        },
+        {
+          "section_id": "2.2",
+          "title": "统一经验物性的全过程模型分析",
+          "question_id": "Q2",
+          "target_words": 500,
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ2全过程模型求解至达标时刻206433 s：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_center_temperature_C",
+              "role": "evaluation",
+              "value": 49.8494,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_surface_temperature_C",
+              "role": "evaluation",
+              "value": 49.9646,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_center_moisture",
+              "role": "evaluation",
+              "value": 1.7662,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_surface_moisture",
+              "role": "evaluation",
+              "value": 1.0174,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_1800s_surface_temperature_C",
+              "role": "comparison",
+              "value": 35.3714,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_1800s_surface_moisture",
+              "role": "comparison",
+              "value": 1.6719,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "采用附录3全过程统一经验物性公式自t=0连续求解3 h（10800 s）：药材升温迅速并在3 h内达到中心49.8494°C、表面49.9646°C，整体贴近烘房温度（约50.2°C）；水分浓度在3 h末中心降至1.7662 kg/kg，表面降至1.0174 kg/kg。相较于AQ1常物性模型，附录3考虑温度和含水率对扩散及热传导的非线性强化，物性场平滑自洽，无须拼接即可覆盖预热与恒温全过程。",
+              "status": "computed"
+            }
+          ]
+        },
+        {
+          "section_id": "2.3",
+          "title": "固定半径下全域达标时长分析",
+          "question_id": "Q3",
+          "target_words": 500,
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_drying_time_s",
+              "role": "evaluation",
+              "value": 206433.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_drying_time_h",
+              "role": "evaluation",
+              "value": 57.3425,
+              "unit": "h",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_max_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_min_moisture",
+              "role": "evaluation",
+              "value": 0.0666,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_center_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_surface_moisture",
+              "role": "evaluation",
+              "value": 0.0666,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_default_threshold_time_s",
+              "role": "validation",
+              "value": 206433.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_tail_mean_threshold_time_s",
+              "role": "validation",
+              "value": 206433.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_boundary_relative_difference",
+              "role": "validation",
+              "value": 0.0,
+              "unit": "fraction",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_boundary_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "在固定几何尺寸（半径2 cm）下，严格以药材全域最大含水率低于0.15 kg/kg作为烘干完成判定准则，模型精确确定烘干所需时间为57.3425小时（即206433.0秒，约57.34小时，处于2-3天工艺区间内）。烘干结束时刻中心含水率为0.1500 kg/kg，表面含水率为0.0666 kg/kg，全域最大含水率达到达标临界值0.1500 kg/kg。表5及result3.xlsx均已精确导出。",
+              "status": "computed"
+            }
+          ]
+        },
+        {
+          "section_id": "2.4",
+          "title": "收缩域中的烘干时长分析",
+          "question_id": "Q4",
+          "target_words": 500,
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_drying_time_s",
+              "role": "evaluation",
+              "value": 183086.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_drying_time_h",
+              "role": "evaluation",
+              "value": 50.8572,
+              "unit": "h",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_radius_cm",
+              "role": "evaluation",
+              "value": 1.2,
+              "unit": "cm",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_max_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_min_moisture",
+              "role": "evaluation",
+              "value": 0.0605,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_center_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_surface_moisture",
+              "role": "evaluation",
+              "value": 0.0605,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_time_reduction_vs_aq3_percent",
+              "role": "comparison",
+              "value": 11.31,
+              "unit": "%",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq4_fixed_moving_T_max_abs",
+              "role": "validation",
+              "value": 1.1937117960769683e-12,
+              "unit": "K",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq4_fixed_moving_C_max_abs",
+              "role": "validation",
+              "value": 2.4424906541753444e-14,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq4_fixed_moving_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "在考虑径向动态收缩及附录4独立经验物性组条件下，药材烘干所需时间显著缩短至50.8572小时（即183086.0秒，约50.86小时），相比固定半径模型（AQ3的57.3425小时）缩短了约11.31%。烘干结束时药材收缩至半径1.200 cm，中心含水率为0.1500 kg/kg，表面含水率为0.0605 kg/kg，全域最大含水率达到临界阈值0.1500 kg/kg。几何尺寸减小大幅缩短了内部水分析出路径，显著提升了烘干动力学速率。表6及result4.xlsx均已导出。",
+              "status": "computed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "3",
+      "title": "模型假设",
+      "target_words": 600,
+      "subsections": []
+    },
+    {
+      "section_id": "4",
+      "title": "符号说明",
+      "target_words": 500,
+      "subsections": []
+    },
+    {
+      "section_id": "5",
+      "title": "模型的建立与求解",
+      "target_words": 8800,
+      "subsections": [
+        {
+          "section_id": "5.1",
+          "title": "预热阶段温度与干基含水率模型的建立与求解",
+          "question_id": "Q1",
+          "target_words": 2200,
+          "task_type": "非线性扩散与热传导",
+          "core_goal": "表1、表2：100/300/600/900/1200/1500/1800 s，r=0/0.5/1/1.5/2 cm",
+          "main_model": "隐式时间推进、Picard迭代、Thomas三对角算法",
+          "required_figures": [
+            {
+              "figure_id": "fig_aq1_fields",
+              "title": "fig_aq1_fields",
+              "path": "paper_output/figures/fig_aq1_fields.png",
+              "status": "generated"
+            }
+          ],
+          "required_tables": [
+            {
+              "table_id": "table1",
+              "title": "30分钟内药材的温度（表1）",
+              "path": "paper_output/tables/table_aq1_temperature.csv",
+              "purpose": "展示预热阶段100-1800 s各径向截面的药材温度动态。",
+              "status": "computed"
+            },
+            {
+              "table_id": "table2",
+              "title": "30分钟内药材的水分浓度（表2）",
+              "path": "paper_output/tables/table_aq1_moisture.csv",
+              "purpose": "展示预热阶段100-1800 s各径向截面的干基水分浓度分布。",
+              "status": "computed"
+            }
+          ],
+          "required_formulas": [
+            "物质导数扩散方程",
+            "经验热容量热方程",
+            "中心与表面Robin边界"
+          ],
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_center_temperature_C",
+              "role": "evaluation",
+              "value": 33.5766,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_surface_temperature_C",
+              "role": "evaluation",
+              "value": 36.7453,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_center_moisture",
+              "role": "evaluation",
+              "value": 2.55,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_final_surface_moisture",
+              "role": "evaluation",
+              "value": 1.5478,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq1_total_moisture_loss_fraction",
+              "role": "evaluation",
+              "value": 0.063924,
+              "unit": "fraction",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_spatial_T_max_abs",
+              "role": "validation",
+              "value": 9.310954300190133e-05,
+              "unit": "K",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_spatial_C_max_abs",
+              "role": "validation",
+              "value": 0.0001791344722710253,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_spatial_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_temporal_T_max_abs",
+              "role": "validation",
+              "value": 0.0006001100597927689,
+              "unit": "K",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_temporal_C_max_abs",
+              "role": "validation",
+              "value": 4.477288710469374e-05,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq1_temporal_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "在预热平衡阶段（0-1800 s），药材受烘房升温与对流传热驱动，中心温度由28.0000°C上升至33.5766°C，表面温度达到36.7453°C；由于对流传质阻力与内部非线性水分扩散制约，药材表面干基含水率由2.5500 kg/kg下降至1.5478 kg/kg，中心干基含水率为2.5500 kg/kg，体现出显著的内外梯度迟滞效应。",
+              "status": "computed"
+            }
+          ],
+          "subsections": [
+            {
+              "section_id": "5.1.1",
+              "title": "建模思路",
+              "question_id": "Q1",
+              "target_words": 300
+            },
+            {
+              "section_id": "5.1.2",
+              "title": "变量定义与公式推导",
+              "question_id": "Q1",
+              "target_words": 600,
+              "required_formulas": [
+                "物质导数扩散方程",
+                "经验热容量热方程",
+                "中心与表面Robin边界"
+              ]
+            },
+            {
+              "section_id": "5.1.3",
+              "title": "求解算法",
+              "question_id": "Q1",
+              "target_words": 400
+            },
+            {
+              "section_id": "5.1.4",
+              "title": "结果分析",
+              "question_id": "Q1",
+              "target_words": 650,
+              "required_figures": [
+                {
+                  "figure_id": "fig_aq1_fields",
+                  "title": "fig_aq1_fields",
+                  "path": "paper_output/figures/fig_aq1_fields.png",
+                  "status": "generated"
+                }
+              ],
+              "required_tables": [
+                {
+                  "table_id": "table1",
+                  "title": "30分钟内药材的温度（表1）",
+                  "path": "paper_output/tables/table_aq1_temperature.csv",
+                  "purpose": "展示预热阶段100-1800 s各径向截面的药材温度动态。",
+                  "status": "computed"
+                },
+                {
+                  "table_id": "table2",
+                  "title": "30分钟内药材的水分浓度（表2）",
+                  "path": "paper_output/tables/table_aq1_moisture.csv",
+                  "purpose": "展示预热阶段100-1800 s各径向截面的干基水分浓度分布。",
+                  "status": "computed"
+                }
+              ],
+              "required_evidence": [
+                {
+                  "type": "model_result",
+                  "summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq1_final_center_temperature_C",
+                  "role": "evaluation",
+                  "value": 33.5766,
+                  "unit": "°C",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq1_final_surface_temperature_C",
+                  "role": "evaluation",
+                  "value": 36.7453,
+                  "unit": "°C",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq1_final_center_moisture",
+                  "role": "evaluation",
+                  "value": 2.55,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq1_final_surface_moisture",
+                  "role": "evaluation",
+                  "value": 1.5478,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq1_total_moisture_loss_fraction",
+                  "role": "evaluation",
+                  "value": 0.063924,
+                  "unit": "fraction",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq1_spatial_T_max_abs",
+                  "role": "validation",
+                  "value": 9.310954300190133e-05,
+                  "unit": "K",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq1_spatial_C_max_abs",
+                  "role": "validation",
+                  "value": 0.0001791344722710253,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq1_spatial_pass",
+                  "role": "validation",
+                  "value": 1,
+                  "unit": "boolean",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq1_temporal_T_max_abs",
+                  "role": "validation",
+                  "value": 0.0006001100597927689,
+                  "unit": "K",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq1_temporal_C_max_abs",
+                  "role": "validation",
+                  "value": 4.477288710469374e-05,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq1_temporal_pass",
+                  "role": "validation",
+                  "value": 1,
+                  "unit": "boolean",
+                  "status": "computed"
+                },
+                {
+                  "type": "conclusion",
+                  "text": "在预热平衡阶段（0-1800 s），药材受烘房升温与对流传热驱动，中心温度由28.0000°C上升至33.5766°C，表面温度达到36.7453°C；由于对流传质阻力与内部非线性水分扩散制约，药材表面干基含水率由2.5500 kg/kg下降至1.5478 kg/kg，中心干基含水率为2.5500 kg/kg，体现出显著的内外梯度迟滞效应。",
+                  "status": "computed"
+                }
+              ]
+            },
+            {
+              "section_id": "5.1.5",
+              "title": "模型检验或灵敏度分析",
+              "question_id": "Q1",
+              "target_words": 250
+            }
+          ]
+        },
+        {
+          "section_id": "5.2",
+          "title": "统一经验物性的全过程模型模型的建立与求解",
+          "question_id": "Q2",
+          "target_words": 2200,
+          "task_type": "热湿非线性耦合",
+          "core_goal": "表3、表4：0.5至3 h，间隔0.5 h；r=0/0.5/1/1.5/2 cm",
+          "main_model": "迭代残差控制及环境延拓敏感性",
+          "required_figures": [
+            {
+              "figure_id": "fig_aq2_profiles",
+              "title": "fig_aq2_profiles",
+              "path": "paper_output/figures/fig_aq2_profiles.png",
+              "status": "generated"
+            }
+          ],
+          "required_tables": [
+            {
+              "table_id": "table3",
+              "title": "3小时内药材的温度（表3）",
+              "path": "paper_output/tables/table_aq2_temperature.csv",
+              "purpose": "展示全过程模型在0.5-3.0 h各半小时的温度径向分布。",
+              "status": "computed"
+            },
+            {
+              "table_id": "table4",
+              "title": "3小时内药材的水分浓度（表4）",
+              "path": "paper_output/tables/table_aq2_moisture.csv",
+              "purpose": "展示全过程模型在0.5-3.0 h各半小时的干基水分浓度径向分布。",
+              "status": "computed"
+            }
+          ],
+          "required_formulas": [
+            "物质导数扩散方程",
+            "经验热容量热方程",
+            "中心与表面Robin边界"
+          ],
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ2全过程模型求解至达标时刻206433 s：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_center_temperature_C",
+              "role": "evaluation",
+              "value": 49.8494,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_surface_temperature_C",
+              "role": "evaluation",
+              "value": 49.9646,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_center_moisture",
+              "role": "evaluation",
+              "value": 1.7662,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_3h_surface_moisture",
+              "role": "evaluation",
+              "value": 1.0174,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_1800s_surface_temperature_C",
+              "role": "comparison",
+              "value": 35.3714,
+              "unit": "°C",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq2_1800s_surface_moisture",
+              "role": "comparison",
+              "value": 1.6719,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "采用附录3全过程统一经验物性公式自t=0连续求解3 h（10800 s）：药材升温迅速并在3 h内达到中心49.8494°C、表面49.9646°C，整体贴近烘房温度（约50.2°C）；水分浓度在3 h末中心降至1.7662 kg/kg，表面降至1.0174 kg/kg。相较于AQ1常物性模型，附录3考虑温度和含水率对扩散及热传导的非线性强化，物性场平滑自洽，无须拼接即可覆盖预热与恒温全过程。",
+              "status": "computed"
+            }
+          ],
+          "subsections": [
+            {
+              "section_id": "5.2.1",
+              "title": "建模思路",
+              "question_id": "Q2",
+              "target_words": 300
+            },
+            {
+              "section_id": "5.2.2",
+              "title": "变量定义与公式推导",
+              "question_id": "Q2",
+              "target_words": 600,
+              "required_formulas": [
+                "物质导数扩散方程",
+                "经验热容量热方程",
+                "中心与表面Robin边界"
+              ]
+            },
+            {
+              "section_id": "5.2.3",
+              "title": "求解算法",
+              "question_id": "Q2",
+              "target_words": 400
+            },
+            {
+              "section_id": "5.2.4",
+              "title": "结果分析",
+              "question_id": "Q2",
+              "target_words": 650,
+              "required_figures": [
+                {
+                  "figure_id": "fig_aq2_profiles",
+                  "title": "fig_aq2_profiles",
+                  "path": "paper_output/figures/fig_aq2_profiles.png",
+                  "status": "generated"
+                }
+              ],
+              "required_tables": [
+                {
+                  "table_id": "table3",
+                  "title": "3小时内药材的温度（表3）",
+                  "path": "paper_output/tables/table_aq2_temperature.csv",
+                  "purpose": "展示全过程模型在0.5-3.0 h各半小时的温度径向分布。",
+                  "status": "computed"
+                },
+                {
+                  "table_id": "table4",
+                  "title": "3小时内药材的水分浓度（表4）",
+                  "path": "paper_output/tables/table_aq2_moisture.csv",
+                  "purpose": "展示全过程模型在0.5-3.0 h各半小时的干基水分浓度径向分布。",
+                  "status": "computed"
+                }
+              ],
+              "required_evidence": [
+                {
+                  "type": "model_result",
+                  "summary": "AQ2全过程模型求解至达标时刻206433 s：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq2_3h_center_temperature_C",
+                  "role": "evaluation",
+                  "value": 49.8494,
+                  "unit": "°C",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq2_3h_surface_temperature_C",
+                  "role": "evaluation",
+                  "value": 49.9646,
+                  "unit": "°C",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq2_3h_center_moisture",
+                  "role": "evaluation",
+                  "value": 1.7662,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq2_3h_surface_moisture",
+                  "role": "evaluation",
+                  "value": 1.0174,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq2_1800s_surface_temperature_C",
+                  "role": "comparison",
+                  "value": 35.3714,
+                  "unit": "°C",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq2_1800s_surface_moisture",
+                  "role": "comparison",
+                  "value": 1.6719,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "conclusion",
+                  "text": "采用附录3全过程统一经验物性公式自t=0连续求解3 h（10800 s）：药材升温迅速并在3 h内达到中心49.8494°C、表面49.9646°C，整体贴近烘房温度（约50.2°C）；水分浓度在3 h末中心降至1.7662 kg/kg，表面降至1.0174 kg/kg。相较于AQ1常物性模型，附录3考虑温度和含水率对扩散及热传导的非线性强化，物性场平滑自洽，无须拼接即可覆盖预热与恒温全过程。",
+                  "status": "computed"
+                }
+              ]
+            },
+            {
+              "section_id": "5.2.5",
+              "title": "模型检验或灵敏度分析",
+              "question_id": "Q2",
+              "target_words": 250
+            }
+          ]
+        },
+        {
+          "section_id": "5.3",
+          "title": "固定半径下全域达标时长模型的建立与求解",
+          "question_id": "Q3",
+          "target_words": 2200,
+          "task_type": "阈值事件检测",
+          "core_goal": "烘干时长h与未舍入事件夹逼区间",
+          "main_model": "事件区间内二分重算",
+          "required_figures": [
+            {
+              "figure_id": "fig_aq3_threshold",
+              "title": "fig_aq3_threshold",
+              "path": "paper_output/figures/fig_aq3_threshold.png",
+              "status": "generated"
+            }
+          ],
+          "required_tables": [
+            {
+              "table_id": "table5",
+              "title": "药材烘干过程的水分浓度（表5）",
+              "path": "paper_output/tables/table_aq3_drying_moisture.csv",
+              "purpose": "展示固定半径下每隔6小时及烘干结束时刻各截面含水率衰变历程。",
+              "status": "computed"
+            }
+          ],
+          "required_formulas": [
+            "物质导数扩散方程",
+            "经验热容量热方程",
+            "中心与表面Robin边界"
+          ],
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_drying_time_s",
+              "role": "evaluation",
+              "value": 206433.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_drying_time_h",
+              "role": "evaluation",
+              "value": 57.3425,
+              "unit": "h",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_max_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_min_moisture",
+              "role": "evaluation",
+              "value": 0.0666,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_center_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq3_final_surface_moisture",
+              "role": "evaluation",
+              "value": 0.0666,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_default_threshold_time_s",
+              "role": "validation",
+              "value": 206433.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_tail_mean_threshold_time_s",
+              "role": "validation",
+              "value": 206433.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_boundary_relative_difference",
+              "role": "validation",
+              "value": 0.0,
+              "unit": "fraction",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq3_boundary_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "在固定几何尺寸（半径2 cm）下，严格以药材全域最大含水率低于0.15 kg/kg作为烘干完成判定准则，模型精确确定烘干所需时间为57.3425小时（即206433.0秒，约57.34小时，处于2-3天工艺区间内）。烘干结束时刻中心含水率为0.1500 kg/kg，表面含水率为0.0666 kg/kg，全域最大含水率达到达标临界值0.1500 kg/kg。表5及result3.xlsx均已精确导出。",
+              "status": "computed"
+            }
+          ],
+          "subsections": [
+            {
+              "section_id": "5.3.1",
+              "title": "建模思路",
+              "question_id": "Q3",
+              "target_words": 300
+            },
+            {
+              "section_id": "5.3.2",
+              "title": "变量定义与公式推导",
+              "question_id": "Q3",
+              "target_words": 600,
+              "required_formulas": [
+                "物质导数扩散方程",
+                "经验热容量热方程",
+                "中心与表面Robin边界"
+              ]
+            },
+            {
+              "section_id": "5.3.3",
+              "title": "求解算法",
+              "question_id": "Q3",
+              "target_words": 400
+            },
+            {
+              "section_id": "5.3.4",
+              "title": "结果分析",
+              "question_id": "Q3",
+              "target_words": 650,
+              "required_figures": [
+                {
+                  "figure_id": "fig_aq3_threshold",
+                  "title": "fig_aq3_threshold",
+                  "path": "paper_output/figures/fig_aq3_threshold.png",
+                  "status": "generated"
+                }
+              ],
+              "required_tables": [
+                {
+                  "table_id": "table5",
+                  "title": "药材烘干过程的水分浓度（表5）",
+                  "path": "paper_output/tables/table_aq3_drying_moisture.csv",
+                  "purpose": "展示固定半径下每隔6小时及烘干结束时刻各截面含水率衰变历程。",
+                  "status": "computed"
+                }
+              ],
+              "required_evidence": [
+                {
+                  "type": "model_result",
+                  "summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq3_drying_time_s",
+                  "role": "evaluation",
+                  "value": 206433.0,
+                  "unit": "s",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq3_drying_time_h",
+                  "role": "evaluation",
+                  "value": 57.3425,
+                  "unit": "h",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq3_final_max_moisture",
+                  "role": "evaluation",
+                  "value": 0.15,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq3_final_min_moisture",
+                  "role": "evaluation",
+                  "value": 0.0666,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq3_final_center_moisture",
+                  "role": "evaluation",
+                  "value": 0.15,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq3_final_surface_moisture",
+                  "role": "evaluation",
+                  "value": 0.0666,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq3_default_threshold_time_s",
+                  "role": "validation",
+                  "value": 206433.0,
+                  "unit": "s",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq3_tail_mean_threshold_time_s",
+                  "role": "validation",
+                  "value": 206433.0,
+                  "unit": "s",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq3_boundary_relative_difference",
+                  "role": "validation",
+                  "value": 0.0,
+                  "unit": "fraction",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq3_boundary_pass",
+                  "role": "validation",
+                  "value": 1,
+                  "unit": "boolean",
+                  "status": "computed"
+                },
+                {
+                  "type": "conclusion",
+                  "text": "在固定几何尺寸（半径2 cm）下，严格以药材全域最大含水率低于0.15 kg/kg作为烘干完成判定准则，模型精确确定烘干所需时间为57.3425小时（即206433.0秒，约57.34小时，处于2-3天工艺区间内）。烘干结束时刻中心含水率为0.1500 kg/kg，表面含水率为0.0666 kg/kg，全域最大含水率达到达标临界值0.1500 kg/kg。表5及result3.xlsx均已精确导出。",
+                  "status": "computed"
+                }
+              ]
+            },
+            {
+              "section_id": "5.3.5",
+              "title": "模型检验或灵敏度分析",
+              "question_id": "Q3",
+              "target_words": 250
+            }
+          ]
+        },
+        {
+          "section_id": "5.4",
+          "title": "收缩域中的烘干时长模型的建立与求解",
+          "question_id": "Q4",
+          "target_words": 2200,
+          "task_type": "移动边界传热传质",
+          "core_goal": "收缩条件下时长h",
+          "main_model": "同物性固定/收缩对照和2×2因子实验",
+          "required_figures": [
+            {
+              "figure_id": "fig_aq4_shrinkage",
+              "title": "fig_aq4_shrinkage",
+              "path": "paper_output/figures/fig_aq4_shrinkage.png",
+              "status": "generated"
+            }
+          ],
+          "required_tables": [
+            {
+              "table_id": "table6",
+              "title": "药材烘干过程的水分浓度（表6）",
+              "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
+              "purpose": "展示收缩域中每隔6小时及烘干结束时刻各物理截面及真实表面的含水率分布。",
+              "status": "computed"
+            }
+          ],
+          "required_formulas": [
+            "物质导数扩散方程",
+            "经验热容量热方程",
+            "中心与表面Robin边界",
+            "收缩坐标变换",
+            "归一水分收支"
+          ],
+          "required_evidence": [
+            {
+              "type": "model_result",
+              "summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_drying_time_s",
+              "role": "evaluation",
+              "value": 183086.0,
+              "unit": "s",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_drying_time_h",
+              "role": "evaluation",
+              "value": 50.8572,
+              "unit": "h",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_radius_cm",
+              "role": "evaluation",
+              "value": 1.2,
+              "unit": "cm",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_max_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_min_moisture",
+              "role": "evaluation",
+              "value": 0.0605,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_center_moisture",
+              "role": "evaluation",
+              "value": 0.15,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_final_surface_moisture",
+              "role": "evaluation",
+              "value": 0.0605,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "aq4_time_reduction_vs_aq3_percent",
+              "role": "comparison",
+              "value": 11.31,
+              "unit": "%",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq4_fixed_moving_T_max_abs",
+              "role": "validation",
+              "value": 1.1937117960769683e-12,
+              "unit": "K",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq4_fixed_moving_C_max_abs",
+              "role": "validation",
+              "value": 2.4424906541753444e-14,
+              "unit": "kg/kg",
+              "status": "computed"
+            },
+            {
+              "type": "metric",
+              "name": "validation_aq4_fixed_moving_pass",
+              "role": "validation",
+              "value": 1,
+              "unit": "boolean",
+              "status": "computed"
+            },
+            {
+              "type": "conclusion",
+              "text": "在考虑径向动态收缩及附录4独立经验物性组条件下，药材烘干所需时间显著缩短至50.8572小时（即183086.0秒，约50.86小时），相比固定半径模型（AQ3的57.3425小时）缩短了约11.31%。烘干结束时药材收缩至半径1.200 cm，中心含水率为0.1500 kg/kg，表面含水率为0.0605 kg/kg，全域最大含水率达到临界阈值0.1500 kg/kg。几何尺寸减小大幅缩短了内部水分析出路径，显著提升了烘干动力学速率。表6及result4.xlsx均已导出。",
+              "status": "computed"
+            }
+          ],
+          "subsections": [
+            {
+              "section_id": "5.4.1",
+              "title": "建模思路",
+              "question_id": "Q4",
+              "target_words": 300
+            },
+            {
+              "section_id": "5.4.2",
+              "title": "变量定义与公式推导",
+              "question_id": "Q4",
+              "target_words": 600,
+              "required_formulas": [
+                "物质导数扩散方程",
+                "经验热容量热方程",
+                "中心与表面Robin边界",
+                "收缩坐标变换",
+                "归一水分收支"
+              ]
+            },
+            {
+              "section_id": "5.4.3",
+              "title": "求解算法",
+              "question_id": "Q4",
+              "target_words": 400
+            },
+            {
+              "section_id": "5.4.4",
+              "title": "结果分析",
+              "question_id": "Q4",
+              "target_words": 650,
+              "required_figures": [
+                {
+                  "figure_id": "fig_aq4_shrinkage",
+                  "title": "fig_aq4_shrinkage",
+                  "path": "paper_output/figures/fig_aq4_shrinkage.png",
+                  "status": "generated"
+                }
+              ],
+              "required_tables": [
+                {
+                  "table_id": "table6",
+                  "title": "药材烘干过程的水分浓度（表6）",
+                  "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
+                  "purpose": "展示收缩域中每隔6小时及烘干结束时刻各物理截面及真实表面的含水率分布。",
+                  "status": "computed"
+                }
+              ],
+              "required_evidence": [
+                {
+                  "type": "model_result",
+                  "summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_drying_time_s",
+                  "role": "evaluation",
+                  "value": 183086.0,
+                  "unit": "s",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_drying_time_h",
+                  "role": "evaluation",
+                  "value": 50.8572,
+                  "unit": "h",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_final_radius_cm",
+                  "role": "evaluation",
+                  "value": 1.2,
+                  "unit": "cm",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_final_max_moisture",
+                  "role": "evaluation",
+                  "value": 0.15,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_final_min_moisture",
+                  "role": "evaluation",
+                  "value": 0.0605,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_final_center_moisture",
+                  "role": "evaluation",
+                  "value": 0.15,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_final_surface_moisture",
+                  "role": "evaluation",
+                  "value": 0.0605,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "aq4_time_reduction_vs_aq3_percent",
+                  "role": "comparison",
+                  "value": 11.31,
+                  "unit": "%",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq4_fixed_moving_T_max_abs",
+                  "role": "validation",
+                  "value": 1.1937117960769683e-12,
+                  "unit": "K",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq4_fixed_moving_C_max_abs",
+                  "role": "validation",
+                  "value": 2.4424906541753444e-14,
+                  "unit": "kg/kg",
+                  "status": "computed"
+                },
+                {
+                  "type": "metric",
+                  "name": "validation_aq4_fixed_moving_pass",
+                  "role": "validation",
+                  "value": 1,
+                  "unit": "boolean",
+                  "status": "computed"
+                },
+                {
+                  "type": "conclusion",
+                  "text": "在考虑径向动态收缩及附录4独立经验物性组条件下，药材烘干所需时间显著缩短至50.8572小时（即183086.0秒，约50.86小时），相比固定半径模型（AQ3的57.3425小时）缩短了约11.31%。烘干结束时药材收缩至半径1.200 cm，中心含水率为0.1500 kg/kg，表面含水率为0.0605 kg/kg，全域最大含水率达到临界阈值0.1500 kg/kg。几何尺寸减小大幅缩短了内部水分析出路径，显著提升了烘干动力学速率。表6及result4.xlsx均已导出。",
+                  "status": "computed"
+                }
+              ]
+            },
+            {
+              "section_id": "5.4.5",
+              "title": "模型检验或灵敏度分析",
+              "question_id": "Q4",
+              "target_words": 250
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "6",
+      "title": "模型检验与灵敏度分析",
+      "target_words": 1000,
+      "subsections": []
+    },
+    {
+      "section_id": "7",
+      "title": "模型评价与推广",
+      "target_words": 800,
+      "subsections": []
+    },
+    {
+      "section_id": "8",
+      "title": "参考文献",
+      "target_words": 350,
+      "subsections": []
+    },
+    {
+      "section_id": "appendix",
+      "title": "附录",
+      "target_words": 600,
+      "subsections": []
+    }
+  ]
+}

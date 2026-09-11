@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper-workflow-orchestrator/scripts/preflight_check.py",
-  "generated_at": "2026-09-11T02:14:53",
+  "generated_at": "2026-09-11T14:15:13",
   "status": "PASS",
-  "root": "D:/VS Project/MATHMODEL",
+  "root": "C:/Users/neverend/Desktop/数模/MATHMODELS",
   "problem_files": {
     "exists": true,
     "non_empty": true,
     "file_count": 7,
     "doc_candidates": [
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/A题.pdf",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/A题.pdf",
         "ext": ".pdf",
         "extractable": true,
         "char_count": 3191,
@@ -22,7 +22,7 @@
     ],
     "data_candidates": [
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件1.xlsx",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件1.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -41,7 +41,7 @@
         "errors": []
       },
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件2.xlsx",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件2.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -59,7 +59,7 @@
         "errors": []
       },
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result1.xlsx",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result1.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -94,7 +94,7 @@
         "errors": []
       },
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result2.xlsx",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result2.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -129,7 +129,7 @@
         "errors": []
       },
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result3.xlsx",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result3.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -151,7 +151,7 @@
         "errors": []
       },
       {
-        "path": "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result4.xlsx",
+        "path": "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result4.xlsx",
         "ext": ".xlsx",
         "readable": true,
         "sheets": [
@@ -174,10 +174,10 @@
       }
     ],
     "suspicious_template_files": [
-      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result1.xlsx",
-      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result2.xlsx",
-      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result3.xlsx",
-      "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result4.xlsx"
+      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result1.xlsx",
+      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result2.xlsx",
+      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result3.xlsx",
+      "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result4.xlsx"
     ]
   },
   "deps": {
@@ -209,7 +209,7 @@
     ]
   },
   "stale_output": {
-    "final_paper_docx_exists": false
+    "final_paper_docx_exists": true
   },
   "input_manifest": {
     "path": "paper_output/input_manifest.json",
@@ -228,9 +228,10 @@
   },
   "errors": [],
   "warnings": [
-    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result1.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result2.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result3.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
-    "D:/VS Project/MATHMODEL/problem_files/A题/附件/附件3/result4.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。"
+    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result1.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result2.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result3.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "C:/Users/neverend/Desktop/数模/MATHMODELS/problem_files/A题/附件/附件3/result4.xlsx: 文件名疑似结果模板（含 result/结果/submit/提交），不可当作原始数据使用。",
+    "C:/Users/neverend/Desktop/数模/MATHMODELS/paper_output/final_paper.docx: 检测到旧的 final_paper.docx；如属历史产物建议归档或删除，以免误导 Agent 认为流程已完成。"
   ]
 }

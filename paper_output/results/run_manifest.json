@@ -1,24 +1,24 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/modeling/run_modeling.py",
-  "generated_at": "2026-09-11T02:16:18",
+  "generated_at": "2026-09-11T14:30:54",
   "status": "PASS",
   "runs": [
     {
-      "run_id": "q1_model_20260911_021522",
+      "run_id": "q1_model_20260911_142921",
       "script": "paper_output/code/modeling/q1_model.py",
-      "script_sha256": "37a6c8306cc803c4715bfc73b60ee6f713359b3598bc25c2bc99c88050c42fd7",
+      "script_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
       "question_ids": [
         "AQ1"
       ],
       "command": "python.exe q1_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T02:15:22",
-      "finished_at": "2026-09-11T02:15:33",
+      "started_at": "2026-09-11T14:29:21",
+      "finished_at": "2026-09-11T14:29:26",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.13.9",
+        "python": "3.12.14",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -41,7 +41,7 @@
         {
           "path": "paper_output/data_cleaned/load_report.json",
           "bytes": 2831,
-          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
+          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
         }
       ],
       "output_artifacts": [
@@ -61,26 +61,26 @@
           "path": "paper_output/tables/result1.xlsx",
           "exists": true,
           "bytes": 362766,
-          "sha256": "1c3355ba47488c4e8e7baccef57c5df118d993eba727d4319fa3dce5fa22fd31"
+          "sha256": "979c51161a99d0f911d0b4725587b661736635a3588ff1b36deea2a1f983a73c"
         }
       ],
       "stdout_tail": "AQ1 finished successfully.\n"
     },
     {
-      "run_id": "q2_model_20260911_021533",
+      "run_id": "q2_model_20260911_142926",
       "script": "paper_output/code/modeling/q2_model.py",
-      "script_sha256": "b9eb5292a7519eaf05bbc3a5b9d430d784d824ea83a83615e4862024b0263448",
+      "script_sha256": "55724147a735502f4ec02c3864a4a8aa025f625aa427b3c0df6a3b893ee541a1",
       "question_ids": [
         "AQ2"
       ],
       "command": "python.exe q2_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T02:15:33",
-      "finished_at": "2026-09-11T02:15:51",
+      "started_at": "2026-09-11T14:29:26",
+      "finished_at": "2026-09-11T14:30:41",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.13.9",
+        "python": "3.12.14",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -103,7 +103,7 @@
         {
           "path": "paper_output/data_cleaned/load_report.json",
           "bytes": 2831,
-          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
+          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
         }
       ],
       "output_artifacts": [
@@ -122,27 +122,27 @@
         {
           "path": "paper_output/tables/result2.xlsx",
           "exists": true,
-          "bytes": 2366503,
-          "sha256": "8f641e1599f7c4a1c2efc438646625450fe5a8a5062fc6ea40aa6c1009e6049e"
+          "bytes": 27527742,
+          "sha256": "96495747899a0966a004a91b5f8fdb477919b6e1e517bb9b020d73e8b113d323"
         }
       ],
       "stdout_tail": "AQ2 finished successfully.\n"
     },
     {
-      "run_id": "q3_model_20260911_021551",
+      "run_id": "q3_model_20260911_143041",
       "script": "paper_output/code/modeling/q3_model.py",
-      "script_sha256": "3297c935c08d67aa542e6f0ad072b71e0da6b088e4f99ccf11f82861bae0119b",
+      "script_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
       "question_ids": [
         "AQ3"
       ],
       "command": "python.exe q3_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T02:15:51",
-      "finished_at": "2026-09-11T02:16:05",
+      "started_at": "2026-09-11T14:30:41",
+      "finished_at": "2026-09-11T14:30:48",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.13.9",
+        "python": "3.12.14",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -165,7 +165,7 @@
         {
           "path": "paper_output/data_cleaned/load_report.json",
           "bytes": 2831,
-          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
+          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
         }
       ],
       "output_artifacts": [
@@ -178,27 +178,27 @@
         {
           "path": "paper_output/tables/result3.xlsx",
           "exists": true,
-          "bytes": 336778,
-          "sha256": "72d14182b74ed2652cd1a1df8fdc343125657d85aebb164c978f8a72295b4bf9"
+          "bytes": 336774,
+          "sha256": "f47f69bd9c140a1e51bcecdf6a415e33accdbfd76056246022dbcbbd905cd887"
         }
       ],
       "stdout_tail": "AQ3 finished successfully: t_end = 57.3425 h (206433.0 s).\n"
     },
     {
-      "run_id": "q4_model_20260911_021605",
+      "run_id": "q4_model_20260911_143048",
       "script": "paper_output/code/modeling/q4_model.py",
-      "script_sha256": "6d1c3ea57bfeef78633aa538fb18f5b243841807e6ffb615a199bc19c5f475c7",
+      "script_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
       "question_ids": [
         "AQ4"
       ],
       "command": "python.exe q4_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T02:16:05",
-      "finished_at": "2026-09-11T02:16:18",
+      "started_at": "2026-09-11T14:30:48",
+      "finished_at": "2026-09-11T14:30:54",
       "working_directory": "paper_output/code/modeling",
       "environment": {
-        "python": "3.13.9",
+        "python": "3.12.14",
         "implementation": "CPython",
         "platform": "Windows-11-10.0.26200-SP0"
       },
@@ -221,7 +221,7 @@
         {
           "path": "paper_output/data_cleaned/load_report.json",
           "bytes": 2831,
-          "sha256": "cfb7b0eaf8ab3e315e833539d24e36ca51652dfdfcd4580e1987a9abd747824e"
+          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
         }
       ],
       "output_artifacts": [
@@ -234,8 +234,8 @@
         {
           "path": "paper_output/tables/result4.xlsx",
           "exists": true,
-          "bytes": 224355,
-          "sha256": "5e756cc0641e5d690cdbd2d5c07d0c898b66f3b5eb54d1412118966ea5835978"
+          "bytes": 224351,
+          "sha256": "37c7c2d621a7eb8b7191bc59d84f3e50b3de791a6fbb7fae7ae8a4f41d7f3040"
         }
       ],
       "stdout_tail": "AQ4 finished successfully: t_end = 50.8572 h (183086.0 s).\n"

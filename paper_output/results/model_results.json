@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-11T02:16:17",
+  "generated_at": "2026-09-11T14:30:53",
   "source": "paper_output/plan/model_route.json",
   "data_sources": [
     "paper_output/data_cleaned/a_environment.csv",
@@ -35,7 +35,7 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q1_model.py",
-        "source_code_sha256": "37a6c8306cc803c4715bfc73b60ee6f713359b3598bc25c2bc99c88050c42fd7",
+        "source_code_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
         "run_command": "python.exe paper_output/code/modeling/q1_model.py",
         "run_exit_code": 0,
@@ -45,7 +45,7 @@
           "paper_output/tables/table_aq1_moisture.csv",
           "paper_output/tables/result1.xlsx"
         ],
-        "generated_at": "2026-09-11T02:15:32"
+        "generated_at": "2026-09-11T14:29:26"
       }
     },
     {
@@ -55,7 +55,7 @@
       "result_type": "general",
       "main_model": "附录3全过程经验物性FVM模型 + Picard迭代 + Thomas三对角求解",
       "baseline_model": "",
-      "result_summary": "AQ2全过程模型（前3 h）求解完成：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4及result2.xlsx均已导出。",
+      "result_summary": "AQ2全过程模型求解至达标时刻206433 s：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
       "outputs": [
         {
           "path": "paper_output/tables/table_aq2_temperature.csv",
@@ -75,7 +75,7 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q2_model.py",
-        "source_code_sha256": "b9eb5292a7519eaf05bbc3a5b9d430d784d824ea83a83615e4862024b0263448",
+        "source_code_sha256": "55724147a735502f4ec02c3864a4a8aa025f625aa427b3c0df6a3b893ee541a1",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
         "run_command": "python.exe paper_output/code/modeling/q2_model.py",
         "run_exit_code": 0,
@@ -85,7 +85,7 @@
           "paper_output/tables/table_aq2_moisture.csv",
           "paper_output/tables/result2.xlsx"
         ],
-        "generated_at": "2026-09-11T02:15:51"
+        "generated_at": "2026-09-11T14:30:41"
       }
     },
     {
@@ -111,7 +111,7 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q3_model.py",
-        "source_code_sha256": "3297c935c08d67aa542e6f0ad072b71e0da6b088e4f99ccf11f82861bae0119b",
+        "source_code_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
         "run_command": "python.exe paper_output/code/modeling/q3_model.py",
         "run_exit_code": 0,
@@ -120,7 +120,7 @@
           "paper_output/tables/table_aq3_drying_moisture.csv",
           "paper_output/tables/result3.xlsx"
         ],
-        "generated_at": "2026-09-11T02:16:04"
+        "generated_at": "2026-09-11T14:30:47"
       }
     },
     {
@@ -146,7 +146,7 @@
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q4_model.py",
-        "source_code_sha256": "6d1c3ea57bfeef78633aa538fb18f5b243841807e6ffb615a199bc19c5f475c7",
+        "source_code_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
         "run_command": "python.exe paper_output/code/modeling/q4_model.py",
         "run_exit_code": 0,
@@ -155,7 +155,7 @@
           "paper_output/tables/table_aq4_shrinkage_moisture.csv",
           "paper_output/tables/result4.xlsx"
         ],
-        "generated_at": "2026-09-11T02:16:17"
+        "generated_at": "2026-09-11T14:30:53"
       }
     }
   ],

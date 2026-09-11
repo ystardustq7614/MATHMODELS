@@ -1,0 +1,8 @@
+.local-tools/
+__pycache__/
+*.py[cod]
+~$*
+paper_output/qa/rendered/pages/
+soffice_bridge.bat
+soffice_bridge.py
+temp_pdf_render.ps1

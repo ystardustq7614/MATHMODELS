@@ -121,10 +121,18 @@ def apply_run_font(run, font_name: str = "宋体", size: float | None = None, bo
 
 def configure_document(document: Document) -> None:
     section = document.sections[0]
+    section.page_width = Cm(21)
+    section.page_height = Cm(29.7)
     section.top_margin = Cm(2.54)
     section.bottom_margin = Cm(2.54)
     section.left_margin = Cm(2.8)
     section.right_margin = Cm(2.6)
+    footer = section.footer.paragraphs[0]
+    footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    footer.paragraph_format.first_line_indent = Cm(0)
+    page_field = OxmlElement("w:fldSimple")
+    page_field.set(qn("w:instr"), "PAGE")
+    footer._p.append(page_field)
 
     styles = document.styles
     normal = styles["Normal"]
@@ -142,7 +150,7 @@ def configure_document(document: Document) -> None:
         style.font.size = Pt(font_size)
         style.font.bold = True
         style.font.color.rgb = RGBColor(0, 0, 0)
-        style.paragraph_format.first_line_indent = None
+        style.paragraph_format.first_line_indent = Cm(0)
         style.paragraph_format.space_before = Pt(10)
         style.paragraph_format.space_after = Pt(6)
         style.paragraph_format.keep_with_next = True
@@ -227,7 +235,7 @@ def add_display_formula(
 ) -> int:
     paragraph = document.add_paragraph()
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    paragraph.paragraph_format.first_line_indent = None
+    paragraph.paragraph_format.first_line_indent = Cm(0)
     paragraph.paragraph_format.space_before = Pt(3)
     paragraph.paragraph_format.space_after = Pt(5)
     try:
@@ -246,7 +254,7 @@ def add_display_formula(
 def add_center_paragraph(document: Document, text: str, font_name: str = "宋体", size: float = 10.5, bold: bool = False) -> None:
     paragraph = document.add_paragraph()
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    paragraph.paragraph_format.first_line_indent = None
+    paragraph.paragraph_format.first_line_indent = Cm(0)
     paragraph.paragraph_format.space_before = Pt(3)
     paragraph.paragraph_format.space_after = Pt(5)
     run = paragraph.add_run(clean_inline_markdown(text))
@@ -256,14 +264,16 @@ def add_center_paragraph(document: Document, text: str, font_name: str = "宋体
 def add_heading(document: Document, text: str, level: int) -> None:
     level = max(1, min(level, 3))
     paragraph = document.add_heading(clean_inline_markdown(text), level=level)
-    paragraph.paragraph_format.first_line_indent = None
+    paragraph.paragraph_format.first_line_indent = Cm(0)
+    if re.fullmatch(r"1\s+问题重述|附录|Appendix|Appendices", text.strip(), re.IGNORECASE):
+        paragraph.paragraph_format.page_break_before = True
     for run in paragraph.runs:
         apply_run_font(run, "黑体", {1: 15, 2: 13, 3: 12}[level], True)
 
 
 def add_code_block(document: Document, code: str) -> None:
     paragraph = document.add_paragraph()
-    paragraph.paragraph_format.first_line_indent = None
+    paragraph.paragraph_format.first_line_indent = Cm(0)
     paragraph.paragraph_format.left_indent = Cm(0.4)
     paragraph.paragraph_format.right_indent = Cm(0.2)
     paragraph.paragraph_format.space_before = Pt(4)
@@ -337,10 +347,16 @@ def add_table_from_rows(
             cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
             set_cell_borders(cell)
             set_cell_margin(cell)
+            if re.fullmatch(r"[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?", value):
+                cell._tc.get_or_add_tcPr().append(OxmlElement("w:noWrap"))
             if row_idx == 0:
                 set_cell_shading(cell, "F2F2F2")
             for paragraph_index, paragraph in enumerate(cell.paragraphs):
-                paragraph.paragraph_format.first_line_indent = None
+                # Explicit zero prevents inheritance of the body indentation.
+                paragraph.paragraph_format.first_line_indent = Cm(0)
+                paragraph.paragraph_format.left_indent = Cm(0)
+                paragraph.paragraph_format.right_indent = Cm(0)
+                paragraph.paragraph_format.line_spacing = 1.1
                 paragraph.paragraph_format.space_after = Pt(0)
                 paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER if len(value) <= 16 else WD_ALIGN_PARAGRAPH.LEFT
                 if paragraph_index == 0:
@@ -431,7 +447,8 @@ def add_image(document: Document, path: Path, caption: str | None = None) -> boo
         return False
     paragraph = document.add_paragraph()
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    paragraph.paragraph_format.first_line_indent = None
+    paragraph.paragraph_format.first_line_indent = Cm(0)
+    paragraph.paragraph_format.keep_with_next = bool(caption)
     run = paragraph.add_run()
     try:
         run.add_picture(str(path), width=Cm(14.2))

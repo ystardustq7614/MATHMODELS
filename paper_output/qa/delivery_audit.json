@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-09-11T06:36:12.739654+00:00",
+  "generated_by": "paper_output/code/qa/verify_delivery.py",
+  "status": "PASS",
+  "failures": [],
+  "counts": {
+    "cjk": 9433,
+    "nonspace": 19079,
+    "content": 15442
+  },
+  "source_formula_count": 90,
+  "native_omml_count": 90,
+  "figure_captions": [
+    "图 4-1 烘房空气温度与水分浓度时间序列",
+    "图 4-2 药材半径随烘干时间的变化",
+    "图 5-1 预热阶段温度与含水率的径向分布",
+    "图 5-2 全过程模型前3小时的温度与含水率剖面",
+    "图 5-3 固定半径模型的中心含水率与达标阈值",
+    "图 5-4 收缩情景的半径与径向含水率演化"
+  ],
+  "computed_table_cells_compared": 288,
+  "pdf_pages": 70,
+  "main_pages_before_appendix": 22,
+  "pdf_metadata": {
+    "format": "PDF 1.7",
+    "title": "",
+    "author": "python-docx",
+    "subject": "",
+    "keywords": "",
+    "creator": "Writer",
+    "producer": "LibreOffice 26.2.6.3 (X86_64)",
+    "creationDate": "D:20260911143531+08'00'",
+    "modDate": "",
+    "trapped": "",
+    "encryption": null
+  },
+  "out_of_page_text_count": 0,
+  "workbooks": [
+    {
+      "file": "result1.xlsx",
+      "sheet": "xl/worksheets/sheet1.xml",
+      "rows_including_header": 1801,
+      "last_time_s": 1800.0,
+      "columns": 22,
+      "nonfinite_values": 0
+    },
+    {
+      "file": "result1.xlsx",
+      "sheet": "xl/worksheets/sheet2.xml",
+      "rows_including_header": 1801,
+      "last_time_s": 1800.0,
+      "columns": 22,
+      "nonfinite_values": 0
+    },
+    {
+      "file": "result2.xlsx",
+      "sheet": "xl/worksheets/sheet1.xml",
+      "rows_including_header": 206434,
+      "last_time_s": 206433.0,
+      "columns": 22,
+      "nonfinite_values": 0
+    },
+    {
+      "file": "result2.xlsx",
+      "sheet": "xl/worksheets/sheet2.xml",
+      "rows_including_header": 206434,
+      "last_time_s": 206433.0,
+      "columns": 22,
+      "nonfinite_values": 0
+    },
+    {
+      "file": "result3.xlsx",
+      "sheet": "xl/worksheets/sheet1.xml",
+      "rows_including_header": 3442,
+      "last_time_s": 206433.0,
+      "columns": 22,
+      "nonfinite_values": 0
+    },
+    {
+      "file": "result4.xlsx",
+      "sheet": "xl/worksheets/sheet1.xml",
+      "rows_including_header": 3053,
+      "last_time_s": 183086.0,
+      "columns": 23,
+      "nonfinite_values": 0
+    }
+  ],
+  "workflow_steps": [
+    {
+      "step": "S0",
+      "name": "准入预检",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S1",
+      "name": "审题分析",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S2",
+      "name": "模型路线",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S3",
+      "name": "数据与图表计划",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S4",
+      "name": "建模代码",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S5",
+      "name": "结果证据",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S6",
+      "name": "证据门禁",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S7",
+      "name": "正式稿",
+      "status": "PASS",
+      "failures": []
+    },
+    {
+      "step": "S8",
+      "name": "格式门禁",
+      "status": "PASS",
+      "failures": []
+    }
+  ],
+  "input_hashes": {
+    "paper_output/code/modeling/core_solver.py": "01055951968c41f6ea4cf51f6307e9c5f80ba5aa8d5ea1258bcf0abc551f7db1",
+    "paper_output/code/modeling/q1_model.py": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+    "paper_output/code/modeling/q2_model.py": "55724147a735502f4ec02c3864a4a8aa025f625aa427b3c0df6a3b893ee541a1",
+    "paper_output/code/modeling/q3_model.py": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+    "paper_output/code/modeling/q4_model.py": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+    "paper_output/code/modeling/result_contract_io.py": "217a7e2275e3bf6d1f3b830b268aa71e0c6e3e9cca316aa84d01e9e434c8a16d",
+    "paper_output/code/modeling/run_modeling.py": "6c3f1dec70b84df9fe3f457e75cb86ded4e42bd742a925524a07c3b00960bf1e",
+    "paper_output/code/visualization/generate_model_evidence.py": "948a4d8a7f5a13ac19cc21072c0ac5214fd45583552284a9d446aa6e95c27f79",
+    "paper_output/code/visualization/run_numerical_validation.py": "3b9953d62dfb0237a8f2dfd0e50b8e8968400833dab87d355f8d40faa58bcc2e",
+    "paper_output/code/visualization/solver_worker.py": "867766d28796723a506e42c09a6ab05c36c5d7defc49e20927cfcdf18b9feb2a",
+    "paper_output/tables/result1.xlsx": "979c51161a99d0f911d0b4725587b661736635a3588ff1b36deea2a1f983a73c",
+    "paper_output/tables/result2.xlsx": "96495747899a0966a004a91b5f8fdb477919b6e1e517bb9b020d73e8b113d323",
+    "paper_output/tables/result3.xlsx": "f47f69bd9c140a1e51bcecdf6a415e33accdbfd76056246022dbcbbd905cd887",
+    "paper_output/tables/result4.xlsx": "37c7c2d621a7eb8b7191bc59d84f3e50b3de791a6fbb7fae7ae8a4f41d7f3040",
+    "paper_output/final_paper_source.md": "2f0cadf8c9bee1701eb292a1d582910479ac8504d9e51a01d790dc36a5a4bb90",
+    "paper_output/final_paper.docx": "43687854f7bcc35710afc86cf1e07a83f75c41c34f2013a7a05555c784fac923",
+    "paper_output/qa/rendered/final_paper.pdf": "e5d92cc5afc4621153fbaccf2fc1e5277ad1885e09d2819e6fc751fdc4bbabad",
+    "paper_output/format_check_report.json": "3eae5fcb51c4331fdf1b095734865e69200deef56e54c25f99fd1a5103d0da4b",
+    "paper_output/qa/draft_audit.json": "bdcc59267ab3e93d49ff76b9e45564f79ec0be89556ee12241a25ad9f9c66c0f",
+    "paper_output/qa/evidence_gate_report.json": "84e1e3b4f8e450d97325a6854ff0ecfa08e6d9a04ad2deb4ea9db990c6cb975f",
+    "paper_output/code/qa/verify_delivery.py": "551d528c88ca096ab0d0c4715aad80366f2ab581ba627b3a769512d534c1f9d6",
+    ".agents/skills/paper-formal-writer/scripts/assemble_sections.py": "d45cf0f9d28ac2f922b168e2414cca1c6668e980dfb75c0d72cd60176bfcf33a",
+    ".agents/skills/paper-formal-writer/scripts/authoring_contracts.py": "5c3f166140e0df3253d413a64bc5ec2a19cb7baab22e11e44fa5da7710d961eb",
+    ".agents/skills/paper-formal-writer/scripts/build_paper_outline.py": "10344c6d3afd827b4b843151c2b3973126439fa4f444bcc008c312589c434db4",
+    ".agents/skills/paper-formal-writer/scripts/check_paper_format.py": "c81d8b0327b5d671939b70b5d5d8d940452f7d06da911f015176fdb7075435b1",
+    ".agents/skills/paper-formal-writer/scripts/format_formal_docx.py": "006104e23034bbb301e9115e37c77a30e76bec90d05a9cc105ea38fc6e55f10c",
+    ".agents/skills/paper-formal-writer/scripts/formula_omml.py": "79d8610cc60364c22b611736333d1506ccfe01a590cbe3746258dbf027d1840a",
+    ".agents/skills/paper-formal-writer/scripts/paper_scope.py": "91a2cc4fdb0422b05803bb491e9d88ce783f287817803ec54100097c00c86fce",
+    ".agents/skills/paper-formal-writer/scripts/prepare_authoring.py": "cd7f8c3cd0d7fd32950a6cb563c694fe24e159b2e4a19a9186cc4fcbe84666bd",
+    ".agents/skills/paper-formal-writer/scripts/validate_authoring.py": "67a1dbff9223472f93e85a6438a63ac4400183befa83fd1f6717778b1d87fd2f"
+  },
+  "limitations": [
+    "Numerical convergence evidence covers the specified test cases, not experimental accuracy.",
+    "Boundary extension comparison has a finite-horizon censoring limitation, disclosed in section 6.3.",
+    "No complete four-combination factorial experiment or independent nonlinear residual study is claimed."
+  ]
+}

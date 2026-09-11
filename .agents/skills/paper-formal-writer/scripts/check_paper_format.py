@@ -130,6 +130,13 @@ def control_character_failures(text: str) -> list[str]:
 def internal_language_failures(text: str) -> list[str]:
     appendix_start = heading_offset(text, "附录")
     searchable = text[:appendix_start] if appendix_start is not None else text
+    # Link destinations are metadata, not prose rendered into the manuscript.
+    # Keep labels and line offsets so diagnostics still identify visible leaks.
+    searchable = re.sub(
+        r"(!?\[[^\]\n]*\]\()([^\n)]+)(\))",
+        lambda m: m.group(1) + " " * len(m.group(2)) + m.group(3),
+        searchable,
+    )
     failures: list[str] = []
     for label, pattern in INTERNAL_PROJECT_PATTERNS:
         match = pattern.search(searchable)
@@ -280,6 +287,10 @@ def compact_text(text: str) -> str:
 
 
 def char_count(text: str) -> dict[str, int]:
+    from paper_scope import body_text
+    # Appendix code and reproducibility inventories cannot inflate or exceed
+    # the main-manuscript length budget.
+    text = body_text(text)
     cjk = len(re.findall(r"[\u4e00-\u9fff]", text))
     nonspace = len(re.sub(r"\s+", "", text))
     content = len(compact_text(text))
@@ -697,10 +708,11 @@ def evaluate(render_mode: str = "auto") -> dict[str, Any]:
     if len(tables) < 5:
         warnings.append(f"表数量少于展示样例建议值：{len(tables)} < 5")
 
+    prose = re.sub(r"```[\s\S]*?```|~~~[\s\S]*?~~~", "", text)
     for placeholder in PLACEHOLDERS:
-        if placeholder in text:
+        if placeholder in prose:
             failures.append(f"存在占位符或待补文本：{placeholder}")
-    template_placeholders = re.findall(r"\{\{\s*[^{}\n]{1,80}\s*\}\}", text)
+    template_placeholders = re.findall(r"\{\{\s*[^{}\n]{1,80}\s*\}\}", prose)
     for placeholder in template_placeholders[:12]:
         failures.append(f"存在模板占位符：{placeholder}")
 
@@ -869,7 +881,8 @@ def write_reports(report: dict[str, Any]) -> None:
     lines.append("## Render QA")
     for key, value in report["render_qa"].items():
         lines.append(f"- {key}: `{value}`")
-    REPORT_MD.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
+    rendered_markdown = "\n".join(line.rstrip() for line in "\n".join(lines).splitlines())
+    REPORT_MD.write_text(rendered_markdown.strip() + "\n", encoding="utf-8")
 
 
 def main() -> int:

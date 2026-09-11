@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/visualization/run_numerical_validation.py",
-  "generated_at": "2026-09-10T18:17:52.750902+00:00",
+  "generated_at": "2026-09-11T06:31:29.529049+00:00",
   "inputs": {
     "environment": {
       "path": "paper_output/data_cleaned/a_environment.csv",

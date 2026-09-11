@@ -66,7 +66,9 @@ def check_rendered_scope(page_texts, plan):
     scope = checked_scope(plan)
     counted = len(page_texts)
     for index, text in enumerate(page_texts if scope["mode"] == "competition" else []):
-        if re.search(r"(?mi)^\s*(?:\d+[.、 ]\s*)?(?:附\s*录|Appendix|Appendices)(?:[ \t]+[^\n]*|[A-Z0-9][^\n]*)?[ \t]*$", text):
+        # A numbered appendix heading needs a boundary after its identifier.
+        # Prose such as '附录4的经验式为：' refers to the problem statement.
+        if re.search(r"(?mi)^[ \t]*(?:\d+[.、 ]\s*)?(?:附\s*录|Appendix|Appendices)(?:[ \t]*[A-Z0-9]+(?=[ \t:：、.]|$))?(?:[ \t]+[^\n]*|[:：、.][^\n]*)?[ \t]*$", text):
             counted = index  # Conservatively exclude a shared appendix boundary page.
             break
     errors = []

@@ -51,3 +51,10 @@
 - official evidence gate：新鲜 `PASS`；workflow guard/memory：`current=S6`、`next=S7`、推荐 `paper-formal-writer`。
 - validation：AQ1 spatial `T=9.3109543e-05 K, C=1.7913447e-04 kg/kg`；temporal `T=6.0011006e-04 K, C=4.4772887e-05 kg/kg`；AQ3 两种边界延拓均 `206433 s`；AQ4 全剖面 `T=1.1937118e-12 K, C=2.4424907e-14`。
 - 环境与质量检查：已安装仓库声明的 `pypdf 6.18.0`，`pip check`、依赖导入、`py_compile`、`git diff --check` 均通过；待本轮提交与 push。
+
+## 2026-09-11 — 产物整理
+
+- 按用户授权清理130个中间文件（移入回收站），共23164083字节；清单见paper_output/cleanup_manifest.json。
+- 保留最初S2/S3的5份plan、正式源稿/Word/PDF、当前代码及真实计算证据，未回滚原有未提交修改。
+- 新增paper_output/整理最终报告.md，归纳模型方案、修改建议、历史验收及后续验证事项；交接与AGENTS入口更新为该报告。
+- 清理前guard为S5完成、S6因结果变更过期；没有沿用旧S8 PASS。71个保留文件逐个SHA-256核对无差异。

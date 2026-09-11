@@ -58,7 +58,7 @@ def run_aq2():
     times_tab_h = times_tab_s / 3600.0
     r_tab_cm = np.array([0.0, 0.5, 1.0, 1.5, 2.0], dtype=np.float64)
 
-    T_tab, C_tab = sample_and_interpolate_fixed(times_tab_s, T_raw[times_tab_s.astype(int)], C_raw[times_tab_s.astype(int)], N=80, R=0.02, r_target_cm=r_tab_cm)
+    T_tab, C_tab = sample_and_interpolate_fixed(times_tab_s, T_raw[times_tab_s.astype(int)], C_raw[times_tab_s.astype(int)], N=80, R=0.02, r_target_cm=r_tab_cm, t_env=t_env, T_env=T_env, C_env=C_env, formula_mode=2)
     T_tab_C = T_tab - 273.15
 
     # Write Table 3 CSV
@@ -83,7 +83,7 @@ def run_aq2():
 
     # 3. Build result2.xlsx (every second to the terminal event, 0.1 cm steps)
     r_full_cm = np.arange(0.0, 2.0001, 0.1)
-    T_full, C_full = sample_and_interpolate_fixed(times_raw, T_raw, C_raw, N=80, R=0.02, r_target_cm=r_full_cm)
+    T_full, C_full = sample_and_interpolate_fixed(times_raw, T_raw, C_raw, N=80, R=0.02, r_target_cm=r_full_cm, t_env=t_env, T_env=T_env, C_env=C_env, formula_mode=2)
     T_full_C = T_full - 273.15
 
     res2_path = TABLES_DIR / 'result2.xlsx'

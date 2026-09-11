@@ -81,6 +81,7 @@ def run_aq3():
         N=80,
         R=0.02,
         r_target_cm=r_tab_cm,
+        t_env=t_env, T_env=T_env, C_env=C_env, formula_mode=2,
     )
 
     table5_rows = []
@@ -106,6 +107,7 @@ def run_aq3():
         N=80,
         R=0.02,
         r_target_cm=r_full_cm,
+        t_env=t_env, T_env=T_env, C_env=C_env, formula_mode=2,
     )
 
     res3_path = TABLES_DIR / 'result3.xlsx'

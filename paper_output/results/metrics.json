@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/modeling/result_contract_io.py",
-  "generated_at": "2026-09-11T14:30:53",
+  "generated_at": "2026-09-11T21:48:39",
   "source": "paper_output/results/model_results.json",
   "items": [
     {
@@ -17,7 +17,7 @@
       "status": "computed",
       "metric_name": "aq1_final_surface_temperature_C",
       "metric_role": "evaluation",
-      "value": 36.7453,
+      "value": 36.7863,
       "unit": "°C"
     },
     {
@@ -33,7 +33,7 @@
       "status": "computed",
       "metric_name": "aq1_final_surface_moisture",
       "metric_role": "evaluation",
-      "value": 1.5478,
+      "value": 1.5103,
       "unit": "kg/kg"
     },
     {
@@ -41,7 +41,7 @@
       "status": "computed",
       "metric_name": "aq1_total_moisture_loss_fraction",
       "metric_role": "evaluation",
-      "value": 0.063924,
+      "value": 0.100532,
       "unit": "fraction"
     },
     {
@@ -57,7 +57,7 @@
       "status": "computed",
       "metric_name": "aq2_3h_surface_temperature_C",
       "metric_role": "evaluation",
-      "value": 49.9646,
+      "value": 49.9664,
       "unit": "°C"
     },
     {
@@ -73,7 +73,7 @@
       "status": "computed",
       "metric_name": "aq2_3h_surface_moisture",
       "metric_role": "evaluation",
-      "value": 1.0174,
+      "value": 1.0081,
       "unit": "kg/kg"
     },
     {
@@ -81,7 +81,7 @@
       "status": "computed",
       "metric_name": "aq2_1800s_surface_temperature_C",
       "metric_role": "comparison",
-      "value": 35.3714,
+      "value": 35.414,
       "unit": "°C"
     },
     {
@@ -89,7 +89,7 @@
       "status": "computed",
       "metric_name": "aq2_1800s_surface_moisture",
       "metric_role": "comparison",
-      "value": 1.6719,
+      "value": 1.6487,
       "unit": "kg/kg"
     },
     {
@@ -121,7 +121,7 @@
       "status": "computed",
       "metric_name": "aq3_final_min_moisture",
       "metric_role": "evaluation",
-      "value": 0.0666,
+      "value": 0.0525,
       "unit": "kg/kg"
     },
     {
@@ -137,7 +137,7 @@
       "status": "computed",
       "metric_name": "aq3_final_surface_moisture",
       "metric_role": "evaluation",
-      "value": 0.0666,
+      "value": 0.0525,
       "unit": "kg/kg"
     },
     {
@@ -193,7 +193,7 @@
       "status": "computed",
       "metric_name": "aq4_final_surface_moisture",
       "metric_role": "evaluation",
-      "value": 0.0605,
+      "value": 0.0525,
       "unit": "kg/kg"
     },
     {
@@ -203,123 +203,6 @@
       "metric_role": "comparison",
       "value": 11.31,
       "unit": "%"
-    },
-    {
-      "question_id": "AQ1",
-      "status": "computed",
-      "metric_name": "validation_aq1_spatial_T_max_abs",
-      "metric_role": "validation",
-      "value": 9.310954300190133e-05,
-      "unit": "K",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ1",
-      "status": "computed",
-      "metric_name": "validation_aq1_spatial_C_max_abs",
-      "metric_role": "validation",
-      "value": 0.0001791344722710253,
-      "unit": "kg/kg",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ1",
-      "status": "computed",
-      "metric_name": "validation_aq1_spatial_pass",
-      "metric_role": "validation",
-      "value": 1,
-      "unit": "boolean",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ1",
-      "status": "computed",
-      "metric_name": "validation_aq1_temporal_T_max_abs",
-      "metric_role": "validation",
-      "value": 0.0006001100597927689,
-      "unit": "K",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ1",
-      "status": "computed",
-      "metric_name": "validation_aq1_temporal_C_max_abs",
-      "metric_role": "validation",
-      "value": 4.477288710469374e-05,
-      "unit": "kg/kg",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ1",
-      "status": "computed",
-      "metric_name": "validation_aq1_temporal_pass",
-      "metric_role": "validation",
-      "value": 1,
-      "unit": "boolean",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ3",
-      "status": "computed",
-      "metric_name": "validation_aq3_default_threshold_time_s",
-      "metric_role": "validation",
-      "value": 206433.0,
-      "unit": "s",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ3",
-      "status": "computed",
-      "metric_name": "validation_aq3_tail_mean_threshold_time_s",
-      "metric_role": "validation",
-      "value": 206433.0,
-      "unit": "s",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ3",
-      "status": "computed",
-      "metric_name": "validation_aq3_boundary_relative_difference",
-      "metric_role": "validation",
-      "value": 0.0,
-      "unit": "fraction",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ3",
-      "status": "computed",
-      "metric_name": "validation_aq3_boundary_pass",
-      "metric_role": "validation",
-      "value": 1,
-      "unit": "boolean",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ4",
-      "status": "computed",
-      "metric_name": "validation_aq4_fixed_moving_T_max_abs",
-      "metric_role": "validation",
-      "value": 1.1937117960769683e-12,
-      "unit": "K",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ4",
-      "status": "computed",
-      "metric_name": "validation_aq4_fixed_moving_C_max_abs",
-      "metric_role": "validation",
-      "value": 2.4424906541753444e-14,
-      "unit": "kg/kg",
-      "source": "paper_output/qa/model_validation_checks.json"
-    },
-    {
-      "question_id": "AQ4",
-      "status": "computed",
-      "metric_name": "validation_aq4_fixed_moving_pass",
-      "metric_role": "validation",
-      "value": 1,
-      "unit": "boolean",
-      "source": "paper_output/qa/model_validation_checks.json"
     }
   ],
   "validation_generated_by": "paper_output/code/visualization/run_numerical_validation.py"

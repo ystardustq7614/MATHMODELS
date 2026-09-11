@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper-workflow-orchestrator/scripts/workflow_guard.py",
-  "generated_at": "2026-09-11T14:35:37",
+  "generated_at": "2026-09-11T22:20:07",
   "mode": "status",
-  "target_step": "S8",
-  "status": "COMPLETE",
-  "current_step": "S8",
-  "next_step": "",
-  "recommended_skill": "",
-  "next_action": "S0-S8 全部通过；可以进行最终一致性复核或交付。",
+  "target_step": "S6",
+  "status": "INCOMPLETE",
+  "current_step": "S5",
+  "next_step": "S6",
+  "recommended_skill": "quality-assurance-auditor",
+  "next_action": "运行 evidence_gate.py --mode official，未通过则回补结果证据。",
   "steps": [
     {
       "step": "S0",
@@ -49,21 +49,21 @@
     {
       "step": "S6",
       "name": "证据门禁",
-      "status": "PASS",
-      "failures": []
-    },
-    {
-      "step": "S7",
-      "name": "正式稿",
-      "status": "PASS",
-      "failures": []
-    },
-    {
-      "step": "S8",
-      "name": "格式门禁",
-      "status": "PASS",
-      "failures": []
+      "status": "FAIL",
+      "failures": [
+        "证据门禁报告已过期，输入发生变化：paper_output/results/model_results.json",
+        "证据门禁报告已过期，输入发生变化：paper_output/results/run_manifest.json",
+        "证据门禁报告已过期，输入发生变化：paper_output/results/metrics.json",
+        "证据门禁报告已过期，输入发生变化：paper_output/results/conclusions.json",
+        "证据门禁报告已过期，输入发生变化：paper_output/tables/table_index.json"
+      ]
     }
   ],
-  "failures": []
+  "failures": [
+    "S6: 证据门禁报告已过期，输入发生变化：paper_output/results/model_results.json",
+    "S6: 证据门禁报告已过期，输入发生变化：paper_output/results/run_manifest.json",
+    "S6: 证据门禁报告已过期，输入发生变化：paper_output/results/metrics.json",
+    "S6: 证据门禁报告已过期，输入发生变化：paper_output/results/conclusions.json",
+    "S6: 证据门禁报告已过期，输入发生变化：paper_output/tables/table_index.json"
+  ]
 }

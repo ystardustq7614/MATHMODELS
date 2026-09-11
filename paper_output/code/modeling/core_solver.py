@@ -363,6 +363,39 @@ def simulate_fvm_moving(
     return times_out[:rec_idx], radius_out[:rec_idx], T_history[:rec_idx], C_history[:rec_idx], actual_end_time, rec_idx
 
 
+def reconstruct_surface(
+    times: np.ndarray,
+    T_outer: np.ndarray,
+    C_outer: np.ndarray,
+    delta: float | np.ndarray,
+    t_env: np.ndarray,
+    T_env: np.ndarray,
+    C_env: np.ndarray,
+    formula_mode: int,
+    h: float,
+    hm: float,
+) -> tuple[np.ndarray, np.ndarray]:
+    if formula_mode == 1:
+        k = 0.36
+        D = 7.0e-9 * np.exp(-0.89 / C_outer)
+    elif formula_mode == 2:
+        k = 0.21 + 0.38 * (C_outer / (C_outer + 1.0))
+        D = 2.4e-3 * np.exp(-0.45 / C_outer - 3850.0 / T_outer)
+    else:  # Appendix 4
+        k = 0.12 + 0.20 * (C_outer / (C_outer + 1.0))
+        D = 4.2e-4 * np.exp(-0.30 / C_outer - 3850.0 / T_outer)
+
+    T_air = np.interp(times, t_env, T_env)
+    C_air = np.interp(times, t_env, C_env)
+    # Match the half-cell resistance used by the Robin boundary.
+    T_surface = (k * T_outer + h * delta * T_air) / (k + h * delta)
+    C_surface = (D * C_outer + hm * delta * C_air) / (D + hm * delta)
+    # The initial condition specifies a uniform field, including the surface.
+    T_surface[times == 0.0] = T_outer[times == 0.0]
+    C_surface[times == 0.0] = C_outer[times == 0.0]
+    return T_surface, C_surface
+
+
 def sample_and_interpolate_fixed(
     times_raw: np.ndarray,
     T_raw: np.ndarray,
@@ -370,6 +403,12 @@ def sample_and_interpolate_fixed(
     N: int,
     R: float,
     r_target_cm: np.ndarray,
+    t_env: np.ndarray,
+    T_env: np.ndarray,
+    C_env: np.ndarray,
+    formula_mode: int,
+    h: float = 25.0,
+    hm: float = 8e-7,
 ) -> tuple[np.ndarray, np.ndarray]:
     r_faces = np.linspace(0.0, R, N + 1)
     r_centers = 0.5 * (r_faces[:-1] + r_faces[1:])
@@ -378,18 +417,29 @@ def sample_and_interpolate_fixed(
     n_radii = len(r_target_m)
     T_interp = np.zeros((n_steps, n_radii), dtype=np.float64)
     C_interp = np.zeros((n_steps, n_radii), dtype=np.float64)
+    T_surface, C_surface = reconstruct_surface(
+        times_raw, T_raw[:, -1], C_raw[:, -1], R / (2 * N),
+        t_env, T_env, C_env, formula_mode, h, hm,
+    )
+    r_nodes = np.append(r_centers, R)
     for s in range(n_steps):
-        T_interp[s] = np.interp(r_target_m, r_centers, T_raw[s])
-        C_interp[s] = np.interp(r_target_m, r_centers, C_raw[s])
+        T_interp[s] = np.interp(r_target_m, r_nodes, np.append(T_raw[s], T_surface[s]))
+        C_interp[s] = np.interp(r_target_m, r_nodes, np.append(C_raw[s], C_surface[s]))
     return T_interp, C_interp
 
 
 def sample_and_interpolate_moving(
     times_raw: np.ndarray,
     radius_raw: np.ndarray,
+    T_raw: np.ndarray,
     C_raw: np.ndarray,
     N: int,
     r_target_cm: np.ndarray,
+    t_env: np.ndarray,
+    T_env: np.ndarray,
+    C_env: np.ndarray,
+    h: float = 25.0,
+    hm: float = 8e-7,
 ) -> tuple[np.ndarray, np.ndarray]:
     xi_faces = np.linspace(0.0, 1.0, N + 1)
     xi_centers = 0.5 * (xi_faces[:-1] + xi_faces[1:])
@@ -397,11 +447,15 @@ def sample_and_interpolate_moving(
     n_steps = len(times_raw)
     n_radii = len(r_target_m)
     C_interp = np.full((n_steps, n_radii), np.nan, dtype=np.float64)
-    C_surface = C_raw[:, -1].copy()
+    _, C_surface = reconstruct_surface(
+        times_raw, T_raw[:, -1], C_raw[:, -1], radius_raw / (2 * N),
+        t_env, T_env, C_env, 3, h, hm,
+    )
+    xi_nodes = np.append(xi_centers, 1.0)
     for s in range(n_steps):
         R_s = radius_raw[s]
         valid_mask = r_target_m <= R_s
         if np.any(valid_mask):
             xi_targets = r_target_m[valid_mask] / R_s
-            C_interp[s, valid_mask] = np.interp(xi_targets, xi_centers, C_raw[s])
+            C_interp[s, valid_mask] = np.interp(xi_targets, xi_nodes, np.append(C_raw[s], C_surface[s]))
     return C_interp, C_surface

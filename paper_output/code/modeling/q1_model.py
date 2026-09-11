@@ -55,7 +55,7 @@ def run_aq1():
     r_tab_cm = np.array([0.0, 0.5, 1.0, 1.5, 2.0], dtype=np.float64)
 
     # Interpolate to table points
-    T_tab, C_tab = sample_and_interpolate_fixed(times_tab, T_raw[times_tab.astype(int)], C_raw[times_tab.astype(int)], N=80, R=0.02, r_target_cm=r_tab_cm)
+    T_tab, C_tab = sample_and_interpolate_fixed(times_tab, T_raw[times_tab.astype(int)], C_raw[times_tab.astype(int)], N=80, R=0.02, r_target_cm=r_tab_cm, t_env=t_env, T_env=T_env, C_env=C_env, formula_mode=1)
 
     # Convert Temperature to Celsius
     T_tab_C = T_tab - 273.15
@@ -82,7 +82,7 @@ def run_aq1():
 
     # 3. Build result1.xlsx (1800 s, 0.1 cm steps)
     r_full_cm = np.arange(0.0, 2.0001, 0.1)
-    T_full, C_full = sample_and_interpolate_fixed(times_raw, T_raw, C_raw, N=80, R=0.02, r_target_cm=r_full_cm)
+    T_full, C_full = sample_and_interpolate_fixed(times_raw, T_raw, C_raw, N=80, R=0.02, r_target_cm=r_full_cm, t_env=t_env, T_env=T_env, C_env=C_env, formula_mode=1)
     T_full_C = T_full - 273.15
 
     res1_path = TABLES_DIR / 'result1.xlsx'
@@ -103,12 +103,15 @@ def run_aq1():
     wb.save(res1_path)
 
     # 4. Metrics & Contracts
+    r_faces = np.linspace(0.0, 0.02, 81)
+    vols = np.pi * (r_faces[1:]**2 - r_faces[:-1]**2)
+    C_mean = np.sum(vols * C_raw[-1]) / np.sum(vols)
     metrics = [
         {'metric_name': 'aq1_final_center_temperature_C', 'metric_role': 'evaluation', 'value': round_float(T_full_C[1800, 0], 4), 'unit': '°C'},
         {'metric_name': 'aq1_final_surface_temperature_C', 'metric_role': 'evaluation', 'value': round_float(T_full_C[1800, -1], 4), 'unit': '°C'},
         {'metric_name': 'aq1_final_center_moisture', 'metric_role': 'evaluation', 'value': round_float(C_full[1800, 0], 4), 'unit': 'kg/kg'},
         {'metric_name': 'aq1_final_surface_moisture', 'metric_role': 'evaluation', 'value': round_float(C_full[1800, -1], 4), 'unit': 'kg/kg'},
-        {'metric_name': 'aq1_total_moisture_loss_fraction', 'metric_role': 'evaluation', 'value': round_float((2.55 - np.mean(C_full[1800])) / 2.55, 6), 'unit': 'fraction'},
+        {'metric_name': 'aq1_total_moisture_loss_fraction', 'metric_role': 'evaluation', 'value': round_float((2.55 - C_mean) / 2.55, 6), 'unit': 'fraction'},
     ]
 
     conclusions = [

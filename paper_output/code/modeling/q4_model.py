@@ -79,9 +79,11 @@ def run_aq4():
     C_tab_interp, C_tab_surf = sample_and_interpolate_moving(
         times_tab_s,
         radius_raw[tab_indices],
+        T_raw[tab_indices],
         C_raw[tab_indices],
         N=80,
         r_target_cm=r_tab_cm,
+        t_env=t_env, T_env=T_env, C_env=C_env,
     )
 
     table6_rows = []
@@ -106,9 +108,11 @@ def run_aq4():
     C_full_interp, C_full_surf = sample_and_interpolate_moving(
         times_raw,
         radius_raw,
+        T_raw,
         C_raw,
         N=80,
         r_target_cm=r_full_cm,
+        t_env=t_env, T_env=T_env, C_env=C_env,
     )
 
     res4_path = TABLES_DIR / 'result4.xlsx'

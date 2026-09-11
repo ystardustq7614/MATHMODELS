@@ -1,21 +1,21 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/modeling/run_modeling.py",
-  "generated_at": "2026-09-11T14:30:54",
+  "generated_at": "2026-09-11T21:48:39",
   "status": "PASS",
   "runs": [
     {
-      "run_id": "q1_model_20260911_142921",
+      "run_id": "q1_model_20260911_214719",
       "script": "paper_output/code/modeling/q1_model.py",
-      "script_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+      "script_sha256": "6426b89ec0e189739d969929694baa07180b48bf4e61c752abae1728d14e2932",
       "question_ids": [
         "AQ1"
       ],
       "command": "python.exe q1_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:29:21",
-      "finished_at": "2026-09-11T14:29:26",
+      "started_at": "2026-09-11T21:47:19",
+      "finished_at": "2026-09-11T21:47:24",
       "working_directory": "paper_output/code/modeling",
       "environment": {
         "python": "3.12.14",
@@ -49,35 +49,35 @@
           "path": "paper_output/tables/table_aq1_temperature.csv",
           "exists": true,
           "bytes": 360,
-          "sha256": "b5da6a07cbb2147bed0d6102f198276f66e44c00d0c7944017cb711784875fe4"
+          "sha256": "1afc13b29e0f05ae61ef00fb300971d9e7c18a5e908110429b3bcece83ae1f30"
         },
         {
           "path": "paper_output/tables/table_aq1_moisture.csv",
           "exists": true,
           "bytes": 325,
-          "sha256": "11476afea146ccd67afae0cc21985362b523d9b16d670e1c90fd15013e864471"
+          "sha256": "94560186ea86f129d5ac68768d4ed7241cd987cf80470966b5bfb96eb142ebe0"
         },
         {
           "path": "paper_output/tables/result1.xlsx",
           "exists": true,
-          "bytes": 362766,
-          "sha256": "979c51161a99d0f911d0b4725587b661736635a3588ff1b36deea2a1f983a73c"
+          "bytes": 362971,
+          "sha256": "2a552aa3aef73323e2fd8f3788b184a1d18414ca2cb38516774691e9dcf23627"
         }
       ],
       "stdout_tail": "AQ1 finished successfully.\n"
     },
     {
-      "run_id": "q2_model_20260911_142926",
+      "run_id": "q2_model_20260911_214724",
       "script": "paper_output/code/modeling/q2_model.py",
-      "script_sha256": "55724147a735502f4ec02c3864a4a8aa025f625aa427b3c0df6a3b893ee541a1",
+      "script_sha256": "997680cdee88071f619b467f9ae2f09de17f096cd05fcf8776af841ee80c5821",
       "question_ids": [
         "AQ2"
       ],
       "command": "python.exe q2_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:29:26",
-      "finished_at": "2026-09-11T14:30:41",
+      "started_at": "2026-09-11T21:47:24",
+      "finished_at": "2026-09-11T21:48:27",
       "working_directory": "paper_output/code/modeling",
       "environment": {
         "python": "3.12.14",
@@ -111,35 +111,35 @@
           "path": "paper_output/tables/table_aq2_temperature.csv",
           "exists": true,
           "bytes": 312,
-          "sha256": "f8fdb7118b17e6f2e74a40009d321a41cdd0808f71f1e437b2cd082f428e648b"
+          "sha256": "d482dfaaf95f60e92d42436df1c8c61967897d63e2f02f74fd67f9e486079231"
         },
         {
           "path": "paper_output/tables/table_aq2_moisture.csv",
           "exists": true,
           "bytes": 282,
-          "sha256": "699006fbbddb5e3b8e4095675611cfc26674a90b3d6f7f2f44dd127e7ec8d128"
+          "sha256": "ffed95a04c4eafce9ca1ed10f0d0a4f4b39ccfcdfdef8932568caece13cfc704"
         },
         {
           "path": "paper_output/tables/result2.xlsx",
           "exists": true,
-          "bytes": 27527742,
-          "sha256": "96495747899a0966a004a91b5f8fdb477919b6e1e517bb9b020d73e8b113d323"
+          "bytes": 27529738,
+          "sha256": "8e80558ae1922f668937e52e50cebf36ac53045735172293de90771521fb737c"
         }
       ],
       "stdout_tail": "AQ2 finished successfully.\n"
     },
     {
-      "run_id": "q3_model_20260911_143041",
+      "run_id": "q3_model_20260911_214828",
       "script": "paper_output/code/modeling/q3_model.py",
-      "script_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+      "script_sha256": "09ef7ba455b5ca092843ea42d5da3a717182ce45509682ac95fb4a08cb14f8fa",
       "question_ids": [
         "AQ3"
       ],
       "command": "python.exe q3_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:30:41",
-      "finished_at": "2026-09-11T14:30:48",
+      "started_at": "2026-09-11T21:48:28",
+      "finished_at": "2026-09-11T21:48:33",
       "working_directory": "paper_output/code/modeling",
       "environment": {
         "python": "3.12.14",
@@ -173,29 +173,29 @@
           "path": "paper_output/tables/table_aq3_drying_moisture.csv",
           "exists": true,
           "bytes": 477,
-          "sha256": "93bb19f77877ddd6f0a7ac0ef229a847184170f6aca72d715c74d45b01308e50"
+          "sha256": "52c777a5aff50925ba3e4704f68a444b965dacd93c0d2b54afe820ed825f1606"
         },
         {
           "path": "paper_output/tables/result3.xlsx",
           "exists": true,
-          "bytes": 336774,
-          "sha256": "f47f69bd9c140a1e51bcecdf6a415e33accdbfd76056246022dbcbbd905cd887"
+          "bytes": 334925,
+          "sha256": "ac40a734dcc43a5ccc7abbde3544bce14f02ffa6b469a4e1cd2247d7c7a284cd"
         }
       ],
       "stdout_tail": "AQ3 finished successfully: t_end = 57.3425 h (206433.0 s).\n"
     },
     {
-      "run_id": "q4_model_20260911_143048",
+      "run_id": "q4_model_20260911_214833",
       "script": "paper_output/code/modeling/q4_model.py",
-      "script_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+      "script_sha256": "50c584e20ec903f5a090551d21e9f9e7883d072a1c0773ffb9b884b2e42e5f32",
       "question_ids": [
         "AQ4"
       ],
       "command": "python.exe q4_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:30:48",
-      "finished_at": "2026-09-11T14:30:54",
+      "started_at": "2026-09-11T21:48:33",
+      "finished_at": "2026-09-11T21:48:39",
       "working_directory": "paper_output/code/modeling",
       "environment": {
         "python": "3.12.14",
@@ -229,13 +229,13 @@
           "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
           "exists": true,
           "bytes": 474,
-          "sha256": "6395c9ceffcca306fb7cd1157618326c0bcc658ece5627b7a4ca027e063cd9bf"
+          "sha256": "e1202a9d41ae1533f127aa89f4b0d6843ad7604a3225be06f662931e363b7ae5"
         },
         {
           "path": "paper_output/tables/result4.xlsx",
           "exists": true,
-          "bytes": 224351,
-          "sha256": "37c7c2d621a7eb8b7191bc59d84f3e50b3de791a6fbb7fae7ae8a4f41d7f3040"
+          "bytes": 225214,
+          "sha256": "4ad16cec9786c0d5268b86db9dcb86af90b808f39d93e52088590cdd1c703cc2"
         }
       ],
       "stdout_tail": "AQ4 finished successfully: t_end = 50.8572 h (183086.0 s).\n"

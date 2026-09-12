@@ -1,0 +1,1150 @@
+{
+  "created_at_utc": "2026-09-12T06:47:33Z",
+  "delivery": {
+    "min_body_chars": 8000,
+    "min_pages": 18,
+    "mode": "competition",
+    "reason": ""
+  },
+  "evidence_gate_sha256": "ba68ab64e3e5dc7cbcb5f0dea505786184af9cbb65e7da89068ed92a184c9ec2",
+  "evidence_marker": "<!-- mathmodel-evidence: evidence-id-1, evidence-id-2 -->",
+  "global_constraints": {
+    "forbid_internal_workflow_language": true,
+    "forbid_placeholders": true,
+    "formal_source": "paper_output/final_paper_source.md",
+    "numbering_style": "1 / 1.1 / 1.1.1",
+    "require_global_revision": true
+  },
+  "input_hashes": {
+    "paper_output/figure_index.json": "5abf045b315832a7d89109f4c869981a3285d5a296595b9332ff866dbc1949c7",
+    "paper_output/plan/model_route.json": "9c382d4eda50c1a30b789afb71cac4c553d22050cbdaeb96a0c9316e6afc7f49",
+    "paper_output/plan/paper_outline.json": "a99671d1c0e94ece08f0fe4a9a6c175cc695d5c377613d7452e309463d133ab5",
+    "paper_output/qa/evidence_gate_report.json": "ba68ab64e3e5dc7cbcb5f0dea505786184af9cbb65e7da89068ed92a184c9ec2",
+    "paper_output/results/conclusions.json": "2f5c45c9cf8f004799f455d1d91cf84ac6aec26b6eeaa27cf413cd8d411f0ba6",
+    "paper_output/results/metrics.json": "9b60e8eaadc27669fc26530ec0a0009705b440ae4b2f146b6f872ed16fdb1906",
+    "paper_output/results/model_results.json": "d742ce0e2a78e07cef185748e7e6e8fddb401086775f83a250189913790a81e5",
+    "paper_output/results/run_manifest.json": "e7e045337cbbc05d93b92956c34861d0b3549194570a74d7c0ad62ba2a5a3875",
+    "paper_output/tables/table_index.json": "5cbec75eade7a8467334c319d586dcc6c7b6f40d179637af857c4cf4ab12c3f1"
+  },
+  "mode": "section",
+  "mode_reason": "auto selected section because ideal target is 14000 effective characters",
+  "producer_role": "paper-formal-writer/prepare-authoring",
+  "question_ids": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "requested_mode": "auto",
+  "schema_version": "2.2",
+  "sections": [
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "abstract",
+      "target_chars": 700,
+      "title": "摘要"
+    },
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "1",
+      "target_chars": 900,
+      "title": "问题重述"
+    },
+    {
+      "requirements": {
+        "evidence": [
+          {
+            "evidence_id": "model_result:Q1:1",
+            "question_id": "Q1",
+            "status": "computed",
+            "summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5759°C，表面温度为36.7859°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5103 kg/kg。表1、表2及result1.xlsx均已导出。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "model_result:Q2:1",
+            "question_id": "Q2",
+            "status": "computed",
+            "summary": "AQ2全过程模型求解至达标时刻205818.0 s：3 h时中心温度为49.8495°C，表面温度为49.9664°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0081 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "model_result:Q3:1",
+            "question_id": "Q3",
+            "status": "computed",
+            "summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.1717 h (205818.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0525 kg/kg。表5与result3.xlsx已导出。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "model_result:Q4:1",
+            "question_id": "Q4",
+            "status": "computed",
+            "summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8249 h (182969.5 s)；终点半径为1.2000 cm，中心含水率为0.1500 kg/kg，表面为0.0525 kg/kg。表6与result4.xlsx已导出。",
+            "type": "model_result"
+          }
+        ],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "2",
+      "target_chars": 1600,
+      "title": "问题分析"
+    },
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "3",
+      "target_chars": 600,
+      "title": "模型假设"
+    },
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "4",
+      "target_chars": 500,
+      "title": "符号说明"
+    },
+    {
+      "requirements": {
+        "evidence": [
+          {
+            "evidence_id": "model_result:Q1:1",
+            "question_id": "Q1",
+            "status": "computed",
+            "summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5759°C，表面温度为36.7859°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5103 kg/kg。表1、表2及result1.xlsx均已导出。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "metric:Q1:aq1_final_center_temperature_C",
+            "name": "aq1_final_center_temperature_C",
+            "question_id": "Q1",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "°C",
+            "value": 33.5759
+          },
+          {
+            "evidence_id": "metric:Q1:aq1_final_surface_temperature_C",
+            "name": "aq1_final_surface_temperature_C",
+            "question_id": "Q1",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "°C",
+            "value": 36.7859
+          },
+          {
+            "evidence_id": "metric:Q1:aq1_final_center_moisture",
+            "name": "aq1_final_center_moisture",
+            "question_id": "Q1",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 2.55
+          },
+          {
+            "evidence_id": "metric:Q1:aq1_final_surface_moisture",
+            "name": "aq1_final_surface_moisture",
+            "question_id": "Q1",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.5103
+          },
+          {
+            "evidence_id": "metric:Q1:aq1_total_moisture_loss_fraction",
+            "name": "aq1_total_moisture_loss_fraction",
+            "question_id": "Q1",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "fraction",
+            "value": 0.100563
+          },
+          {
+            "evidence_id": "conclusion:Q1:7",
+            "question_id": "Q1",
+            "status": "computed",
+            "text": "在预热平衡阶段（0-1800 s），药材受烘房升温与对流传热驱动，中心温度由28.0000°C上升至33.5759°C，表面温度达到36.7859°C；由于对流传质阻力与内部非线性水分扩散制约，药材表面干基含水率由2.5500 kg/kg下降至1.5103 kg/kg，中心干基含水率为2.5500 kg/kg，体现出显著的内外梯度迟滞效应。",
+            "type": "conclusion"
+          },
+          {
+            "evidence_id": "model_result:Q2:1",
+            "question_id": "Q2",
+            "status": "computed",
+            "summary": "AQ2全过程模型求解至达标时刻205818.0 s：3 h时中心温度为49.8495°C，表面温度为49.9664°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0081 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "metric:Q2:aq2_3h_center_temperature_C",
+            "name": "aq2_3h_center_temperature_C",
+            "question_id": "Q2",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "°C",
+            "value": 49.8495
+          },
+          {
+            "evidence_id": "metric:Q2:aq2_3h_surface_temperature_C",
+            "name": "aq2_3h_surface_temperature_C",
+            "question_id": "Q2",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "°C",
+            "value": 49.9664
+          },
+          {
+            "evidence_id": "metric:Q2:aq2_3h_center_moisture",
+            "name": "aq2_3h_center_moisture",
+            "question_id": "Q2",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.7662
+          },
+          {
+            "evidence_id": "metric:Q2:aq2_3h_surface_moisture",
+            "name": "aq2_3h_surface_moisture",
+            "question_id": "Q2",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.0081
+          },
+          {
+            "evidence_id": "metric:Q2:aq2_1800s_surface_temperature_C",
+            "name": "aq2_1800s_surface_temperature_C",
+            "question_id": "Q2",
+            "role": "comparison",
+            "status": "computed",
+            "type": "metric",
+            "unit": "°C",
+            "value": 35.4135
+          },
+          {
+            "evidence_id": "metric:Q2:aq2_1800s_surface_moisture",
+            "name": "aq2_1800s_surface_moisture",
+            "question_id": "Q2",
+            "role": "comparison",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.6487
+          },
+          {
+            "evidence_id": "conclusion:Q2:8",
+            "question_id": "Q2",
+            "status": "computed",
+            "text": "采用附录3全过程统一经验物性公式自t=0连续求解3 h（10800 s）：药材升温迅速并在3 h内达到中心49.8495°C、表面49.9664°C，整体贴近烘房温度（约50.2°C）；水分浓度在3 h末中心降至1.7662 kg/kg，表面降至1.0081 kg/kg。相较于AQ1常物性模型，附录3通过温度和含水率相关物性描述全过程，不需要拼接问题一末态。",
+            "type": "conclusion"
+          },
+          {
+            "evidence_id": "model_result:Q3:1",
+            "question_id": "Q3",
+            "status": "computed",
+            "summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.1717 h (205818.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0525 kg/kg。表5与result3.xlsx已导出。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "metric:Q3:aq3_drying_time_s",
+            "name": "aq3_drying_time_s",
+            "question_id": "Q3",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 205818.0
+          },
+          {
+            "evidence_id": "metric:Q3:aq3_drying_time_h",
+            "name": "aq3_drying_time_h",
+            "question_id": "Q3",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "h",
+            "value": 57.1717
+          },
+          {
+            "evidence_id": "metric:Q3:aq3_final_max_moisture",
+            "name": "aq3_final_max_moisture",
+            "question_id": "Q3",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15
+          },
+          {
+            "evidence_id": "metric:Q3:aq3_final_min_moisture",
+            "name": "aq3_final_min_moisture",
+            "question_id": "Q3",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.0525
+          },
+          {
+            "evidence_id": "metric:Q3:aq3_final_center_moisture",
+            "name": "aq3_final_center_moisture",
+            "question_id": "Q3",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15
+          },
+          {
+            "evidence_id": "metric:Q3:aq3_final_surface_moisture",
+            "name": "aq3_final_surface_moisture",
+            "question_id": "Q3",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.0525
+          },
+          {
+            "evidence_id": "conclusion:Q3:8",
+            "question_id": "Q3",
+            "status": "computed",
+            "text": "在固定几何尺寸（半径2 cm）下，严格以药材全域最大含水率低于0.15 kg/kg作为烘干完成判定准则，模型计算得到烘干所需时间为57.1717小时（即205818.0秒）。烘干结束时刻中心含水率为0.1500 kg/kg，表面含水率为0.0525 kg/kg，全域最大含水率达到达标临界值0.1500 kg/kg。表5及result3.xlsx均已导出。",
+            "type": "conclusion"
+          },
+          {
+            "evidence_id": "model_result:Q4:1",
+            "question_id": "Q4",
+            "status": "computed",
+            "summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8249 h (182969.5 s)；终点半径为1.2000 cm，中心含水率为0.1500 kg/kg，表面为0.0525 kg/kg。表6与result4.xlsx已导出。",
+            "type": "model_result"
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_drying_time_s",
+            "name": "aq4_drying_time_s",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 182969.5
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_drying_time_h",
+            "name": "aq4_drying_time_h",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "h",
+            "value": 50.8249
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_final_radius_cm",
+            "name": "aq4_final_radius_cm",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "cm",
+            "value": 1.2
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_final_max_moisture",
+            "name": "aq4_final_max_moisture",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_final_min_moisture",
+            "name": "aq4_final_min_moisture",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.0535
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_final_center_moisture",
+            "name": "aq4_final_center_moisture",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_final_surface_moisture",
+            "name": "aq4_final_surface_moisture",
+            "question_id": "Q4",
+            "role": "evaluation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.0525
+          },
+          {
+            "evidence_id": "metric:Q4:aq4_time_reduction_vs_aq3_percent",
+            "name": "aq4_time_reduction_vs_aq3_percent",
+            "question_id": "Q4",
+            "role": "comparison",
+            "status": "computed",
+            "type": "metric",
+            "unit": "%",
+            "value": 11.1
+          },
+          {
+            "evidence_id": "conclusion:Q4:10",
+            "question_id": "Q4",
+            "status": "computed",
+            "text": "附件2收缩与附录4物性共同作用下，达标时长为50.8249 h（182969.5 s），较问题三变化-11.1013%。该差异是联合情景变化，不全部归因于收缩。终点半径为1.2000 cm，表面含水率为0.0525 kg/kg。",
+            "type": "conclusion"
+          }
+        ],
+        "figures": [
+          {
+            "evidence_id": "figure:fig_aq1_fields",
+            "figure_id": "fig_aq1_fields",
+            "path": "paper_output/figures/fig_aq1_fields.png",
+            "status": "generated",
+            "title": "fig_aq1_fields"
+          },
+          {
+            "evidence_id": "figure:fig_aq2_profiles",
+            "figure_id": "fig_aq2_profiles",
+            "path": "paper_output/figures/fig_aq2_profiles.png",
+            "status": "generated",
+            "title": "fig_aq2_profiles"
+          },
+          {
+            "evidence_id": "figure:fig_aq3_threshold",
+            "figure_id": "fig_aq3_threshold",
+            "path": "paper_output/figures/fig_aq3_threshold.png",
+            "status": "generated",
+            "title": "fig_aq3_threshold"
+          },
+          {
+            "evidence_id": "figure:fig_aq4_shrinkage",
+            "figure_id": "fig_aq4_shrinkage",
+            "path": "paper_output/figures/fig_aq4_shrinkage.png",
+            "status": "generated",
+            "title": "fig_aq4_shrinkage"
+          }
+        ],
+        "formulas": [
+          {
+            "description": "经验热容量热方程",
+            "evidence_id": "formula:Q1:section"
+          },
+          {
+            "description": "中心与表面Robin边界",
+            "evidence_id": "formula:Q1:Robin"
+          },
+          {
+            "description": "经验热容量热方程",
+            "evidence_id": "formula:Q2:section"
+          },
+          {
+            "description": "中心与表面Robin边界",
+            "evidence_id": "formula:Q2:Robin"
+          },
+          {
+            "description": "经验热容量热方程",
+            "evidence_id": "formula:Q3:section"
+          },
+          {
+            "description": "中心与表面Robin边界",
+            "evidence_id": "formula:Q3:Robin"
+          },
+          {
+            "description": "归一水分收支",
+            "evidence_id": "formula:Q4:section"
+          },
+          {
+            "description": "中心与表面Robin边界",
+            "evidence_id": "formula:Q4:Robin"
+          }
+        ],
+        "tables": [
+          {
+            "evidence_id": "table:table1",
+            "path": "paper_output/tables/table_aq1_temperature.csv",
+            "purpose": "展示预热阶段100-1800 s各径向截面的药材温度动态。",
+            "status": "computed",
+            "table_id": "table1",
+            "title": "30分钟内药材的温度（表1）"
+          },
+          {
+            "evidence_id": "table:table2",
+            "path": "paper_output/tables/table_aq1_moisture.csv",
+            "purpose": "展示预热阶段100-1800 s各径向截面的干基水分浓度分布。",
+            "status": "computed",
+            "table_id": "table2",
+            "title": "30分钟内药材的水分浓度（表2）"
+          },
+          {
+            "evidence_id": "table:table3",
+            "path": "paper_output/tables/table_aq2_temperature.csv",
+            "purpose": "展示全过程模型在0.5-3.0 h各半小时的温度径向分布。",
+            "status": "computed",
+            "table_id": "table3",
+            "title": "3小时内药材的温度（表3）"
+          },
+          {
+            "evidence_id": "table:table4",
+            "path": "paper_output/tables/table_aq2_moisture.csv",
+            "purpose": "展示全过程模型在0.5-3.0 h各半小时的干基水分浓度径向分布。",
+            "status": "computed",
+            "table_id": "table4",
+            "title": "3小时内药材的水分浓度（表4）"
+          },
+          {
+            "evidence_id": "table:table5",
+            "path": "paper_output/tables/table_aq3_drying_moisture.csv",
+            "purpose": "展示固定半径下每隔6小时及烘干结束时刻各截面含水率衰变历程。",
+            "status": "computed",
+            "table_id": "table5",
+            "title": "药材烘干过程的水分浓度（表5）"
+          },
+          {
+            "evidence_id": "table:table7",
+            "path": "paper_output/qa/model_validation_checks.json",
+            "purpose": "长程网格与时间步验证",
+            "status": "computed",
+            "table_id": "table7",
+            "title": "长程网格与时间步验证"
+          },
+          {
+            "evidence_id": "table:table9",
+            "path": "paper_output/qa/model_validation_checks.json",
+            "purpose": "边界情景检验",
+            "status": "computed",
+            "table_id": "table9",
+            "title": "边界情景检验"
+          },
+          {
+            "evidence_id": "table:table6",
+            "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
+            "purpose": "展示收缩域中每隔6小时及烘干结束时刻各物理截面及真实表面的含水率分布。",
+            "status": "computed",
+            "table_id": "table6",
+            "title": "药材烘干过程的水分浓度（表6）"
+          },
+          {
+            "evidence_id": "table:table8",
+            "path": "paper_output/qa/model_validation_checks.json",
+            "purpose": "三格顺序对照",
+            "status": "computed",
+            "table_id": "table8",
+            "title": "三格顺序对照"
+          }
+        ]
+      },
+      "section_id": "5",
+      "target_chars": 8800,
+      "title": "模型的建立与求解"
+    },
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "6",
+      "target_chars": 1000,
+      "title": "模型检验与灵敏度分析"
+    },
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "7",
+      "target_chars": 800,
+      "title": "模型评价与推广"
+    },
+    {
+      "requirements": {
+        "evidence": [],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "8",
+      "target_chars": 350,
+      "title": "参考文献"
+    },
+    {
+      "requirements": {
+        "evidence": [
+          {
+            "evidence_id": "metric:ALL:aq1_left_time_s",
+            "name": "aq1_left_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 1799.5
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_end_time_s",
+            "name": "aq1_end_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 1800.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_left_max_C",
+            "name": "aq1_left_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 2.5499922976882003
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_final_max_C",
+            "name": "aq1_final_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 2.549992271962013
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_water_balance",
+            "name": "aq1_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.2060069718477192e-14
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_step_water_balance",
+            "name": "aq1_step_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 2.00152224587275e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_residual_C",
+            "name": "aq1_residual_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 3.8706802378437625e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_residual_T",
+            "name": "aq1_residual_T",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 2.4453460187734737e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_max_iterations",
+            "name": "aq1_max_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 4.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_mean_iterations",
+            "name": "aq1_mean_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 4.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_steps",
+            "name": "aq1_steps",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 3600.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_center_excess_bound",
+            "name": "aq1_center_excess_bound",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.590029219400435e-10
+          },
+          {
+            "evidence_id": "metric:ALL:aq1_status_code",
+            "name": "aq1_status_code",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 0.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_left_time_s",
+            "name": "aq2_left_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 205817.5
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_end_time_s",
+            "name": "aq2_end_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 205818.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_left_max_C",
+            "name": "aq2_left_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15000010079669182
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_final_max_C",
+            "name": "aq2_final_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.14999995427300694
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_water_balance",
+            "name": "aq2_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 4.4757226247633767e-14
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_step_water_balance",
+            "name": "aq2_step_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 2.931943095510862e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_residual_C",
+            "name": "aq2_residual_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.0867260945845985e-11
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_residual_T",
+            "name": "aq2_residual_T",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 3.512785547753425e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_max_iterations",
+            "name": "aq2_max_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 4.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_mean_iterations",
+            "name": "aq2_mean_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 3.36223994014129
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_steps",
+            "name": "aq2_steps",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 411636.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_center_excess_bound",
+            "name": "aq2_center_excess_bound",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.54901110160921e-07
+          },
+          {
+            "evidence_id": "metric:ALL:aq2_status_code",
+            "name": "aq2_status_code",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_left_time_s",
+            "name": "aq3_left_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 205817.5
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_end_time_s",
+            "name": "aq3_end_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 205818.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_left_max_C",
+            "name": "aq3_left_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15000010079669182
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_final_max_C",
+            "name": "aq3_final_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.14999995427300694
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_water_balance",
+            "name": "aq3_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 4.4757226247633767e-14
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_step_water_balance",
+            "name": "aq3_step_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 2.931943095510862e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_residual_C",
+            "name": "aq3_residual_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.0867260945845985e-11
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_residual_T",
+            "name": "aq3_residual_T",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 3.512785547753425e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_max_iterations",
+            "name": "aq3_max_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 4.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_mean_iterations",
+            "name": "aq3_mean_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 3.36223994014129
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_steps",
+            "name": "aq3_steps",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 411636.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_center_excess_bound",
+            "name": "aq3_center_excess_bound",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 1.54901110160921e-07
+          },
+          {
+            "evidence_id": "metric:ALL:aq3_status_code",
+            "name": "aq3_status_code",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_left_time_s",
+            "name": "aq4_left_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 182969.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_end_time_s",
+            "name": "aq4_end_time_s",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "s",
+            "value": 182969.5
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_left_max_C",
+            "name": "aq4_left_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.15000000160267352
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_final_max_C",
+            "name": "aq4_final_max_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 0.14999974327394916
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_water_balance",
+            "name": "aq4_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 4.7717820979967513e-14
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_step_water_balance",
+            "name": "aq4_step_water_balance",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.285284472465843e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_residual_C",
+            "name": "aq4_residual_C",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.4649702830163243e-11
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_residual_T",
+            "name": "aq4_residual_T",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 3.347897338265732e-16
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_max_iterations",
+            "name": "aq4_max_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 4.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_mean_iterations",
+            "name": "aq4_mean_iterations",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 3.482017494719065
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_steps",
+            "name": "aq4_steps",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "count",
+            "value": 365939.0
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_center_excess_bound",
+            "name": "aq4_center_excess_bound",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "kg/kg",
+            "value": 2.4056242708958564e-07
+          },
+          {
+            "evidence_id": "metric:ALL:aq4_status_code",
+            "name": "aq4_status_code",
+            "question_id": "ALL",
+            "role": "validation",
+            "status": "computed",
+            "type": "metric",
+            "unit": "1",
+            "value": 1.0
+          }
+        ],
+        "figures": [],
+        "formulas": [],
+        "tables": []
+      },
+      "section_id": "appendix",
+      "target_chars": 600,
+      "title": "附录"
+    }
+  ],
+  "status": "PASS",
+  "target_chars": {
+    "ideal": 14000,
+    "max": 18800,
+    "min": 11300
+  }
+}

@@ -9,11 +9,27 @@ from check_paper_format import internal_language_failures, char_count
 from paper_scope import check_rendered_scope, delivery_scope
 from format_formal_docx import configure_document, add_heading, add_table_from_rows
 from validate_authoring import validate_common
+from authoring_contracts import numeric_variants
 from docx import Document
 from docx.oxml.ns import qn
 
 
 class FormatRegressionTests(unittest.TestCase):
+    def test_scientific_notation_exponent_is_not_trimmed(self):
+        variants = numeric_variants(1.590029219400435e-10)
+        self.assertIn('1.590029219400435e-10', variants)
+        self.assertNotIn('1.590029219400435e-1', variants)
+
+    def test_three_line_table_has_no_vertical_grid(self):
+        document = Document()
+        configure_document(document)
+        add_table_from_rows(document, [['量', '值'], ['温度', '1.2']])
+        for row in document.tables[0].rows:
+            for cell in row.cells:
+                borders = cell._tc.find('.//' + qn('w:tcBorders'))
+                self.assertEqual('nil', borders.find(qn('w:left')).get(qn('w:val')))
+                self.assertEqual('nil', borders.find(qn('w:right')).get(qn('w:val')))
+
     def test_image_destination_is_not_rendered_prose(self):
         self.assertEqual([], internal_language_failures(
             '# 1 问题重述\n![图 1 温度](paper_output/figures/temperature.png)'))
@@ -26,6 +42,10 @@ class FormatRegressionTests(unittest.TestCase):
         plan = {'delivery': delivery_scope()}
         pages = ['正文'] * 20
         pages[4] = '附录4的经验式为：\n这里仍然是模型推导。'
+        failures, counts = check_rendered_scope(pages + ['附录\n代码'], plan)
+        self.assertEqual([], failures)
+        self.assertEqual(20, counts['counted_main_pages'])
+        pages[4] = '附录4 的经验式为：\nPDF在数字后插入空格。'
         failures, counts = check_rendered_scope(pages + ['附录\n代码'], plan)
         self.assertEqual([], failures)
         self.assertEqual(20, counts['counted_main_pages'])

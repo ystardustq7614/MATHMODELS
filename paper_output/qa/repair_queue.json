@@ -1,0 +1,11 @@
+{
+  "created_at_utc": "2026-09-12T07:08:52Z",
+  "input_hashes": {
+    "paper_output/final_paper_source.md": "044feb81225bb65124a8d5bf6927c24fd238d59fe1c709d4eae05dd8f9a6783f",
+    "paper_output/plan/writing_plan.json": "0c14ea0e079c8e8ef500fec36846684d694ca097f6bae86e125491f3786b2b31"
+  },
+  "issues": [],
+  "producer_role": "paper-formal-writer/repair-router",
+  "schema_version": "2.2",
+  "status": "PASS"
+}

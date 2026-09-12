@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T18:16:28.788114+00:00",
+  "generated_at": "2026-09-12T05:55:49.974211+00:00",
   "generated_by": "paper_output/code/visualization/generate_model_evidence.py",
   "figures": [
     {
       "figure_id": "fig_a_environment",
-      "title": "fig_a_environment",
+      "title": "烘房温度与水分浓度实测输入",
       "path": "paper_output/figures/fig_a_environment.png",
       "expected_path": "paper_output/figures/fig_a_environment.png",
       "question_ids": [
@@ -22,11 +22,13 @@
       "ok": true,
       "exists": true,
       "placeholder": false,
-      "evidence_type": "input_observation"
+      "evidence_type": "input_observation",
+      "interpretation": "展示官方输入，不是模型预测或独立验证。",
+      "paper_section": "2 数据与问题分析"
     },
     {
       "figure_id": "fig_a_radius",
-      "title": "fig_a_radius",
+      "title": "药材半径实测输入",
       "path": "paper_output/figures/fig_a_radius.png",
       "expected_path": "paper_output/figures/fig_a_radius.png",
       "question_ids": [
@@ -40,7 +42,9 @@
       "ok": true,
       "exists": true,
       "placeholder": false,
-      "evidence_type": "input_observation"
+      "evidence_type": "input_observation",
+      "interpretation": "展示官方输入，不是模型预测或独立验证。",
+      "paper_section": "2 数据与问题分析"
     },
     {
       "figure_id": "fig_aq1_fields",
@@ -52,9 +56,9 @@
       ],
       "question_id": "AQ1",
       "source_data": "paper_output/tables/table_aq1_temperature.csv",
-      "source_sha256": "b5da6a07cbb2147bed0d6102f198276f66e44c00d0c7944017cb711784875fe4",
-      "sha256": "5714118cdf294e152cc80f0f3e8d6a29d3962d3fbdc9e6409b68ca0f74a125e1",
-      "bytes": 78869,
+      "source_sha256": "d678ce51cad4d2a62c896475e490170dc064d70da7444fc9a50cffa3ddf51d80",
+      "sha256": "d8ab669bbb8a553ebff475c000dbb75d8e7ed28b83714e252ebb257e2274a1dc",
+      "bytes": 80374,
       "status": "generated",
       "ok": true,
       "exists": true,
@@ -71,9 +75,9 @@
       ],
       "question_id": "AQ2",
       "source_data": "paper_output/tables/table_aq2_temperature.csv",
-      "source_sha256": "f8fdb7118b17e6f2e74a40009d321a41cdd0808f71f1e437b2cd082f428e648b",
-      "sha256": "720d30e73be348ea034b2e803606e342b5a80f4d36c12a5d2a2b55d5a3c81741",
-      "bytes": 144068,
+      "source_sha256": "13562cd331bc2421c9ca1ba0ed343cdd8a5da5fb2164ee4ea69e3672f0bc6964",
+      "sha256": "3d2cfe283edd072177770f9e182194615759e9eb070480fffff6326f6403c9e9",
+      "bytes": 145861,
       "status": "generated",
       "ok": true,
       "exists": true,
@@ -90,9 +94,9 @@
       ],
       "question_id": "AQ3",
       "source_data": "paper_output/tables/table_aq3_drying_moisture.csv",
-      "source_sha256": "93bb19f77877ddd6f0a7ac0ef229a847184170f6aca72d715c74d45b01308e50",
-      "sha256": "bbd26fafd727df21fa1c69ad41224f55032a5332206bc9913a6b0fe6d2a43574",
-      "bytes": 46084,
+      "source_sha256": "8c62c6067b21f6a0f1b3d09975491914fd741b24a7a5c4c0c603f618e5dd501e",
+      "sha256": "3f4bb1e1c33217fed7272548142fc20e734ba0f9b8b9908ea3d340e707d55555",
+      "bytes": 43022,
       "status": "generated",
       "ok": true,
       "exists": true,
@@ -109,9 +113,9 @@
       ],
       "question_id": "AQ4",
       "source_data": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
-      "source_sha256": "6395c9ceffcca306fb7cd1157618326c0bcc658ece5627b7a4ca027e063cd9bf",
-      "sha256": "cfc2f062e26a38481f87ef7395a6fcecca363da8f09c712f16849ab304cb7c19",
-      "bytes": 103248,
+      "source_sha256": "eb1ba36b329d5f9e489b76ee56883ccc1fce76c982eecbaf97059008458cb794",
+      "sha256": "4a5a18393bc5137872eb17d52b17287d00355f0042b12e53c65a141d42dba14f",
+      "bytes": 106825,
       "status": "generated",
       "ok": true,
       "exists": true,

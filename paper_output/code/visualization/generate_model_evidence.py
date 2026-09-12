@@ -5,6 +5,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -24,6 +25,8 @@ def read_csv(name: str) -> tuple[list[str], list[list[float]]]:
     values = []
     for row in rows[1:]:
         parsed = []
+        if row[0].startswith('烘干结束时间'):
+            row[0]=re.search(r'([0-9.]+) h',row[0]).group(1)
         for value in row:
             try:
                 parsed.append(float(value))
@@ -98,8 +101,8 @@ def main() -> None:
     axes[0].set(xlabel="Time (h)", ylabel="Radius (cm)", title="AQ4 shrinking domain")
     for row in q4:
         values = [value for value in row[1:5] if math.isfinite(value)]
-        axes[1].plot(range(len(values)), values, marker="o", label=f"{row[0]:g} h")
-    axes[1].set(xlabel="Radial node", ylabel="Dry-basis moisture", title="AQ4 moisture profiles")
+        axes[1].plot([.5*i for i in range(len(values))]+[row[-1]], values+[row[-2]], marker="o", label=f"{row[0]:g} h")
+    axes[1].set(xlabel="Radius (cm)", ylabel="Dry-basis moisture", title="AQ4 moisture profiles")
     axes[1].legend(fontsize=7); axes[0].grid(alpha=0.25); axes[1].grid(alpha=0.25)
     p4 = save(fig, "fig_aq4_shrinkage.png")
 

@@ -1,366 +1,225 @@
-# Core solver module for radial finite volume method and Thomas algorithm
+"""圆柱径向有限体积：后向欧拉、Picard迭代和三对角求解。"""
 from __future__ import annotations
-
 import numba
 import numpy as np
-import pandas as pd
-from pathlib import Path
 
 
 @numba.njit
-def solve_thomas(a: np.ndarray, b: np.ndarray, c: np.ndarray, d: np.ndarray) -> np.ndarray:
+def solve_thomas(a, b, c, d):
     n = len(d)
-    cp = np.zeros(n, dtype=np.float64)
-    dp = np.zeros(n, dtype=np.float64)
-    cp[0] = c[0] / b[0]
-    dp[0] = d[0] / b[0]
+    upper = np.zeros(n)
+    rhs = np.zeros(n)
+    upper[0] = c[0] / b[0]
+    rhs[0] = d[0] / b[0]
     for i in range(1, n):
-        denom = b[i] - a[i] * cp[i - 1]
-        cp[i] = c[i] / denom if i < n - 1 else 0.0
-        dp[i] = (d[i] - a[i] * dp[i - 1]) / denom
-    x = np.zeros(n, dtype=np.float64)
-    x[-1] = dp[-1]
-    for i in range(n - 2, -1, -1):
-        x[i] = dp[i] - cp[i] * x[i + 1]
+        pivot = b[i] - a[i] * upper[i-1]
+        upper[i] = c[i] / pivot
+        rhs[i] = (d[i] - a[i] * rhs[i-1]) / pivot
+    x = rhs.copy()
+    for i in range(n-2, -1, -1):
+        x[i] -= upper[i] * x[i+1]
     return x
 
 
 @numba.njit
-def interp_env(t: float, t_env: np.ndarray, T_env: np.ndarray, C_env: np.ndarray) -> tuple[float, float]:
-    if t <= 0.0:
-        return T_env[0], C_env[0]
-    if t >= t_env[-1]:
-        return T_env[-1], C_env[-1]
-    idx = int(t / 60.0)
-    if idx >= len(t_env) - 1:
-        return T_env[-1], C_env[-1]
-    dt_seg = t_env[idx + 1] - t_env[idx]
-    frac = (t - t_env[idx]) / dt_seg if dt_seg > 0.0 else 0.0
-    T_air = T_env[idx] + frac * (T_env[idx + 1] - T_env[idx])
-    C_e = C_env[idx] + frac * (C_env[idx + 1] - C_env[idx])
-    return T_air, C_e
+def interp_env(t, t_env, T_env, C_env):
+    return np.interp(t, t_env, T_env), np.interp(t, t_env, C_env)
 
 
 @numba.njit
-def interp_radius(t: float, t_rad: np.ndarray, R_rad: np.ndarray) -> float:
-    if t <= 0.0:
-        return R_rad[0]
-    if t >= t_rad[-1]:
-        return R_rad[-1]
-    idx = int(t / 1800.0)
-    if idx >= len(t_rad) - 1:
-        return R_rad[-1]
-    dt_seg = t_rad[idx + 1] - t_rad[idx]
-    frac = (t - t_rad[idx]) / dt_seg if dt_seg > 0.0 else 0.0
-    return R_rad[idx] + frac * (R_rad[idx + 1] - R_rad[idx])
+def interp_radius(t, t_rad, R_rad):
+    return np.interp(t, t_rad, R_rad)
 
 
 @numba.njit
-def simulate_fvm_fixed(
-    t_env: np.ndarray,
-    T_env: np.ndarray,
-    C_env: np.ndarray,
-    total_seconds: int,
-    formula_mode: int,  # 1 Appx 2 (AQ1), 2 Appx 3 (AQ2/AQ3), 3 Appx 4 fixed-domain reference only (AQ4)
-    sample_every_s: int = 1,
-    N: int = 80,
-    R: float = 0.02,
-    h: float = 25.0,
-    hm: float = 8e-7,
-    dt: float = 1.0,
-    stop_at_cmax: float = -1.0,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, float, int]:
-    dr = R / N
-    r_faces = np.linspace(0.0, R, N + 1)
-    vols = np.pi * (r_faces[1:]**2 - r_faces[:-1]**2)
-    areas = 2.0 * np.pi * r_faces
+def properties(T, C, mode):
+    if mode == 1:
+        rho = np.full(len(C), 820.)
+        cp = np.full(len(C), 2600.)
+        k = np.full(len(C), .36)
+        D = 7e-9 * np.exp(-.89 / C)
+    elif mode == 2:
+        rho = 650 + 128*C
+        cp = 1450 + 2736*C/(1+C)
+        k = .21 + .38*C/(1+C)
+        D = 2.4e-3 * np.exp(-.45/C - 3850/T)
+    else:
+        rho = 760 + 90*C
+        cp = 1850 + 2150*C/(1+C)
+        k = .12 + .20*C/(1+C)
+        D = 4.2e-4 * np.exp(-.30/C - 3850/T)
+    return rho*cp, k, D
 
-    T = np.full(N, 301.15, dtype=np.float64)
-    C = np.full(N, 2.55, dtype=np.float64)
 
-    max_records = total_seconds // sample_every_s + 2
-    times_out = np.zeros(max_records, dtype=np.float64)
-    T_history = np.zeros((max_records, N), dtype=np.float64)
-    C_history = np.zeros((max_records, N), dtype=np.float64)
+@numba.njit
+def system(coef, storage, old, weights, R, dt, transfer, exterior):
+    # 用xi环面积权重；内部通量成对抵消，表面采用半格串联阻力。
+    n = len(old)
+    dxi = 1. / n
+    face = 2*coef[:-1]*coef[1:]/(coef[:-1]+coef[1:])
+    g = 2*np.arange(1,n)*face/(R*R)
+    a = np.zeros(n)
+    c = np.zeros(n)
+    a[1:] = -g
+    c[:-1] = -g
+    mass = weights*storage/dt
+    b = mass-a-c
+    rhs = mass*old
+    gamma = 1/(1/transfer + .5*dxi*R/coef[-1])
+    b[-1] += 2*gamma/R
+    rhs[-1] += 2*gamma/R*exterior
+    return a,b,c,rhs,gamma
 
-    rec_idx = 0
-    times_out[rec_idx] = 0.0
-    T_history[rec_idx] = T
-    C_history[rec_idx] = C
-    rec_idx += 1
 
-    D_face = np.zeros(N + 1, dtype=np.float64)
-    k_face = np.zeros(N + 1, dtype=np.float64)
+@numba.njit
+def residual(a,b,c,rhs,x):
+    r = b*x-rhs
+    scale = np.abs(b*x)+np.abs(rhs)
+    r[1:] += a[1:]*x[:-1]
+    r[:-1] += c[:-1]*x[1:]
+    scale[1:] += np.abs(a[1:]*x[:-1])
+    scale[:-1] += np.abs(c[:-1]*x[1:])
+    return np.max(np.abs(r)/np.maximum(scale,1e-30))
 
-    a_C = np.zeros(N, dtype=np.float64)
-    b_C = np.zeros(N, dtype=np.float64)
-    c_C = np.zeros(N, dtype=np.float64)
-    d_C = np.zeros(N, dtype=np.float64)
 
-    a_T = np.zeros(N, dtype=np.float64)
-    b_T = np.zeros(N, dtype=np.float64)
-    c_T = np.zeros(N, dtype=np.float64)
-    d_T = np.zeros(N, dtype=np.float64)
-
-    t = 0.0
-    step = 0
-    actual_end_time = float(total_seconds)
-
-    while t < total_seconds:
-        t_next = t + dt
-        T_air, C_e = interp_env(t_next, t_env, T_env, C_env)
-
-        C_old = C.copy()
-        T_old = T.copy()
-        C_iter = C.copy()
-        T_iter = T.copy()
-
-        for _it in range(2):
-            if formula_mode == 1:
-                rho = np.full(N, 820.0, dtype=np.float64)
-                cp = np.full(N, 2600.0, dtype=np.float64)
-                k = np.full(N, 0.36, dtype=np.float64)
-                D = 7.0e-9 * np.exp(-0.89 / C_iter)
-            elif formula_mode == 2:
-                rho = 650.0 + 128.0 * C_iter
-                cp = 1450.0 + 2736.0 * (C_iter / (C_iter + 1.0))
-                k = 0.21 + 0.38 * (C_iter / (C_iter + 1.0))
-                D = 2.4e-3 * np.exp(-0.45 / C_iter - 3850.0 / T_iter)
-            else:  # formula_mode=3: Appendix 4 fixed-domain reference
-                rho = 760.0 + 90.0 * C_iter
-                cp = 1850.0 + 2150.0 * (C_iter / (C_iter + 1.0))
-                k = 0.12 + 0.20 * (C_iter / (C_iter + 1.0))
-                D = 4.2e-4 * np.exp(-0.30 / C_iter - 3850.0 / T_iter)
-
-            for i in range(1, N):
-                D_face[i] = 2.0 * D[i - 1] * D[i] / (D[i - 1] + D[i])
-            gamma_s = 1.0 / (1.0 / hm + 0.5 * dr / D[N - 1])
-
-            for i in range(N):
-                d_C[i] = vols[i] * C_old[i] / dt
-
-            fl = areas[1] * D_face[1] / dr
-            b_C[0] = vols[0] / dt + fl
-            c_C[0] = -fl
-            a_C[0] = 0.0
-
-            for i in range(1, N - 1):
-                fl = areas[i] * D_face[i] / dr
-                fr = areas[i + 1] * D_face[i + 1] / dr
-                a_C[i] = -fl
-                b_C[i] = vols[i] / dt + fl + fr
-                c_C[i] = -fr
-
-            fl = areas[N - 1] * D_face[N - 1] / dr
-            fr_s = areas[N] * gamma_s
-            a_C[N - 1] = -fl
-            b_C[N - 1] = vols[N - 1] / dt + fl + fr_s
-            c_C[N - 1] = 0.0
-            d_C[N - 1] += fr_s * C_e
-
-            C_iter = solve_thomas(a_C, b_C, c_C, d_C)
-
-            for i in range(1, N):
-                k_face[i] = 2.0 * k[i - 1] * k[i] / (k[i - 1] + k[i])
-            gamma_T_s = 1.0 / (1.0 / h + 0.5 * dr / k[N - 1])
-
-            for i in range(N):
-                d_T[i] = vols[i] * rho[i] * cp[i] * T_old[i] / dt
-
-            fl_T = areas[1] * k_face[1] / dr
-            b_T[0] = vols[0] * rho[0] * cp[0] / dt + fl_T
-            c_T[0] = -fl_T
-            a_T[0] = 0.0
-
-            for i in range(1, N - 1):
-                fl = areas[i] * k_face[i] / dr
-                fr = areas[i + 1] * k_face[i + 1] / dr
-                a_T[i] = -fl
-                b_T[i] = vols[i] * rho[i] * cp[i] / dt + fl + fr
-                c_T[i] = -fr
-
-            fl = areas[N - 1] * k_face[N - 1] / dr
-            fr_s = areas[N] * gamma_T_s
-            a_T[N - 1] = -fl
-            b_T[N - 1] = vols[N - 1] * rho[N - 1] * cp[N - 1] / dt + fl + fr_s
-            c_T[N - 1] = 0.0
-            d_T[N - 1] += fr_s * T_air
-
-            T_iter = solve_thomas(a_T, b_T, c_T, d_T)
-
-        C = C_iter
-        T = T_iter
-        t = t_next
-        step += 1
-
-        if step % sample_every_s == 0:
-            times_out[rec_idx] = t
-            T_history[rec_idx] = T
-            C_history[rec_idx] = C
-            rec_idx += 1
-
-        if stop_at_cmax > 0.0 and C.max() < stop_at_cmax:
-            actual_end_time = t
-            if step % sample_every_s != 0:
-                times_out[rec_idx] = t
-                T_history[rec_idx] = T
-                C_history[rec_idx] = C
-                rec_idx += 1
+@numba.njit
+def _simulate(t_env,T_env,C_env,t_rad,R_rad,total_seconds,formula_mode,
+              sample_every_s,N,h,hm,dt,stop_at_cmax,max_iterations,converge,
+              initial_T,initial_C):
+    edges = np.linspace(0.,1.,N+1)
+    weights = edges[1:]**2-edges[:-1]**2
+    one = np.ones(N)
+    T = np.full(N,initial_T)
+    C = np.full(N,initial_C)
+    capacity = int(np.floor(total_seconds/sample_every_s))+2
+    times = np.zeros(capacity)
+    radii = np.zeros(capacity)
+    Th = np.zeros((capacity,N))
+    Ch = np.zeros((capacity,N))
+    radii[0] = R_rad[0]
+    Th[0],Ch[0] = T,C
+    rec = 1
+    sample_index = 1
+    t = 0.
+    steps = 0
+    iterations_sum = 0
+    max_it = 0
+    flux_sum = 0.
+    balance_max = 0.
+    step_balance_max = 0.
+    residual_C_max = 0.
+    residual_T_max = 0.
+    delta_C_max = 0.
+    delta_T_max = 0.
+    center_excess_max = 0.
+    left_t = 0.
+    left_C = initial_C
+    status = 0
+    while t < total_seconds-1e-10:
+        step_dt = min(dt,total_seconds-t)
+        t_new = t+step_dt
+        R = interp_radius(t_new,t_rad,R_rad)
+        air,Ce = interp_env(t_new,t_env,T_env,C_env)
+        T_old,C_old = T.copy(),C.copy()
+        Ti,Ci = T.copy(),C.copy()
+        accepted = False
+        rc,rt,dc,dT = 0.,0.,0.,0.
+        for it in range(max_iterations):
+            storage,k,D = properties(Ti,Ci,formula_mode)
+            ac,bc,cc,fc,gamma = system(D,one,C_old,weights,R,step_dt,hm,Ce)
+            at,bt,ct,ft,_ = system(k,storage,T_old,weights,R,step_dt,h,air)
+            Cn = solve_thomas(ac,bc,cc,fc)
+            Tn = solve_thomas(at,bt,ct,ft)
+            dc = np.max(np.abs(Cn-Ci))
+            dT = np.max(np.abs(Tn-Ti))
+            Ci,Ti = Cn,Tn
+            # 接近收敛时，重组最终状态的非线性方程并检查残差。
+            if (dc <= 1e-10 and dT <= 1e-7) or it == max_iterations-1:
+                sn,kn,Dn = properties(Ti,Ci,formula_mode)
+                aa,bb,ccn,ff,_ = system(Dn,one,C_old,weights,R,step_dt,hm,Ce)
+                rc = residual(aa,bb,ccn,ff,Ci)
+                aa,bb,ccn,ff,_ = system(kn,sn,T_old,weights,R,step_dt,h,air)
+                rt = residual(aa,bb,ccn,ff,Ti)
+                if not converge or (dc<=1e-10 and dT<=1e-7 and max(rc,rt)<=1e-10):
+                    accepted = True
+                    break
+        if not accepted or not np.isfinite(Ci).all() or not np.isfinite(Ti).all() or np.min(Ci)<=0:
+            status = -1
             break
-
-    return times_out[:rec_idx], T_history[:rec_idx], C_history[:rec_idx], actual_end_time, rec_idx
-
-
-@numba.njit
-def simulate_fvm_moving(
-    t_env: np.ndarray,
-    T_env: np.ndarray,
-    C_env: np.ndarray,
-    t_rad: np.ndarray,
-    R_rad: np.ndarray,
-    total_seconds: int,
-    sample_every_s: int = 60,
-    N: int = 80,
-    h: float = 25.0,
-    hm: float = 8e-7,
-    dt: float = 1.0,
-    stop_at_cmax: float = 0.15,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, float, int]:
-    dxi = 1.0 / N
-    xi_faces = np.linspace(0.0, 1.0, N + 1)
-    vols_xi = np.pi * (xi_faces[1:]**2 - xi_faces[:-1]**2)
-    areas_xi = 2.0 * np.pi * xi_faces
-
-    T = np.full(N, 301.15, dtype=np.float64)
-    C = np.full(N, 2.55, dtype=np.float64)
-
-    max_records = total_seconds // sample_every_s + 2
-    times_out = np.zeros(max_records, dtype=np.float64)
-    radius_out = np.zeros(max_records, dtype=np.float64)
-    T_history = np.zeros((max_records, N), dtype=np.float64)
-    C_history = np.zeros((max_records, N), dtype=np.float64)
-
-    rec_idx = 0
-    times_out[rec_idx] = 0.0
-    radius_out[rec_idx] = R_rad[0]
-    T_history[rec_idx] = T
-    C_history[rec_idx] = C
-    rec_idx += 1
-
-    D_face = np.zeros(N + 1, dtype=np.float64)
-    k_face = np.zeros(N + 1, dtype=np.float64)
-
-    a_C = np.zeros(N, dtype=np.float64)
-    b_C = np.zeros(N, dtype=np.float64)
-    c_C = np.zeros(N, dtype=np.float64)
-    d_C = np.zeros(N, dtype=np.float64)
-
-    a_T = np.zeros(N, dtype=np.float64)
-    b_T = np.zeros(N, dtype=np.float64)
-    c_T = np.zeros(N, dtype=np.float64)
-    d_T = np.zeros(N, dtype=np.float64)
-
-    t = 0.0
-    step = 0
-    actual_end_time = float(total_seconds)
-
-    while t < total_seconds:
-        t_next = t + dt
-        T_air, C_e = interp_env(t_next, t_env, T_env, C_env)
-        R_curr = interp_radius(t_next, t_rad, R_rad)
-
-        C_old = C.copy()
-        T_old = T.copy()
-        C_iter = C.copy()
-        T_iter = T.copy()
-
-        for _it in range(2):
-            rho = 760.0 + 90.0 * C_iter
-            cp = 1850.0 + 2150.0 * (C_iter / (C_iter + 1.0))
-            k = 0.12 + 0.20 * (C_iter / (C_iter + 1.0))
-            D = 4.2e-4 * np.exp(-0.30 / C_iter - 3850.0 / T_iter)
-
-            D_eff = D / (R_curr * R_curr)
-            for i in range(1, N):
-                D_face[i] = 2.0 * D_eff[i - 1] * D_eff[i] / (D_eff[i - 1] + D_eff[i])
-            gamma_s_eff = 1.0 / ((0.5 * dxi * R_curr) / D[N - 1] + 1.0 / hm) / R_curr
-
-            for i in range(N):
-                d_C[i] = vols_xi[i] * C_old[i] / dt
-
-            fl = areas_xi[1] * D_face[1] / dxi
-            b_C[0] = vols_xi[0] / dt + fl
-            c_C[0] = -fl
-            a_C[0] = 0.0
-
-            for i in range(1, N - 1):
-                fl = areas_xi[i] * D_face[i] / dxi
-                fr = areas_xi[i + 1] * D_face[i + 1] / dxi
-                a_C[i] = -fl
-                b_C[i] = vols_xi[i] / dt + fl + fr
-                c_C[i] = -fr
-
-            fl = areas_xi[N - 1] * D_face[N - 1] / dxi
-            fr_s = areas_xi[N] * gamma_s_eff
-            a_C[N - 1] = -fl
-            b_C[N - 1] = vols_xi[N - 1] / dt + fl + fr_s
-            c_C[N - 1] = 0.0
-            d_C[N - 1] += fr_s * C_e
-
-            C_iter = solve_thomas(a_C, b_C, c_C, d_C)
-
-            k_eff = k / (R_curr * R_curr)
-            for i in range(1, N):
-                k_face[i] = 2.0 * k_eff[i - 1] * k_eff[i] / (k_eff[i - 1] + k_eff[i])
-            gamma_T_eff = 1.0 / ((0.5 * dxi * R_curr) / k[N - 1] + 1.0 / h) / R_curr
-
-            for i in range(N):
-                d_T[i] = vols_xi[i] * rho[i] * cp[i] * T_old[i] / dt
-
-            fl_T = areas_xi[1] * k_face[1] / dxi
-            b_T[0] = vols_xi[0] * rho[0] * cp[0] / dt + fl_T
-            c_T[0] = -fl_T
-            a_T[0] = 0.0
-
-            for i in range(1, N - 1):
-                fl = areas_xi[i] * k_face[i] / dxi
-                fr = areas_xi[i + 1] * k_face[i + 1] / dxi
-                a_T[i] = -fl
-                b_T[i] = vols_xi[i] * rho[i] * cp[i] / dt + fl + fr
-                c_T[i] = -fr
-
-            fl = areas_xi[N - 1] * k_face[N - 1] / dxi
-            fr_s = areas_xi[N] * gamma_T_eff
-            a_T[N - 1] = -fl
-            b_T[N - 1] = vols_xi[N - 1] * rho[N - 1] * cp[N - 1] / dt + fl + fr_s
-            c_T[N - 1] = 0.0
-            d_T[N - 1] += fr_s * T_air
-
-            T_iter = solve_thomas(a_T, b_T, c_T, d_T)
-
-        C = C_iter
-        T = T_iter
-        t = t_next
-        step += 1
-
-        if step % sample_every_s == 0:
-            times_out[rec_idx] = t
-            radius_out[rec_idx] = R_curr
-            T_history[rec_idx] = T
-            C_history[rec_idx] = C
-            rec_idx += 1
-
-        if stop_at_cmax > 0.0 and C.max() < stop_at_cmax:
-            actual_end_time = t
-            if step % sample_every_s != 0:
-                times_out[rec_idx] = t
-                radius_out[rec_idx] = R_curr
-                T_history[rec_idx] = T
-                C_history[rec_idx] = C
-                rec_idx += 1
+        iterations_sum += it+1
+        max_it = max(max_it,it+1)
+        residual_C_max = max(residual_C_max,rc)
+        residual_T_max = max(residual_T_max,rt)
+        delta_C_max = max(delta_C_max,dc)
+        delta_T_max = max(delta_T_max,dT)
+        # gamma为本步实际水分矩阵采用的系数，不用重组系数替代它。
+        outward = 2*gamma/R*(Ci[-1]-Ce)*step_dt
+        flux_sum += outward
+        mean_new = np.sum(weights*Ci)
+        step_balance_max = max(step_balance_max,abs(np.sum(weights*(Ci-C_old))+outward)/initial_C)
+        balance_max = max(balance_max,abs(mean_new-initial_C+flux_sum)/initial_C)
+        center_excess_max = max(center_excess_max,(Ci[0]-Ci[1])/8)
+        # 输出不改变积分步长。跨越输出点时作线性输出插值；本题验证节点整除步长。
+        while sample_index*sample_every_s <= t_new+1e-10:
+            if rec >= capacity:
+                raise IndexError('output capacity')
+            ts = sample_index*sample_every_s
+            alpha = (ts-t)/step_dt
+            times[rec] = ts
+            radii[rec] = interp_radius(ts,t_rad,R_rad)
+            Th[rec] = T_old+alpha*(Ti-T_old)
+            Ch[rec] = C_old+alpha*(Ci-C_old)
+            rec += 1
+            sample_index += 1
+        left_t,left_C = t,np.max(C_old)
+        t,T,C = t_new,Ti,Ci
+        steps += 1
+        if stop_at_cmax > 0 and np.max(C) < stop_at_cmax:
+            status = 1
             break
+    if abs(times[rec-1]-t)>1e-9:
+        times[rec] = t
+        radii[rec] = interp_radius(t,t_rad,R_rad)
+        Th[rec],Ch[rec] = T,C
+        rec += 1
+    diag = np.array([status,left_t,t,left_C,np.max(C),balance_max,step_balance_max,
+                     residual_C_max,residual_T_max,max_it,iterations_sum/max(steps,1),
+                     steps,center_excess_max,delta_C_max,delta_T_max])
+    return times[:rec],radii[:rec],Th[:rec],Ch[:rec],t,rec,diag
 
-    return times_out[:rec_idx], radius_out[:rec_idx], T_history[:rec_idx], C_history[:rec_idx], actual_end_time, rec_idx
+
+def _finish(result, moving, return_diagnostics):
+    keys = ['status_code','left_time_s','end_time_s','left_max_C','final_max_C',
+            'water_balance','step_water_balance','residual_C','residual_T',
+            'max_iterations','mean_iterations','steps','center_excess_bound',
+            'last_iteration_delta_C_max','last_iteration_delta_T_max']
+    diag = dict(zip(keys,result[-1].tolist()))
+    diag['status'] = {-1:'solver_failed',0:'not_reached',1:'reached'}[int(diag['status_code'])]
+    values = result[:-1] if moving else (result[0],result[2],result[3],result[4],result[5])
+    if return_diagnostics:
+        return (*values,diag)
+    if diag['status_code'] == -1:
+        raise RuntimeError(f"Nonlinear solve failed after t={result[4]} s")
+    return values
+
+
+def simulate_fvm_fixed(t_env,T_env,C_env,total_seconds,formula_mode,sample_every_s=1,
+                       N=80,R=.02,h=25.,hm=8e-7,dt=1.,stop_at_cmax=-1.,
+                       max_iterations=50,converge=True,return_diagnostics=False,
+                       initial_T=301.15,initial_C=2.55):
+    result = _simulate(t_env,T_env,C_env,np.array([0.,float(total_seconds)]),
+        np.array([R,R]),total_seconds,formula_mode,sample_every_s,N,h,hm,dt,
+        stop_at_cmax,max_iterations,converge,initial_T,initial_C)
+    return _finish(result,False,return_diagnostics)
+
+
+def simulate_fvm_moving(t_env,T_env,C_env,t_rad,R_rad,total_seconds,sample_every_s=60,
+                        N=80,h=25.,hm=8e-7,dt=1.,stop_at_cmax=.15,
+                        max_iterations=50,converge=True,return_diagnostics=False,
+                        initial_T=301.15,initial_C=2.55):
+    result = _simulate(t_env,T_env,C_env,t_rad,R_rad,total_seconds,3,sample_every_s,N,h,hm,
+                      dt,stop_at_cmax,max_iterations,converge,initial_T,initial_C)
+    return _finish(result,True,return_diagnostics)
 
 
 def reconstruct_surface(

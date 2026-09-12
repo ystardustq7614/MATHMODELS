@@ -287,7 +287,8 @@ def numeric_variants(value: object) -> set[str]:
     if not math.isfinite(number):
         return set()
     variants = {str(value), f"{number:g}", f"{number:.2f}", f"{number:.3f}", f"{number:.4f}"}
-    return {item.rstrip("0").rstrip(".") if "." in item else item for item in variants}
+    # Trailing-zero normalization must never alter a scientific exponent.
+    return {item.rstrip("0").rstrip(".") if "." in item and "e" not in item.lower() else item for item in variants}
 
 
 def collect_requirements(section: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:

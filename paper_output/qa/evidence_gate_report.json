@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "quality-assurance-auditor/scripts/evidence_gate.py",
-  "generated_at": "2026-09-11T14:31:29",
+  "generated_at": "2026-09-12T13:56:56",
   "status": "PASS",
   "failures": [],
   "warnings": [],
@@ -12,7 +12,7 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 11,
+      "metric_count": 18,
       "conclusion_count": 1,
       "figure_count": 1,
       "table_count": 4
@@ -23,7 +23,7 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 6,
+      "metric_count": 19,
       "conclusion_count": 1,
       "figure_count": 1,
       "table_count": 4
@@ -34,10 +34,10 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 10,
+      "metric_count": 19,
       "conclusion_count": 1,
       "figure_count": 1,
-      "table_count": 3
+      "table_count": 5
     },
     {
       "question_id": "AQ4",
@@ -45,19 +45,19 @@
       "failures": [],
       "warnings": [],
       "has_result": true,
-      "metric_count": 11,
+      "metric_count": 21,
       "conclusion_count": 1,
       "figure_count": 1,
-      "table_count": 3
+      "table_count": 4
     }
   ],
   "input_hashes": {
-    "paper_output/plan/model_route.json": "1fa3f04e25ba4a905994e39e3c26e25051eb0b4c62dc11e1fb8bd86b33adcf0f",
-    "paper_output/figure_index.json": "bdc93596641360c75ac920eea8504a629d83f9d82dee867a381c4b022ef20663",
-    "paper_output/results/model_results.json": "35b4e8f7846e19ecf9065a16b454f054c8a70007f1ea0523241db24531a6ef9f",
-    "paper_output/results/run_manifest.json": "b7196b6f0687fcdefb10528dd3c7942217a7177cbbcb31a1c27606a31d8fbc91",
-    "paper_output/results/metrics.json": "9628ea2d3859eb92f0bcfeb5e62b5a65caea8a99411a458be75bb2a3847eb6a7",
-    "paper_output/results/conclusions.json": "12c1fa1cfe19d53f53f9829dac7fcb37ee0132757847103dce94804a38688978",
-    "paper_output/tables/table_index.json": "f6fdaf4ef33592f1ddeaad62ede6e562e7fdbe83f8e06fca03430a6f9abd0c57"
+    "paper_output/plan/model_route.json": "9c382d4eda50c1a30b789afb71cac4c553d22050cbdaeb96a0c9316e6afc7f49",
+    "paper_output/figure_index.json": "5abf045b315832a7d89109f4c869981a3285d5a296595b9332ff866dbc1949c7",
+    "paper_output/results/model_results.json": "d742ce0e2a78e07cef185748e7e6e8fddb401086775f83a250189913790a81e5",
+    "paper_output/results/run_manifest.json": "e7e045337cbbc05d93b92956c34861d0b3549194570a74d7c0ad62ba2a5a3875",
+    "paper_output/results/metrics.json": "9b60e8eaadc27669fc26530ec0a0009705b440ae4b2f146b6f872ed16fdb1906",
+    "paper_output/results/conclusions.json": "2f5c45c9cf8f004799f455d1d91cf84ac6aec26b6eeaa27cf413cd8d411f0ba6",
+    "paper_output/tables/table_index.json": "5cbec75eade7a8467334c319d586dcc6c7b6f40d179637af857c4cf4ab12c3f1"
   }
 }

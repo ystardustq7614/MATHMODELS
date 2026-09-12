@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-11T21:48:39",
+  "generated_by": "paper_output/code/modeling/result_contract_io.py",
+  "generated_at": "2026-09-12T13:55:48",
   "source": "paper_output/results/model_results.json",
   "tables": [
     {
@@ -23,8 +23,8 @@
       "status": "generated_from_cleaned_data"
     },
     {
-      "table_id": "table1",
       "question_id": "AQ1",
+      "table_id": "table1",
       "title": "30分钟内药材的温度（表1）",
       "purpose": "展示预热阶段100-1800 s各径向截面的药材温度动态。",
       "path": "paper_output/tables/table_aq1_temperature.csv",
@@ -32,8 +32,8 @@
       "status": "computed"
     },
     {
-      "table_id": "table2",
       "question_id": "AQ1",
+      "table_id": "table2",
       "title": "30分钟内药材的水分浓度（表2）",
       "purpose": "展示预热阶段100-1800 s各径向截面的干基水分浓度分布。",
       "path": "paper_output/tables/table_aq1_moisture.csv",
@@ -41,8 +41,8 @@
       "status": "computed"
     },
     {
-      "table_id": "table3",
       "question_id": "AQ2",
+      "table_id": "table3",
       "title": "3小时内药材的温度（表3）",
       "purpose": "展示全过程模型在0.5-3.0 h各半小时的温度径向分布。",
       "path": "paper_output/tables/table_aq2_temperature.csv",
@@ -50,8 +50,8 @@
       "status": "computed"
     },
     {
-      "table_id": "table4",
       "question_id": "AQ2",
+      "table_id": "table4",
       "title": "3小时内药材的水分浓度（表4）",
       "purpose": "展示全过程模型在0.5-3.0 h各半小时的干基水分浓度径向分布。",
       "path": "paper_output/tables/table_aq2_moisture.csv",
@@ -59,8 +59,8 @@
       "status": "computed"
     },
     {
-      "table_id": "table5",
       "question_id": "AQ3",
+      "table_id": "table5",
       "title": "药材烘干过程的水分浓度（表5）",
       "purpose": "展示固定半径下每隔6小时及烘干结束时刻各截面含水率衰变历程。",
       "path": "paper_output/tables/table_aq3_drying_moisture.csv",
@@ -68,18 +68,46 @@
       "status": "computed"
     },
     {
-      "table_id": "table6",
       "question_id": "AQ4",
+      "table_id": "table6",
       "title": "药材烘干过程的水分浓度（表6）",
       "purpose": "展示收缩域中每隔6小时及烘干结束时刻各物理截面及真实表面的含水率分布。",
       "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
       "source": "paper_output/code/modeling",
       "status": "computed"
+    },
+    {
+      "table_id": "table7",
+      "question_id": "AQ3",
+      "title": "长程网格与时间步验证",
+      "purpose": "长程网格与时间步验证",
+      "path": "paper_output/qa/model_validation_checks.json",
+      "json_section": "accepted_combined_comparison",
+      "status": "computed",
+      "source": "numerical_validation"
+    },
+    {
+      "table_id": "table8",
+      "question_id": "AQ4",
+      "title": "三格顺序对照",
+      "purpose": "三格顺序对照",
+      "path": "paper_output/qa/model_validation_checks.json",
+      "json_section": "sequential_contrast",
+      "status": "computed",
+      "source": "numerical_validation"
+    },
+    {
+      "table_id": "table9",
+      "question_id": "AQ3",
+      "title": "边界情景检验",
+      "purpose": "边界情景检验",
+      "path": "paper_output/qa/model_validation_checks.json",
+      "json_section": "scenarios",
+      "status": "computed",
+      "source": "numerical_validation"
     }
   ],
   "notes": [
-    "status=draft_contract 的表格是结果证据骨架，不应直接冒充最终比赛结果。",
-    "真实赛题应由 Agent 根据当前建模代码补齐表格数值后再进入最终正文。",
-    "status=scaffold_result_needs_review 的表格来自自动脚手架，正式提交前应由 Agent 结合真实赛题复核或改写。"
+    "各结果来自实际数值运行；显示四位小数不代表四位小数的物理准确度。"
   ]
 }

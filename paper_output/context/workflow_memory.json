@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "context-memory-keeper/scripts/update_workflow_memory.py",
+  "generated_at": "2026-09-12T15:14:33",
+  "status": "PASS",
+  "root": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS",
+  "workflow": {
+    "status": "COMPLETE",
+    "mode": "status",
+    "current_step": "S8",
+    "next_step": "",
+    "recommended_skill": "",
+    "next_action": "S0-S8 全部通过；可以进行最终一致性复核或交付。",
+    "completed_steps": [
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8"
+    ],
+    "failures": []
+  },
+  "inputs": {
+    "summary": {
+      "file_count": 7,
+      "role_counts": {
+        "problem_statement": 1,
+        "raw_data": 2,
+        "result_template": 4
+      },
+      "problem_statement_count": 1,
+      "raw_data_count": 2,
+      "result_template_count": 4,
+      "requires_user_confirmation": false
+    },
+    "role_counts": {
+      "problem_statement": 1,
+      "raw_data": 2,
+      "result_template": 4
+    },
+    "problem_statements": [
+      "problem_files/A题/A题.pdf"
+    ],
+    "raw_data": [
+      "problem_files/A题/附件/附件1.xlsx",
+      "problem_files/A题/附件/附件2.xlsx"
+    ],
+    "result_templates": [
+      "problem_files/A题/附件/附件3/result1.xlsx",
+      "problem_files/A题/附件/附件3/result2.xlsx",
+      "problem_files/A题/附件/附件3/result3.xlsx",
+      "problem_files/A题/附件/附件3/result4.xlsx"
+    ]
+  },
+  "runs": {
+    "status": "PASS",
+    "run_count": 4,
+    "scripts": [
+      "paper_output/code/modeling/q1_model.py",
+      "paper_output/code/modeling/q2_model.py",
+      "paper_output/code/modeling/q3_model.py",
+      "paper_output/code/modeling/q4_model.py"
+    ],
+    "returncodes": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "artifacts": {
+    "workflow_guard_report": {
+      "path": "paper_output/qa/workflow_guard_report.json",
+      "exists": true,
+      "bytes": 1450,
+      "status": "COMPLETE"
+    },
+    "preflight_report": {
+      "path": "paper_output/preflight_report.json",
+      "exists": true,
+      "bytes": 7158,
+      "status": "PASS"
+    },
+    "input_manifest": {
+      "path": "paper_output/input_manifest.json",
+      "exists": true,
+      "bytes": 6108
+    },
+    "load_report": {
+      "path": "paper_output/data_cleaned/load_report.json",
+      "exists": true,
+      "bytes": 2831,
+      "status": "PASS"
+    },
+    "run_manifest": {
+      "path": "paper_output/results/run_manifest.json",
+      "exists": true,
+      "bytes": 12007,
+      "status": "PASS"
+    },
+    "evidence_gate_report": {
+      "path": "paper_output/qa/evidence_gate_report.json",
+      "exists": true,
+      "bytes": 2036,
+      "status": "PASS"
+    },
+    "authoring_state": {
+      "path": "paper_output/context/authoring_state.json",
+      "exists": true,
+      "bytes": 4843,
+      "status": "PASS"
+    },
+    "writing_plan": {
+      "path": "paper_output/plan/writing_plan.json",
+      "exists": true,
+      "bytes": 40949,
+      "status": "PASS"
+    },
+    "format_check_report": {
+      "path": "paper_output/format_check_report.json",
+      "exists": true,
+      "bytes": 5807,
+      "status": "PASS"
+    }
+  },
+  "latest_statuses": {
+    "preflight": "PASS",
+    "load_report": "PASS",
+    "run_manifest": "PASS",
+    "evidence_gate": "PASS",
+    "authoring": "PASS",
+    "format_check": "PASS"
+  },
+  "blockers": []
+}

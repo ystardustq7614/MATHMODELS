@@ -1,209 +1,2890 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/modeling/result_contract_io.py",
-  "generated_at": "2026-09-11T21:48:39",
+  "generated_at": "2026-09-12T13:55:48",
   "source": "paper_output/results/model_results.json",
   "items": [
     {
-      "question_id": "AQ1",
-      "status": "computed",
       "metric_name": "aq1_final_center_temperature_C",
       "metric_role": "evaluation",
-      "value": 33.5766,
-      "unit": "°C"
+      "value": 33.5759,
+      "unit": "°C",
+      "question_id": "AQ1",
+      "status": "computed"
     },
     {
-      "question_id": "AQ1",
-      "status": "computed",
       "metric_name": "aq1_final_surface_temperature_C",
       "metric_role": "evaluation",
-      "value": 36.7863,
-      "unit": "°C"
+      "value": 36.7859,
+      "unit": "°C",
+      "question_id": "AQ1",
+      "status": "computed"
     },
     {
-      "question_id": "AQ1",
-      "status": "computed",
       "metric_name": "aq1_final_center_moisture",
       "metric_role": "evaluation",
       "value": 2.55,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ1",
+      "status": "computed"
     },
     {
-      "question_id": "AQ1",
-      "status": "computed",
       "metric_name": "aq1_final_surface_moisture",
       "metric_role": "evaluation",
       "value": 1.5103,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ1",
+      "status": "computed"
     },
     {
-      "question_id": "AQ1",
-      "status": "computed",
       "metric_name": "aq1_total_moisture_loss_fraction",
       "metric_role": "evaluation",
-      "value": 0.100532,
-      "unit": "fraction"
+      "value": 0.100563,
+      "unit": "fraction",
+      "question_id": "AQ1",
+      "status": "computed"
     },
     {
-      "question_id": "AQ2",
-      "status": "computed",
+      "metric_name": "aq1_left_time_s",
+      "metric_role": "validation",
+      "value": 1799.5,
+      "unit": "s",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_end_time_s",
+      "metric_role": "validation",
+      "value": 1800.0,
+      "unit": "s",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_left_max_C",
+      "metric_role": "validation",
+      "value": 2.5499922976882003,
+      "unit": "kg/kg",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_final_max_C",
+      "metric_role": "validation",
+      "value": 2.549992271962013,
+      "unit": "kg/kg",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_water_balance",
+      "metric_role": "validation",
+      "value": 1.2060069718477192e-14,
+      "unit": "1",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_step_water_balance",
+      "metric_role": "validation",
+      "value": 2.00152224587275e-16,
+      "unit": "1",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_residual_C",
+      "metric_role": "validation",
+      "value": 3.8706802378437625e-16,
+      "unit": "1",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_residual_T",
+      "metric_role": "validation",
+      "value": 2.4453460187734737e-16,
+      "unit": "1",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_max_iterations",
+      "metric_role": "validation",
+      "value": 4.0,
+      "unit": "count",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_mean_iterations",
+      "metric_role": "validation",
+      "value": 4.0,
+      "unit": "count",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_steps",
+      "metric_role": "validation",
+      "value": 3600.0,
+      "unit": "count",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_center_excess_bound",
+      "metric_role": "validation",
+      "value": 1.590029219400435e-10,
+      "unit": "kg/kg",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq1_status_code",
+      "metric_role": "validation",
+      "value": 0.0,
+      "unit": "1",
+      "question_id": "AQ1",
+      "status": "computed"
+    },
+    {
       "metric_name": "aq2_3h_center_temperature_C",
       "metric_role": "evaluation",
-      "value": 49.8494,
-      "unit": "°C"
+      "value": 49.8495,
+      "unit": "°C",
+      "question_id": "AQ2",
+      "status": "computed"
     },
     {
-      "question_id": "AQ2",
-      "status": "computed",
       "metric_name": "aq2_3h_surface_temperature_C",
       "metric_role": "evaluation",
       "value": 49.9664,
-      "unit": "°C"
+      "unit": "°C",
+      "question_id": "AQ2",
+      "status": "computed"
     },
     {
-      "question_id": "AQ2",
-      "status": "computed",
       "metric_name": "aq2_3h_center_moisture",
       "metric_role": "evaluation",
       "value": 1.7662,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ2",
+      "status": "computed"
     },
     {
-      "question_id": "AQ2",
-      "status": "computed",
       "metric_name": "aq2_3h_surface_moisture",
       "metric_role": "evaluation",
       "value": 1.0081,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ2",
+      "status": "computed"
     },
     {
-      "question_id": "AQ2",
-      "status": "computed",
       "metric_name": "aq2_1800s_surface_temperature_C",
       "metric_role": "comparison",
-      "value": 35.414,
-      "unit": "°C"
+      "value": 35.4135,
+      "unit": "°C",
+      "question_id": "AQ2",
+      "status": "computed"
     },
     {
-      "question_id": "AQ2",
-      "status": "computed",
       "metric_name": "aq2_1800s_surface_moisture",
       "metric_role": "comparison",
       "value": 1.6487,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ2",
+      "status": "computed"
     },
     {
-      "question_id": "AQ3",
-      "status": "computed",
+      "metric_name": "aq2_left_time_s",
+      "metric_role": "validation",
+      "value": 205817.5,
+      "unit": "s",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_end_time_s",
+      "metric_role": "validation",
+      "value": 205818.0,
+      "unit": "s",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_left_max_C",
+      "metric_role": "validation",
+      "value": 0.15000010079669182,
+      "unit": "kg/kg",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_final_max_C",
+      "metric_role": "validation",
+      "value": 0.14999995427300694,
+      "unit": "kg/kg",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_water_balance",
+      "metric_role": "validation",
+      "value": 4.4757226247633767e-14,
+      "unit": "1",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_step_water_balance",
+      "metric_role": "validation",
+      "value": 2.931943095510862e-16,
+      "unit": "1",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_residual_C",
+      "metric_role": "validation",
+      "value": 1.0867260945845985e-11,
+      "unit": "1",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_residual_T",
+      "metric_role": "validation",
+      "value": 3.512785547753425e-16,
+      "unit": "1",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_max_iterations",
+      "metric_role": "validation",
+      "value": 4.0,
+      "unit": "count",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_mean_iterations",
+      "metric_role": "validation",
+      "value": 3.36223994014129,
+      "unit": "count",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_steps",
+      "metric_role": "validation",
+      "value": 411636.0,
+      "unit": "count",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_center_excess_bound",
+      "metric_role": "validation",
+      "value": 1.54901110160921e-07,
+      "unit": "kg/kg",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq2_status_code",
+      "metric_role": "validation",
+      "value": 1.0,
+      "unit": "1",
+      "question_id": "AQ2",
+      "status": "computed"
+    },
+    {
       "metric_name": "aq3_drying_time_s",
       "metric_role": "evaluation",
-      "value": 206433.0,
-      "unit": "s"
+      "value": 205818.0,
+      "unit": "s",
+      "question_id": "AQ3",
+      "status": "computed"
     },
     {
-      "question_id": "AQ3",
-      "status": "computed",
       "metric_name": "aq3_drying_time_h",
       "metric_role": "evaluation",
-      "value": 57.3425,
-      "unit": "h"
+      "value": 57.1717,
+      "unit": "h",
+      "question_id": "AQ3",
+      "status": "computed"
     },
     {
-      "question_id": "AQ3",
-      "status": "computed",
       "metric_name": "aq3_final_max_moisture",
       "metric_role": "evaluation",
       "value": 0.15,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
     },
     {
-      "question_id": "AQ3",
-      "status": "computed",
       "metric_name": "aq3_final_min_moisture",
       "metric_role": "evaluation",
       "value": 0.0525,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
     },
     {
-      "question_id": "AQ3",
-      "status": "computed",
       "metric_name": "aq3_final_center_moisture",
       "metric_role": "evaluation",
       "value": 0.15,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
     },
     {
-      "question_id": "AQ3",
-      "status": "computed",
       "metric_name": "aq3_final_surface_moisture",
       "metric_role": "evaluation",
       "value": 0.0525,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
+      "metric_name": "aq3_left_time_s",
+      "metric_role": "validation",
+      "value": 205817.5,
+      "unit": "s",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_end_time_s",
+      "metric_role": "validation",
+      "value": 205818.0,
+      "unit": "s",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_left_max_C",
+      "metric_role": "validation",
+      "value": 0.15000010079669182,
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_final_max_C",
+      "metric_role": "validation",
+      "value": 0.14999995427300694,
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_water_balance",
+      "metric_role": "validation",
+      "value": 4.4757226247633767e-14,
+      "unit": "1",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_step_water_balance",
+      "metric_role": "validation",
+      "value": 2.931943095510862e-16,
+      "unit": "1",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_residual_C",
+      "metric_role": "validation",
+      "value": 1.0867260945845985e-11,
+      "unit": "1",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_residual_T",
+      "metric_role": "validation",
+      "value": 3.512785547753425e-16,
+      "unit": "1",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_max_iterations",
+      "metric_role": "validation",
+      "value": 4.0,
+      "unit": "count",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_mean_iterations",
+      "metric_role": "validation",
+      "value": 3.36223994014129,
+      "unit": "count",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_steps",
+      "metric_role": "validation",
+      "value": 411636.0,
+      "unit": "count",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_center_excess_bound",
+      "metric_role": "validation",
+      "value": 1.54901110160921e-07,
+      "unit": "kg/kg",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq3_status_code",
+      "metric_role": "validation",
+      "value": 1.0,
+      "unit": "1",
+      "question_id": "AQ3",
+      "status": "computed"
+    },
+    {
       "metric_name": "aq4_drying_time_s",
       "metric_role": "evaluation",
-      "value": 183086.0,
-      "unit": "s"
+      "value": 182969.5,
+      "unit": "s",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_drying_time_h",
       "metric_role": "evaluation",
-      "value": 50.8572,
-      "unit": "h"
+      "value": 50.8249,
+      "unit": "h",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_final_radius_cm",
       "metric_role": "evaluation",
       "value": 1.2,
-      "unit": "cm"
+      "unit": "cm",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_final_max_moisture",
       "metric_role": "evaluation",
       "value": 0.15,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_final_min_moisture",
       "metric_role": "evaluation",
-      "value": 0.0605,
-      "unit": "kg/kg"
+      "value": 0.0535,
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_final_center_moisture",
       "metric_role": "evaluation",
       "value": 0.15,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_final_surface_moisture",
       "metric_role": "evaluation",
       "value": 0.0525,
-      "unit": "kg/kg"
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
     },
     {
-      "question_id": "AQ4",
-      "status": "computed",
       "metric_name": "aq4_time_reduction_vs_aq3_percent",
       "metric_role": "comparison",
-      "value": 11.31,
-      "unit": "%"
+      "value": 11.1,
+      "unit": "%",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_left_time_s",
+      "metric_role": "validation",
+      "value": 182969.0,
+      "unit": "s",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_end_time_s",
+      "metric_role": "validation",
+      "value": 182969.5,
+      "unit": "s",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_left_max_C",
+      "metric_role": "validation",
+      "value": 0.15000000160267352,
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_final_max_C",
+      "metric_role": "validation",
+      "value": 0.14999974327394916,
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_water_balance",
+      "metric_role": "validation",
+      "value": 4.7717820979967513e-14,
+      "unit": "1",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_step_water_balance",
+      "metric_role": "validation",
+      "value": 1.285284472465843e-16,
+      "unit": "1",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_residual_C",
+      "metric_role": "validation",
+      "value": 1.4649702830163243e-11,
+      "unit": "1",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_residual_T",
+      "metric_role": "validation",
+      "value": 3.347897338265732e-16,
+      "unit": "1",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_max_iterations",
+      "metric_role": "validation",
+      "value": 4.0,
+      "unit": "count",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_mean_iterations",
+      "metric_role": "validation",
+      "value": 3.482017494719065,
+      "unit": "count",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_steps",
+      "metric_role": "validation",
+      "value": 365939.0,
+      "unit": "count",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_center_excess_bound",
+      "metric_role": "validation",
+      "value": 2.4056242708958564e-07,
+      "unit": "kg/kg",
+      "question_id": "AQ4",
+      "status": "computed"
+    },
+    {
+      "metric_name": "aq4_status_code",
+      "metric_role": "validation",
+      "value": 1.0,
+      "unit": "1",
+      "question_id": "AQ4",
+      "status": "computed"
     }
   ],
-  "validation_generated_by": "paper_output/code/visualization/run_numerical_validation.py"
+  "validation_generated_by": "paper_output/code/visualization/run_numerical_validation.py",
+  "numerical_validation": {
+    "schema_version": "2.0",
+    "generated_by": "paper_output/code/visualization/run_numerical_validation.py",
+    "generated_at": "2026-09-12T05:08:06.157442+00:00",
+    "status": "PASS",
+    "checks": {
+      "sampling_0.5": true,
+      "sampling_1.0": true,
+      "sampling_2.0": true,
+      "uniform_moving": true,
+      "constant_radius": true,
+      "event_between_samples": true,
+      "nonlinear_failure": true,
+      "not_reached": true
+    },
+    "runs": {
+      "AQ3_B0": {
+        "N": 80,
+        "dt_s": 1.0,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 206432.0,
+          "end_time_s": 206433.0,
+          "left_max_C": 0.15000001007788819,
+          "final_max_C": 0.14999971882303406,
+          "water_balance": 2.0375857863708756e-14,
+          "step_water_balance": 6.691228113525737e-17,
+          "residual_C": 2.6573165183855313e-10,
+          "residual_T": 5.817769176421808e-12,
+          "max_iterations": 2.0,
+          "mean_iterations": 2.0,
+          "steps": 206433.0,
+          "center_excess_bound": 3.964447430315765e-05,
+          "last_iteration_delta_C_max": 9.143831107838452e-07,
+          "last_iteration_delta_T_max": 2.4381907337556186e-06,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.34082462055386,
+            "surface_cell_T": 308.52138635513,
+            "max_C": 2.5499294889861526,
+            "min_C": 1.671867243444376,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549929743638235
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99942097811766,
+            "surface_cell_T": 323.11460551502114,
+            "max_C": 1.7661866670163882,
+            "min_C": 1.0174369945832191,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7662178395175232
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3145182399852,
+            "surface_cell_T": 323.3147298588106,
+            "max_C": 1.0155813549691497,
+            "min_C": 0.5403677186274646,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155993102722958
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999998,
+            "surface_cell_T": 323.31500000000017,
+            "max_C": 0.23715847902146622,
+            "min_C": 0.08559481011962657,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23716158501825813
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.314999999999,
+            "surface_cell_T": 323.31499999999926,
+            "max_C": 0.16163244694945306,
+            "min_C": 0.06909144053436628,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16163405784124743
+          },
+          {
+            "time_s": 206433.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999999926,
+            "surface_cell_T": 323.3149999999998,
+            "max_C": 0.14999971882303406,
+            "min_C": 0.06664220613897524,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15000113229961964
+          }
+        ],
+        "elapsed_s": 3.2070565000003626
+      },
+      "AQ3_B1": {
+        "N": 80,
+        "dt_s": 1.0,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 206432.0,
+          "end_time_s": 206433.0,
+          "left_max_C": 0.15000001013188313,
+          "final_max_C": 0.14999971887702848,
+          "water_balance": 2.751611574757251e-14,
+          "step_water_balance": 7.885976389872507e-17,
+          "residual_C": 9.415857737730611e-13,
+          "residual_T": 3.7855330243162647e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.65488076034355,
+          "steps": 206433.0,
+          "center_excess_bound": 3.9644474400246654e-05,
+          "last_iteration_delta_C_max": 9.999889805101247e-11,
+          "last_iteration_delta_T_max": 2.582396518846508e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.34082462233346,
+            "surface_cell_T": 308.52138635311576,
+            "max_C": 2.5499294889859896,
+            "min_C": 1.671867247390687,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549929743638073
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99942097842614,
+            "surface_cell_T": 323.1146055152407,
+            "max_C": 1.7661866650780398,
+            "min_C": 1.017436993381654,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.766217837579158
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3145182399858,
+            "surface_cell_T": 323.31472985881044,
+            "max_C": 1.0155813539403777,
+            "min_C": 0.5403677182822787,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.015599309243497
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999998,
+            "surface_cell_T": 323.31499999999966,
+            "max_C": 0.23715847930459366,
+            "min_C": 0.0855948105243766,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23716158530138662
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999998,
+            "surface_cell_T": 323.31500000000034,
+            "max_C": 0.16163244702539595,
+            "min_C": 0.06909144055070257,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16163405791719157
+          },
+          {
+            "time_s": 206433.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999999915,
+            "surface_cell_T": 323.31499999999994,
+            "max_C": 0.14999971887702848,
+            "min_C": 0.06664220615044442,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15000113235361495
+          }
+        ],
+        "elapsed_s": 3.744572199999311
+      },
+      "AQ3_B2": {
+        "N": 160,
+        "dt_s": 1.0,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 206040.0,
+          "end_time_s": 206041.0,
+          "left_max_C": 0.1500001009097708,
+          "final_max_C": 0.14999980852057995,
+          "water_balance": 2.2988147333415006e-14,
+          "step_water_balance": 6.070469222612467e-17,
+          "residual_C": 1.91113876883355e-12,
+          "residual_T": 3.4845479076222975e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.974272110890551,
+          "steps": 206041.0,
+          "center_excess_bound": 9.912393369893024e-06,
+          "last_iteration_delta_C_max": 9.999931438464671e-11,
+          "last_iteration_delta_T_max": 9.600853445590474e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.34074683323007,
+            "surface_cell_T": 308.5426338046127,
+            "max_C": 2.5499317737466463,
+            "min_C": 1.660297720309155,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.5499318359403684
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.9994279033935,
+            "surface_cell_T": 323.1154962295148,
+            "max_C": 1.7661952490806907,
+            "min_C": 1.0127931949400995,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7662030423722719
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.31451831169727,
+            "surface_cell_T": 323.3147311184031,
+            "max_C": 1.0155783338566866,
+            "min_C": 0.5369349139403333,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155828226045511
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3150000000002,
+            "surface_cell_T": 323.314999999999,
+            "max_C": 0.23712088574014362,
+            "min_C": 0.08014255503742278,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23712166302503523
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000005,
+            "surface_cell_T": 323.31499999999915,
+            "max_C": 0.1615234299639744,
+            "min_C": 0.06512048666686306,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16152383366567943
+          },
+          {
+            "time_s": 206041.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000125,
+            "surface_cell_T": 323.31500000000057,
+            "max_C": 0.14999980852057995,
+            "min_C": 0.06299591740749655,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15000016323528928
+          }
+        ],
+        "elapsed_s": 6.694478399999753
+      },
+      "AQ3_B3": {
+        "N": 160,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 206038.5,
+          "end_time_s": 206039.0,
+          "left_max_C": 0.15000008078138938,
+          "final_max_C": 0.14999993458621758,
+          "water_balance": 3.9358494676907516e-14,
+          "step_water_balance": 5.624564505595145e-17,
+          "residual_C": 1.2445436899490493e-12,
+          "residual_T": 3.4992649461919134e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.5480151815918344,
+          "steps": 412078.0,
+          "center_excess_bound": 9.913252479065715e-06,
+          "last_iteration_delta_C_max": 9.999812089489524e-11,
+          "last_iteration_delta_T_max": 3.545892468537204e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.3400086553439,
+            "surface_cell_T": 308.54217023557254,
+            "max_C": 2.5499325652016074,
+            "min_C": 1.6602520194740826,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.5499326269604055
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99946073644253,
+            "surface_cell_T": 323.11550912572994,
+            "max_C": 1.7661847460888125,
+            "min_C": 1.0127870684602955,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.766192539351111
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3145188643568,
+            "surface_cell_T": 323.31473142742306,
+            "max_C": 1.0155648696377784,
+            "min_C": 0.5369261352815756,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155693583291798
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000005,
+            "surface_cell_T": 323.31500000000045,
+            "max_C": 0.23711874836262523,
+            "min_C": 0.08014208242907561,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2371195256357996
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000017,
+            "surface_cell_T": 323.31499999999977,
+            "max_C": 0.16152281787793954,
+            "min_C": 0.06512037391462457,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1615232215769516
+          },
+          {
+            "time_s": 206039.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999999994,
+            "surface_cell_T": 323.31499999999954,
+            "max_C": 0.14999993458621758,
+            "min_C": 0.06299594093142777,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.150000289301431
+          }
+        ],
+        "elapsed_s": 12.253096500000538
+      },
+      "AQ4_B0": {
+        "N": 80,
+        "dt_s": 1.0,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 183085.0,
+          "end_time_s": 183086.0,
+          "left_max_C": 0.15000033937769472,
+          "final_max_C": 0.14999982342171558,
+          "water_balance": 1.6892805237433754e-14,
+          "step_water_balance": 5.906775953433283e-17,
+          "residual_C": 2.2478703072946332e-10,
+          "residual_T": 7.548202794279294e-12,
+          "max_iterations": 2.0,
+          "mean_iterations": 2.0,
+          "steps": 183086.0,
+          "center_excess_bound": 6.157219702002115e-05,
+          "last_iteration_delta_C_max": 6.428375942668652e-07,
+          "last_iteration_delta_T_max": 4.587529303989868e-06,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.18975516019964,
+            "surface_cell_T": 308.9889064141251,
+            "max_C": 2.550000000000004,
+            "min_C": 1.2130875512912747,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.550000000000004
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.9711254230406,
+            "surface_cell_T": 323.12482863391233,
+            "max_C": 2.4545487012519382,
+            "min_C": 0.7111909777533927,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.4545913631280274
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.31463663206694,
+            "surface_cell_T": 323.31481409283384,
+            "max_C": 1.7171980002425955,
+            "min_C": 0.4396037924859329,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172523774358064
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.31499999999994,
+            "surface_cell_T": 323.3149999999999,
+            "max_C": 0.2837649854935254,
+            "min_C": 0.08157207029705678,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.28377031681548276
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000000017,
+            "surface_cell_T": 323.3150000000003,
+            "max_C": 0.155678641519201,
+            "min_C": 0.06132910963725729,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1556806589290749
+          },
+          {
+            "time_s": 183086.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000000085,
+            "surface_cell_T": 323.3149999999998,
+            "max_C": 0.14999982342171558,
+            "min_C": 0.060468732940814146,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15000171834411005
+          }
+        ],
+        "elapsed_s": 5.441781300000002
+      },
+      "AQ4_B1": {
+        "N": 80,
+        "dt_s": 1.0,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 183085.0,
+          "end_time_s": 183086.0,
+          "left_max_C": 0.1500003394564526,
+          "final_max_C": 0.1499998235004725,
+          "water_balance": 1.7415263131375006e-14,
+          "step_water_balance": 6.05611948797663e-17,
+          "residual_C": 8.349542104182343e-13,
+          "residual_T": 6.300929410182931e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.7870508941153336,
+          "steps": 183086.0,
+          "center_excess_bound": 6.157219709851391e-05,
+          "last_iteration_delta_C_max": 9.999791272807812e-11,
+          "last_iteration_delta_T_max": 3.510081114654895e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.189755161613,
+            "surface_cell_T": 308.98890641760147,
+            "max_C": 2.550000000000007,
+            "min_C": 1.2130875513586306,
+            "max_cell": 2,
+            "center_reconstructed_C": 2.5500000000000034
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.97112542337635,
+            "surface_cell_T": 323.1248286341276,
+            "max_C": 2.4545487001974062,
+            "min_C": 0.7111909755133977,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.4545913620738578
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.3146366320671,
+            "surface_cell_T": 323.3148140928332,
+            "max_C": 1.7171979979476766,
+            "min_C": 0.4396037924668256,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.717252375140827
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.31499999999846,
+            "surface_cell_T": 323.3149999999994,
+            "max_C": 0.2837649858867542,
+            "min_C": 0.08157207087101365,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2837703172087135
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000000017,
+            "surface_cell_T": 323.31499999999966,
+            "max_C": 0.15567864160880493,
+            "min_C": 0.061329109651575425,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1556806590186805
+          },
+          {
+            "time_s": 183086.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000000034,
+            "surface_cell_T": 323.31500000000017,
+            "max_C": 0.1499998235004725,
+            "min_C": 0.060468732953106986,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15000171842286852
+          }
+        ],
+        "elapsed_s": 3.4194303000003856
+      },
+      "AQ4_B2": {
+        "N": 160,
+        "dt_s": 1.0,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 183006.0,
+          "end_time_s": 183007.0,
+          "left_max_C": 0.15000000381203515,
+          "final_max_C": 0.14999948737157492,
+          "water_balance": 1.6892805237433754e-14,
+          "step_water_balance": 4.6115795346356483e-17,
+          "residual_C": 2.1245217504173822e-12,
+          "residual_T": 5.017922889142621e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.2691317818444103,
+          "steps": 183007.0,
+          "center_excess_bound": 1.5394894621711952e-05,
+          "last_iteration_delta_C_max": 9.999950173478211e-11,
+          "last_iteration_delta_T_max": 9.958966984413564e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.1896426550224,
+            "surface_cell_T": 309.02455956155353,
+            "max_C": 2.5500000000000025,
+            "min_C": 1.1723623795354987,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.550000000000003
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.9711325459997,
+            "surface_cell_T": 323.12612439382684,
+            "max_C": 2.4546527981704074,
+            "min_C": 0.6978702682406169,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.454663463638957
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.31463667600417,
+            "surface_cell_T": 323.31481520138675,
+            "max_C": 1.717215157512443,
+            "min_C": 0.43077301014504,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172287523951646
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.31500000000057,
+            "surface_cell_T": 323.3150000000021,
+            "max_C": 0.28375288293473067,
+            "min_C": 0.07639491442438906,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2837542160306705
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.3150000000003,
+            "surface_cell_T": 323.3149999999995,
+            "max_C": 0.15563733281613673,
+            "min_C": 0.05831220197296054,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15563783738642817
+          },
+          {
+            "time_s": 183007.0,
+            "radius_m": 0.012,
+            "center_T": 323.3149999999987,
+            "surface_cell_T": 323.3149999999989,
+            "max_C": 0.14999948737157492,
+            "min_C": 0.057602893887945164,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1499999615131935
+          }
+        ],
+        "elapsed_s": 6.297228899999936
+      },
+      "AQ4_B3": {
+        "N": 160,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 183004.5,
+          "end_time_s": 183005.0,
+          "left_max_C": 0.15000016660664936,
+          "final_max_C": 0.14999990838376875,
+          "water_balance": 5.799282622747877e-14,
+          "step_water_balance": 4.521495089421779e-17,
+          "residual_C": 1.1142444046654707e-12,
+          "residual_T": 5.541754710172716e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.714420371028114,
+          "steps": 366010.0,
+          "center_excess_bound": 1.539539005152024e-05,
+          "last_iteration_delta_C_max": 9.99984123284392e-11,
+          "last_iteration_delta_T_max": 4.532125785772223e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.18874973769965,
+            "surface_cell_T": 309.02416184495496,
+            "max_C": 2.5500000000000065,
+            "min_C": 1.172304409245601,
+            "max_cell": 3,
+            "center_reconstructed_C": 2.550000000000004
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.97118561934286,
+            "surface_cell_T": 323.126134031615,
+            "max_C": 2.4546716434753644,
+            "min_C": 0.6978667308829861,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.4546823094276946
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.3146371280294,
+            "surface_cell_T": 323.3148154313649,
+            "max_C": 1.7172161910136203,
+            "min_C": 0.4307713615522361,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172297860472743
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.3149999999996,
+            "surface_cell_T": 323.3149999999988,
+            "max_C": 0.2837502420482137,
+            "min_C": 0.0763945039682288,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.28375157512462945
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.3149999999998,
+            "surface_cell_T": 323.3149999999997,
+            "max_C": 0.1556366520710207,
+            "min_C": 0.058312116322398425,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.155637156637549
+          },
+          {
+            "time_s": 183005.0,
+            "radius_m": 0.012,
+            "center_T": 323.3149999999974,
+            "surface_cell_T": 323.31499999999903,
+            "max_C": 0.14999990838376875,
+            "min_C": 0.05760294696726438,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1500003825275925
+          }
+        ],
+        "elapsed_s": 11.194279999999708
+      },
+      "AQ3_N320_dt0.5": {
+        "N": 320,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 205887.0,
+          "end_time_s": 205887.5,
+          "left_max_C": 0.15000013716354926,
+          "final_max_C": 0.14999999074491288,
+          "water_balance": 4.1274173621358766e-14,
+          "step_water_balance": 7.16264346989566e-17,
+          "residual_C": 2.3907243819622668e-12,
+          "residual_T": 3.4654392691109945e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.803926901827454,
+          "steps": 411775.0,
+          "center_excess_bound": 2.4783928455618387e-06,
+          "last_iteration_delta_C_max": 9.999988337394683e-11,
+          "last_iteration_delta_T_max": 1.7064394342014566e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.33998921501365,
+            "surface_cell_T": 308.55281821880675,
+            "max_C": 2.549933129269405,
+            "min_C": 1.654460178456551,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.5499331446176536
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99946245983085,
+            "surface_cell_T": 323.11595459624556,
+            "max_C": 1.7661868915483163,
+            "min_C": 1.0104599362563467,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7661888398742764
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3145188822751,
+            "surface_cell_T": 323.31473204707197,
+            "max_C": 1.0155641148417232,
+            "min_C": 0.5351990749774229,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155652370097052
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999978,
+            "surface_cell_T": 323.31500000000057,
+            "max_C": 0.23710647750682418,
+            "min_C": 0.0758335096687661,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23710667189702966
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000295,
+            "surface_cell_T": 323.3150000000005,
+            "max_C": 0.16148093993233434,
+            "min_C": 0.06187240182918705,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16148104095665955
+          },
+          {
+            "time_s": 205887.5,
+            "radius_m": 0.02,
+            "center_T": 323.3150000000011,
+            "surface_cell_T": 323.31500000000045,
+            "max_C": 0.14999999074491288,
+            "min_C": 0.060007482572625254,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1500000795572759
+          }
+        ]
+      },
+      "AQ4_N320_dt0.5": {
+        "N": 320,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 182978.5,
+          "end_time_s": 182979.0,
+          "left_max_C": 0.15000006001470723,
+          "final_max_C": 0.1499998017139771,
+          "water_balance": 1.4106363136413754e-14,
+          "step_water_balance": 3.777434774970943e-17,
+          "residual_C": 2.693963088656486e-12,
+          "residual_T": 3.6450166908117214e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.0468933593472474,
+          "steps": 365958.0,
+          "center_excess_bound": 3.8489628075843996e-06,
+          "last_iteration_delta_C_max": 9.999991112952245e-11,
+          "last_iteration_delta_T_max": 1.3596945791505277e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.18872160849344,
+            "surface_cell_T": 309.042131065004,
+            "max_C": 2.550000000000008,
+            "min_C": 1.1518823275885133,
+            "max_cell": 48,
+            "center_reconstructed_C": 2.5499999999999945
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.97118738650494,
+            "surface_cell_T": 323.1267855195511,
+            "max_C": 2.4546977053837535,
+            "min_C": 0.6911441072348347,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.4547003718716525
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.3146371389863,
+            "surface_cell_T": 323.3148159825562,
+            "max_C": 1.7172205262463893,
+            "min_C": 0.4262698766929455,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172239250413628
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.3150000000001,
+            "surface_cell_T": 323.31499999999943,
+            "max_C": 0.2837463368662122,
+            "min_C": 0.07275733189836926,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2837466701579407
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.3149999999999,
+            "surface_cell_T": 323.3150000000016,
+            "max_C": 0.15562301456857014,
+            "min_C": 0.05617424452076344,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1556231407282164
+          },
+          {
+            "time_s": 182979.0,
+            "radius_m": 0.012,
+            "center_T": 323.31499999999727,
+            "surface_cell_T": 323.31500000000017,
+            "max_C": 0.1499998017139771,
+            "min_C": 0.055582446899405856,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999992028358944
+          }
+        ]
+      },
+      "AQ3_N640_dt0.5": {
+        "N": 640,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 205834.5,
+          "end_time_s": 205835.0,
+          "left_max_C": 0.15000001500315974,
+          "final_max_C": 0.14999986850548042,
+          "water_balance": 1.7415263131375006e-14,
+          "step_water_balance": 1.356847130566418e-16,
+          "residual_C": 5.5907946508860535e-12,
+          "residual_T": 3.4673130491539144e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.0681322418441956,
+          "steps": 411670.0,
+          "center_excess_bound": 6.196031946403835e-07,
+          "last_iteration_delta_C_max": 9.999956418482725e-11,
+          "last_iteration_delta_T_max": 1.192006493511144e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.3399843550822,
+            "surface_cell_T": 308.5581481184447,
+            "max_C": 2.5499332700183226,
+            "min_C": 1.6515624365553716,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549933273849673
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99946289063473,
+            "surface_cell_T": 323.116177369792,
+            "max_C": 1.7661874279353762,
+            "min_C": 1.0092950337480993,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7661879150175153
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3145188867356,
+            "surface_cell_T": 323.314732354558,
+            "max_C": 1.0155639261703608,
+            "min_C": 0.534332789446592,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.015564206712052
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000426,
+            "surface_cell_T": 323.315000000006,
+            "max_C": 0.23710288926059736,
+            "min_C": 0.07253823592559218,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23710293786388692
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.315000000004,
+            "surface_cell_T": 323.3150000000055,
+            "max_C": 0.1614664290628766,
+            "min_C": 0.059278941840086766,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1614664543280786
+          },
+          {
+            "time_s": 205835.0,
+            "radius_m": 0.02,
+            "center_T": 323.314999999996,
+            "surface_cell_T": 323.315,
+            "max_C": 0.14999986850548042,
+            "min_C": 0.05762832902810628,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999989072049327
+          }
+        ]
+      },
+      "AQ4_N640_dt0.5": {
+        "N": 640,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 182971.0,
+          "end_time_s": 182971.5,
+          "left_max_C": 0.15000001242515043,
+          "final_max_C": 0.14999975410228839,
+          "water_balance": 3.9532647308221265e-14,
+          "step_water_balance": 5.392577128982437e-17,
+          "residual_C": 6.962138592374493e-12,
+          "residual_T": 3.510537106255739e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.3759219331972465,
+          "steps": 365943.0,
+          "center_excess_bound": 9.62247907021485e-07,
+          "last_iteration_delta_C_max": 9.999887723433076e-11,
+          "last_iteration_delta_T_max": 6.326672519207932e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.18871457524034,
+            "surface_cell_T": 309.05115364530917,
+            "max_C": 2.550000000000007,
+            "min_C": 1.141649594583178,
+            "max_cell": 45,
+            "center_reconstructed_C": 2.5500000000000016
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.97118782781575,
+            "surface_cell_T": 323.1271122141346,
+            "max_C": 2.454704223329437,
+            "min_C": 0.6877660080227143,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.4547048899513957
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.31463714172617,
+            "surface_cell_T": 323.3148162576092,
+            "max_C": 1.7172216133898819,
+            "min_C": 0.42399584163386067,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.717222463090911
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.3150000000019,
+            "surface_cell_T": 323.31499999999846,
+            "max_C": 0.28374525246226706,
+            "min_C": 0.07035573755201317,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2837453357868288
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.3150000000135,
+            "surface_cell_T": 323.3149999999955,
+            "max_C": 0.15561905715862695,
+            "min_C": 0.054761000411721904,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1556190886998437
+          },
+          {
+            "time_s": 182971.5,
+            "radius_m": 0.012,
+            "center_T": 323.3150000000048,
+            "surface_cell_T": 323.31500000001085,
+            "max_C": 0.14999975410228839,
+            "min_C": 0.0542569630887142,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999978374710954
+          }
+        ]
+      },
+      "AQ3_N1280_dt0.5": {
+        "N": 1280,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 205817.5,
+          "end_time_s": 205818.0,
+          "left_max_C": 0.15000010079669182,
+          "final_max_C": 0.14999995427300694,
+          "water_balance": 4.4757226247633767e-14,
+          "step_water_balance": 2.931943095510862e-16,
+          "residual_C": 1.0867260945845985e-11,
+          "residual_T": 3.512785547753425e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.36223994014129,
+          "steps": 411636.0,
+          "center_excess_bound": 1.54901110160921e-07,
+          "last_iteration_delta_C_max": 9.99993005068589e-11,
+          "last_iteration_delta_T_max": 9.760015018400736e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.33998314010154,
+            "surface_cell_T": 308.5608145530015,
+            "max_C": 2.549933305188805,
+            "min_C": 1.6501131032016556,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549933306146286
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99946299832993,
+            "surface_cell_T": 323.11628876645415,
+            "max_C": 1.7661875620336518,
+            "min_C": 1.00871224514613,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7661876838042272
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.31451888784005,
+            "surface_cell_T": 323.3147325077048,
+            "max_C": 1.0155638790045804,
+            "min_C": 0.5338989463672581,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155639491399844
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000002063,
+            "surface_cell_T": 323.31500000000125,
+            "max_C": 0.23710192087837575,
+            "min_C": 0.07014492915753974,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23710193302960725
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000000653,
+            "surface_cell_T": 323.3149999999972,
+            "max_C": 0.1614618942046781,
+            "min_C": 0.05728908693827375,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16146190052172787
+          },
+          {
+            "time_s": 205818.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999858,
+            "surface_cell_T": 323.3150000000116,
+            "max_C": 0.14999995427300694,
+            "min_C": 0.05581666529014554,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999995982772912
+          }
+        ]
+      },
+      "AQ4_N1280_dt0.5": {
+        "N": 1280,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 182969.0,
+          "end_time_s": 182969.5,
+          "left_max_C": 0.15000000160267352,
+          "final_max_C": 0.14999974327394916,
+          "water_balance": 4.7717820979967513e-14,
+          "step_water_balance": 1.285284472465843e-16,
+          "residual_C": 1.4649702830163243e-11,
+          "residual_T": 3.347897338265732e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.482017494719065,
+          "steps": 365939.0,
+          "center_excess_bound": 2.4056242708958564e-07,
+          "last_iteration_delta_C_max": 9.999800987259277e-11,
+          "last_iteration_delta_T_max": 4.718003765447065e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.18871281686467,
+            "surface_cell_T": 309.0556747873209,
+            "max_C": 2.549999999999999,
+            "min_C": 1.136526906091929,
+            "max_cell": 151,
+            "center_reconstructed_C": 2.5499999999999914
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.971187938115,
+            "surface_cell_T": 323.1272758042688,
+            "max_C": 2.454705852984921,
+            "min_C": 0.6860726012085894,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.45470601964041
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.3146371424035,
+            "surface_cell_T": 323.3148163950204,
+            "max_C": 1.7172218854064818,
+            "min_C": 0.4228527588860179,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172220978318817
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.3149999999814,
+            "surface_cell_T": 323.3150000000009,
+            "max_C": 0.28374497158688416,
+            "min_C": 0.06888222027916142,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2837449924181319
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000001324,
+            "surface_cell_T": 323.31499999998226,
+            "max_C": 0.15561800296651726,
+            "min_C": 0.05389684546639955,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15561801085190824
+          },
+          {
+            "time_s": 182969.5,
+            "radius_m": 0.012,
+            "center_T": 323.31499999997885,
+            "surface_cell_T": 323.31500000001665,
+            "max_C": 0.14999974327394916,
+            "min_C": 0.053453009494867865,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999975068531493
+          }
+        ]
+      },
+      "AQ3_N2560_dt0.5": {
+        "N": 2560,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 205813.0,
+          "end_time_s": 205813.5,
+          "left_max_C": 0.15000001383797273,
+          "final_max_C": 0.1499998673072306,
+          "water_balance": 2.4773211804380946e-14,
+          "step_water_balance": 8.98304017636495e-16,
+          "residual_C": 1.9941471770694853e-11,
+          "residual_T": 3.511590514056374e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.484540615654464,
+          "steps": 411627.0,
+          "center_excess_bound": 3.872529696913318e-08,
+          "last_iteration_delta_C_max": 9.99998417405834e-11,
+          "last_iteration_delta_T_max": 1.0317080523236655e-10,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.33998283637095,
+            "surface_cell_T": 308.5621481424462,
+            "max_C": 2.549933313980338,
+            "min_C": 1.6493883200105213,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549933314219686
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.9994630252998,
+            "surface_cell_T": 323.11634446737446,
+            "max_C": 1.7661875955584025,
+            "min_C": 1.008420766100415,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.766187626001049
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3145188882117,
+            "surface_cell_T": 323.3147325842658,
+            "max_C": 1.0155638672124403,
+            "min_C": 0.5336818482928586,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155638847462902
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3150000000463,
+            "surface_cell_T": 323.3150000000129,
+            "max_C": 0.23710167145476188,
+            "min_C": 0.06852519704115091,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2371016744925968
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999221,
+            "surface_cell_T": 323.3149999999674,
+            "max_C": 0.16146060337007778,
+            "min_C": 0.05585057350841401,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16146060494939563
+          },
+          {
+            "time_s": 205813.5,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999273,
+            "surface_cell_T": 323.31499999999113,
+            "max_C": 0.1499998673072306,
+            "min_C": 0.054522255995806304,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999986869598
+          }
+        ]
+      },
+      "AQ4_N2560_dt0.5": {
+        "N": 2560,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 182968.0,
+          "end_time_s": 182968.5,
+          "left_max_C": 0.15000025167713826,
+          "final_max_C": 0.14999999334531416,
+          "water_balance": 5.4509773601203766e-14,
+          "step_water_balance": 2.7096285029860155e-16,
+          "residual_C": 2.0291899505671047e-11,
+          "residual_T": 3.4624293394108755e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.5694122212293373,
+          "steps": 365937.0,
+          "center_excess_bound": 6.014063491655008e-08,
+          "last_iteration_delta_C_max": 9.999997357956758e-11,
+          "last_iteration_delta_T_max": 8.049028110690415e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.1887123770901,
+            "surface_cell_T": 309.0579378678979,
+            "max_C": 2.549999999999998,
+            "min_C": 1.1339638649223343,
+            "max_cell": 198,
+            "center_reconstructed_C": 2.549999999999977
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.9711879656276,
+            "surface_cell_T": 323.12735766070233,
+            "max_C": 2.454706260409931,
+            "min_C": 0.6852247878727126,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.454706302073803
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.3146371424523,
+            "surface_cell_T": 323.31481646369497,
+            "max_C": 1.717221953426332,
+            "min_C": 0.4222796694754011,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172220065326909
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.3149999998949,
+            "surface_cell_T": 323.31500000000835,
+            "max_C": 0.28374490065343655,
+            "min_C": 0.06803920642833035,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.28374490586125534
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000013676,
+            "surface_cell_T": 323.31500000014256,
+            "max_C": 0.1556177337427421,
+            "min_C": 0.05340477556770408,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.15561773571409537
+          },
+          {
+            "time_s": 182968.5,
+            "radius_m": 0.012,
+            "center_T": 323.3150000000431,
+            "surface_cell_T": 323.314999999999,
+            "max_C": 0.14999999334531416,
+            "min_C": 0.05299830119777591,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999999519817112
+          }
+        ]
+      },
+      "AQ3_N2560_dt0.25": {
+        "N": 2560,
+        "dt_s": 0.25,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 205812.25,
+          "end_time_s": 205812.5,
+          "left_max_C": 0.15000000381560563,
+          "final_max_C": 0.14999993055008967,
+          "water_balance": 4.980765255573252e-14,
+          "step_water_balance": 4.187956766677862e-16,
+          "residual_C": 1.4305761072918867e-11,
+          "residual_T": 3.51522197336491e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.1019265107804435,
+          "steps": 823250.0,
+          "center_excess_bound": 3.872697573736872e-08,
+          "last_iteration_delta_C_max": 9.999940459026746e-11,
+          "last_iteration_delta_T_max": 2.0193454020045465e-08,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.3396137775173,
+            "surface_cell_T": 308.5619171511942,
+            "max_C": 2.549933706183617,
+            "min_C": 1.649365475203179,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.5499337064221175
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99947933452256,
+            "surface_cell_T": 323.11635086091087,
+            "max_C": 1.7661823429303318,
+            "min_C": 1.008417712303615,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7661823733729207
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.314519164318,
+            "surface_cell_T": 323.3147327379,
+            "max_C": 1.0155571349832186,
+            "min_C": 0.5336774660546437,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0155571525169582
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999991723,
+            "surface_cell_T": 323.3149999999397,
+            "max_C": 0.23710060252735551,
+            "min_C": 0.06852496079979997,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2371006055651676
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000001523,
+            "surface_cell_T": 323.3149999999915,
+            "max_C": 0.16146029720370364,
+            "min_C": 0.05585053631970082,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1614602987830162
+          },
+          {
+            "time_s": 205812.5,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999923,
+            "surface_cell_T": 323.3150000000011,
+            "max_C": 0.14999993055008967,
+            "min_C": 0.05452226302452959,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999993193884004
+          }
+        ]
+      },
+      "AQ4_N2560_dt0.25": {
+        "N": 2560,
+        "dt_s": 0.25,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 182967.75,
+          "end_time_s": 182968.0,
+          "left_max_C": 0.15000007479404087,
+          "final_max_C": 0.14999994562828634,
+          "water_balance": 4.980765255573252e-14,
+          "step_water_balance": 1.689036843990393e-16,
+          "residual_C": 1.225509410829073e-11,
+          "residual_T": 3.5142679827606224e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.3018751912902804,
+          "steps": 731872.0,
+          "center_excess_bound": 6.014160269796065e-08,
+          "last_iteration_delta_C_max": 9.999995276288587e-11,
+          "last_iteration_delta_T_max": 2.8168869903311133e-08,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.01873,
+            "center_T": 304.18826583208295,
+            "surface_cell_T": 309.057740384303,
+            "max_C": 2.549999999999998,
+            "min_C": 1.1339353161961179,
+            "max_cell": 188,
+            "center_reconstructed_C": 2.549999999999993
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.01552,
+            "center_T": 322.97121442841416,
+            "surface_cell_T": 323.1273624124149,
+            "max_C": 2.4547156859499455,
+            "min_C": 0.6852230434619988,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.4547157276147633
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.01374,
+            "center_T": 323.3146373683967,
+            "surface_cell_T": 323.31481657792233,
+            "max_C": 1.7172224701513448,
+            "min_C": 0.4222788528874957,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7172225232579985
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.01204,
+            "center_T": 323.3150000000106,
+            "surface_cell_T": 323.31499999994827,
+            "max_C": 0.28374358018680784,
+            "min_C": 0.06803901059077518,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.28374358539458844
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000004667,
+            "surface_cell_T": 323.3150000000218,
+            "max_C": 0.15561739336656696,
+            "min_C": 0.053404750396162576,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1556173953379129
+          },
+          {
+            "time_s": 182968.0,
+            "radius_m": 0.012,
+            "center_T": 323.31500000010493,
+            "surface_cell_T": 323.31500000009055,
+            "max_C": 0.14999994562828634,
+            "min_C": 0.052998297974210073,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1499999474811422
+          }
+        ]
+      }
+    },
+    "comparisons": {
+      "AQ3": {
+        "iteration": {
+          "max_abs_T": 9.534346645523328e-09,
+          "max_abs_C": 6.655608730810059e-09,
+          "event_relative_difference": 0.0,
+          "pass": true
+        },
+        "space": {
+          "max_abs_T": 0.00012823859827904016,
+          "max_abs_C": 0.00408746079508128,
+          "event_relative_difference": 0.001902533961687237,
+          "pass": false
+        },
+        "time": {
+          "max_abs_T": 0.0008704242627004533,
+          "max_abs_C": 0.00024519011251999956,
+          "event_relative_difference": 9.706900149971607e-06,
+          "pass": true
+        },
+        "combined": {
+          "max_abs_T": 0.0008694784870613148,
+          "max_abs_C": 0.00408713107871167,
+          "event_relative_difference": 0.0019122593295444067,
+          "pass": false
+        }
+      },
+      "AQ4": {
+        "iteration": {
+          "max_abs_T": 1.2351847544778138e-08,
+          "max_abs_C": 2.7641931188426838e-08,
+          "event_relative_difference": 0.0,
+          "pass": true
+        },
+        "space": {
+          "max_abs_T": 0.00019826902547492864,
+          "max_abs_C": 0.00961449431408301,
+          "event_relative_difference": 0.00043167747681782664,
+          "pass": false
+        },
+        "time": {
+          "max_abs_T": 0.0009493404376712533,
+          "max_abs_C": 0.0005418441926510198,
+          "event_relative_difference": 1.092866315128002e-05,
+          "pass": false
+        },
+        "combined": {
+          "max_abs_T": 0.0009319775147673681,
+          "max_abs_C": 0.010076670682910738,
+          "event_relative_difference": 0.0004426108576268408,
+          "pass": false
+        }
+      }
+    },
+    "scenarios": {
+      "appendix4_fixed": {
+        "N": 1280,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 464739.0,
+          "end_time_s": 464739.5,
+          "left_max_C": 0.15000007415669103,
+          "final_max_C": 0.14999998107513962,
+          "water_balance": 1.0257589984379878e-13,
+          "step_water_balance": 7.811968962167309e-17,
+          "residual_C": 9.103010163724854e-12,
+          "residual_T": 3.5047349923576675e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 2.928767621430931,
+          "steps": 929479.0,
+          "center_excess_bound": 2.507874186097325e-07,
+          "last_iteration_delta_C_max": 9.999975847385656e-11,
+          "last_iteration_delta_T_max": 1.838719754232443e-08,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 303.89182437605524,
+            "surface_cell_T": 309.00855893233114,
+            "max_C": 2.5499999999999963,
+            "min_C": 1.1260711389618914,
+            "max_cell": 38,
+            "center_reconstructed_C": 2.5499999999999927
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.63953248176097,
+            "surface_cell_T": 322.99279279707497,
+            "max_C": 2.5286852597201066,
+            "min_C": 0.6741580617540421,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.5286853384866426
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.3083063888235,
+            "surface_cell_T": 323.3122239366623,
+            "max_C": 2.1988798507891913,
+            "min_C": 0.4474688047676878,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.1988800976996727
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999954,
+            "surface_cell_T": 323.3150000000028,
+            "max_C": 0.6982240450000218,
+            "min_C": 0.11712378918132077,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.6982241225476209
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999999227,
+            "surface_cell_T": 323.315000000001,
+            "max_C": 0.32256838592524484,
+            "min_C": 0.06668997026546981,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.3225684114380494
+          },
+          {
+            "time_s": 464739.5,
+            "radius_m": 0.02,
+            "center_T": 323.31500000001415,
+            "surface_cell_T": 323.31499999999113,
+            "max_C": 0.14999998107513962,
+            "min_C": 0.05250017736344104,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1499999884931132
+          }
+        ],
+        "relative_time_change_percent": 125.80119328727322
+      },
+      "Ce_low": {
+        "N": 1280,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 205159.5,
+          "end_time_s": 205160.0,
+          "left_max_C": 0.15000000543161104,
+          "final_max_C": 0.14999985887320635,
+          "water_balance": 2.681950522231751e-14,
+          "step_water_balance": 3.063402608924729e-16,
+          "residual_C": 1.1673916487415322e-11,
+          "residual_T": 3.699976932718692e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.2948601091830767,
+          "steps": 410320.0,
+          "center_excess_bound": 1.5535946412681412e-07,
+          "last_iteration_delta_C_max": 9.999915479008692e-11,
+          "last_iteration_delta_T_max": 9.561063052387908e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.34014641017836,
+            "surface_cell_T": 308.5612319920423,
+            "max_C": 2.5499331957428764,
+            "min_C": 1.6479818070899936,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549933196701939
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.9997848521132,
+            "surface_cell_T": 323.1165801254285,
+            "max_C": 1.7638252434250863,
+            "min_C": 1.0026299768869666,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.763825365670539
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.31452402192866,
+            "surface_cell_T": 323.3147357065515,
+            "max_C": 1.0107564710738364,
+            "min_C": 0.5252454556673221,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0107565415221889
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999998124,
+            "surface_cell_T": 323.31499999998664,
+            "max_C": 0.23596322227784736,
+            "min_C": 0.06346512190964364,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.2359632343529108
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.3150000000157,
+            "surface_cell_T": 323.315000000006,
+            "max_C": 0.16119478035233098,
+            "min_C": 0.051902958324056614,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16119478665292641
+          },
+          {
+            "time_s": 205160.0,
+            "radius_m": 0.02,
+            "center_T": 323.31500000001944,
+            "surface_cell_T": 323.3150000000181,
+            "max_C": 0.14999985887320635,
+            "min_C": 0.05038928070794305,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999986442925534
+          }
+        ],
+        "relative_time_change_percent": -0.31969992906354155
+      },
+      "Ce_high": {
+        "N": 1280,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 206770.0,
+          "end_time_s": 206770.5,
+          "left_max_C": 0.15000009884988236,
+          "final_max_C": 0.14999995266843363,
+          "water_balance": 4.075171572741751e-14,
+          "step_water_balance": 3.1065315335802187e-16,
+          "residual_C": 9.764095241449086e-12,
+          "residual_T": 3.447104232326628e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.319837694448676,
+          "steps": 413541.0,
+          "center_excess_bound": 1.5444262774222395e-07,
+          "last_iteration_delta_C_max": 9.999986949615902e-11,
+          "last_iteration_delta_T_max": 9.680434231995605e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.33981987838797,
+            "surface_cell_T": 308.56039732541643,
+            "max_C": 2.5499334146375805,
+            "min_C": 1.6522440618572147,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549933415593479
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.9991407181244,
+            "surface_cell_T": 323.1159974757063,
+            "max_C": 1.768552434446696,
+            "min_C": 1.0147890838731308,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7685525557418522
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.31451370937657,
+            "surface_cell_T": 323.31472928004484,
+            "max_C": 1.0203904343457284,
+            "min_C": 0.5425211692929294,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0203905041661647
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999996,
+            "surface_cell_T": 323.31499999998505,
+            "max_C": 0.23842655559818005,
+            "min_C": 0.07857900544660507,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23842656781926125
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.31499999999056,
+            "surface_cell_T": 323.31499999997953,
+            "max_C": 0.1618256369152343,
+            "min_C": 0.06504186144278809,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16182564324379148
+          },
+          {
+            "time_s": 206770.5,
+            "radius_m": 0.02,
+            "center_T": 323.3149999999461,
+            "surface_cell_T": 323.3149999999727,
+            "max_C": 0.14999995266843363,
+            "min_C": 0.06369966984144111,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.14999995821018178
+          }
+        ],
+        "relative_time_change_percent": 0.46278751129638807
+      },
+      "tail_hour": {
+        "N": 1280,
+        "dt_s": 0.5,
+        "diagnostics": {
+          "status_code": 1.0,
+          "left_time_s": 206934.0,
+          "end_time_s": 206934.5,
+          "left_max_C": 0.15000014105924814,
+          "final_max_C": 0.1499999954469861,
+          "water_balance": 3.169577889910251e-14,
+          "step_water_balance": 2.931943095510862e-16,
+          "residual_C": 1.0841265540170225e-11,
+          "residual_T": 3.4890305202457064e-16,
+          "max_iterations": 4.0,
+          "mean_iterations": 3.3584588360084955,
+          "steps": 413869.0,
+          "center_excess_bound": 1.54901110160921e-07,
+          "last_iteration_delta_C_max": 9.999943234584308e-11,
+          "last_iteration_delta_T_max": 9.760015018400736e-11,
+          "status": "reached"
+        },
+        "checkpoints": [
+          {
+            "time_s": 0.0,
+            "radius_m": 0.02,
+            "center_T": 301.15,
+            "surface_cell_T": 301.15,
+            "max_C": 2.55,
+            "min_C": 2.55,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.55
+          },
+          {
+            "time_s": 1800.0,
+            "radius_m": 0.02,
+            "center_T": 305.33998314010154,
+            "surface_cell_T": 308.5608145530015,
+            "max_C": 2.549933305188805,
+            "min_C": 1.6501131032016556,
+            "max_cell": 0,
+            "center_reconstructed_C": 2.549933306146286
+          },
+          {
+            "time_s": 10800.0,
+            "radius_m": 0.02,
+            "center_T": 322.99946299832993,
+            "surface_cell_T": 323.11628876645415,
+            "max_C": 1.7661875620336518,
+            "min_C": 1.00871224514613,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.7661876838042272
+          },
+          {
+            "time_s": 21600.0,
+            "radius_m": 0.02,
+            "center_T": 323.1459092792882,
+            "surface_cell_T": 323.14591255947704,
+            "max_C": 1.0170076547686606,
+            "min_C": 0.5332128239211612,
+            "max_cell": 0,
+            "center_reconstructed_C": 1.0170077251704361
+          },
+          {
+            "time_s": 86400.0,
+            "radius_m": 0.02,
+            "center_T": 323.145916666617,
+            "surface_cell_T": 323.1459166666323,
+            "max_C": 0.23781481777650615,
+            "min_C": 0.07031926585799637,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.23781482998857495
+          },
+          {
+            "time_s": 172800.0,
+            "radius_m": 0.02,
+            "center_T": 323.1459166666376,
+            "surface_cell_T": 323.1459166666476,
+            "max_C": 0.161836754365137,
+            "min_C": 0.0574100447452865,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.16183676070767516
+          },
+          {
+            "time_s": 206934.5,
+            "radius_m": 0.02,
+            "center_T": 323.14591666669696,
+            "surface_cell_T": 323.1459166666793,
+            "max_C": 0.1499999954469861,
+            "min_C": 0.05589393518739386,
+            "max_cell": 0,
+            "center_reconstructed_C": 0.1500000010016535
+          }
+        ],
+        "relative_time_change_percent": 0.5424695604854775
+      }
+    },
+    "refinement_comparisons": {
+      "160": {
+        "AQ3": {
+          "max_abs_T": 3.2067658651158126e-05,
+          "max_abs_C": 0.0026788807050519697,
+          "event_relative_difference": 0.0007358387468884706,
+          "pass": false
+        },
+        "AQ4": {
+          "max_abs_T": 4.943899511999916e-05,
+          "max_abs_C": 0.0028484914977453535,
+          "event_relative_difference": 0.0001420928084643593,
+          "pass": false
+        }
+      },
+      "320": {
+        "AQ3": {
+          "max_abs_T": 8.016868207505468e-06,
+          "max_abs_C": 0.001642680427436774,
+          "event_relative_difference": 0.0002550586634926033,
+          "pass": false
+        },
+        "AQ4": {
+          "max_abs_T": 1.235362935858575e-05,
+          "max_abs_C": 0.0007355713554715315,
+          "event_relative_difference": 4.098999024438232e-05,
+          "pass": false
+        }
+      },
+      "640": {
+        "AQ3": {
+          "max_abs_T": 2.0042102732986677e-06,
+          "max_abs_C": 0.000917021769757706,
+          "event_relative_difference": 8.259724611064144e-05,
+          "pass": false
+        },
+        "AQ4": {
+          "max_abs_T": 3.0877026233611105e-06,
+          "max_abs_C": 0.00018549652466059996,
+          "event_relative_difference": 1.0930783545891529e-05,
+          "pass": true
+        }
+      },
+      "1280": {
+        "AQ3": {
+          "max_abs_T": 5.010404606764496e-07,
+          "max_abs_C": 0.00045222674774852284,
+          "event_relative_difference": 2.1864454955578716e-05,
+          "pass": true
+        },
+        "AQ4": {
+          "max_abs_T": 7.719589234511659e-07,
+          "max_abs_C": 5.7145024666284405e-05,
+          "event_relative_difference": 5.465421643616251e-06,
+          "pass": true
+        }
+      }
+    },
+    "accepted_time_comparison": {
+      "AQ3": {
+        "max_abs_T": 0.0004353633948994684,
+        "max_abs_C": 0.00012311447483170923,
+        "event_relative_difference": 4.858791375645308e-06,
+        "pass": true
+      },
+      "AQ4": {
+        "max_abs_T": 0.0004748008052501973,
+        "max_abs_C": 0.0002762796213446883,
+        "event_relative_difference": 2.7327182895369683e-06,
+        "pass": true
+      }
+    },
+    "accepted_combined_comparison": {
+      "AQ3": {
+        "max_abs_T": 0.0004353538521399969,
+        "max_abs_C": 0.0004521451340604582,
+        "event_relative_difference": 2.6723352566049196e-05,
+        "pass": true
+      },
+      "AQ4": {
+        "max_abs_T": 0.00047470610434174887,
+        "max_abs_C": 0.00032239269277223315,
+        "event_relative_difference": 8.198154868610905e-06,
+        "pass": true
+      }
+    },
+    "selected_configuration": {
+      "N": 1280,
+      "dt_s": 0.5,
+      "max_iterations": 50
+    },
+    "sequential_contrast": {
+      "t3F_s": 205818.0,
+      "t4F_s": 464739.5,
+      "t4S_s": 182969.5,
+      "property_change_percent": 125.80119328727322,
+      "geometry_change_percent": -136.90250609762023,
+      "total_change_percent": -11.101312810347006,
+      "interpretation": "指定先物性后几何路径；不估计交互"
+    },
+    "input_hashes": {
+      "paper_output/code/visualization/run_numerical_validation.py": "9d916fdecd94171e619175288b770858222bdc892f7ce29faccd330b600ab0cf",
+      "paper_output/code/modeling/core_solver.py": "9ae3728d87e2fd6458772ee4e9152061e9f74c3e2ac37b82ef1c9fca3802fd4d",
+      "paper_output/data_cleaned/a_environment.csv": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1",
+      "paper_output/data_cleaned/a_radius.csv": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+    },
+    "elapsed_s": 2027.0410655000005,
+    "execution_provenance": {
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/visualization/run_numerical_validation.py",
+      "returncode": 0
+    }
+  }
 }

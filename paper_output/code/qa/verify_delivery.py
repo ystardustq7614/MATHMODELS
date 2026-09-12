@@ -154,6 +154,105 @@ def main():
     return bool(failures)
 
 
+def numerical_delivery():
+    """S6只核对数值附件和来源，不读取或修改论文、Word及PDF。"""
+    validation=json.loads((OUT/'qa/model_validation_checks.json').read_text(encoding='utf-8'))
+    metrics=json.loads((OUT/'results/metrics.json').read_text(encoding='utf-8'))
+    manifest=json.loads((OUT/'results/run_manifest.json').read_text(encoding='utf-8'))
+    failures=[]
+    def check(ok,message):
+        if not ok: failures.append(message)
+    check(validation['status']=='PASS','数值验证未通过')
+    check(manifest['status']=='PASS','四问运行未通过')
+    for name,expected in validation['input_hashes'].items():
+        check(sha(ROOT/name)==expected,'数值验证来源变化：'+name)
+    for run in manifest['runs']:
+        check(run['returncode']==0,'运行失败：'+run['script'])
+        check(sha(ROOT/run['script'])==run['script_sha256'],'主程序来源变化')
+        for entry in run['input_files']+run['output_artifacts']:
+            check(sha(ROOT/entry['path'])==entry['sha256'],'运行文件变化：'+entry['path'])
+    for entry in manifest['final_artifacts']:
+        check(sha(ROOT/entry['path'])==entry['sha256'],'结果契约变化：'+entry['path'])
+    sys.path.insert(0,str(OUT/'code/visualization'))
+    from run_numerical_validation import inputs,solve,compare
+    env,rad=inputs()
+    config=validation['selected_configuration']
+    base=solve(env,rad,mode=1,N=config['N'],dt=config['dt_s'],horizon=1800,threshold=-1.)
+    finer=solve(env,rad,mode=1,N=2*config['N'],dt=config['dt_s']/2,horizon=1800,threshold=-1.)
+    q1_check=compare(base,finer)
+    check(q1_check['pass'],'Q1新配置加密未通过')
+    vals={x['metric_name']:x['value'] for x in metrics['items']}
+    t3,t4=vals['aq3_drying_time_s'],vals['aq4_drying_time_s']
+    check(vals['aq2_end_time_s']==t3,'Q2/Q3终点不一致')
+    for q in [2,3,4]:
+        check(vals[f'aq{q}_status_code']==1,'未真正达标')
+        check(vals[f'aq{q}_left_max_C']>=.15>vals[f'aq{q}_final_max_C'],'终点未夹逼阈值')
+    workbook_checks=[]
+    xmlns='{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'
+    # 同时与正文用CSV核对；只读取数值，不改动附件。
+    table_names={1:['table_aq1_temperature.csv','table_aq1_moisture.csv'],
+                 2:['table_aq2_temperature.csv','table_aq2_moisture.csv'],
+                 3:['table_aq3_drying_moisture.csv'],4:['table_aq4_shrinkage_moisture.csv']}
+    for q,end,step,columns,sheets in [(1,1800.,1,22,2),(2,t3,1,22,2),(3,t3,60,22,1),(4,t4,60,23,1)]:
+        path=OUT/f'tables/result{q}.xlsx'
+        with zipfile.ZipFile(path) as archive:
+            names=sorted(n for n in archive.namelist() if re.fullmatch(r'xl/worksheets/sheet\d+\.xml',n))
+            check(len(names)==sheets,f'result{q} sheet count')
+            for sheet,name in enumerate(names):
+                expected={}
+                with (OUT/'tables'/table_names[q][sheet]).open(encoding='utf-8-sig',newline='') as stream:
+                    rows=list(csv.reader(stream))
+                for row in rows[1:]:
+                    ts=end if row[0].startswith('烘干结束') else float(row[0])*(1 if q==1 else 3600)
+                    expected[ts]=[float(x) if x else None for x in row[1:]]
+                count=0;last=0.;invalid=0;time_errors=0;table_errors=0;matched=0;domain_errors=0
+                radius_data=None
+                if q==4:
+                    import numpy as np
+                    radius_data=np.loadtxt(OUT/'data_cleaned/a_radius.csv',delimiter=',',skiprows=1)
+                with archive.open(name) as stream:
+                    for _,row in etree.iterparse(stream,events=('end',),tag=xmlns+'row'):
+                        count+=1
+                        cells=row.findall(xmlns+'c')
+                        if count==1:
+                            check(len(cells)==columns,f'result{q} header')
+                        else:
+                            values={re.sub(r'\d','',c.get('r')):float(c.findtext(xmlns+'v')) for c in cells if c.findtext(xmlns+'v') is not None}
+                            last=values['A']
+                            time_errors+=last!=min((count-1)*step,end)
+                            invalid+=sum(not math.isfinite(v) for v in values.values())
+                            if q!=4: invalid+=len(values)!=columns
+                            if q==4:
+                                Rcm=float(np.interp(last,radius_data[:,0],radius_data[:,1]))
+                                for j in range(21):
+                                    column=chr(ord('B')+j)
+                                    domain_errors+=((column in values)!=(j*.1<=Rcm+1e-12))
+                            if last in expected:
+                                matched+=1
+                                targets=expected[last]
+                                for j,value in enumerate(targets[:5]):
+                                    actual=values.get(chr(ord('B')+5*j))
+                                    table_errors+=(actual is not None) if value is None else (actual is None or abs(actual-value)>1e-9)
+                                if q==4:
+                                    table_errors+=abs(values['W']-targets[5])>1e-9
+                            row.clear()
+                            while row.getprevious() is not None: del row.getparent()[0]
+                check(last==end and count==math.ceil(end/step)+1,f'result{q} endpoint/rows')
+                check(invalid==0 and time_errors==0 and domain_errors==0,f'result{q} finite/time/domain')
+                check(table_errors==0 and matched==len(expected),f'result{q} CSV mismatch')
+                workbook_checks.append(dict(file=path.name,sheet=name,rows=count,end_s=last,invalid=invalid,time_errors=time_errors,
+                    table_errors=table_errors,matched_table_rows=matched,domain_errors=domain_errors))
+        print(f'Checked result{q}.xlsx',flush=True)
+    result=dict(schema_version='2.0',generated_by='paper_output/code/qa/verify_delivery.py --s6',
+        generated_at=datetime.now(timezone.utc).isoformat(),scope='S6数值附件检查；不含S7/S8论文检查',
+        status='FAIL' if failures else 'PASS',failures=failures,workbooks=workbook_checks,q1_refinement=q1_check,
+        selected_configuration=validation['selected_configuration'],
+        input_hashes={p.relative_to(ROOT).as_posix():sha(p) for p in [OUT/'qa/model_validation_checks.json',OUT/'results/run_manifest.json',OUT/'results/metrics.json',Path(__file__)]})
+    (OUT/'qa/delivery_audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps(result,ensure_ascii=False),flush=True)
+    return bool(failures)
+
+
 if __name__ == '__main__':
     for stream in (sys.stdout,sys.stderr): stream.reconfigure(encoding='utf-8')
-    raise SystemExit(main())
+    raise SystemExit(numerical_delivery() if '--s6' in sys.argv else main())

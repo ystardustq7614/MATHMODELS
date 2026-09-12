@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 ~$*
 paper_output/qa/rendered/pages/
+paper_output/qa/rendered/inspection/*.png
 soffice_bridge.bat
 soffice_bridge.py
 temp_pdf_render.ps1

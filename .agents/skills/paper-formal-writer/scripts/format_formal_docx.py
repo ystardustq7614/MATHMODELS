@@ -111,7 +111,7 @@ def set_cell_margin(cell, margin_twips: int = 90) -> None:
 
 
 def apply_run_font(run, font_name: str = "宋体", size: float | None = None, bold: bool | None = None) -> None:
-    run.font.name = font_name
+    run.font.name = "Times New Roman" if font_name in ("宋体", "黑体") else font_name
     run._element.rPr.rFonts.set(qn("w:eastAsia"), font_name)
     if size is not None:
         run.font.size = Pt(size)
@@ -136,12 +136,13 @@ def configure_document(document: Document) -> None:
 
     styles = document.styles
     normal = styles["Normal"]
-    normal.font.name = "宋体"
+    normal.font.name = "Times New Roman"
     normal._element.rPr.rFonts.set(qn("w:eastAsia"), "宋体")
     normal.font.size = Pt(10.5)
     normal.paragraph_format.first_line_indent = Cm(0.74)
-    normal.paragraph_format.line_spacing = 1.35
-    normal.paragraph_format.space_after = Pt(4)
+    normal.paragraph_format.line_spacing = 1.3
+    normal.paragraph_format.space_after = Pt(3)
+    normal.paragraph_format.widow_control = True
 
     for name, font_size in (("Heading 1", 15), ("Heading 2", 13), ("Heading 3", 12)):
         style = styles[name]
@@ -269,6 +270,12 @@ def add_heading(document: Document, text: str, level: int) -> None:
         paragraph.paragraph_format.page_break_before = True
     for run in paragraph.runs:
         apply_run_font(run, "黑体", {1: 15, 2: 13, 3: 12}[level], True)
+    if text.strip() == "摘要" or len(document.paragraphs) == 1:
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        paragraph.paragraph_format.space_before = Pt(0)
+        paragraph.paragraph_format.space_after = Pt(10)
+        for run in paragraph.runs:
+            apply_run_font(run, "黑体", 15 if text.strip() == "摘要" else 17, True)
 
 
 def add_code_block(document: Document, code: str) -> None:
@@ -278,6 +285,7 @@ def add_code_block(document: Document, code: str) -> None:
     paragraph.paragraph_format.right_indent = Cm(0.2)
     paragraph.paragraph_format.space_before = Pt(4)
     paragraph.paragraph_format.space_after = Pt(4)
+    paragraph.paragraph_format.line_spacing = 1.0
     run = paragraph.add_run(code.rstrip())
     apply_run_font(run, "Consolas", 8.5)
 
@@ -345,12 +353,18 @@ def add_table_from_rows(
             value = row[col_idx] if col_idx < len(row) else ""
             cell.text = ""
             cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
-            set_cell_borders(cell)
-            set_cell_margin(cell)
+            set_cell_borders(cell, color="222222")
+            borders = cell._tc.get_or_add_tcPr().find(qn("w:tcBorders"))
+            for edge in borders:
+                side = edge.tag.rsplit("}", 1)[-1]
+                visible = (row_idx == 0 and side in ("top", "bottom")) or (row_idx == len(rows)-1 and side == "bottom")
+                edge.set(qn("w:val"), "single" if visible else "nil")
+                edge.set(qn("w:sz"), "8" if side == "top" or row_idx == len(rows)-1 else "4")
+            set_cell_margin(cell, 65)
             if re.fullmatch(r"[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?", value):
                 cell._tc.get_or_add_tcPr().append(OxmlElement("w:noWrap"))
             if row_idx == 0:
-                set_cell_shading(cell, "F2F2F2")
+                set_cell_shading(cell, "FFFFFF")
             for paragraph_index, paragraph in enumerate(cell.paragraphs):
                 # Explicit zero prevents inheritance of the body indentation.
                 paragraph.paragraph_format.first_line_indent = Cm(0)
@@ -358,6 +372,8 @@ def add_table_from_rows(
                 paragraph.paragraph_format.right_indent = Cm(0)
                 paragraph.paragraph_format.line_spacing = 1.1
                 paragraph.paragraph_format.space_after = Pt(0)
+                if len(rows) <= 12:
+                    paragraph.paragraph_format.keep_with_next = row_idx < len(rows)-1
                 paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER if len(value) <= 16 else WD_ALIGN_PARAGRAPH.LEFT
                 if paragraph_index == 0:
                     native_count += add_inline_content(
@@ -655,6 +671,11 @@ def render_markdown(
             allow_formula_fallback=allow_formula_fallback,
             formula_errors=stats["formula_fallbacks"],
         )
+        if re.match(r"^\*\*表\s*\d", stripped):
+            caption = document.paragraphs[-1]
+            caption.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            caption.paragraph_format.first_line_indent = Cm(0)
+            caption.paragraph_format.keep_with_next = True
         idx += 1
 
     if code_lines:

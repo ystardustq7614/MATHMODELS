@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
-  "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-11T14:30:53",
+  "generated_by": "paper_output/code/modeling/result_contract_io.py",
+  "generated_at": "2026-09-12T13:55:48",
   "source": "paper_output/results/model_results.json",
   "items": [
     {
       "question_id": "AQ1",
-      "conclusion_text": "在预热平衡阶段（0-1800 s），药材受烘房升温与对流传热驱动，中心温度由28.0000°C上升至33.5766°C，表面温度达到36.7453°C；由于对流传质阻力与内部非线性水分扩散制约，药材表面干基含水率由2.5500 kg/kg下降至1.5478 kg/kg，中心干基含水率为2.5500 kg/kg，体现出显著的内外梯度迟滞效应。",
+      "conclusion_text": "在预热平衡阶段（0-1800 s），药材受烘房升温与对流传热驱动，中心温度由28.0000°C上升至33.5759°C，表面温度达到36.7859°C；由于对流传质阻力与内部非线性水分扩散制约，药材表面干基含水率由2.5500 kg/kg下降至1.5103 kg/kg，中心干基含水率为2.5500 kg/kg，体现出显著的内外梯度迟滞效应。",
       "evidence_required": [
         "model_results.json",
         "metrics.json",
@@ -16,7 +16,7 @@
     },
     {
       "question_id": "AQ2",
-      "conclusion_text": "采用附录3全过程统一经验物性公式自t=0连续求解3 h（10800 s）：药材升温迅速并在3 h内达到中心49.8494°C、表面49.9646°C，整体贴近烘房温度（约50.2°C）；水分浓度在3 h末中心降至1.7662 kg/kg，表面降至1.0174 kg/kg。相较于AQ1常物性模型，附录3考虑温度和含水率对扩散及热传导的非线性强化，物性场平滑自洽，无须拼接即可覆盖预热与恒温全过程。",
+      "conclusion_text": "采用附录3全过程统一经验物性公式自t=0连续求解3 h（10800 s）：药材升温迅速并在3 h内达到中心49.8495°C、表面49.9664°C，整体贴近烘房温度（约50.2°C）；水分浓度在3 h末中心降至1.7662 kg/kg，表面降至1.0081 kg/kg。相较于AQ1常物性模型，附录3通过温度和含水率相关物性描述全过程，不需要拼接问题一末态。",
       "evidence_required": [
         "model_results.json",
         "metrics.json",
@@ -26,7 +26,7 @@
     },
     {
       "question_id": "AQ3",
-      "conclusion_text": "在固定几何尺寸（半径2 cm）下，严格以药材全域最大含水率低于0.15 kg/kg作为烘干完成判定准则，模型精确确定烘干所需时间为57.3425小时（即206433.0秒，约57.34小时，处于2-3天工艺区间内）。烘干结束时刻中心含水率为0.1500 kg/kg，表面含水率为0.0666 kg/kg，全域最大含水率达到达标临界值0.1500 kg/kg。表5及result3.xlsx均已精确导出。",
+      "conclusion_text": "在固定几何尺寸（半径2 cm）下，严格以药材全域最大含水率低于0.15 kg/kg作为烘干完成判定准则，模型计算得到烘干所需时间为57.1717小时（即205818.0秒）。烘干结束时刻中心含水率为0.1500 kg/kg，表面含水率为0.0525 kg/kg，全域最大含水率达到达标临界值0.1500 kg/kg。表5及result3.xlsx均已导出。",
       "evidence_required": [
         "model_results.json",
         "metrics.json",
@@ -36,7 +36,7 @@
     },
     {
       "question_id": "AQ4",
-      "conclusion_text": "在考虑径向动态收缩及附录4独立经验物性组条件下，药材烘干所需时间显著缩短至50.8572小时（即183086.0秒，约50.86小时），相比固定半径模型（AQ3的57.3425小时）缩短了约11.31%。烘干结束时药材收缩至半径1.200 cm，中心含水率为0.1500 kg/kg，表面含水率为0.0605 kg/kg，全域最大含水率达到临界阈值0.1500 kg/kg。几何尺寸减小大幅缩短了内部水分析出路径，显著提升了烘干动力学速率。表6及result4.xlsx均已导出。",
+      "conclusion_text": "附件2收缩与附录4物性共同作用下，达标时长为50.8249 h（182969.5 s），较问题三变化-11.1013%。该差异是联合情景变化，不全部归因于收缩。终点半径为1.2000 cm，表面含水率为0.0525 kg/kg。",
       "evidence_required": [
         "model_results.json",
         "metrics.json",

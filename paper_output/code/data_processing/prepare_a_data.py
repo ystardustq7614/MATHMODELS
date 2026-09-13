@@ -87,7 +87,7 @@ def main():
     environment = dict(interpolation='piecewise_linear', support_s=[0, 14400],
                        extension='hold_last', last_temperature_C=float(env[-1, 1]),
                        last_Ce=float(env[-1, 2]), sensitivity_window_s=[10800, 14400],
-                       tail_mean_temperature_C=float(tail[:, 1].mean()), tail_mean_Ce=float(tail[:, 2].mean()),
+                       tail_mean_temperature_C=float(np.trapezoid(tail[:, 1], tail[:, 0]) / 3600), tail_mean_Ce=float(np.trapezoid(tail[:, 2], tail[:, 0]) / 3600),
                        tail_std_temperature_C=float(tail[:, 1].std(ddof=1)),
                        tail_std_Ce=float(tail[:, 2].std(ddof=1)), extension_is_observed=False)
     radius = dict(interpolation='piecewise_linear', support_s=[0, 259200], extension='hold_last',
@@ -155,7 +155,7 @@ def main():
     record = lambda p: dict(path=p.relative_to(ROOT).as_posix(), sha256=digest(p), bytes=p.stat().st_size)
     save_json('data_cleaned/data_pipeline_run.json', dict(schema_version='1.0', stage='S3', status='PASS',
               generated_at=stamp, exit_code=0, elapsed_s=time.perf_counter()-started,
-              command='F:/Anaconda_envs/envs/mathmodel-skill-standard/python.exe -X utf8 paper_output/code/data_processing/prepare_a_data.py',
+              command=f'{sys.executable} -B paper_output/code/data_processing/prepare_a_data.py',
               executable=sys.executable, python=sys.version, numpy=np.__version__, matplotlib=matplotlib.__version__,
               scripts=[record(Path(__file__)), record(Path(loader.__file__))],
               inputs=[record(p) for p in tracked_inputs], outputs=[record(p) for p in outputs],

@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:19:23.806540+00:00",
+  "generated_at": "2026-09-12T05:34:20.470542+00:00",
   "selected_problem": "A",
-  "input_manifest_sha256": "dccf576e5ddd665c700a3327b75282645aa2e913f5b05ff7b4834ed03271713b",
-  "model_route_sha256": "1fa3f04e25ba4a905994e39e3c26e25051eb0b4c62dc11e1fb8bd86b33adcf0f",
+  "input_manifest_sha256": "25a86d5551166577777d1e1a8e1ff40f14da2fe8d3a1eaf42f0e5e1be7b6966f",
+  "model_route_sha256": "9c382d4eda50c1a30b789afb71cac4c553d22050cbdaeb96a0c9316e6afc7f49",
   "data_files": [
     {
       "path": "problem_files/A题/附件/附件1.xlsx",
@@ -102,8 +102,8 @@
       10800,
       14400
     ],
-    "tail_mean_temperature_C": 49.998934426229496,
-    "tail_mean_Ce": 0.049987540983606554,
+    "tail_mean_temperature_C": 49.99591666666667,
+    "tail_mean_Ce": 0.04999041666666666,
     "tail_std_temperature_C": 0.15435336826607313,
     "tail_std_Ce": 0.00015012945233702923,
     "extension_is_observed": false

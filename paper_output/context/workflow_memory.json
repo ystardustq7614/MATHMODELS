@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "generated_by": "context-memory-keeper/scripts/update_workflow_memory.py",
-  "generated_at": "2026-09-11T14:35:37",
+  "generated_at": "2026-09-12T15:14:33",
   "status": "PASS",
   "root": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS",
   "workflow": {
@@ -99,31 +99,31 @@
     "run_manifest": {
       "path": "paper_output/results/run_manifest.json",
       "exists": true,
-      "bytes": 8866,
+      "bytes": 12007,
       "status": "PASS"
     },
     "evidence_gate_report": {
       "path": "paper_output/qa/evidence_gate_report.json",
       "exists": true,
-      "bytes": 2035,
+      "bytes": 2036,
       "status": "PASS"
     },
     "authoring_state": {
       "path": "paper_output/context/authoring_state.json",
       "exists": true,
-      "bytes": 4781,
+      "bytes": 4843,
       "status": "PASS"
     },
     "writing_plan": {
       "path": "paper_output/plan/writing_plan.json",
       "exists": true,
-      "bytes": 43721,
+      "bytes": 40949,
       "status": "PASS"
     },
     "format_check_report": {
       "path": "paper_output/format_check_report.json",
       "exists": true,
-      "bytes": 5897,
+      "bytes": 5807,
       "status": "PASS"
     }
   },

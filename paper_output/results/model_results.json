@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_by": "model-code-and-result-generator/scripts/build_result_contracts.py",
-  "generated_at": "2026-09-11T14:30:53",
+  "generated_by": "paper_output/code/modeling/result_contract_io.py",
+  "generated_at": "2026-09-12T13:55:48",
   "source": "paper_output/plan/model_route.json",
   "data_sources": [
     "paper_output/data_cleaned/a_environment.csv",
@@ -12,10 +12,10 @@
       "question_id": "AQ1",
       "title": "预热平衡阶段温度与干基含水率",
       "task_type": "非线性扩散与热传导",
-      "result_type": "general",
+      "result_type": "simulation",
       "main_model": "隐式有限体积法 (FVM) + Picard迭代 + Thomas三对角求解",
       "baseline_model": "",
-      "result_summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5766°C，表面温度为36.7453°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5478 kg/kg。表1、表2及result1.xlsx均已导出。",
+      "result_summary": "AQ1预热平衡阶段数值求解完成：1800 s时中心温度为33.5759°C，表面温度为36.7859°C；中心水分浓度为2.5500 kg/kg，表面水分浓度为1.5103 kg/kg。表1、表2及result1.xlsx均已导出。",
       "outputs": [
         {
           "path": "paper_output/tables/table_aq1_temperature.csv",
@@ -30,32 +30,47 @@
           "type": "xlsx"
         }
       ],
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "N",
+          "value": 1280
+        },
+        {
+          "name": "dt_s",
+          "value": 0.5
+        },
+        {
+          "name": "event_status",
+          "value": "not_reached"
+        }
+      ],
       "evidence_status": "computed",
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q1_model.py",
-        "source_code_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+        "source_code_sha256": "ee861ee9b0436edb204c1e4e5f3f4987fcbe9d7a0ca5ad7c9385d30c4c73fe2d",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "python.exe paper_output/code/modeling/q1_model.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q1_model.py",
         "run_exit_code": 0,
-        "input_files": [],
+        "input_files": [
+          "paper_output/data_cleaned/a_environment.csv"
+        ],
         "output_artifacts": [
           "paper_output/tables/table_aq1_temperature.csv",
           "paper_output/tables/table_aq1_moisture.csv",
           "paper_output/tables/result1.xlsx"
         ],
-        "generated_at": "2026-09-11T14:29:26"
+        "generated_at": "2026-09-12T13:42:15"
       }
     },
     {
       "question_id": "AQ2",
       "title": "统一经验物性的全过程模型",
       "task_type": "热湿非线性耦合",
-      "result_type": "general",
+      "result_type": "simulation",
       "main_model": "附录3全过程经验物性FVM模型 + Picard迭代 + Thomas三对角求解",
       "baseline_model": "",
-      "result_summary": "AQ2全过程模型求解至达标时刻206433 s：3 h时中心温度为49.8494°C，表面温度为49.9646°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0174 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
+      "result_summary": "AQ2全过程模型求解至达标时刻205818.0 s：3 h时中心温度为49.8495°C，表面温度为49.9664°C；中心水分浓度为1.7662 kg/kg，表面水分浓度为1.0081 kg/kg。表3、表4保留前3 h，result2.xlsx包含1 s至达标时刻的逐秒温度和含水率。",
       "outputs": [
         {
           "path": "paper_output/tables/table_aq2_temperature.csv",
@@ -70,32 +85,47 @@
           "type": "xlsx"
         }
       ],
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "N",
+          "value": 1280
+        },
+        {
+          "name": "dt_s",
+          "value": 0.5
+        },
+        {
+          "name": "event_status",
+          "value": "reached"
+        }
+      ],
       "evidence_status": "computed",
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q2_model.py",
-        "source_code_sha256": "55724147a735502f4ec02c3864a4a8aa025f625aa427b3c0df6a3b893ee541a1",
+        "source_code_sha256": "b0a9b5e1a19080a2b512c308ae0c571a9de9b9becc7a569ddf5446c0646a4180",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "python.exe paper_output/code/modeling/q2_model.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q2_model.py",
         "run_exit_code": 0,
-        "input_files": [],
+        "input_files": [
+          "paper_output/data_cleaned/a_environment.csv"
+        ],
         "output_artifacts": [
           "paper_output/tables/table_aq2_temperature.csv",
           "paper_output/tables/table_aq2_moisture.csv",
           "paper_output/tables/result2.xlsx"
         ],
-        "generated_at": "2026-09-11T14:30:41"
+        "generated_at": "2026-09-12T13:45:01"
       }
     },
     {
       "question_id": "AQ3",
       "title": "固定半径下全域达标时长",
       "task_type": "阈值事件检测",
-      "result_type": "general",
-      "main_model": "烘干终点全域极值检测 + 截断逼近算法",
+      "result_type": "simulation",
+      "main_model": "烘干终点全域极值检测 + 离散阈值事件检测",
       "baseline_model": "",
-      "result_summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.3425 h (206433.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0666 kg/kg。表5与result3.xlsx已导出。",
+      "result_summary": "AQ3固定半径烘干时长确定完成：烘干达标时长为57.1717 h (205818.0 s)；终点中心水分浓度为0.1500 kg/kg，表面为0.0525 kg/kg。表5与result3.xlsx已导出。",
       "outputs": [
         {
           "path": "paper_output/tables/table_aq3_drying_moisture.csv",
@@ -106,31 +136,46 @@
           "type": "xlsx"
         }
       ],
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "N",
+          "value": 1280
+        },
+        {
+          "name": "dt_s",
+          "value": 0.5
+        },
+        {
+          "name": "event_status",
+          "value": "reached"
+        }
+      ],
       "evidence_status": "computed",
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q3_model.py",
-        "source_code_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+        "source_code_sha256": "ab9a9299072c3bf0976da48c5c10bb4dc45135422abd4edb5fb7e45372856b75",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "python.exe paper_output/code/modeling/q3_model.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q3_model.py",
         "run_exit_code": 0,
-        "input_files": [],
+        "input_files": [
+          "paper_output/data_cleaned/a_environment.csv"
+        ],
         "output_artifacts": [
           "paper_output/tables/table_aq3_drying_moisture.csv",
           "paper_output/tables/result3.xlsx"
         ],
-        "generated_at": "2026-09-11T14:30:47"
+        "generated_at": "2026-09-12T13:46:40"
       }
     },
     {
       "question_id": "AQ4",
       "title": "收缩域中的烘干时长",
       "task_type": "移动边界传热传质",
-      "result_type": "general",
-      "main_model": "物质坐标系(xi)移动网格FVM + 附录4公式 + 截断逼近算法",
+      "result_type": "simulation",
+      "main_model": "物质坐标系(xi)移动网格FVM + 附录4公式 + 离散阈值事件检测",
       "baseline_model": "",
-      "result_summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8572 h (183086.0 s)；终点半径为1.200 cm，中心含水率为0.1500 kg/kg，表面为0.0605 kg/kg。表6与result4.xlsx已导出。",
+      "result_summary": "AQ4收缩域烘干时长求解完成：烘干达标时长为50.8249 h (182969.5 s)；终点半径为1.2000 cm，中心含水率为0.1500 kg/kg，表面为0.0525 kg/kg。表6与result4.xlsx已导出。",
       "outputs": [
         {
           "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
@@ -141,21 +186,37 @@
           "type": "xlsx"
         }
       ],
-      "parameters": [],
+      "parameters": [
+        {
+          "name": "N",
+          "value": 1280
+        },
+        {
+          "name": "dt_s",
+          "value": 0.5
+        },
+        {
+          "name": "event_status",
+          "value": "reached"
+        }
+      ],
       "evidence_status": "computed",
       "status": "computed",
       "execution_provenance": {
         "source_code_path": "paper_output/code/modeling/q4_model.py",
-        "source_code_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+        "source_code_sha256": "b61934cb57cf237d23425803db6a344c598b71af141008e1dfac9f6b64c24aaf",
         "helper_path": "paper_output/code/modeling/result_contract_io.py",
-        "run_command": "python.exe paper_output/code/modeling/q4_model.py",
+        "run_command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q4_model.py",
         "run_exit_code": 0,
-        "input_files": [],
+        "input_files": [
+          "paper_output/data_cleaned/a_environment.csv",
+          "paper_output/data_cleaned/a_radius.csv"
+        ],
         "output_artifacts": [
           "paper_output/tables/table_aq4_shrinkage_moisture.csv",
           "paper_output/tables/result4.xlsx"
         ],
-        "generated_at": "2026-09-11T14:30:53"
+        "generated_at": "2026-09-12T13:55:48"
       }
     }
   ],

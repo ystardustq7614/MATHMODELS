@@ -1,16 +1,16 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper-formal-writer/scripts/check_paper_format.py",
-  "generated_at": "2026-09-11T14:35:37",
+  "generated_at": "2026-09-12T15:14:04",
   "status": "PASS",
   "delivery_mode": "competition",
   "acceptance_scope": "STANDARD_COMPETITION_CHECKS",
   "source": "paper_output/final_paper_source.md",
   "docx": "paper_output/final_paper.docx",
   "counts": {
-    "cjk": 9433,
-    "nonspace": 19079,
-    "content": 15442
+    "cjk": 11145,
+    "nonspace": 22427,
+    "content": 18218
   },
   "target_words": {
     "min": 11300,
@@ -39,21 +39,21 @@
     }
   ],
   "figure_count": 6,
-  "table_count": 8,
-  "paper_table_count": 8,
+  "table_count": 11,
+  "paper_table_count": 11,
   "missing_figures": [],
   "missing_tables": [],
-  "source_heading_count": 111,
+  "source_heading_count": 121,
   "input_hashes": {
-    "paper_output/final_paper_source.md": "2f0cadf8c9bee1701eb292a1d582910479ac8504d9e51a01d790dc36a5a4bb90",
-    "paper_output/final_paper.docx": "43687854f7bcc35710afc86cf1e07a83f75c41c34f2013a7a05555c784fac923",
-    "paper_output/plan/paper_outline.json": "3544151341f6a005138d9ab3efb5bb336ca68b63691c48ccd47f4e3e6cbed432",
-    "paper_output/figure_index.json": "bdc93596641360c75ac920eea8504a629d83f9d82dee867a381c4b022ef20663",
-    "paper_output/tables/table_index.json": "f6fdaf4ef33592f1ddeaad62ede6e562e7fdbe83f8e06fca03430a6f9abd0c57",
-    "paper_output/qa/evidence_gate_report.json": "84e1e3b4f8e450d97325a6854ff0ecfa08e6d9a04ad2deb4ea9db990c6cb975f",
-    "paper_output/context/authoring_state.json": "a74211e19533fb6eb45fc936149583698b62c233e1ee883c20099bdbe5aefb37",
-    "paper_output/plan/writing_plan.json": "133424886241c3820cb8882b49b770f1c55fc4377802be4b28b1d2b68086d3f9",
-    "paper_output/qa/rendered/final_paper.pdf": "e5d92cc5afc4621153fbaccf2fc1e5277ad1885e09d2819e6fc751fdc4bbabad"
+    "paper_output/final_paper_source.md": "044feb81225bb65124a8d5bf6927c24fd238d59fe1c709d4eae05dd8f9a6783f",
+    "paper_output/final_paper.docx": "968a7d660b2c6371580d17e7416630c58d7fd063b455cb97e1b164fb6c3c09f3",
+    "paper_output/plan/paper_outline.json": "a99671d1c0e94ece08f0fe4a9a6c175cc695d5c377613d7452e309463d133ab5",
+    "paper_output/figure_index.json": "5abf045b315832a7d89109f4c869981a3285d5a296595b9332ff866dbc1949c7",
+    "paper_output/tables/table_index.json": "5cbec75eade7a8467334c319d586dcc6c7b6f40d179637af857c4cf4ab12c3f1",
+    "paper_output/qa/evidence_gate_report.json": "ba68ab64e3e5dc7cbcb5f0dea505786184af9cbb65e7da89068ed92a184c9ec2",
+    "paper_output/context/authoring_state.json": "96660aa1348945cab852692a84172b02c6349dd2dd4ee5cfae70752b8e824a47",
+    "paper_output/plan/writing_plan.json": "0c14ea0e079c8e8ef500fec36846684d694ca097f6bae86e125491f3786b2b31",
+    "paper_output/qa/rendered/final_paper.pdf": "8dfacbde991d377cd3328b3f53292f1decaf96314dabb901dbc9097dd7e550ad"
   },
   "citation_qa": {
     "bibliography_entry_count": 6,
@@ -72,23 +72,23 @@
   "duplicate_paragraphs": [],
   "formula_qa": {
     "status": "PASS",
-    "source_formula_count": 90,
-    "source_display_formula_count": 20,
-    "native_omml_count": 90,
-    "native_display_omml_count": 20,
+    "source_formula_count": 119,
+    "source_display_formula_count": 26,
+    "native_omml_count": 119,
+    "native_display_omml_count": 26,
     "failures": [],
     "warnings": []
   },
   "docx_structure": {
     "exists": true,
     "package_ok": true,
-    "paragraph_count": 254,
-    "table_count": 9,
-    "table_cell_count": 439,
+    "paragraph_count": 287,
+    "table_count": 13,
+    "table_cell_count": 671,
     "empty_table_count": 0,
     "image_count": 6,
     "inline_shape_count": 6,
-    "heading_count": 69,
+    "heading_count": 73,
     "sample_headings": [
       "圆柱形药材热风干燥的径向传热传质与收缩域数值模拟",
       "摘要",
@@ -103,11 +103,11 @@
       "2.4 长期终点与环境延拓",
       "2.5 收缩域的分析与比较边界"
     ],
-    "nonspace_text_chars": 81949,
-    "native_omml_count": 90,
-    "display_omml_count": 20,
-    "math_text_chars": 1093,
-    "text_preview": "圆柱形药材热风干燥的径向传热传质与收缩域数值模拟\n摘要\n针对圆柱形药材在时变烘房环境中的温度、干基含水率与达标时长预测问题，建立一维径向传热传质模型。模型以题面给定的经验物性和环境序列为输入，以全域最大干基含水率低于 0.15 kg/kg 为干燥终点，采用有限体积空间离散、一阶后向欧拉时间推进、每步两次物性更新及三对角直接求解，分别处理预热、统一物性全过程和几何收缩三种情形。\n问题一采用常热物性及随含水率变化的扩散系数。1800 s 时，中心与表面温度分别为 33.5766 "
+    "nonspace_text_chars": 87879,
+    "native_omml_count": 119,
+    "display_omml_count": 26,
+    "math_text_chars": 1417,
+    "text_preview": "圆柱形药材热风干燥的径向传热传质与收缩域数值模拟\n摘要\n围绕圆柱形药材热风干燥的内部温湿场与停止时间，建立含水率相关物性的径向传热传质模型。采用环形有限体积与后向欧拉离散，以场增量和非线性残差共同控制Picard迭代；通过半单元传导和表面对流串联阻力重构真实表面值，并以未舍入单元最大含水率低于0.15 kg/kg检测干燥终点。\n问题一使用常热物性及非线性扩散关系。1800 s时，中心与表面温度分别为33.5759 °C、36.7859 °C，含水率分别为2.5500 kg/k"
   },
   "visual_qa": {
     "status": "PASS",
@@ -119,16 +119,16 @@
     "status": "PASS",
     "libreoffice": "C:\\Users\\neverend\\Desktop\\数模\\MATHMODELS\\.local-tools\\LibreOffice\\program\\soffice.com",
     "pdf": "paper_output/qa/rendered/final_paper.pdf",
-    "page_count": 70,
-    "extracted_text_chars": 84308,
+    "page_count": 61,
+    "extracted_text_chars": 92429,
     "returncode": 0,
     "stdout": "Could not find platform independent libraries <prefix>\nconvert C:\\Users\\neverend\\Desktop\\��ģ\\MATHMODELS\\paper_output\\final_paper.docx as a Writer document -> C:\\Users\\neverend\\Desktop\\��ģ\\MATHMODELS\\paper_output\\qa\\rendered\\final_paper.pdf using filter : writer_pdf_Export\n",
-    "pdf_sha256": "e5d92cc5afc4621153fbaccf2fc1e5277ad1885e09d2819e6fc751fdc4bbabad",
-    "pdf_bytes": 1555656,
-    "text_preview": "1\n圆柱形药材热风干燥的径向传热传质与收缩域数值模拟\n摘要\n针对圆柱形药材在时变烘房环境中的温度、干基含水率与达标时长预测问题，建立一维径向\n传热传质模型。模型以题面给定的经验物性和环境序列为输入，以全域最大干基含水率低于  \n0.15 kg/kg 为干燥终点，采用有限体积空间离散、一阶后向欧拉时间推进、每步两次物性更新\n及三对角直接求解，分别处理预热、统一物性全过程和几何收缩三种情形。\n问题一采用常热物性及随含水率变化的扩散系数。 1800 s 时，中心与表面温度分别为  ",
+    "pdf_sha256": "8dfacbde991d377cd3328b3f53292f1decaf96314dabb901dbc9097dd7e550ad",
+    "pdf_bytes": 1757617,
+    "text_preview": "1\n圆柱形药材热风干燥的径向传热传质与收缩域数值模拟\n摘要\n围绕圆柱形药材热风干燥的内部温湿场与停止时间，建立含水率相关物性的径向传热传质模\n型。采用环形有限体积与后向欧拉离散，以场增量和非线性残差共同控制Picard 迭代；通过半单\n元传导和表面对流串联阻力重构真实表面值，并以未舍入单元最大含水率低于 0.15 kg/kg 检测干\n燥终点。\n问题一使用常热物性及非线性扩散关系。 1800 s 时，中心与表面温度分别为 33.5759 °C、\n36.7859 °C，含水率分别",
     "paper_scope": {
-      "counted_main_pages": 22,
-      "total_pages": 70,
+      "counted_main_pages": 23,
+      "total_pages": 61,
       "delivery_mode": "competition"
     }
   },

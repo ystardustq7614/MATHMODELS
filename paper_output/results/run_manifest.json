@@ -1,47 +1,50 @@
 {
   "schema_version": "1.0",
   "generated_by": "paper_output/code/modeling/run_modeling.py",
-  "generated_at": "2026-09-11T14:30:54",
+  "generated_at": "2026-09-12T05:55:50.078248+00:00",
   "status": "PASS",
   "runs": [
     {
-      "run_id": "q1_model_20260911_142921",
+      "run_id": "AQ1_2026-09-12T05:42:05.674371+00:00",
       "script": "paper_output/code/modeling/q1_model.py",
-      "script_sha256": "f920b85f5588b2d9c5317751f4394278e018d16c80b668c66c55940c4f6b7e9e",
+      "script_sha256": "ee861ee9b0436edb204c1e4e5f3f4987fcbe9d7a0ca5ad7c9385d30c4c73fe2d",
       "question_ids": [
         "AQ1"
       ],
-      "command": "python.exe q1_model.py",
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q1_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:29:21",
-      "finished_at": "2026-09-11T14:29:26",
-      "working_directory": "paper_output/code/modeling",
+      "started_at": "2026-09-12T05:42:05.674371+00:00",
+      "finished_at": "2026-09-12T05:42:15.653734+00:00",
+      "working_directory": ".",
       "environment": {
-        "python": "3.12.14",
-        "implementation": "CPython",
+        "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
         "platform": "Windows-11-10.0.26200-SP0"
       },
       "input_files": [
         {
           "path": "paper_output/data_cleaned/a_environment.csv",
+          "exists": true,
           "bytes": 6750,
           "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
         },
         {
-          "path": "paper_output/data_cleaned/a_radius.csv",
-          "bytes": 2807,
-          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+          "path": "paper_output/code/modeling/core_solver.py",
+          "exists": true,
+          "bytes": 12018,
+          "sha256": "9ae3728d87e2fd6458772ee4e9152061e9f74c3e2ac37b82ef1c9fca3802fd4d"
         },
         {
-          "path": "paper_output/data_cleaned/data_pipeline_run.json",
-          "bytes": 3311,
-          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+          "path": "paper_output/code/modeling/result_contract_io.py",
+          "exists": true,
+          "bytes": 3683,
+          "sha256": "6bed7929c088150c035dbe7b0bfb327e47c23a79f111cc4fabff80c5e35bcb31"
         },
         {
-          "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 2831,
-          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
+          "path": "paper_output/qa/model_validation_checks.json",
+          "exists": true,
+          "bytes": 74961,
+          "sha256": "c33e4a29c1389995d0732939100da18af7b9e80197eaa380f4e074a85fc252ce"
         }
       ],
       "output_artifacts": [
@@ -49,61 +52,64 @@
           "path": "paper_output/tables/table_aq1_temperature.csv",
           "exists": true,
           "bytes": 360,
-          "sha256": "b5da6a07cbb2147bed0d6102f198276f66e44c00d0c7944017cb711784875fe4"
+          "sha256": "d678ce51cad4d2a62c896475e490170dc064d70da7444fc9a50cffa3ddf51d80"
         },
         {
           "path": "paper_output/tables/table_aq1_moisture.csv",
           "exists": true,
           "bytes": 325,
-          "sha256": "11476afea146ccd67afae0cc21985362b523d9b16d670e1c90fd15013e864471"
+          "sha256": "6afbca2de8e7a6d44958d44213a4c16d2f1143995d5e5bc665cc1aa7b191c2e3"
         },
         {
           "path": "paper_output/tables/result1.xlsx",
           "exists": true,
-          "bytes": 362766,
-          "sha256": "979c51161a99d0f911d0b4725587b661736635a3588ff1b36deea2a1f983a73c"
+          "bytes": 362580,
+          "sha256": "73fcefd4db7150f3c9142ffadfc5961ba7e467b8786863b195a8bcde221c2495"
         }
       ],
       "stdout_tail": "AQ1 finished successfully.\n"
     },
     {
-      "run_id": "q2_model_20260911_142926",
+      "run_id": "AQ2_2026-09-12T05:42:15.733985+00:00",
       "script": "paper_output/code/modeling/q2_model.py",
-      "script_sha256": "55724147a735502f4ec02c3864a4a8aa025f625aa427b3c0df6a3b893ee541a1",
+      "script_sha256": "b0a9b5e1a19080a2b512c308ae0c571a9de9b9becc7a569ddf5446c0646a4180",
       "question_ids": [
         "AQ2"
       ],
-      "command": "python.exe q2_model.py",
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q2_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:29:26",
-      "finished_at": "2026-09-11T14:30:41",
-      "working_directory": "paper_output/code/modeling",
+      "started_at": "2026-09-12T05:42:15.733985+00:00",
+      "finished_at": "2026-09-12T05:45:02.633138+00:00",
+      "working_directory": ".",
       "environment": {
-        "python": "3.12.14",
-        "implementation": "CPython",
+        "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
         "platform": "Windows-11-10.0.26200-SP0"
       },
       "input_files": [
         {
           "path": "paper_output/data_cleaned/a_environment.csv",
+          "exists": true,
           "bytes": 6750,
           "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
         },
         {
-          "path": "paper_output/data_cleaned/a_radius.csv",
-          "bytes": 2807,
-          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+          "path": "paper_output/code/modeling/core_solver.py",
+          "exists": true,
+          "bytes": 12018,
+          "sha256": "9ae3728d87e2fd6458772ee4e9152061e9f74c3e2ac37b82ef1c9fca3802fd4d"
         },
         {
-          "path": "paper_output/data_cleaned/data_pipeline_run.json",
-          "bytes": 3311,
-          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+          "path": "paper_output/code/modeling/result_contract_io.py",
+          "exists": true,
+          "bytes": 3683,
+          "sha256": "6bed7929c088150c035dbe7b0bfb327e47c23a79f111cc4fabff80c5e35bcb31"
         },
         {
-          "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 2831,
-          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
+          "path": "paper_output/qa/model_validation_checks.json",
+          "exists": true,
+          "bytes": 74961,
+          "sha256": "c33e4a29c1389995d0732939100da18af7b9e80197eaa380f4e074a85fc252ce"
         }
       ],
       "output_artifacts": [
@@ -111,61 +117,64 @@
           "path": "paper_output/tables/table_aq2_temperature.csv",
           "exists": true,
           "bytes": 312,
-          "sha256": "f8fdb7118b17e6f2e74a40009d321a41cdd0808f71f1e437b2cd082f428e648b"
+          "sha256": "13562cd331bc2421c9ca1ba0ed343cdd8a5da5fb2164ee4ea69e3672f0bc6964"
         },
         {
           "path": "paper_output/tables/table_aq2_moisture.csv",
           "exists": true,
           "bytes": 282,
-          "sha256": "699006fbbddb5e3b8e4095675611cfc26674a90b3d6f7f2f44dd127e7ec8d128"
+          "sha256": "14db82e529ea2a8c3a6710a037d39c79ec3fcb1e55e0f0bb4b1b49e45c2d2100"
         },
         {
           "path": "paper_output/tables/result2.xlsx",
           "exists": true,
-          "bytes": 27527742,
-          "sha256": "96495747899a0966a004a91b5f8fdb477919b6e1e517bb9b020d73e8b113d323"
+          "bytes": 27456250,
+          "sha256": "b3f7132df2221de554899ea2decd3e7a967058a814118d88c381556dd9c766f3"
         }
       ],
       "stdout_tail": "AQ2 finished successfully.\n"
     },
     {
-      "run_id": "q3_model_20260911_143041",
+      "run_id": "AQ3_2026-09-12T05:45:02.651257+00:00",
       "script": "paper_output/code/modeling/q3_model.py",
-      "script_sha256": "84161c3ae112ab39478ae56d5869742bc02d15388784b12e49b8e4a9461c839d",
+      "script_sha256": "ab9a9299072c3bf0976da48c5c10bb4dc45135422abd4edb5fb7e45372856b75",
       "question_ids": [
         "AQ3"
       ],
-      "command": "python.exe q3_model.py",
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q3_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:30:41",
-      "finished_at": "2026-09-11T14:30:48",
-      "working_directory": "paper_output/code/modeling",
+      "started_at": "2026-09-12T05:45:02.651257+00:00",
+      "finished_at": "2026-09-12T05:46:41.032899+00:00",
+      "working_directory": ".",
       "environment": {
-        "python": "3.12.14",
-        "implementation": "CPython",
+        "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
         "platform": "Windows-11-10.0.26200-SP0"
       },
       "input_files": [
         {
           "path": "paper_output/data_cleaned/a_environment.csv",
+          "exists": true,
           "bytes": 6750,
           "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
         },
         {
-          "path": "paper_output/data_cleaned/a_radius.csv",
-          "bytes": 2807,
-          "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
+          "path": "paper_output/code/modeling/core_solver.py",
+          "exists": true,
+          "bytes": 12018,
+          "sha256": "9ae3728d87e2fd6458772ee4e9152061e9f74c3e2ac37b82ef1c9fca3802fd4d"
         },
         {
-          "path": "paper_output/data_cleaned/data_pipeline_run.json",
-          "bytes": 3311,
-          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
+          "path": "paper_output/code/modeling/result_contract_io.py",
+          "exists": true,
+          "bytes": 3683,
+          "sha256": "6bed7929c088150c035dbe7b0bfb327e47c23a79f111cc4fabff80c5e35bcb31"
         },
         {
-          "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 2831,
-          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
+          "path": "paper_output/qa/model_validation_checks.json",
+          "exists": true,
+          "bytes": 74961,
+          "sha256": "c33e4a29c1389995d0732939100da18af7b9e80197eaa380f4e074a85fc252ce"
         }
       ],
       "output_artifacts": [
@@ -173,72 +182,135 @@
           "path": "paper_output/tables/table_aq3_drying_moisture.csv",
           "exists": true,
           "bytes": 477,
-          "sha256": "93bb19f77877ddd6f0a7ac0ef229a847184170f6aca72d715c74d45b01308e50"
+          "sha256": "8c62c6067b21f6a0f1b3d09975491914fd741b24a7a5c4c0c603f618e5dd501e"
         },
         {
           "path": "paper_output/tables/result3.xlsx",
           "exists": true,
-          "bytes": 336774,
-          "sha256": "f47f69bd9c140a1e51bcecdf6a415e33accdbfd76056246022dbcbbd905cd887"
+          "bytes": 334004,
+          "sha256": "deefe5e8ebb6f70bb5d02eb008aca492c7be4ca84dfe5a182b2f8867369fd71c"
         }
       ],
-      "stdout_tail": "AQ3 finished successfully: t_end = 57.3425 h (206433.0 s).\n"
+      "stdout_tail": "AQ3 finished successfully: t_end = 57.1717 h (205818.0 s).\n"
     },
     {
-      "run_id": "q4_model_20260911_143048",
+      "run_id": "AQ4_2026-09-12T05:54:16.937708+00:00",
       "script": "paper_output/code/modeling/q4_model.py",
-      "script_sha256": "e7f9ae9d0b7f038cbd2356308dc225003cf819eae7a4614c9fd31349fad92c76",
+      "script_sha256": "b61934cb57cf237d23425803db6a344c598b71af141008e1dfac9f6b64c24aaf",
       "question_ids": [
         "AQ4"
       ],
-      "command": "python.exe q4_model.py",
+      "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/modeling/q4_model.py",
       "returncode": 0,
       "status": "PASS",
-      "started_at": "2026-09-11T14:30:48",
-      "finished_at": "2026-09-11T14:30:54",
-      "working_directory": "paper_output/code/modeling",
+      "started_at": "2026-09-12T05:54:16.937708+00:00",
+      "finished_at": "2026-09-12T05:55:48.523746+00:00",
+      "working_directory": ".",
       "environment": {
-        "python": "3.12.14",
-        "implementation": "CPython",
+        "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
         "platform": "Windows-11-10.0.26200-SP0"
       },
       "input_files": [
         {
           "path": "paper_output/data_cleaned/a_environment.csv",
+          "exists": true,
           "bytes": 6750,
           "sha256": "57864bb0cb439ac41f00464e0fa8ff18e4739c4984eff660df3b81f33a0220f1"
         },
         {
+          "path": "paper_output/code/modeling/core_solver.py",
+          "exists": true,
+          "bytes": 12018,
+          "sha256": "9ae3728d87e2fd6458772ee4e9152061e9f74c3e2ac37b82ef1c9fca3802fd4d"
+        },
+        {
+          "path": "paper_output/code/modeling/result_contract_io.py",
+          "exists": true,
+          "bytes": 3683,
+          "sha256": "6bed7929c088150c035dbe7b0bfb327e47c23a79f111cc4fabff80c5e35bcb31"
+        },
+        {
+          "path": "paper_output/qa/model_validation_checks.json",
+          "exists": true,
+          "bytes": 74961,
+          "sha256": "c33e4a29c1389995d0732939100da18af7b9e80197eaa380f4e074a85fc252ce"
+        },
+        {
           "path": "paper_output/data_cleaned/a_radius.csv",
+          "exists": true,
           "bytes": 2807,
           "sha256": "db7a37bfad1ae782f6166fdd8baa39cce16f16896a8fcc1c8df351b84172d4db"
-        },
-        {
-          "path": "paper_output/data_cleaned/data_pipeline_run.json",
-          "bytes": 3311,
-          "sha256": "b9fa6c3f3189739caffff672cc6dcb8f49ff0b7aff411e12353f070d01101cb3"
-        },
-        {
-          "path": "paper_output/data_cleaned/load_report.json",
-          "bytes": 2831,
-          "sha256": "6f3be5a0d8e1e6f1c07042971ea6c17a168b230223c69437e2e9d99da2a415bc"
         }
       ],
       "output_artifacts": [
         {
           "path": "paper_output/tables/table_aq4_shrinkage_moisture.csv",
           "exists": true,
-          "bytes": 474,
-          "sha256": "6395c9ceffcca306fb7cd1157618326c0bcc658ece5627b7a4ca027e063cd9bf"
+          "bytes": 483,
+          "sha256": "eb1ba36b329d5f9e489b76ee56883ccc1fce76c982eecbaf97059008458cb794"
         },
         {
           "path": "paper_output/tables/result4.xlsx",
           "exists": true,
-          "bytes": 224351,
-          "sha256": "37c7c2d621a7eb8b7191bc59d84f3e50b3de791a6fbb7fae7ae8a4f41d7f3040"
+          "bytes": 227650,
+          "sha256": "6861f5f7cfb57c1ea6ebad287e998e83b64e36292528be6a3034bbdc6f347bb1"
         }
       ],
-      "stdout_tail": "AQ4 finished successfully: t_end = 50.8572 h (183086.0 s).\n"
+      "stdout_tail": "AQ4 finished successfully: t_end = 50.8249 h (182969.5 s).\n"
     }
-  ]
+  ],
+  "validation_provenance": {
+    "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/visualization/run_numerical_validation.py",
+    "returncode": 0
+  },
+  "validation_record": {
+    "path": "paper_output/qa/model_validation_checks.json",
+    "exists": true,
+    "bytes": 74961,
+    "sha256": "c33e4a29c1389995d0732939100da18af7b9e80197eaa380f4e074a85fc252ce"
+  },
+  "figure_generator": {
+    "path": "paper_output/code/visualization/generate_model_evidence.py",
+    "exists": true,
+    "bytes": 6809,
+    "sha256": "29e3d2334c1079111831731bfb0dbfaf49a4d2a3cd469f675a63ca3ad8dba7be"
+  },
+  "final_artifacts": [
+    {
+      "path": "paper_output/results/model_results.json",
+      "exists": true,
+      "bytes": 8622,
+      "sha256": "d742ce0e2a78e07cef185748e7e6e8fddb401086775f83a250189913790a81e5"
+    },
+    {
+      "path": "paper_output/results/metrics.json",
+      "exists": true,
+      "bytes": 95577,
+      "sha256": "9b60e8eaadc27669fc26530ec0a0009705b440ae4b2f146b6f872ed16fdb1906"
+    },
+    {
+      "path": "paper_output/results/conclusions.json",
+      "exists": true,
+      "bytes": 2552,
+      "sha256": "2f5c45c9cf8f004799f455d1d91cf84ac6aec26b6eeaa27cf413cd8d411f0ba6"
+    },
+    {
+      "path": "paper_output/tables/table_index.json",
+      "exists": true,
+      "bytes": 4520,
+      "sha256": "5cbec75eade7a8467334c319d586dcc6c7b6f40d179637af857c4cf4ab12c3f1"
+    },
+    {
+      "path": "paper_output/figure_index.json",
+      "exists": true,
+      "bytes": 4748,
+      "sha256": "5abf045b315832a7d89109f4c869981a3285d5a296595b9332ff866dbc1949c7"
+    }
+  ],
+  "generator": {
+    "path": "paper_output/code/modeling/run_modeling.py",
+    "exists": true,
+    "bytes": 4910,
+    "sha256": "05bdbf89698616c3be7bfd96a70c38afd89acf210c11874c5a4c64c1f87b3de9"
+  }
 }

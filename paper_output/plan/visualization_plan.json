@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-10T13:19:23.806540+00:00",
+  "generated_at": "2026-09-12T05:34:20.470542+00:00",
   "figures": [
     {
       "figure_id": "fig_a_environment",
@@ -57,65 +57,11 @@
       "status": "planned"
     },
     {
-      "figure_id": "fig_convergence",
-      "question_id": "all",
-      "title": "网格与时间步收敛",
-      "expected_path": "paper_output/figures/fig_convergence.png",
-      "purpose": "网格与时间步收敛",
-      "stage": "S5",
-      "status": "planned"
-    },
-    {
-      "figure_id": "fig_balance",
-      "question_id": "all",
-      "title": "归一水分收支残差",
-      "expected_path": "paper_output/figures/fig_balance.png",
-      "purpose": "归一水分收支残差",
-      "stage": "S5",
-      "status": "planned"
-    },
-    {
-      "figure_id": "fig_sensitivity",
-      "question_id": "all",
-      "title": "边界与参数敏感性",
-      "expected_path": "paper_output/figures/fig_sensitivity.png",
-      "purpose": "边界与参数敏感性",
-      "stage": "S5",
-      "status": "planned"
-    },
-    {
       "figure_id": "fig_aq2_profiles",
       "question_id": "AQ2",
       "title": "全程温湿剖面",
       "expected_path": "paper_output/figures/fig_aq2_profiles.png",
       "purpose": "全程温湿剖面",
-      "stage": "S5",
-      "status": "planned"
-    },
-    {
-      "figure_id": "fig_aq3_event",
-      "question_id": "AQ3",
-      "title": "全域最大含水率与阈值事件",
-      "expected_path": "paper_output/figures/fig_aq3_event.png",
-      "purpose": "全域最大含水率与阈值事件",
-      "stage": "S5",
-      "status": "planned"
-    },
-    {
-      "figure_id": "fig_aq4_fields",
-      "question_id": "AQ4",
-      "title": "收缩域水分分布",
-      "expected_path": "paper_output/figures/fig_aq4_fields.png",
-      "purpose": "收缩域水分分布",
-      "stage": "S5",
-      "status": "planned"
-    },
-    {
-      "figure_id": "fig_aq4_factorial",
-      "question_id": "AQ4",
-      "title": "几何与物性2×2对照",
-      "expected_path": "paper_output/figures/fig_aq4_factorial.png",
-      "purpose": "几何与物性2×2对照",
       "stage": "S5",
       "status": "planned"
     }

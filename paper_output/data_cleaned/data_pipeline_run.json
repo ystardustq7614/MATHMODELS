@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "stage": "S3",
   "status": "PASS",
-  "generated_at": "2026-09-10T13:19:23.806540+00:00",
+  "generated_at": "2026-09-12T05:34:20.470542+00:00",
   "exit_code": 0,
-  "elapsed_s": 0.657277599995723,
-  "command": "F:/Anaconda_envs/envs/mathmodel-skill-standard/python.exe -X utf8 paper_output/code/data_processing/prepare_a_data.py",
+  "elapsed_s": 0.328997900000104,
+  "command": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe -B paper_output/code/data_processing/prepare_a_data.py",
   "executable": "F:\\Anaconda_envs\\envs\\mathmodel-skill-standard\\python.exe",
   "python": "3.12.14 | packaged by conda-forge | (main, Sep  2 2026, 23:18:20) [MSC v.1944 64 bit (AMD64)]",
   "numpy": "2.5.3",
@@ -13,8 +13,8 @@
   "scripts": [
     {
       "path": "paper_output/code/data_processing/prepare_a_data.py",
-      "sha256": "d4367bca3210ca062727ac4d5739df7cec07a5ea0a3253f702239e295f625a60",
-      "bytes": 10768
+      "sha256": "e3103c936c1174ec9a914efe6ab57076feb1787ae19e65e836acce1489772ff0",
+      "bytes": 10943
     },
     {
       "path": ".agents/skills/data-cleaning-and-visualization/scripts/robust_loader.py",
@@ -25,8 +25,8 @@
   "inputs": [
     {
       "path": "paper_output/input_manifest.json",
-      "sha256": "dccf576e5ddd665c700a3327b75282645aa2e913f5b05ff7b4834ed03271713b",
-      "bytes": 18114
+      "sha256": "25a86d5551166577777d1e1a8e1ff40f14da2fe8d3a1eaf42f0e5e1be7b6966f",
+      "bytes": 6108
     },
     {
       "path": "paper_output/step1/problem_analysis.json",
@@ -35,8 +35,8 @@
     },
     {
       "path": "paper_output/plan/model_route.json",
-      "sha256": "1fa3f04e25ba4a905994e39e3c26e25051eb0b4c62dc11e1fb8bd86b33adcf0f",
-      "bytes": 15017
+      "sha256": "9c382d4eda50c1a30b789afb71cac4c553d22050cbdaeb96a0c9316e6afc7f49",
+      "bytes": 11418
     },
     {
       "path": "problem_files/A题/附件/附件1.xlsx",
@@ -52,22 +52,22 @@
   "outputs": [
     {
       "path": "paper_output/data_cleaned/load_report.json",
-      "sha256": "215ddc5fea044667b126944b3123379a813fa7fc479a4aa9ca9eb0afec636e25",
-      "bytes": 6844
+      "sha256": "40c28b0703b9482936a05e2c63978a624aa80b481040d5904462fb93d2ed335f",
+      "bytes": 5033
     },
     {
       "path": "paper_output/plan/data_plan.json",
-      "sha256": "9cce315ed3efc3ef3855d3ba12045371e5087c23447b0598ff0db5a908a180c1",
-      "bytes": 3966
+      "sha256": "323b009afac293166eddf2e776c70af3a3d0709e72be2d2704e2d078520d4c32",
+      "bytes": 3964
     },
     {
       "path": "paper_output/plan/visualization_plan.json",
-      "sha256": "274b0ec9ce5cb5e4b4283de84f684e801b5cbdc83fd15fa8b45f6848616a533e",
-      "bytes": 4129
+      "sha256": "39db1e6d6fcd3dafcdd3de9ab6f98df0a67c6a7fd21cece9906fdb415d4b3688",
+      "bytes": 2433
     },
     {
       "path": "paper_output/figure_index.json",
-      "sha256": "80b5c8c77ffe5503a3cfa894b8b4f1fd5343ad4cb89ffd16f1868f1e0edfe351",
+      "sha256": "ac265148fcccc708e026df68347c1c9a9e197b5ec706700eeeebcf35b0cd7c05",
       "bytes": 1767
     },
     {

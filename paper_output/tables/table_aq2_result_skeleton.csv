@@ -1,4 +1,0 @@
-﻿table_title,question_id,main_model,evidence_status,note
-核心结果表,AQ2,迭代残差控制及环境延拓敏感性,needs_real_modeling,真实数值需要由当前赛题专用建模代码补齐。
-模型对比表,AQ2,迭代残差控制及环境延拓敏感性,needs_real_modeling,真实数值需要由当前赛题专用建模代码补齐。
-稳健性检查表,AQ2,迭代残差控制及环境延拓敏感性,needs_real_modeling,真实数值需要由当前赛题专用建模代码补齐。
